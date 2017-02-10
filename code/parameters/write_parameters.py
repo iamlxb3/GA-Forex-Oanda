@@ -25,6 +25,7 @@ para_dict['input']['raw_data_dict'] = {
                                         14:'days_to_next_dividend',
                                         15:'percent_return_next_dividend',
                                         }
+para_dict['input']['next_price_str'] = 'percent_change_next_weeks_price'
 
 with open('parameter.json', 'w') as f:
   json.dump(para_dict, f, ensure_ascii = False, indent = 4)

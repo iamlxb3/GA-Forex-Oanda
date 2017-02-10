@@ -6,6 +6,8 @@ from pjslib.logger import logger1
 import os
 import datetime, time
 import json
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
 from collections import namedtuple, defaultdict
 
 
@@ -53,7 +55,7 @@ class Formatter():
         print (Feature_namedtuple._fields)
         #--------------------:::format_and_create_dict:::------------------
         with open(path, 'r', encoding = 'utf-8') as f:
-            input_data_dict = defaultdict(lambda: defaultdict(lambda: []))
+            input_data_dict = defaultdict(lambda: defaultdict(lambda: tuple))
             for line in f:
                 try:
                     line_list = line.strip().split(',')
@@ -66,10 +68,10 @@ class Formatter():
                     date = datetime.datetime(*date[:3])
                     date = datetime.date(year = date.year, month = date.month, day = date.day)
                     feature_chosen_tuple__date_key = Feature_namedtuple._make([line_list[x] for x in feature_choice_list])
-                    input_data_dict[date][stock].append(feature_chosen_tuple__date_key)
+                    input_data_dict[date][stock] = feature_chosen_tuple__date_key
                 except UnicodeEncodeError:
                     pass
-            print (input_data_dict)
+            #pp.pprint (input_data_dict)
         return input_data_dict
 
 # formatter1 = Formatter()

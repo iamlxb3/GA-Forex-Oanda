@@ -7,8 +7,8 @@ from pjslib.logger import logger1
 
 from read_parameters import ReadParameters
 from formatter import Formatter
-
-
+from ga import GeneticAlgorithm
+from fitness import AmericanStockFitness
 
 # (1.) read parameters
 reader1 = ReadParameters()
@@ -19,3 +19,23 @@ formatter1 = Formatter(parameter_dict)
 input_data_dict = formatter1.format_and_create_dict(formatter1.path, formatter1.feature_choice_list)
 logger1.info("create input_data_dict successful")
 
+
+
+
+
+
+# test for fitness function
+#==================================================================================================
+# debug: create population_dict
+date_list = input_data_dict.keys()
+stock_list = ['BA' for x in range(len(date_list))]
+sorted_date_stock_list = sorted(list(zip(date_list, stock_list)), key = lambda x:x[0])
+date_stock_tuple = tuple(sorted_date_stock_list)
+population_dict = {'name':'sss', 'date_stock_tuple': date_stock_tuple}
+
+# compute result for one population
+genetic_algorithm = GeneticAlgorithm()
+american_stock_fitness = AmericanStockFitness(parameter_dict)
+# augument : (input_data_dict, population_dict, result_dict)
+tuple1 = american_stock_fitness(input_data_dict, population_dict, genetic_algorithm.result_dict)
+#==================================================================================================
