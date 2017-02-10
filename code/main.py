@@ -37,5 +37,6 @@ population_dict = {'name':'sss', 'date_stock_tuple': date_stock_tuple}
 genetic_algorithm = GeneticAlgorithm()
 american_stock_fitness = AmericanStockFitness(parameter_dict)
 # augument : (input_data_dict, population_dict, result_dict)
-tuple1 = american_stock_fitness(input_data_dict, population_dict, genetic_algorithm.result_dict)
+training_dict = input_data_dict
+tuple1 = american_stock_fitness(training_dict, population_dict, genetic_algorithm.result_dict)
 #==================================================================================================

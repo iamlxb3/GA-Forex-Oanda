@@ -57,3 +57,11 @@
 2017-02-10 18:50:51,743 - logger1 - INFO - read parameters successful
 2017-02-10 18:50:51,779 - logger1 - INFO - create input_data_dict successful
 2017-02-10 18:50:51,791 - logger1 - INFO - result: sss,0.216568496
+2017-02-10 18:57:06,486 - logger1 - INFO - read parameters successful
+2017-02-10 18:57:06,521 - logger1 - INFO - create input_data_dict successful
+2017-02-10 18:57:13,797 - logger1 - INFO - read parameters successful
+2017-02-10 18:57:13,834 - logger1 - INFO - create input_data_dict successful
+2017-02-10 18:57:13,844 - logger1 - INFO - result: sss,0.216568496
+2017-02-10 18:59:27,033 - logger1 - INFO - read parameters successful
+2017-02-10 18:59:27,070 - logger1 - INFO - create input_data_dict successful
+2017-02-10 18:59:27,081 - logger1 - INFO - result: sss,0.216568496
