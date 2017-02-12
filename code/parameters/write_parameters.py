@@ -30,8 +30,11 @@ para_dict['evolution']['mutation']['flip_bit_num'] = 1
 para_dict['evolution']['mutation']['mode'] = 'random_flip'
 # cross_over, mode = 'uniform', 'multi_point', 'one_point'
 para_dict['evolution']['cross_over']['mode'] = 'uniform'
-
-
+para_dict['SGA']['max_population_num'] = 9
+#para_dict['SGA']['kept_population_num'] = 5
+# mode: TS-Tournament Selection, RWS-Roulette Wheel Selection, SUS-Stochastic Universal Sampling, RK-Rank Selection
+para_dict['SGA']['parent_select_mode'] = 'TS'
+para_dict['SGA']['TS']['TS_K'] = 3
 
 
 

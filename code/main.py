@@ -36,7 +36,25 @@ logger1.info("create input_data_dict successful")
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ==================================SIMPLE UNIT TEST=================================================
+# ===================================================================================================
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 # #:::test for fitness function:::
@@ -73,15 +91,26 @@ logger1.info("create input_data_dict successful")
 # #====================================================================================================
 
 
-
 # #====================================================================================================
 # #::: cross over :::
 # #----------------------------------TEST CODE--------------------------------------------------------
 # from evolution import CrossOver
 # p1 = [0,0,0,0,0]
 # p2 = [1,1,1,1,1]
-# cross_over = CrossOver(parameter_dict)
-# c1,c2 = cross_over(p1,p2)
+# # multi_point
+# cross_over_multi_point = CrossOver(parameter_dict)
+# cross_over_multi_point.mode = 'multi_point'
+# c1,c2 = cross_over_multi_point(p1,p2)
+# print ("c1:{}c2:{}".format(c1,c2))
+# # one_point
+# cross_over_one_point = CrossOver(parameter_dict)
+# cross_over_one_point.mode = 'one_point'
+# c1,c2 = cross_over_one_point(p1,p2)
+# print ("c1:{}c2:{}".format(c1,c2))
+# # uniform
+# cross_over_uniform = CrossOver(parameter_dict)
+# cross_over_uniform.mode = 'uniform'
+# c1,c2 = cross_over_uniform(p1,p2)
 # print ("c1:{}c2:{}".format(c1,c2))
 # #---------------------------------------------------------------------------------------------------
 # #::: cross_over simple test pass; DATA:2017-2-12
@@ -90,10 +119,18 @@ logger1.info("create input_data_dict successful")
 
 
 #==================================================================================================
+
+
+
+
+
+
+
 # :::test for parent selection:::
 #==================================================================================================
 
 
 
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# ===================================================================================================
 # =================================SIMPLE UNIT TEST END==============================================
