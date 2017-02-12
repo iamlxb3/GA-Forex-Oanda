@@ -65,9 +65,9 @@ logger1.info("create input_data_dict successful")
 # #----------------------------------TEST CODE--------------------------------------------------------
 # from evolution import Mutation
 # mutation = Mutation(parameter_dict)
-# individual = [1,0,0,0,1,0]
-# new_individual = mutation(individual)
-# print ("new_individual: ", new_individual)
+# chromosome_bits = [1,0,0,0,1,0]
+# new_chromosome_bits = mutation(chromosome_bits)
+# print ("chromosome_bits: ", chromosome_bits)
 # #---------------------------------------------------------------------------------------------------
 # #::: mutation test result: all pass; DATA:2017-2-12
 # #====================================================================================================

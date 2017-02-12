@@ -82,37 +82,37 @@ class Mutation():
         self.flip_bit_num = parameter_dict['evolution']['mutation']['flip_bit_num']
         self.mode = parameter_dict['evolution']['mutation']['mode']
 
-    def __call__(self, individual):
+    def __call__(self, chromosome_bits):
         mode = self.mode
         flip_bit_num = self.flip_bit_num
 
         @accepts(list)
-        def random_flip(individual):
-            list_length = len(individual)
+        def random_flip(chromosome_bits):
+            list_length = len(chromosome_bits)
             random_list = list(range(0, list_length))
             flip_bits = random.sample(random_list, flip_bit_num)
             for flip_bit in flip_bits:
-                old_bit_value = individual[flip_bit]
+                old_bit_value = chromosome_bits[flip_bit]
                 if old_bit_value == 0:
-                    individual[flip_bit] = 1
+                    chromosome_bits[flip_bit] = 1
                 elif old_bit_value == 1:
-                    individual[flip_bit] = 0
-            return individual
+                    chromosome_bits[flip_bit] = 0
+            return chromosome_bits
 
         @accepts(list)
-        def bit_flip(individual):
-            list_length = len(individual)
+        def bit_flip(chromosome_bits):
+            list_length = len(chromosome_bits)
             random_list = list(range(0, list_length))
             flip_bit = random.sample(random_list, 1)[0]
-            old_bit_value = individual[flip_bit]
+            old_bit_value = chromosome_bits[flip_bit]
             if old_bit_value == 0:
-                individual[flip_bit] = 1
+                chromosome_bits[flip_bit] = 1
             elif old_bit_value == 1:
-                individual[flip_bit] = 0
-            return individual
+                chromosome_bits[flip_bit] = 0
+            return chromosome_bits
 
         mode_dict = {
                     "random_flip": random_flip,
                     "bit_flip": bit_flip,
         }
-        return mode_dict[mode](individual)
+        return mode_dict[mode](chromosome_bits)
