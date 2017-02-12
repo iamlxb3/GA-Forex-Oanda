@@ -51,7 +51,6 @@ class CrossOver():
                 e0 = edge_tuple[0]
                 e1 = edge_tuple[1]
                 c1[e0:e1], c2[e0:e1] = c2[e0:e1], c1[e0:e1]
-            print (c1,c2)
             return c1, c2
 
         @accepts(list, list)
