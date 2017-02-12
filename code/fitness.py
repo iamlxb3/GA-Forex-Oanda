@@ -28,7 +28,6 @@ class AmericanStockFitness():
             logger1.error("stocks number doesn't match for the input and the chosen one!")
             sys.exit(0)
         else:
-
             average_sum = 0
             for date,stock in predicted_stock_sequence_tuple:
                 features_tuple = input_data_dict[date][stock]
