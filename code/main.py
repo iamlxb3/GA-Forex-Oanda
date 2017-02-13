@@ -4,11 +4,19 @@ from pjslib.general import accepts
 from pjslib.logger import logger1
 #================================================
 
-
+# import local .py files
 from read_parameters import ReadParameters
 from formatter import Formatter
 from ga import GeneticAlgorithm
 from fitness import AmericanStockFitness
+from solution import Solution
+from evolution import OffspringGeneration, CrossOver, Mutation
+
+#================================================
+import random
+
+
+
 
 # (1.) read parameters
 reader1 = ReadParameters()
@@ -117,17 +125,67 @@ logger1.info("create input_data_dict successful")
 # #====================================================================================================
 
 
+# # #====================================================================================================
+# # #::: solution :::
+# # #----------------------------------TEST CODE--------------------------------------------------------
+# chromosome_bit_list = ['0','0','1','1','0','1','1','0']
+#
+# for i in range(5):
+#     s = Solution()
+#     s.chromosome_bits = random.sample(chromosome_bit_list, 5)
+#
+# print (Solution.all()[0].chromosome_bits)
+# Solution._clear()
+# print (Solution.all())
+# # #---------------------------------------------------------------------------------------------------
+# # #:::solution test ; DATA:2017-2-13
+# # #====================================================================================================
 
-#==================================================================================================
 
 
 
 
+# #====================================================================================================
+# #::: offspring generation :::
+# #----------------------------------TEST CODE--------------------------------------------------------
+chromosome_bit_list = [0,0,1,1,0,1,1,0]
+
+#----------------------------------------------------------
+# test for tournament_selection
+for i in range(5):
+    s = Solution()
+    s.chromosome_bits = random.sample(chromosome_bit_list, 5)
+    s.fitness = random.random()
+
+parent_list = Solution.all()
+parameter_dict['SGA']['TS']['TS_K'] = 3
+parameter_dict['SGA']['parent_select_mode'] = 'TS'
+off_spring_generation = OffspringGeneration(parameter_dict)
+off_spring_generation(parent_list)
+#----------------------------------------------------------
+# Clear
+Solution._clear()
+#----------------------------------------------------------
+# test for roulette_wheel_selection
+for i in range(5):
+    s = Solution()
+    s.chromosome_bits = random.sample(chromosome_bit_list, 5)
+    s.fitness = random.random()
+
+Solution.all()[0].fitness = 0.9
+Solution.all()[1].fitness = 0.1
+parent_list = Solution.all()
+parameter_dict['SGA']['parent_select_mode'] = 'RWS'
+off_spring_generation = OffspringGeneration(parameter_dict)
+off_spring_generation(parent_list)
+#----------------------------------------------------------
+# #---------------------------------------------------------------------------------------------------
+# #:::solution test ; DATA:2017-2-13
+# #====================================================================================================
 
 
 
-# :::test for parent selection:::
-#==================================================================================================
+
 
 
 

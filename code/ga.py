@@ -11,3 +11,6 @@ import collections
 class GeneticAlgorithm():
     def __init__(self):
         self.result_dict = collections.defaultdict(lambda :0)
+        self.tabu_list = []
+        self.current_solutions_list = []
+        self.seed_list = []

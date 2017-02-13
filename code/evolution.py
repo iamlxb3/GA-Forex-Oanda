@@ -25,6 +25,10 @@ class OffspringGeneration():
             sp2_tuple = sorted(sp2_random_list, key = lambda x:x[1], reverse = True)[0]
             sp1 = sp1_tuple[0]
             sp2 = sp2_tuple[0]
+            logger1.debug("chosen_K:{}".format(self.TS_K))
+            logger1.debug("parent1 name: {}, chromosome_bits:{}, fitness:{}, parent2 name: {}, chromosome_bits:{}, fitness:{},"
+                          .format(sp1.name, sp1.chromosome_bits, sp1.fitness, sp2.name, sp2.chromosome_bits, sp2.fitness))
+            logger1.debug(":::tournament parent selection complete:::!")
             return sp1, sp2
 
         def roulette_wheel_selection(compare_tuple_list):
@@ -37,20 +41,25 @@ class OffspringGeneration():
             sorted_compare_tuple_list = sorted(compare_tuple_list, key = lambda x:x[1], reverse = True)
             unzip_sorted_compare_tuple_list = [xy for xy in zip(*sorted_compare_tuple_list)]
             solution_list = unzip_sorted_compare_tuple_list[0]
-            solution_fitness_list = unzip_sorted_compare_tuple_list[0]
+            solution_fitness_list = unzip_sorted_compare_tuple_list[1]
             # convert the fitness to the possibility of being chosen eg: [0.4, 0.3, 0.2, 0.1]
-            solution_probability_list = ["{:.3f}".format(x/sum(solution_fitness_list)) for x in solution_fitness_list]
+            solution_probability_list = [float("{:.3f}".format(x/sum(solution_fitness_list))) for x in solution_fitness_list]
             # [0.4, 0.3, 0.2, 0.1] -> [0.4, 0.7, 0.9, 1.0]
             for i, x in enumerate(solution_probability_list):
                 if i > 0:
                     solution_probability_list[i] += solution_probability_list[i - 1]
-
+            logger1.debug("solution_probability_list:{}".format(solution_probability_list))
+            logger1.debug("solution_list:{}".format([solution.name for solution in solution_list]))
             sp1_index = get_parent_index(solution_probability_list, solution_list)
             sp2_index = get_parent_index(solution_probability_list, solution_list)
             while sp1_index == sp2_index:
                 sp2_index = get_parent_index(solution_probability_list, solution_list)
             sp1 = solution_list[sp1_index]
             sp2 = solution_list[sp2_index]
+            logger1.debug("parent1 selected name:{}, parent2 selected name:{}".format(sp1.name, sp2.name))
+            logger1.debug("parent1 name: {}, chromosome_bits:{}, fitness:{}, parent2 name: {}, chromosome_bits:{}, fitness:{},"
+                          .format(sp1.name, sp1.chromosome_bits, sp1.fitness, sp2.name, sp2.chromosome_bits, sp2.fitness))
+            logger1.debug(":::roulette wheel parent selection complete:::!")
             return sp1, sp2
 
         # :::parent_selection:::
@@ -69,16 +78,22 @@ class OffspringGeneration():
         compare_tuple_list = [(parent, parent.fitness) for parent in parents_list]
         while population_now <= self.max_population_num-2:
             compare_tuple_list_copy = compare_tuple_list.copy()
+            logger1.debug("===============START PARENT SELECTION===============")
             sp1, sp2 = self.parent_selection(compare_tuple_list_copy)
             sp1_chbits = sp1.chromosome_bits
             sp2_chbits = sp2.chromosome_bits
+            logger1.debug("===============PARENT SELECTION END=================")
             # cross_over
+            logger1.debug("===============CROSS OVER START=====================")
             cross_over = CrossOver(self.parameter_dict)
             c1_chbits, c2_chbits = cross_over(sp1_chbits, sp2_chbits)
+            logger1.debug("===============CROSS OVER END=======================")
             # mutation
+            logger1.debug("===============MUTATION START=======================")
             mutation = Mutation(self.parameter_dict)
             c1_chbits = mutation(c1_chbits)
             c2_chbits = mutation(c2_chbits)
+            logger1.debug("===============MUTATION END=========================")
             # create solution object
             c1 = Solution()
             c2 = Solution()
@@ -88,6 +103,10 @@ class OffspringGeneration():
             temp_offsprings_pool.append(c2)
             # count entire population
             population_now += 2
+            logger1.debug("child1 created name:{}, child2 created name:{}".format(c1.name, c2.name))
+            logger1.debug("child1 chromosome_bits:{}, child2 chromosome_bits:{}".format(c1.chromosome_bits, c2.chromosome_bits))
+            logger1.debug("Two children have been created!!")
+        logger1.debug("populaton pool is fool now, total solutions number : {}".format(population_now))
         return temp_offsprings_pool
 
 
@@ -112,6 +131,9 @@ class CrossOver():
             random_point = random.randint(1, len(p1_chbits)-1)
             c1 = p1_chbits[0:random_point] + p2_chbits[random_point:len(p2_chbits)]
             c2 = p2_chbits[0:random_point] + p1_chbits[random_point:len(p2_chbits)]
+            # logging
+            logger1.debug("<<<one point mutation>>>")
+            logger1.debug("chosen_point: {}".format(random_point))
             return c1, c2
 
         @accepts(list, list)
@@ -137,6 +159,10 @@ class CrossOver():
                 e0 = edge_tuple[0]
                 e1 = edge_tuple[1]
                 c1[e0:e1], c2[e0:e1] = c2[e0:e1], c1[e0:e1]
+            # logging
+            logger1.debug("<<<one point mutation>>>")
+            logger1.debug("chosen_points: {}".format(cut_point_list))
+            logger1.debug("cut_parts: {}".format(cut_point_tuple_list))
             return c1, c2
 
         @accepts(list, list)
@@ -144,10 +170,16 @@ class CrossOver():
             random_list = [0,1]
             c1 = p1_chbits[:]
             c2 = p2_chbits[:]
+            # create for logging
+            filped_points = []
             for i, cell in enumerate(c1):
                 is_filp = random.sample(random_list,1)[0]
                 if is_filp:
+                    # logging purpose
+                    filped_points.append(i)
                     c1[i],c2[i] = c2[i],c1[i]
+            logger1.debug("<<<uniform>>>")
+            logger1.debug("flipped_points: {}".format(filped_points))
             return c1, c2
 
         #:::Crossover:::
@@ -183,6 +215,10 @@ class Mutation():
                     chromosome_bits[flip_bit] = 1
                 elif old_bit_value == 1:
                     chromosome_bits[flip_bit] = 0
+            # logging
+            logger1.debug("<<<random_flip>>>")
+            logger1.debug("flip_bit_num: {}".format(flip_bit_num))
+            logger1.debug("flipped_bits: {}".format(flip_bits))
             return chromosome_bits
 
         @accepts(list)
@@ -195,10 +231,15 @@ class Mutation():
                 chromosome_bits[flip_bit] = 1
             elif old_bit_value == 1:
                 chromosome_bits[flip_bit] = 0
+            # logging
+            logger1.debug("<<<bit_flip>>>")
+            logger1.debug("flipped_bit: {}".format(flip_bit))
             return chromosome_bits
 
         mode_dict = {
                     "random_flip": random_flip,
                     "bit_flip": bit_flip,
         }
+
+
         return mode_dict[mode](chromosome_bits)
