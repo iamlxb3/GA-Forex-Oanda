@@ -22,6 +22,11 @@ import random
 reader1 = ReadParameters()
 parameter_dict = reader1.read_parameters(reader1.path)
 logger1.info("read parameters successful")
+
+
+
+
+
 # (2.) put data into dict
 formatter1 = Formatter(parameter_dict)
 input_data_dict = formatter1.format_and_create_dict(formatter1.path, formatter1.feature_choice_list)
@@ -125,9 +130,9 @@ logger1.info("create input_data_dict successful")
 # #====================================================================================================
 
 
-# # #====================================================================================================
-# # #::: solution :::
-# # #----------------------------------TEST CODE--------------------------------------------------------
+# #====================================================================================================
+# #::: solution :::
+# #----------------------------------TEST CODE--------------------------------------------------------
 # chromosome_bit_list = ['0','0','1','1','0','1','1','0']
 #
 # for i in range(5):
@@ -137,9 +142,9 @@ logger1.info("create input_data_dict successful")
 # print (Solution.all()[0].chromosome_bits)
 # Solution._clear()
 # print (Solution.all())
-# # #---------------------------------------------------------------------------------------------------
+# #---------------------------------------------------------------------------------------------------
 # # #:::solution test ; DATA:2017-2-13
-# # #====================================================================================================
+# #====================================================================================================
 
 
 
@@ -148,40 +153,53 @@ logger1.info("create input_data_dict successful")
 # #====================================================================================================
 # #::: offspring generation :::
 # #----------------------------------TEST CODE--------------------------------------------------------
-chromosome_bit_list = [0,0,1,1,0,1,1,0]
-
-#----------------------------------------------------------
-# test for tournament_selection
-for i in range(5):
-    s = Solution()
-    s.chromosome_bits = random.sample(chromosome_bit_list, 5)
-    s.fitness = random.random()
-
-parent_list = Solution.all()
-parameter_dict['SGA']['TS']['TS_K'] = 3
-parameter_dict['SGA']['parent_select_mode'] = 'TS'
-off_spring_generation = OffspringGeneration(parameter_dict)
-off_spring_generation(parent_list)
-#----------------------------------------------------------
-# Clear
-Solution._clear()
-#----------------------------------------------------------
-# test for roulette_wheel_selection
-for i in range(5):
-    s = Solution()
-    s.chromosome_bits = random.sample(chromosome_bit_list, 5)
-    s.fitness = random.random()
-
-Solution.all()[0].fitness = 0.9
-Solution.all()[1].fitness = 0.1
-parent_list = Solution.all()
-parameter_dict['SGA']['parent_select_mode'] = 'RWS'
-off_spring_generation = OffspringGeneration(parameter_dict)
-off_spring_generation(parent_list)
-#----------------------------------------------------------
+# chromosome_bit_list = [0,0,1,1,0,1,1,0]
+#
+# #----------------------------------------------------------
+# # test for tournament_selection
+# for i in range(5):
+#     s = Solution()
+#     s.chromosome_bits = random.sample(chromosome_bit_list, 5)
+#     s.fitness = random.random()
+#
+# parent_list = Solution.all()
+# parameter_dict['SGA']['TS']['TS_K'] = 3
+# parameter_dict['SGA']['parent_select_mode'] = 'TS'
+# off_spring_generation = OffspringGeneration(parameter_dict)
+# off_spring_generation(parent_list)
+# #----------------------------------------------------------
+# # Clear
+# Solution._clear()
+# #----------------------------------------------------------
+# # test for roulette_wheel_selection
+# for i in range(5):
+#     s = Solution()
+#     s.chromosome_bits = random.sample(chromosome_bit_list, 5)
+#     s.fitness = random.random()
+#
+# Solution.all()[0].fitness = 0.9
+# Solution.all()[1].fitness = 0.1
+# parent_list = Solution.all()
+# parameter_dict['SGA']['parent_select_mode'] = 'RWS'
+# off_spring_generation = OffspringGeneration(parameter_dict)
+# off_spring_generation(parent_list)
+# #----------------------------------------------------------
 # #---------------------------------------------------------------------------------------------------
 # #:::solution test ; DATA:2017-2-13
 # #====================================================================================================
+
+
+#====================================================================================================
+#::: create_empty_chromosome_bits generation :::
+#----------------------------------TEST CODE--------------------------------------------------------
+
+ga = GeneticAlgorithm()
+empty_chromosome_bits = ga.create_empty_chromosome_bits(parameter_dict)
+print (empty_chromosome_bits)
+print (len(empty_chromosome_bits))
+#---------------------------------------------------------------------------------------------------
+#:::create_empty_chromosome_bits test ; DATA:2017-2-14
+#====================================================================================================
 
 
 

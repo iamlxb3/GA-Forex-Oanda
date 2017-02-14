@@ -1136,3 +1136,11 @@
 2017-02-13 11:55:45,500 - logger1 - DEBUG - child1 chromosome_bits:[0, 1, 1, 1, 1], child2 chromosome_bits:[0, 0, 1, 0, 0]
 2017-02-13 11:55:45,500 - logger1 - DEBUG - Two children have been created!!
 2017-02-13 11:55:45,500 - logger1 - DEBUG - populaton pool is fool now, total solutions number : 9
+2017-02-14 21:50:16,091 - logger1 - INFO - read parameters successful
+2017-02-14 21:50:16,122 - logger1 - INFO - create input_data_dict successful
+2017-02-14 22:03:20,324 - logger1 - INFO - read parameters successful
+2017-02-14 22:03:20,355 - logger1 - INFO - create input_data_dict successful
+2017-02-14 22:03:55,887 - logger1 - INFO - read parameters successful
+2017-02-14 22:03:55,918 - logger1 - INFO - create input_data_dict successful
+2017-02-14 22:04:06,995 - logger1 - INFO - read parameters successful
+2017-02-14 22:04:07,027 - logger1 - INFO - create input_data_dict successful

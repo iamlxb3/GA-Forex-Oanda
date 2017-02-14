@@ -7,6 +7,20 @@ para_dict = collections.defaultdict(lambda: collections.defaultdict(lambda:{}))
 para_dict['input']['raw_data_path'] = ''
 para_dict['input']['raw_data_file_name'] = 'cleaned_data.txt'
 para_dict['input']['feature_choice_str'] = '0,1,3,4,5,6,7,8,9,10,11,12,13,14,15'
+
+#-------------------------------------------------switch bit------operator_bit------valuebit
+# -------
+# eg. (4,11,1), bit 4 is a sign bit
+#  on/off bit    operator_bits     sign_bit     int_value_bits      decimal_bits
+# (1,            2,               (1,           4,                  7))
+para_dict['input']['data_pos_in_chromosome'][8] = (1, 2, (1, 4, 7))
+para_dict['input']['data_pos_in_chromosome'][9] = (1, 2, (1, 8, 4))
+para_dict['input']['data_pos_in_chromosome'][14] = (1, 2, (0, 7, 0))
+para_dict['input']['data_pos_in_chromosome'][15] = (1, 2, (0, 2, 10))
+#0  1       2             3      4            5        6           7          8            9           10
+#1, AA,   2/25/2011,   $16.98   ,$17.15,   $15.96,   $16.68,   132981863,  -1.76678,  66.17769355,  80023895,
+#    11        12          13     14        15
+# $16.81,    $16.58,   -1.36823,  76,    0.179856
 para_dict['input']['raw_data_dict'] = {
                                         0:'quarter',
                                         1:'stock',
@@ -17,7 +31,7 @@ para_dict['input']['raw_data_dict'] = {
                                         6:'close',
                                         7:'volume',
                                         8:'percent_change_price',
-                                        9:'percent_chagne_volume_over_last_wek',
+                                        9:'percent_change_volume_over_last_wek',
                                         10:'previous_weeks_volume',
                                         11:'next_weeks_open',
                                         12:'next_weeks_close',
