@@ -16,7 +16,7 @@ class OffspringGeneration():
         self.parameter_dict = parameter_dict
 
     def parent_selection(self, compare_tuple_list):
-
+        # TODO fix the bug of "population larger than sample"
         def tournament_selection(compare_tuple_list):
             sp1_random_list = random.sample(compare_tuple_list, self.TS_K)
             sp1_tuple = sorted(sp1_random_list, key = lambda x:x[1], reverse = True)[0]

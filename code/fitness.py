@@ -32,9 +32,10 @@ class AmericanStockFitness():
             elif is_buy == 0:
                 value = (-1) * float(features_dict[self._next_price_str])
             average_sum += value
-            #print('profit_percent: ', float(features_dict[self._next_price_str]))
+            print('profit_percent: ', float(features_dict[self._next_price_str]))
 
         average = average_sum/predicted_days_num
+        print('average: ', float(average))
         solution.fitness = average
         solution.is_f_computed = True
         logger1.info("----------SOLUTION_INFO-----------------------")

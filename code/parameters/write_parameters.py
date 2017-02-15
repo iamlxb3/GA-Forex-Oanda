@@ -22,7 +22,9 @@ para_dict['input']['training_date_start'] = '1/14/2011'
 para_dict['input']['training_date_end'] = '3/25/2011'
 para_dict['input']['training_testing_ratio'] = '8,2'
 # determine the decisive feature
-para_dict['input']['decisive_feature'] = 8
+#  buy/sell difference indicator,    feature index
+# (1,                                8)
+para_dict['input']['decisive_feature'] = (1,8)
 
 #0  1       2             3      4            5        6           7          8            9           10
 #1, AA,   2/25/2011,   $16.98   ,$17.15,   $15.96,   $16.68,   132981863,  -1.76678,  66.17769355,  80023895,
@@ -51,12 +53,12 @@ para_dict['evolution']['mutation']['flip_bit_num'] = 2
 para_dict['evolution']['mutation']['mode'] = 'random_flip'
 # cross_over, mode = 'uniform', 'multi_point', 'one_point'
 para_dict['evolution']['cross_over']['mode'] = 'uniform'
-para_dict['SGA']['max_population_num'] = 200
+para_dict['SGA']['max_population_num'] = 60
 #para_dict['SGA']['kept_population_num'] = 5
 # mode: TS-Tournament Selection, RWS-Roulette Wheel Selection, SUS-Stochastic Universal Sampling, RK-Rank Selection
 para_dict['SGA']['parent_select_mode'] = 'TS'
 para_dict['SGA']['TS']['TS_K'] = 3
-para_dict['SGA']['intial_solution_number'] = 100
+para_dict['SGA']['intial_solution_number'] = 30
 para_dict['SGA']['target_return_percent'] = 5
 para_dict['SGA']['no_progress_generation'] = 10
 

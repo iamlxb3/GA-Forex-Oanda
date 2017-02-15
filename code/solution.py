@@ -191,9 +191,8 @@ class Solution():
         logger1.debug("solution name: {}".format(self.name))
 
         # get the decisive feature if more than 1 target is seleted each time frame
-        decisive_feature_index = str(parameter_dict['input']['decisive_feature'])
-        decisive_feature = parameter_dict['input']['raw_data_dict'][decisive_feature_index]
-
+        is_decisive_feature, decisive_feature_index = parameter_dict['input']['decisive_feature']
+        decisive_feature = parameter_dict['input']['raw_data_dict'][str(decisive_feature_index)]
         chromosome_bits = self.chromosome_bits
         # sort the input_data_list
         input_data_list = sorted(list(input_data_dict.items()), key = lambda x:x[0])
@@ -241,11 +240,20 @@ class Solution():
                             is_target_chosen = False
 
                     if is_target_chosen == True:
-                        # chose only 1 target every day, based on decisive feature
-                        target_decisive_feature_tuple = (target, float(feature_value_dict[decisive_feature]))
+                        # chose only 1 target every day, based on decisive feature, if it is sell, revert the sign
+                        if is_decisive_feature == 0:
+                            target_decisive_feature_tuple = (target, float(feature_value_dict[decisive_feature]))
+                        elif is_decisive_feature == 1:
+                            is_buy = self.chromosome_bits[0]
+                            if is_buy == 1:
+                                target_decisive_feature_tuple = (target, float(feature_value_dict[decisive_feature]))
+                            elif is_buy == 0:
+
+                                target_decisive_feature_tuple = (target, (-1)*float(feature_value_dict[decisive_feature]))
+
+
                         self.classification_result_dict[date_object].append(target_decisive_feature_tuple)
-
-
+                        #logger1.info("self.classification_result_dict[date_object]: {}".format(self.classification_result_dict[date_object]))
                         is_target_chosen = False
 
         # chose only 1 target every day, based on decisive feature
