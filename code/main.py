@@ -24,9 +24,6 @@ parameter_dict = reader1.read_parameters(reader1.path)
 logger1.info("read parameters successful")
 
 
-
-
-
 # (2.) put data into dict
 formatter1 = Formatter(parameter_dict)
 input_data_dict = formatter1.format_and_create_dict(formatter1.path, formatter1.feature_choice_list)
@@ -189,17 +186,70 @@ logger1.info("create input_data_dict successful")
 # #====================================================================================================
 
 
+# #====================================================================================================
+# #::: create_empty_chromosome_bits generation :::
+# #----------------------------------TEST CODE--------------------------------------------------------
+#
+# ga = GeneticAlgorithm()
+# empty_chromosome_bits = ga.create_empty_chromosome_bits(parameter_dict)
+# feature_pos_dict = ga.create_feature_pos_dict(parameter_dict)
+# print (feature_pos_dict)
+# print (empty_chromosome_bits)
+# print (len(empty_chromosome_bits))
+# #---------------------------------------------------------------------------------------------------
+# #:::create_empty_chromosome_bits test ; DATA:2017-2-14
+# #====================================================================================================
+
+
 #====================================================================================================
-#::: create_empty_chromosome_bits generation :::
+#::: select stocks :::
 #----------------------------------TEST CODE--------------------------------------------------------
 
 ga = GeneticAlgorithm()
-empty_chromosome_bits = ga.create_empty_chromosome_bits(parameter_dict)
-print (empty_chromosome_bits)
-print (len(empty_chromosome_bits))
+empty_chromosome_bits, chromosome_bits_length = ga.create_empty_chromosome_bits(parameter_dict)
+feature_pos_dict = ga.create_feature_pos_dict(parameter_dict)
+print (feature_pos_dict)
+random_chromosome = [random.randint(0,1) for p in range(chromosome_bits_length)]
+# create solution with random chromosome
+s = Solution()
+s.chromosome_bits = random_chromosome
+#s.get_classification_result(feature_pos_dict, input_data_dict)
+
 #---------------------------------------------------------------------------------------------------
 #:::create_empty_chromosome_bits test ; DATA:2017-2-14
 #====================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

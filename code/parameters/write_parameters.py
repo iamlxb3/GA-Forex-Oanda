@@ -12,11 +12,11 @@ para_dict['input']['feature_choice_str'] = '0,1,3,4,5,6,7,8,9,10,11,12,13,14,15'
 # -------
 # eg. (4,11,1), bit 4 is a sign bit
 #  on/off bit    operator_bits     sign_bit     int_value_bits      decimal_bits
-# (1,            2,               (1,           4,                  7))
-para_dict['input']['data_pos_in_chromosome'][8] = (1, 2, (1, 4, 7))
-para_dict['input']['data_pos_in_chromosome'][9] = (1, 2, (1, 8, 4))
-para_dict['input']['data_pos_in_chromosome'][14] = (1, 2, (0, 7, 0))
-para_dict['input']['data_pos_in_chromosome'][15] = (1, 2, (0, 2, 10))
+# (1,            2,                1,           4,                  7)
+para_dict['input']['data_pos_in_chromosome'][8] = (1, 2, 1, 4, 7)
+para_dict['input']['data_pos_in_chromosome'][9] = (1, 2, 1, 8, 4)
+para_dict['input']['data_pos_in_chromosome'][14] = (1, 2, 0, 7, 0)
+para_dict['input']['data_pos_in_chromosome'][15] = (1, 2, 0, 2, 10)
 #0  1       2             3      4            5        6           7          8            9           10
 #1, AA,   2/25/2011,   $16.98   ,$17.15,   $15.96,   $16.68,   132981863,  -1.76678,  66.17769355,  80023895,
 #    11        12          13     14        15

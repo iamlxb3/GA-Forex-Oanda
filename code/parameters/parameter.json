@@ -1,12 +1,54 @@
 {
+    "evolution": {
+        "mutation": {
+            "mode": "random_flip",
+            "flip_bit_num": 1
+        },
+        "cross_over": {
+            "mode": "uniform"
+        }
+    },
     "SGA": {
-        "max_population_num": 9,
+        "parent_select_mode": "TS",
         "TS": {
             "TS_K": 3
         },
-        "parent_select_mode": "TS"
+        "max_population_num": 9
     },
     "input": {
+        "next_price_str": "percent_change_next_weeks_price",
+        "raw_data_file_name": "cleaned_data.txt",
+        "raw_data_path": "",
+        "data_pos_in_chromosome": {
+            "8": [
+                1,
+                2,
+                1,
+                4,
+                7
+            ],
+            "9": [
+                1,
+                2,
+                1,
+                8,
+                4
+            ],
+            "14": [
+                1,
+                2,
+                0,
+                7,
+                0
+            ],
+            "15": [
+                1,
+                2,
+                0,
+                2,
+                10
+            ]
+        },
         "feature_choice_str": "0,1,3,4,5,6,7,8,9,10,11,12,13,14,15",
         "raw_data_dict": {
             "0": "quarter",
@@ -25,56 +67,6 @@
             "13": "percent_change_next_weeks_price",
             "14": "days_to_next_dividend",
             "15": "percent_return_next_dividend"
-        },
-        "next_price_str": "percent_change_next_weeks_price",
-        "raw_data_path": "",
-        "data_pos_in_chromosome": {
-            "8": [
-                1,
-                2,
-                [
-                    1,
-                    4,
-                    7
-                ]
-            ],
-            "9": [
-                1,
-                2,
-                [
-                    1,
-                    8,
-                    4
-                ]
-            ],
-            "14": [
-                1,
-                2,
-                [
-                    0,
-                    7,
-                    0
-                ]
-            ],
-            "15": [
-                1,
-                2,
-                [
-                    0,
-                    2,
-                    10
-                ]
-            ]
-        },
-        "raw_data_file_name": "cleaned_data.txt"
-    },
-    "evolution": {
-        "mutation": {
-            "mode": "random_flip",
-            "flip_bit_num": 1
-        },
-        "cross_over": {
-            "mode": "uniform"
         }
     }
 }
