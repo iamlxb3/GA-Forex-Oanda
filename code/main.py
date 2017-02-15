@@ -16,7 +16,22 @@ from evolution import OffspringGeneration, CrossOver, Mutation
 import random
 import pprint
 
-
+# #======TEMP
+# # (2) translate chromosome bits list to decimal value
+# s.translate_chromosome_bits(feature_pos_dict)
+# # (3) get the classfiled result in each day
+# s.get_classification_result(input_data_dict)
+# # (4) filter the solution with limited target returns
+# input_data_num = len(input_data_dict.keys())
+# is_s_not_removed = s.filter_solution(input_data_num)
+# # (5) compute the fitness for solution
+# if is_s_not_removed:
+#     american_stock_fitness = AmericanStockFitness(parameter_dict)
+#     american_stock_fitness(input_data_dict, s)
+# top_solutions_list = sorted([(solution.name, solution.fitness) for solution in Solution._all], key = lambda x:x[1], reverse = True)[0:10]
+# print (top_solutions_list)
+# print ("Found solution num:{}".format(len(Solution._all)))
+# #TEMP END
 
 
 # (1.) read parameters
@@ -29,6 +44,43 @@ logger1.info("read parameters successful")
 formatter1 = Formatter(parameter_dict)
 input_data_dict = formatter1.format_and_create_dict(formatter1.path, formatter1.feature_choice_list)
 logger1.info("create input_data_dict successful")
+
+# (3.) create initial parents
+ga = GeneticAlgorithm(parameter_dict, input_data_dict)
+ga.create_initial_parents()
+off_spring_generation = OffspringGeneration(parameter_dict)
+
+
+while not ga.END:
+    RLC = parameter_dict['DSGA']['RLC']
+    for i in range(RLC):
+        # (4.) offspring generation , return target, compute fitness
+        current_solution_pool = off_spring_generation(Solution.all())
+        ga.process_new_solutions(current_solution_pool)
+        # (5.) compute shared fitness
+        Solution.compute_shared_fitness(ga.tabu_list)
+        # (6.) find seed solution
+        Solution.find_seed_solution(ga)
+        # (7.) filter_solution_pool and ready for new parents
+        Solution.filter_solution_pool()
+        ga.small_generation += 1
+    Solution.replace_converged_seeds()
+    ga.monitor_progress(Solution)
+    ga.big_generation += 1
+    # TEST
+    ga.END = True
+
+# END
+ga.write_result_to_file()
+
+#================TEMP PRINT===============
+top_solutions_list = sorted([(solution.name, solution.fitness) for solution in Solution._all], key = lambda x:x[1], reverse = True)[0:10]
+print (top_solutions_list)
+print ("Found solution num:{}".format(len(Solution._all)))
+
+
+# (5.) continue running unless no better solution is found in n iterations
+# (6.) loop n iterations
 
 
 

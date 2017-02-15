@@ -1,0 +1,1533 @@
+2017-02-15 18:14:41,478 - logger1 - INFO - read parameters successful
+2017-02-15 18:14:41,558 - logger1 - INFO - create input_data_dict successful
+2017-02-15 18:14:41,560 - logger1 - INFO - feature_pos_dict: defaultdict(<function GeneticAlgorithm.__init__.<locals>.create_feature_pos_dict.<locals>.<lambda> at 0x0000004CACFA8378>, {'9': {'name': 'percent_change_volume_over_last_wek', 'pos': [(16, 17), (17, 19), (19, 20), (20, 28), (28, 32)]}, '15': {'name': 'percent_return_next_dividend', 'pos': [(42, 43), (43, 45), (45, 45), (45, 47), (47, 57)]}, '14': {'name': 'days_to_next_dividend', 'pos': [(32, 33), (33, 35), (35, 35), (35, 42), (42, 42)]}, '8': {'name': 'percent_change_price', 'pos': [(1, 2), (2, 4), (4, 5), (5, 9), (9, 16)]}})
+2017-02-15 18:14:41,592 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,594 - logger1 - INFO - solution_name: 1, result:1.9403414545454545
+2017-02-15 18:14:41,595 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,595 - logger1 - INFO - chromosome: '001111101011000010011110000000100101011101100001000000110'
+2017-02-15 18:14:41,597 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'AA'),
+ (datetime.date(2011, 1, 28), 'HPQ'),
+ (datetime.date(2011, 2, 4), 'AA'),
+ (datetime.date(2011, 2, 11), 'BAC'),
+ (datetime.date(2011, 2, 18), 'HPQ'),
+ (datetime.date(2011, 2, 25), 'CSCO'),
+ (datetime.date(2011, 3, 4), 'HPQ'),
+ (datetime.date(2011, 3, 11), 'CSCO'),
+ (datetime.date(2011, 3, 18), 'BAC'),
+ (datetime.date(2011, 3, 25), 'AA')]
+2017-02-15 18:14:41,602 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA87B8>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '10',
+                                       'value': 93},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 11.6},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 7.4},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '00',
+                                              'value': 0.385}})
+2017-02-15 18:14:41,607 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,609 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,642 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,644 - logger1 - INFO - solution_name: 3, result:0.12619136363636377
+2017-02-15 18:14:41,645 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,645 - logger1 - INFO - chromosome: '010001111101001010011000000111000101100111000001011000111'
+2017-02-15 18:14:41,647 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:41,652 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA88C8>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '10',
+                                       'value': 115},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 15.37},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 129.3},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 0.909}})
+2017-02-15 18:14:41,658 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,659 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,686 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,687 - logger1 - INFO - solution_name: 5, result:0.9314916363636363
+2017-02-15 18:14:41,688 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,689 - logger1 - INFO - chromosome: '100001110111111101011001101110001001110100000110010111100'
+2017-02-15 18:14:41,690 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'INTC'),
+ (datetime.date(2011, 1, 21), 'IBM'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'DD'),
+ (datetime.date(2011, 2, 11), 'MMM'),
+ (datetime.date(2011, 2, 18), 'TRV'),
+ (datetime.date(2011, 2, 25), 'KO'),
+ (datetime.date(2011, 3, 4), 'MRK'),
+ (datetime.date(2011, 3, 11), 'KRFT'),
+ (datetime.date(2011, 3, 18), 'AXP'),
+ (datetime.date(2011, 3, 25), 'AXP')]
+2017-02-15 18:14:41,695 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA8950>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '00',
+                                       'value': 23},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 7.127},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '10',
+                                                     'value': 217.1},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 3.2439999999999998}})
+2017-02-15 18:14:41,701 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,702 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,724 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,725 - logger1 - INFO - solution_name: 6, result:0.9185703636363635
+2017-02-15 18:14:41,726 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,727 - logger1 - INFO - chromosome: '110111100110110110101111101110111111011010101001001010111'
+2017-02-15 18:14:41,728 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'JPM'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'CAT'),
+ (datetime.date(2011, 2, 11), 'PG'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'MCD'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:41,733 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFD6950>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 45},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '01',
+                                      'value': 3.91},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 223.13},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 0.937}})
+2017-02-15 18:14:41,739 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,740 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,804 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,805 - logger1 - INFO - solution_name: 10, result:0.22073900000000005
+2017-02-15 18:14:41,806 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,807 - logger1 - INFO - chromosome: '101111110111001101100011001111111101100110011110011110001'
+2017-02-15 18:14:41,808 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'HD'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:41,813 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA8730>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 51},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 7.103},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 204.15},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 3.572}})
+2017-02-15 18:14:41,818 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,819 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,836 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,837 - logger1 - INFO - solution_name: 11, result:-0.36835881818181837
+2017-02-15 18:14:41,838 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,839 - logger1 - INFO - chromosome: '111000000100010000111111101101110000010001010011011100010'
+2017-02-15 18:14:41,840 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:41,845 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA8488>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '00',
+                                       'value': 68},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '10',
+                                      'value': 0.16999999999999998},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '01',
+                                                     'value': 223.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '10',
+                                              'value': 2.285}})
+2017-02-15 18:14:41,850 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,851 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,872 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,873 - logger1 - INFO - solution_name: 12, result:0.49598570000000003
+2017-02-15 18:14:41,875 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,876 - logger1 - INFO - chromosome: '010000110000010111000111001101111010111111000111111101011'
+2017-02-15 18:14:41,877 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 11), 'CSCO'), (datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:41,878 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA80D0>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 126},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 6.8},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '10',
+                                                     'value': 206.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 3.863}})
+2017-02-15 18:14:41,883 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,884 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,905 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,907 - logger1 - INFO - solution_name: 13, result:0.36835881818181837
+2017-02-15 18:14:41,908 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,909 - logger1 - INFO - chromosome: '000001001001011010010011110101100010100110010101011010001'
+2017-02-15 18:14:41,910 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:41,917 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA8048>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '01',
+                                       'value': 50},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 9.52},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 188.6},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '10',
+                                              'value': 1.557}})
+2017-02-15 18:14:41,924 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,925 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,960 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,961 - logger1 - INFO - solution_name: 15, result:-0.49598570000000003
+2017-02-15 18:14:41,962 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,963 - logger1 - INFO - chromosome: '101110010010101011011101100101100011000101001101111011011'
+2017-02-15 18:14:41,964 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 11), 'CSCO'), (datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:41,965 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACF75F28>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '01',
+                                       'value': 81},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 4.42},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '10',
+                                                     'value': 155.6},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '01',
+                                              'value': 1.879}})
+2017-02-15 18:14:41,971 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:41,972 - logger1 - INFO - 
+
+
+2017-02-15 18:14:41,988 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:41,989 - logger1 - INFO - solution_name: 16, result:0.36835881818181837
+2017-02-15 18:14:41,990 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:41,991 - logger1 - INFO - chromosome: '001111010100010110101101110100010111110001011101010010010'
+2017-02-15 18:14:41,992 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:41,997 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACFA81E0>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 71},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 5.81},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 187.8},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 1.2930000000000001}})
+2017-02-15 18:14:42,003 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,004 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,020 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,021 - logger1 - INFO - solution_name: 17, result:-0.411146090909091
+2017-02-15 18:14:42,022 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,023 - logger1 - INFO - chromosome: '000000000000101000110000001010011110000000110100010111010'
+2017-02-15 18:14:42,024 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'T'),
+ (datetime.date(2011, 1, 21), 'T'),
+ (datetime.date(2011, 1, 28), 'VZ'),
+ (datetime.date(2011, 2, 4), 'T'),
+ (datetime.date(2011, 2, 11), 'T'),
+ (datetime.date(2011, 2, 18), 'T'),
+ (datetime.date(2011, 2, 25), 'T'),
+ (datetime.date(2011, 3, 4), 'T'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'T'),
+ (datetime.date(2011, 3, 25), 'T')]
+2017-02-15 18:14:42,029 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACF75D08>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 0},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 0.4},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '01',
+                                                     'value': 64.9},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '10',
+                                              'value': 1.3719999999999999}})
+2017-02-15 18:14:42,035 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,036 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,120 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,122 - logger1 - INFO - solution_name: 21, result:0.2684802727272727
+2017-02-15 18:14:42,123 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,123 - logger1 - INFO - chromosome: '110001110101010000010101101101000110100101101111011100010'
+2017-02-15 18:14:42,125 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'HD'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,129 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACF95EA0>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 82},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 7.21},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '00',
+                                                     'value': 218.2},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 3.285}})
+2017-02-15 18:14:42,135 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,136 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,154 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,156 - logger1 - INFO - solution_name: 22, result:0.9941116363636362
+2017-02-15 18:14:42,157 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,158 - logger1 - INFO - chromosome: '100001000010011101101011101111111111111111111001011110100'
+2017-02-15 18:14:42,159 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'DIS'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'DIS'),
+ (datetime.date(2011, 2, 4), 'DIS'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'DIS'),
+ (datetime.date(2011, 2, 25), 'DIS'),
+ (datetime.date(2011, 3, 4), 'DIS'),
+ (datetime.date(2011, 3, 11), 'DIS'),
+ (datetime.date(2011, 3, 18), 'DIS'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:42,164 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACF95BF8>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 127},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 1.114},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 221.15},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '11',
+                                              'value': 0.189}})
+2017-02-15 18:14:42,170 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,171 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,237 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,238 - logger1 - INFO - solution_name: 26, result:-0.5833295454545456
+2017-02-15 18:14:42,240 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,240 - logger1 - INFO - chromosome: '100110110010101110101000001001110000111010010000100100111'
+2017-02-15 18:14:42,242 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,247 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACF95E18>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '00',
+                                       'value': 46},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '01',
+                                      'value': 6.106},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 65.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '10',
+                                              'value': 0.914}})
+2017-02-15 18:14:42,252 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,253 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,270 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,271 - logger1 - INFO - solution_name: 27, result:-0.49757045454545457
+2017-02-15 18:14:42,272 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,273 - logger1 - INFO - chromosome: '000111101100011010010101111010111010100100001001010011001'
+2017-02-15 18:14:42,274 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'PG'),
+ (datetime.date(2011, 1, 21), 'PFE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'DD'),
+ (datetime.date(2011, 2, 11), 'MMM'),
+ (datetime.date(2011, 2, 18), 'TRV'),
+ (datetime.date(2011, 2, 25), 'KO'),
+ (datetime.date(2011, 3, 4), 'KO'),
+ (datetime.date(2011, 3, 11), 'KRFT'),
+ (datetime.date(2011, 3, 18), 'JPM'),
+ (datetime.date(2011, 3, 25), 'AXP')]
+2017-02-15 18:14:42,279 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACF95D08>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 18},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '01',
+                                      'value': 11.49},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 122.13},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '01',
+                                              'value': 0.613}})
+2017-02-15 18:14:42,285 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,286 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,357 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,358 - logger1 - INFO - solution_name: 30, result:-1.6244968181818182
+2017-02-15 18:14:42,359 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,360 - logger1 - INFO - chromosome: '100001010110011101001001101111011011111110100100011110100'
+2017-02-15 18:14:42,361 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'CSCO'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'MRK'),
+ (datetime.date(2011, 3, 11), 'AXP'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,366 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CACEB2D90>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 63},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 5.115},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '10',
+                                                     'value': 217.11},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '00',
+                                              'value': 1.188}})
+2017-02-15 18:14:42,372 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,373 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,388 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,389 - logger1 - INFO - solution_name: 31, result:-0.49598570000000003
+2017-02-15 18:14:42,391 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,391 - logger1 - INFO - chromosome: '100000100011111111111011101110101001110101011011011111100'
+2017-02-15 18:14:42,392 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 11), 'CSCO'), (datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:42,394 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAE984C80>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '00',
+                                       'value': 87},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 2.126},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '11',
+                                                     'value': 221.5},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 2.253}})
+2017-02-15 18:14:42,399 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,400 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,421 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,422 - logger1 - INFO - solution_name: 32, result:-0.6205370000000001
+2017-02-15 18:14:42,423 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,424 - logger1 - INFO - chromosome: '101111110100011101100111101111011011100111011111011010000'
+2017-02-15 18:14:42,426 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,430 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAE984F28>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 115},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 7.113},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 222.11},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 3.45}})
+2017-02-15 18:14:42,437 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,438 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,465 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,467 - logger1 - INFO - solution_name: 33, result:0.36835881818181837
+2017-02-15 18:14:42,468 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,469 - logger1 - INFO - chromosome: '001111010111000110101001010100110101010000011110010100011'
+2017-02-15 18:14:42,471 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,481 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAE984BF8>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '10',
+                                       'value': 5},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 5.71},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 169.12},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 3.7880000000000003}})
+2017-02-15 18:14:42,491 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,492 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,540 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,542 - logger1 - INFO - solution_name: 34, result:-0.49598570000000003
+2017-02-15 18:14:42,543 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,543 - logger1 - INFO - chromosome: '110101100100010111001111011110111010111010101111101000011'
+2017-02-15 18:14:42,544 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 11), 'CSCO'), (datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:42,546 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAE984B70>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 46},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '01',
+                                      'value': 3.81},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '10',
+                                                     'value': 239.13},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 3.779}})
+2017-02-15 18:14:42,553 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,554 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,588 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,589 - logger1 - INFO - solution_name: 36, result:1.04505
+2017-02-15 18:14:42,590 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,591 - logger1 - INFO - chromosome: '000001110101111111010101101101111011111100000111010101001'
+2017-02-15 18:14:42,592 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:42,593 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14400>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 31},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 7.125},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '10',
+                                                     'value': 218.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 3.597}})
+2017-02-15 18:14:42,599 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,600 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,620 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,621 - logger1 - INFO - solution_name: 37, result:-0.6205370000000001
+2017-02-15 18:14:42,622 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,623 - logger1 - INFO - chromosome: '100000110010010101001011001110001000110111000100111111110'
+2017-02-15 18:14:42,625 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,629 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14268>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '00',
+                                       'value': 118},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 6.82},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '10',
+                                                     'value': 205.1},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 1.51}})
+2017-02-15 18:14:42,635 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,636 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,651 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,653 - logger1 - INFO - solution_name: 38, result:-1.8107335454545455
+2017-02-15 18:14:42,654 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,654 - logger1 - INFO - chromosome: '100001110111111101101001001110111001110110010110011011100'
+2017-02-15 18:14:42,656 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'CSCO'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'MRK'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,661 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14620>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '00',
+                                       'value': 55},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 7.127},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 201.13},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '10',
+                                              'value': 3.236}})
+2017-02-15 18:14:42,667 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,668 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,702 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,704 - logger1 - INFO - solution_name: 40, result:0.8451290000000001
+2017-02-15 18:14:42,705 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,706 - logger1 - INFO - chromosome: '110101100000110100001101101101110111101011101011011110010'
+2017-02-15 18:14:42,707 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'JPM'),
+ (datetime.date(2011, 1, 21), 'IBM'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'CAT'),
+ (datetime.date(2011, 2, 11), 'DD'),
+ (datetime.date(2011, 2, 18), 'TRV'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:42,712 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14840>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 107},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '01',
+                                      'value': 3.88},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '00',
+                                                     'value': 219.14},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 2.317}})
+2017-02-15 18:14:42,718 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,719 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,739 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,741 - logger1 - INFO - solution_name: 41, result:0.16425572727272725
+2017-02-15 18:14:42,742 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,742 - logger1 - INFO - chromosome: '110011110111011010110101101110001110010100101101001010111'
+2017-02-15 18:14:42,743 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'HD'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,748 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14488>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 20},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 7.55},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 218.1},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 1.937}})
+2017-02-15 18:14:42,754 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,755 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,771 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,773 - logger1 - INFO - solution_name: 42, result:0.36835881818181837
+2017-02-15 18:14:42,774 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,774 - logger1 - INFO - chromosome: '001001110001011010111011000111110101100110010101010110001'
+2017-02-15 18:14:42,776 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,781 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14A60>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '10',
+                                       'value': 51},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '10',
+                                      'value': 7.52},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 141.15},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '10',
+                                              'value': 1.565}})
+2017-02-15 18:14:42,787 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,788 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,804 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,805 - logger1 - INFO - solution_name: 43, result:0.3999884545454544
+2017-02-15 18:14:42,806 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,807 - logger1 - INFO - chromosome: '100111001110001101000011111101101010100110011111011010001'
+2017-02-15 18:14:42,808 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'DD'),
+ (datetime.date(2011, 2, 11), 'MMM'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'MRK'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'CAT'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,813 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA146A8>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 50},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '01',
+                                      'value': 9.99},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '10',
+                                                     'value': 252.6},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 3.557}})
+2017-02-15 18:14:42,819 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,820 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,836 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,837 - logger1 - INFO - solution_name: 44, result:0.36835881818181837
+2017-02-15 18:14:42,838 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,838 - logger1 - INFO - chromosome: '001111101001001010010111110100100110000110000001010000011'
+2017-02-15 18:14:42,840 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,845 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14C80>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 48},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 11.36},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 190.4},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 0.7729999999999999}})
+2017-02-15 18:14:42,851 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,852 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,868 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,869 - logger1 - INFO - solution_name: 45, result:-0.04789654545454545
+2017-02-15 18:14:42,870 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,871 - logger1 - INFO - chromosome: '000001001011010000011010000111100001011101110101001010100'
+2017-02-15 18:14:42,872 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'T'),
+ (datetime.date(2011, 1, 21), 'T'),
+ (datetime.date(2011, 1, 28), 'VZ'),
+ (datetime.date(2011, 2, 4), 'T'),
+ (datetime.date(2011, 2, 11), 'T'),
+ (datetime.date(2011, 2, 18), 'VZ'),
+ (datetime.date(2011, 2, 25), 'T'),
+ (datetime.date(2011, 3, 4), 'VZ'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'VZ'),
+ (datetime.date(2011, 3, 25), 'VZ')]
+2017-02-15 18:14:42,877 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA148C8>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '00',
+                                       'value': 93},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 9.22},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '00',
+                                                     'value': 133.7},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '10',
+                                              'value': 1.169}})
+2017-02-15 18:14:42,883 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,884 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,901 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,902 - logger1 - INFO - solution_name: 46, result:0.026674454545454463
+2017-02-15 18:14:42,903 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,904 - logger1 - INFO - chromosome: '100111001011000000011111000110111101111110111001011110110'
+2017-02-15 18:14:42,905 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'JPM'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'MCD'),
+ (datetime.date(2011, 3, 18), 'TRV'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:42,910 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14EA0>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 63},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '01',
+                                      'value': 9.6},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '00',
+                                                     'value': 143.13},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '11',
+                                              'value': 0.445}})
+2017-02-15 18:14:42,916 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,917 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,957 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,958 - logger1 - INFO - solution_name: 48, result:-0.4725833636363637
+2017-02-15 18:14:42,959 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,960 - logger1 - INFO - chromosome: '110011110111110101111011101110101101111000101011001010100'
+2017-02-15 18:14:42,961 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:42,966 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14D08>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 15},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 7.95},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 221.5},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 2.169}})
+2017-02-15 18:14:42,972 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:42,973 - logger1 - INFO - 
+
+
+2017-02-15 18:14:42,992 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:42,994 - logger1 - INFO - solution_name: 49, result:0.9348925454545451
+2017-02-15 18:14:42,995 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:42,995 - logger1 - INFO - chromosome: '100101100111111110101101101110011011010100100100010111111'
+2017-02-15 18:14:42,996 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'INTC'),
+ (datetime.date(2011, 1, 21), 'IBM'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'DD'),
+ (datetime.date(2011, 2, 11), 'MMM'),
+ (datetime.date(2011, 2, 18), 'TRV'),
+ (datetime.date(2011, 2, 25), 'KO'),
+ (datetime.date(2011, 3, 4), 'KO'),
+ (datetime.date(2011, 3, 11), 'KRFT'),
+ (datetime.date(2011, 3, 18), 'AXP'),
+ (datetime.date(2011, 3, 25), 'AXP')]
+2017-02-15 18:14:43,002 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA14D90>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 21},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '01',
+                                      'value': 3.127},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 219.9},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '00',
+                                              'value': 1.1012}})
+2017-02-15 18:14:43,007 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,008 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,029 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,031 - logger1 - INFO - solution_name: 50, result:-0.4388449090909093
+2017-02-15 18:14:43,032 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,033 - logger1 - INFO - chromosome: '110111101010100010111111101010101101011000100000001010110'
+2017-02-15 18:14:43,034 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CSCO'),
+ (datetime.date(2011, 2, 4), 'AA'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'CAT'),
+ (datetime.date(2011, 2, 25), 'CSCO'),
+ (datetime.date(2011, 3, 4), 'AXP'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'CAT'),
+ (datetime.date(2011, 3, 25), 'AA')]
+2017-02-15 18:14:43,040 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15378>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 13},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '01',
+                                      'value': 11.1},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 95.5},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '00',
+                                              'value': 0.42400000000000004}})
+2017-02-15 18:14:43,046 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,047 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,065 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,067 - logger1 - INFO - solution_name: 51, result:0.4943507272727273
+2017-02-15 18:14:43,068 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,068 - logger1 - INFO - chromosome: '001111100111010110001110100100110111011101111001000000111'
+2017-02-15 18:14:43,070 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'KRFT'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'VZ'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'PFE'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:43,075 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA151E0>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 93},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 3.87},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 151.12},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '11',
+                                              'value': 0.897}})
+2017-02-15 18:14:43,080 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,081 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,099 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,101 - logger1 - INFO - solution_name: 52, result:0.5613561818181819
+2017-02-15 18:14:43,102 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,102 - logger1 - INFO - chromosome: '000001101010010010001111000010100111111111101011000000100'
+2017-02-15 18:14:43,104 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'IBM'),
+ (datetime.date(2011, 2, 4), 'AA'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KO'),
+ (datetime.date(2011, 3, 4), 'CVX'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'AA'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:43,110 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15598>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 127},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 11.18},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 15.5},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 2.129}})
+2017-02-15 18:14:43,117 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,118 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,140 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,142 - logger1 - INFO - solution_name: 53, result:0.18222436363636366
+2017-02-15 18:14:43,143 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,144 - logger1 - INFO - chromosome: '101111000011001101111010101101111111011101110001011010100'
+2017-02-15 18:14:43,145 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'DIS'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'DIS'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'DIS'),
+ (datetime.date(2011, 2, 25), 'DIS'),
+ (datetime.date(2011, 3, 4), 'DIS'),
+ (datetime.date(2011, 3, 11), 'GE'),
+ (datetime.date(2011, 3, 18), 'DIS'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:43,151 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15048>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 93},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 1.102},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 213.14},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '10',
+                                              'value': 0.173}})
+2017-02-15 18:14:43,157 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,158 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,177 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,178 - logger1 - INFO - solution_name: 54, result:0.8355077272727275
+2017-02-15 18:14:43,179 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,180 - logger1 - INFO - chromosome: '001001100000000110011110001001111010111111000111011100010'
+2017-02-15 18:14:43,181 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:43,186 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA157B8>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 126},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '10',
+                                      'value': 3.64},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 71.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 3.285}})
+2017-02-15 18:14:43,192 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,193 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,243 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,244 - logger1 - INFO - solution_name: 57, result:0.39042028571428566
+2017-02-15 18:14:43,245 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,246 - logger1 - INFO - chromosome: '111111100010000110011111101000100111011001101001000010111'
+2017-02-15 18:14:43,247 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'AA'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:43,251 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15620>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 77},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '11',
+                                      'value': 3.66},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 95.4},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 0.929}})
+2017-02-15 18:14:43,257 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,258 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,276 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,277 - logger1 - INFO - solution_name: 58, result:0.49598570000000003
+2017-02-15 18:14:43,279 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,279 - logger1 - INFO - chromosome: '010011010000010111101111110101110111111101011101110101011'
+2017-02-15 18:14:43,280 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 11), 'CSCO'), (datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:43,282 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15BF8>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '11',
+                                       'value': 95},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 5.8},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '11',
+                                                     'value': 191.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 1.855}})
+2017-02-15 18:14:43,288 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,289 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,304 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,305 - logger1 - INFO - solution_name: 59, result:0.5833295454545456
+2017-02-15 18:14:43,306 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,307 - logger1 - INFO - chromosome: '000100110100010110000101001000010010110011000111011000010'
+2017-02-15 18:14:43,308 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'T'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:43,313 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15840>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '01',
+                                       'value': 102},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '01',
+                                      'value': 6.81},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 74.8},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 3.269}})
+2017-02-15 18:14:43,319 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,320 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,356 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,357 - logger1 - INFO - solution_name: 61, result:-0.9941116363636362
+2017-02-15 18:14:43,358 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,359 - logger1 - INFO - chromosome: '010000111001010101000111001101111110101111001111011100111'
+2017-02-15 18:14:43,360 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'DIS'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'DIS'),
+ (datetime.date(2011, 2, 4), 'DIS'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'DIS'),
+ (datetime.date(2011, 2, 25), 'DIS'),
+ (datetime.date(2011, 3, 4), 'DIS'),
+ (datetime.date(2011, 3, 11), 'DIS'),
+ (datetime.date(2011, 3, 18), 'DIS'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:43,365 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15A60>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 122},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 14.84},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '10',
+                                                     'value': 206.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '01',
+                                              'value': 3.925}})
+2017-02-15 18:14:43,371 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,372 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,409 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,410 - logger1 - INFO - solution_name: 63, result:-0.49598570000000003
+2017-02-15 18:14:43,411 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,412 - logger1 - INFO - chromosome: '110001100000011111001011001111111011111111000011111111000'
+2017-02-15 18:14:43,413 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 11), 'CSCO'), (datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:43,415 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA15F28>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 127},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 3.112},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '10',
+                                                     'value': 205.15},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 2.127}})
+2017-02-15 18:14:43,422 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,423 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,460 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,461 - logger1 - INFO - solution_name: 65, result:0.3062027
+2017-02-15 18:14:43,462 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,463 - logger1 - INFO - chromosome: '000010101001000011001110000000101000111111100101111100000'
+2017-02-15 18:14:43,464 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'DD'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'XOM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'PFE')]
+2017-02-15 18:14:43,469 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA171E0>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '00',
+                                       'value': 126},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 10.4},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '10',
+                                                     'value': 7.4},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '00',
+                                              'value': 1.31}})
+2017-02-15 18:14:43,474 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,475 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,527 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,529 - logger1 - INFO - solution_name: 68, result:0.40905422222222215
+2017-02-15 18:14:43,530 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,531 - logger1 - INFO - chromosome: '110001100010010110000111000101111101011111000111001111011'
+2017-02-15 18:14:43,532 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'DIS'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'DIS'),
+ (datetime.date(2011, 2, 18), 'DIS'),
+ (datetime.date(2011, 2, 25), 'DIS'),
+ (datetime.date(2011, 3, 4), 'DIS'),
+ (datetime.date(2011, 3, 11), 'DIS'),
+ (datetime.date(2011, 3, 18), 'DIS'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:43,536 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA17730>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 125},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '00',
+                                      'value': 3.82},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '00',
+                                                     'value': 142.14},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '00',
+                                              'value': 3.8890000000000002}})
+2017-02-15 18:14:43,541 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,542 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,562 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,563 - logger1 - INFO - solution_name: 69, result:0.49598570000000003
+2017-02-15 18:14:43,565 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,565 - logger1 - INFO - chromosome: '010111110100110111101111101110111010111010101001111100111'
+2017-02-15 18:14:43,566 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 11), 'CSCO'), (datetime.date(2011, 2, 25), 'HPQ')]
+2017-02-15 18:14:43,568 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA17378>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01',
+                                       'value': 46},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '01',
+                                      'value': 7.89},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '11',
+                                                     'value': 223.13},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 0.9269999999999999}})
+2017-02-15 18:14:43,573 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,574 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,592 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,594 - logger1 - INFO - solution_name: 70, result:0.22073900000000005
+2017-02-15 18:14:43,595 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,595 - logger1 - INFO - chromosome: '101111100110111110100111001110111111100110011111011110001'
+2017-02-15 18:14:43,597 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'HD'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:43,602 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA17950>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 51},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '11',
+                                      'value': 3.123},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '01',
+                                                     'value': 206.13},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',
+                                              'value': 3.573}})
+2017-02-15 18:14:43,607 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,608 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,629 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,631 - logger1 - INFO - solution_name: 71, result:-0.28145490909090914
+2017-02-15 18:14:43,632 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,632 - logger1 - INFO - chromosome: '110111110111010101101011001111111101011010101100000010111'
+2017-02-15 18:14:43,634 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'HPQ'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:43,639 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA17598>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 45},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '01',
+                                      'value': 7.87},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 205.15},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 1.928}})
+2017-02-15 18:14:43,644 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,645 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,661 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,662 - logger1 - INFO - solution_name: 72, result:0.36908328181818173
+2017-02-15 18:14:43,663 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,664 - logger1 - INFO - chromosome: '100001110010011101101001101111011111110110010010011111100'
+2017-02-15 18:14:43,665 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'AXP'),
+ (datetime.date(2011, 1, 21), 'DIS'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'PFE'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-02-15 18:14:43,671 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA17B70>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '11',
+                                       'value': 55},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 7.114},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '11',
+                                                     'value': 217.11},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '10',
+                                              'value': 2.252}})
+2017-02-15 18:14:43,676 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,677 - logger1 - INFO - 
+
+
+2017-02-15 18:14:43,697 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-15 18:14:43,699 - logger1 - INFO - solution_name: 73, result:-1.8333124545454547
+2017-02-15 18:14:43,700 - logger1 - INFO - chromosome_length: 57
+2017-02-15 18:14:43,701 - logger1 - INFO - chromosome: '100001000111111101011000101110101000111101101101011110100'
+2017-02-15 18:14:43,703 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'BAC'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'DD'),
+ (datetime.date(2011, 2, 4), 'CSCO'),
+ (datetime.date(2011, 2, 11), 'AXP'),
+ (datetime.date(2011, 2, 18), 'JPM'),
+ (datetime.date(2011, 2, 25), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'PFE'),
+ (datetime.date(2011, 3, 11), 'BAC'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 3, 25), 'BA')]
+2017-02-15 18:14:43,708 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000004CAEA177B8>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '00',
+                                       'value': 94},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '00',
+                                      'value': 1.127},
+             'percent_change_volume_over_last_wek': {'is_include': 0,
+                                                     'operator': '10',
+                                                     'value': 209.5},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '01',
+                                              'value': 1.189}})
+2017-02-15 18:14:43,713 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-15 18:14:43,714 - logger1 - INFO - 
+
+

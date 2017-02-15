@@ -47,16 +47,30 @@ para_dict['input']['raw_data_dict'] = {
                                         15:'percent_return_next_dividend',
                                         }
 para_dict['input']['next_price_str'] = 'percent_change_next_weeks_price'
-para_dict['evolution']['mutation']['flip_bit_num'] = 1
+para_dict['evolution']['mutation']['flip_bit_num'] = 2
 para_dict['evolution']['mutation']['mode'] = 'random_flip'
 # cross_over, mode = 'uniform', 'multi_point', 'one_point'
 para_dict['evolution']['cross_over']['mode'] = 'uniform'
-para_dict['SGA']['max_population_num'] = 9
+para_dict['SGA']['max_population_num'] = 200
 #para_dict['SGA']['kept_population_num'] = 5
 # mode: TS-Tournament Selection, RWS-Roulette Wheel Selection, SUS-Stochastic Universal Sampling, RK-Rank Selection
 para_dict['SGA']['parent_select_mode'] = 'TS'
 para_dict['SGA']['TS']['TS_K'] = 3
+para_dict['SGA']['intial_solution_number'] = 100
 para_dict['SGA']['target_return_percent'] = 5
+para_dict['SGA']['no_progress_generation'] = 10
+
+#DSGA
+# mutation rate
+para_dict['DSGA']['M'] = 0.05
+# seed raius
+para_dict['DSGA']['IS'] = 0.05
+# raius delta
+para_dict['DSGA']['SD'] = 0.05
+# reevalution loop count
+para_dict['DSGA']['RLC'] = 1
+# convergence limit
+para_dict['DSGA']['CL'] = 4
 
 with open('parameter.json', 'w') as f:
   json.dump(para_dict, f, ensure_ascii = False, indent = 4)

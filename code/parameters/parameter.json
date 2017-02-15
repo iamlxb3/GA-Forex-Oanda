@@ -1,39 +1,22 @@
 {
+    "DSGA": {
+        "RLC": 1,
+        "CL": 4,
+        "IS": 0.05,
+        "M": 0.05,
+        "SD": 0.05
+    },
     "SGA": {
-        "target_return_percent": 50,
+        "parent_select_mode": "TS",
         "TS": {
             "TS_K": 3
         },
-        "max_population_num": 9,
-        "parent_select_mode": "TS"
+        "max_population_num": 60,
+        "intial_solution_number": 30,
+        "target_return_percent": 5,
+        "no_progress_generation": 10
     },
     "input": {
-        "next_price_str": "percent_change_next_weeks_price",
-        "restrict_training_date": true,
-        "decisive_feature": 8,
-        "training_testing_ratio": "8,2",
-        "raw_data_file_name": "cleaned_data.txt",
-        "feature_choice_str": "0,1,3,4,5,6,7,8,9,10,11,12,13,14,15",
-        "raw_data_dict": {
-            "0": "quarter",
-            "1": "stock",
-            "2": "date",
-            "3": "open",
-            "4": "high",
-            "5": "low",
-            "6": "close",
-            "7": "volume",
-            "8": "percent_change_price",
-            "9": "percent_change_volume_over_last_wek",
-            "10": "previous_weeks_volume",
-            "11": "next_weeks_open",
-            "12": "next_weeks_close",
-            "13": "percent_change_next_weeks_price",
-            "14": "days_to_next_dividend",
-            "15": "percent_return_next_dividend"
-        },
-        "training_date_start": "1/14/2011",
-        "training_date_end": "3/25/2011",
         "data_pos_in_chromosome": {
             "8": [
                 1,
@@ -64,15 +47,41 @@
                 10
             ]
         },
-        "raw_data_path": ""
+        "training_testing_ratio": "8,2",
+        "training_date_start": "1/14/2011",
+        "next_price_str": "percent_change_next_weeks_price",
+        "training_date_end": "3/25/2011",
+        "raw_data_dict": {
+            "0": "quarter",
+            "1": "stock",
+            "2": "date",
+            "3": "open",
+            "4": "high",
+            "5": "low",
+            "6": "close",
+            "7": "volume",
+            "8": "percent_change_price",
+            "9": "percent_change_volume_over_last_wek",
+            "10": "previous_weeks_volume",
+            "11": "next_weeks_open",
+            "12": "next_weeks_close",
+            "13": "percent_change_next_weeks_price",
+            "14": "days_to_next_dividend",
+            "15": "percent_return_next_dividend"
+        },
+        "raw_data_path": "",
+        "raw_data_file_name": "cleaned_data.txt",
+        "feature_choice_str": "0,1,3,4,5,6,7,8,9,10,11,12,13,14,15",
+        "restrict_training_date": true,
+        "decisive_feature": 8
     },
     "evolution": {
-        "cross_over": {
-            "mode": "uniform"
-        },
         "mutation": {
             "mode": "random_flip",
-            "flip_bit_num": 1
+            "flip_bit_num": 2
+        },
+        "cross_over": {
+            "mode": "uniform"
         }
     }
 }

@@ -16,7 +16,7 @@ class Solution():
     name_id = 0
     _all = []
 
-    def __init__(self, parameter_dict):
+    def __init__(self):
         self.chromosome_bits = []
         self.feature_dict = collections.defaultdict(lambda : {})
         self.fitness = 0.0
@@ -31,8 +31,24 @@ class Solution():
         self.name = self.__class__.name_id
         self.__class__.name_id += 1
         self.__class__._all.append(self)
-        self.parameter_dict = parameter_dict
 
+    @classmethod
+    def replace_converged_seeds(cls):
+        pass
+
+    @classmethod
+    def compute_shared_fitness(cls, tabu_list):
+        pass
+
+    @classmethod
+    def find_seed_solution(cls, ga):
+        def get_solution_in_radius():
+            pass
+        pass
+
+    @classmethod
+    def filter_solution_pool(cls):
+        pass
 
 
     @classmethod
@@ -47,9 +63,9 @@ class Solution():
     def compute_fitness(cls):
         all_solutions = cls._all
 
-    def filter_solution(self, input_data_num):
+    def filter_solution(self, parameter_dict, input_data_num):
         """filter_solution with too few targets return"""
-        target_return_percent = self.parameter_dict['SGA']['target_return_percent'] / 100
+        target_return_percent = parameter_dict['SGA']['target_return_percent'] / 100
         classified_target_num = len(self.classification_result_list)
 
         threshold = math.ceil(input_data_num * target_return_percent)
@@ -140,7 +156,7 @@ class Solution():
 
     # input_data_dict:
     # (datetime.date(2011,6,24), defaultdict{'MRK':Feature(quarter = '2', stock = 'MRK',....), 'VZ':Feature(....)})
-    def get_classification_result(self, input_data_dict):
+    def get_classification_result(self, parameter_dict, input_data_dict):
 
         def compare_data_solution_value(operator_bits_str, data_feature_value, solution_feature_value):
             # <
@@ -175,8 +191,8 @@ class Solution():
         logger1.debug("solution name: {}".format(self.name))
 
         # get the decisive feature if more than 1 target is seleted each time frame
-        decisive_feature_index = str(self.parameter_dict['input']['decisive_feature'])
-        decisive_feature = self.parameter_dict['input']['raw_data_dict'][decisive_feature_index]
+        decisive_feature_index = str(parameter_dict['input']['decisive_feature'])
+        decisive_feature = parameter_dict['input']['raw_data_dict'][decisive_feature_index]
 
         chromosome_bits = self.chromosome_bits
         # sort the input_data_list

@@ -7,7 +7,6 @@ import os
 import sys
 import re
 import collections
-from ga import GeneticAlgorithm
 import pprint
 
 
@@ -22,20 +21,27 @@ class AmericanStockFitness():
         # predicted_stock_sequence is sorted by time, from past to future
         population_name = solution.name
         predicted_stock_sequence_tuple = solution.classification_result_list
-
+        is_buy = solution.chromosome_bits[0]
         predicted_days_num = len(predicted_stock_sequence_tuple)
         average_sum = 0
         for date,stock in predicted_stock_sequence_tuple:
             features_tuple = input_data_dict[date][stock]
             features_dict = dict(features_tuple._asdict())
-            average_sum += float(features_dict[self._next_price_str])
+            if is_buy == 1:
+                value = float(features_dict[self._next_price_str])
+            elif is_buy == 0:
+                value = (-1) * float(features_dict[self._next_price_str])
+            average_sum += value
             #print('profit_percent: ', float(features_dict[self._next_price_str]))
 
         average = average_sum/predicted_days_num
         solution.fitness = average
+        solution.is_f_computed = True
         logger1.info("----------SOLUTION_INFO-----------------------")
         logger1.info("solution_name: {}, result:{}"
                      .format(population_name, average, pprint.pformat(solution.classification_result_list)))
+        logger1.info("chromosome_length: {}"
+                     .format(pprint.pformat(len(''.join([str(x) for x in solution.chromosome_bits])))))
         logger1.info("chromosome: {}"
                      .format(pprint.pformat(''.join([str(x) for x in solution.chromosome_bits]))))
         logger1.info("classification_result:\n{}"
