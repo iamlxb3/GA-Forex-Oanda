@@ -39,7 +39,13 @@ class Formatter():
         self.path = path
         self.feature_choice_list = [int(x) for x in feature_choice_list]
         self.raw_data_dict = parameter_dict['input']['raw_data_dict']
-        
+        # set a span of the training date
+        self.restrict_training_date = parameter_dict['input']['restrict_training_date']
+        if self.restrict_training_date:
+            self.training_date_start = parameter_dict['input']['training_date_start']
+            self.training_date_end = parameter_dict['input']['training_date_end']
+
+
     def output_dict(self, target_dict):
         pass
         
@@ -50,7 +56,13 @@ class Formatter():
             tuple_str = tuple_str.strip()
             Feature_namedtuple = namedtuple('Feature', tuple_str)
             return Feature_namedtuple
-    
+
+        # date_str: '%m/%d/%Y', '1/14/2011'
+        def convert_date_str_to_date_object(date_str):
+            date = time.strptime(date_str, '%m/%d/%Y')
+            date = datetime.datetime(*date[:3])
+            date = datetime.date(year=date.year, month=date.month, day=date.day)
+            return date
         Feature_namedtuple = create_namedtuple(self.raw_data_dict, self.feature_choice_list)
         print (Feature_namedtuple._fields)
         #--------------------:::format_and_create_dict:::------------------
@@ -64,9 +76,14 @@ class Formatter():
                     # date pos is fixed to 2
                     date_str = line_list[2]
                     # convert date_str to date object
-                    date = time.strptime(date_str,'%m/%d/%Y')
-                    date = datetime.datetime(*date[:3])
-                    date = datetime.date(year = date.year, month = date.month, day = date.day)
+                    date = convert_date_str_to_date_object(date_str)
+                    # if the date is not in the span, continue to read the next line
+                    if self.restrict_training_date:
+                        training_date_start = convert_date_str_to_date_object(self.training_date_start)
+                        training_date_end = convert_date_str_to_date_object(self.training_date_end)
+                        if not (training_date_start <= date <= training_date_end):
+                            continue
+                    #
                     feature_chosen_tuple__date_key = Feature_namedtuple._make([line_list[x] for x in feature_choice_list])
                     input_data_dict[date][stock] = feature_chosen_tuple__date_key
                 except UnicodeEncodeError:

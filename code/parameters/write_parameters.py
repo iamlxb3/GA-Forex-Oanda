@@ -17,6 +17,13 @@ para_dict['input']['data_pos_in_chromosome'][8] = (1, 2, 1, 4, 7)
 para_dict['input']['data_pos_in_chromosome'][9] = (1, 2, 1, 8, 4)
 para_dict['input']['data_pos_in_chromosome'][14] = (1, 2, 0, 7, 0)
 para_dict['input']['data_pos_in_chromosome'][15] = (1, 2, 0, 2, 10)
+para_dict['input']['restrict_training_date'] = True
+para_dict['input']['training_date_start'] = '1/14/2011'
+para_dict['input']['training_date_end'] = '3/25/2011'
+para_dict['input']['training_testing_ratio'] = '8,2'
+# determine the decisive feature
+para_dict['input']['decisive_feature'] = 8
+
 #0  1       2             3      4            5        6           7          8            9           10
 #1, AA,   2/25/2011,   $16.98   ,$17.15,   $15.96,   $16.68,   132981863,  -1.76678,  66.17769355,  80023895,
 #    11        12          13     14        15

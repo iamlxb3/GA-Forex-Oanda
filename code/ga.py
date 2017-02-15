@@ -32,6 +32,7 @@ class GeneticAlgorithm():
         for key, value_dict in feature_pos_dict.items():
             feature_pos_dict[key]['name'] = id_feature_dict[key]
         self.feature_pos_dict = feature_pos_dict
+        logger1.info("feature_pos_dict: {}".format(feature_pos_dict))
         return feature_pos_dict
 
     def create_empty_chromosome_bits(self, parameter_dict):

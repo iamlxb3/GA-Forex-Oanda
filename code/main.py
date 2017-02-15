@@ -211,9 +211,11 @@ feature_pos_dict = ga.create_feature_pos_dict(parameter_dict)
 print (feature_pos_dict)
 random_chromosome = [random.randint(0,1) for p in range(chromosome_bits_length)]
 # create solution with random chromosome
-s = Solution()
-s.chromosome_bits = random_chromosome
-#s.get_classification_result(feature_pos_dict, input_data_dict)
+s = Solution(parameter_dict)
+s.chromosome_bits = [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1]
+print(s.chromosome_bits)
+
+s.get_classification_result(feature_pos_dict, input_data_dict)
 
 #---------------------------------------------------------------------------------------------------
 #:::create_empty_chromosome_bits test ; DATA:2017-2-14
