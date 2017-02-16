@@ -34,10 +34,11 @@ import pprint
 # print ("Found solution num:{}".format(len(Solution._all)))
 # #TEMP END
 
-
+logger1.info("Genetic Algorithm Starting......")
 # (1.) read parameters
 reader1 = ReadParameters()
 parameter_dict = reader1.read_parameters(reader1.path)
+logger1.info("Sell/Buy Switch :{}".format(parameter_dict['SGA']['buy_sell_switch']))
 logger1.info("read parameters successful")
 # seed radius
 IS = parameter_dict['DSGA']['IS']
@@ -60,7 +61,7 @@ off_spring_generation = OffspringGeneration(parameter_dict)
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(RLC):
+    for i in range(1):
         # (4.) offspring generation , return target, compute fitness
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)
@@ -69,12 +70,14 @@ while not ga.END:
         # (6.) find seed solution
         Solution.find_seed_solution(ga)
         # (7.) filter_solution_pool and ready for new parents
-        Solution.filter_solution_pool()
+        Solution.filter_solution_pool(ga)
         ga.small_generation += 1
+        ga.logging(Solution,'s')
     Solution.replace_converged_seeds()
     ga.monitor_progress(Solution)
     ga.seed_radius.add()
     ga.big_generation += 1
+    ga.logging(Solution, 'b')
     # TEST
     ga.END = True
 

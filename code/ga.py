@@ -22,7 +22,7 @@ class GeneticAlgorithm():
                                                         key=lambda x: int(x[0]))
             print(data_pos_in_chromosome_sorted_list)
             # set pointer = 1 because of the buy/sell
-            pointer = 1
+            pointer = 0
             for feature_id, feature_bit_config in data_pos_in_chromosome_sorted_list:
                 feature_pos_list = []
                 for bit_length in feature_bit_config:
@@ -39,7 +39,7 @@ class GeneticAlgorithm():
 
 
         # --------------:::__init__:::----------------------
-
+        self.parameter_dict = parameter_dict
         self.result_dict = collections.defaultdict(lambda :0)
         self.tabu_list = []
         self.current_solutions_list = []
@@ -53,11 +53,40 @@ class GeneticAlgorithm():
         self.big_generation = 0
         self.END = False
 
+    def logging(self, Solution, generation = 's'):
+        if generation == 's':
+            top_5_solution = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)
+            logger1.info("\n\n")
+            logger1.info("###Small Generation Logging###")
+            logger1.info("==============================")
+            logger1.info("big generation: {}".format(self.big_generation))
+            logger1.info("small generation: {}, {} solution survived."
+                         .format(self.small_generation, len(Solution._all)))
+            logger1.info("----top5 fitness found in this generation----")
+            for i, solution in enumerate(top_5_solution):
+                rank = i + 1
+                logger1.info(
+                             "rank:{}， name:{}, fitness:{}, shared_fitness:{}"
+                             "isSeed:{}, \nchromosome_bits: {}"
+                             .format(rank, solution.name, solution.fitness,
+                                     solution.shared_fitness, solution.isSeed,
+                                     solution.chromosome_bits))
+            logger1.info("\n\n")
+
+        elif generation == 'b':
+            logger1.info("\n\n\n")
+            logger1.info("<<<<<<<<<<<<<<<<<<<<<<<<<<Big Generation Logging>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+            logger1.info("highest fitness in this Big Generation, name, fitness")
+            logger1.info("highest fitness so far, name, fitness")
+            logger1.info("no progress generation: {}".format(self.no_progress_generation))
+
+
     def write_result_to_file(self):
         pass
 
     def monitor_progress(self, Solution):
         # TODO use highest_value
+        self.no_progress_generation += 1
         no_progress_generation_threshold = self.parameter_dict['SGA']['no_progress_generation']
         if self.no_progress_generation > no_progress_generation_threshold:
             self.END = True
@@ -85,6 +114,8 @@ class GeneticAlgorithm():
                 american_stock_fitness = AmericanStockFitness(parameter_dict)
                 american_stock_fitness(self.input_data_dict, s)
 
+
+
     def process_new_solutions(self,new_generation_list):
         """Translate chromosome_bits, find targets, compute fitness"""
         for s in new_generation_list:
@@ -105,7 +136,7 @@ class GeneticAlgorithm():
         data_pos_in_chromosome_dict = parameter_dict['input']['data_pos_in_chromosome']
         data_pos_in_chromosome_sorted_list = sorted(list(data_pos_in_chromosome_dict.items()), key = lambda x:x[0])
         # append the buy/sell bit
-        empty_chromosome_bits.append(0)
+        #empty_chromosome_bits.append(0)
         for feature_id, feature_bit_config in data_pos_in_chromosome_sorted_list:
             switch_bit = feature_bit_config[0]
             operator_bits = feature_bit_config[1]

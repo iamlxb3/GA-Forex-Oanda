@@ -1,15 +1,25 @@
 {
     "SGA": {
-        "intial_solution_number": 30,
+        "target_return_percent": 5,
         "TS": {
             "TS_K": 3
         },
+        "parent_select_mode": "TS",
         "max_population_num": 60,
-        "target_return_percent": 5,
         "no_progress_generation": 10,
-        "parent_select_mode": "TS"
+        "buy_sell_switch": 1,
+        "intial_solution_number": 30
     },
     "input": {
+        "next_price_str": "percent_change_next_weeks_price",
+        "decisive_feature": [
+            1,
+            8
+        ],
+        "training_testing_ratio": "8,2",
+        "raw_data_path": "",
+        "training_date_start": "1/14/2011",
+        "raw_data_file_name": "cleaned_data.txt",
         "data_pos_in_chromosome": {
             "8": [
                 1,
@@ -40,14 +50,7 @@
                 10
             ]
         },
-        "decisive_feature": [
-            1,
-            8
-        ],
-        "restrict_training_date": true,
         "training_date_end": "3/25/2011",
-        "training_testing_ratio": "8,2",
-        "raw_data_file_name": "cleaned_data.txt",
         "raw_data_dict": {
             "0": "quarter",
             "1": "stock",
@@ -66,25 +69,25 @@
             "14": "days_to_next_dividend",
             "15": "percent_return_next_dividend"
         },
-        "feature_choice_str": "0,1,3,4,5,6,7,8,9,10,11,12,13,14,15",
-        "next_price_str": "percent_change_next_weeks_price",
-        "training_date_start": "1/14/2011",
-        "raw_data_path": ""
+        "restrict_training_date": true,
+        "feature_choice_str": "0,1,3,4,5,6,7,8,9,10,11,12,13,14,15"
+    },
+    "DSGA": {
+        "eliminate_ratio": 0.25,
+        "M": 0.2,
+        "seed_max_ratio": 0.6,
+        "SD": 0.01,
+        "RLC": 1,
+        "IS": 0.095,
+        "CL": 5
     },
     "evolution": {
-        "cross_over": {
-            "mode": "uniform"
-        },
         "mutation": {
             "mode": "random_flip",
             "flip_bit_num": 2
+        },
+        "cross_over": {
+            "mode": "uniform"
         }
-    },
-    "DSGA": {
-        "IS": 0.095,
-        "SD": 0.01,
-        "M": 0.2,
-        "RLC": 1,
-        "CL": 5
     }
 }

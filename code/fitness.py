@@ -14,14 +14,15 @@ import pprint
 class AmericanStockFitness():
     def __init__(self, parameter_dict):
         self._next_price_str = parameter_dict['input']['next_price_str']
-        pass
+        self.buy_sell_switch = parameter_dict['SGA']['buy_sell_switch']
 
     # population_dict：{‘asd':((datetime_object1,EUR), (datetime_object2,USD), (datetime_object3,JPY),...)}
     def __call__(self, input_data_dict, solution):
         # predicted_stock_sequence is sorted by time, from past to future
         population_name = solution.name
         predicted_stock_sequence_tuple = solution.classification_result_list
-        is_buy = solution.chromosome_bits[0]
+
+        is_buy = self.buy_sell_switch
         predicted_days_num = len(predicted_stock_sequence_tuple)
         average_sum = 0
         for date,stock in predicted_stock_sequence_tuple:

@@ -15,6 +15,7 @@ import math
 class Solution():
     name_id = 0
     _all = []
+    seed_list = []
     max_distance = 2
 
     def __init__(self):
@@ -23,9 +24,10 @@ class Solution():
         self.fitness = 0.0
         self.testing_fitness = 0.0
         self.is_f_computed = False
-        self.shard_fitness = 0.0
+        self.shared_fitness = 0.0
         self.m_i = 0.0
         self.isSeed = False
+        self.solutions_of_same_species_list = []
         self.classification_result_dict = collections.defaultdict(lambda : [])
         self.classification_result_list = []
         self.classification_result_num = 0.0
@@ -42,10 +44,11 @@ class Solution():
     @classmethod
     def compute_distance(cls, solution1, solution2):
         same_results_set = set(solution1.classification_result_list) & set(solution2.classification_result_list)
+        same_results_set_size = len(same_results_set)
         if not same_results_set:
             distance = cls.max_distance
         else:
-            distance = 1/same_results_set
+            distance = 1/same_results_set_size
         return distance
 
     @classmethod
@@ -70,9 +73,9 @@ class Solution():
                 logger1.debug("solution: {}, shared_fitness:{}".format(solution.name, solution.shared_fitness))
 
         elif tabu_list == []:
-            # assgin the fitness value to the shard_fitness in the 1st iteration
+            # assgin the fitness value to the shared_fitness in the 1st iteration
             for solution in cls._all:
-                solution.shard_fitness = solution.fitness
+                solution.shared_fitness = solution.fitness
             logger1.info("NO tabu_list Found!")
             return
 
@@ -81,11 +84,84 @@ class Solution():
     def find_seed_solution(cls, ga):
         def get_solution_in_radius():
             pass
-        pass
+            #seed_list
+    #:::find_seed_solution:::
+
+        max_population_num = ga.parameter_dict['SGA']['max_population_num']
+        seed_max_ratio = ga.parameter_dict['DSGA']['seed_max_ratio']
+        max_seed_num = math.ceil(seed_max_ratio * max_population_num)
+        seed_radius = ga.seed_radius
+        seed_radius_value = seed_radius.IS
+
+        sorted_soluion_list = sorted(cls._all, key = lambda x:x.shared_fitness, reverse = True)
+        for solution in sorted_soluion_list:
+            seed_list_size = len(cls.seed_list)
+            # we don't expect too much seed
+            if seed_list_size > max_seed_num:
+                break
+            is_seed = True
+            # get the updated_seed_list
+            newest_seed_list = cls.seed_list
+            for seed_solution in newest_seed_list:
+                distance = cls.compute_distance(seed_solution, solution)
+                # which means this solution is in the radius of one species, break the inner for loop and test the next solution
+                if distance < seed_radius_value:
+                    is_seed = False
+                    seed_solution.solutions_of_same_species_list.append(solution)
+                    break
+            # if this solution does not belong to any of the species, add to seed list
+            if is_seed:
+                solution.isSeed = True
+                cls.seed_list.append(solution)
+                logger1.info("#SEED FOUND#")
+                logger1.info("Seed name:{}, seed shared_fitness:{}, seed fitness:{}, seed list size:{}"
+                             ", current seed radius:{}, small_generation:{}, big_generation:{}"
+                              .format(solution.name, solution.shared_fitness, solution.fitness,
+                                      len(cls.seed_list), seed_radius_value, ga.small_generation,
+                                      ga.big_generation))
+                logger1.info("#SEED FOUND END#")
+
 
     @classmethod
-    def filter_solution_pool(cls):
-        pass
+    def filter_solution_pool(cls,ga):
+        # can be solutions_list or solution set
+        def get_left_solution_num(solutions_list, eliminate_ratio):
+            solution_num_in_one_species = len(solutions_list)
+            # eliminate_ratio = 0.2, ceil(1-1*0.2) = 1, ceil(2-2*0.2) = 2,  ceil(3-3*0.2) = 3
+            # ceil(4-4*0.2) = 4, ceil(5-5*0.2) = 4, ceil(6-6*0.2) = 5
+            left_solution_num = math.ceil(solution_num_in_one_species - eliminate_ratio*solution_num_in_one_species)
+            return left_solution_num
+
+        # :::filter_solution_pool
+        logger1.info("Solution removal Start!!!")
+        eliminate_ratio = ga.parameter_dict['DSGA']['eliminate_ratio']
+        solutions_in_seed_species_set = set()
+        removed_solution_num = 0.0
+        for seed_solution in cls.seed_list:
+            one_species_solutions_list = sorted(seed_solution.solutions_of_same_species_list,
+                                          key = lambda x:x.shared_fitness, reverse = True)
+            # update the set of solutions in seed areas
+            solutions_in_seed_species_set.update(set(one_species_solutions_list))
+            left_solution_num = get_left_solution_num(one_species_solutions_list, eliminate_ratio)
+            removed_solution_num += left_solution_num
+            for i, solution in enumerate(one_species_solutions_list):
+                # delete the trailing solutions
+                if i > left_solution_num:
+                    cls._all.remove(solution)
+        logger1.info("{} solutions have been removed in seed areas".format(removed_solution_num))
+
+        # start remove the solutions out of the seed area
+
+        solutions_in_wild_list = sorted(list(set(cls._all) - solutions_in_seed_species_set), key = lambda x:x.shared_fitness)
+        left_solution_num = get_left_solution_num(solutions_in_wild_list, eliminate_ratio)
+        removed_solution_num = 0.0
+        for i, solution in enumerate(solutions_in_wild_list):
+            # delete the trailing solutions
+            if i > left_solution_num:
+                cls._all.remove(solution)
+                removed_solution_num += 1
+        logger1.info("{} solutions have been removed in wild".format(removed_solution_num))
+        logger1.info("Solution removal END!!!")
 
 
     @classmethod
