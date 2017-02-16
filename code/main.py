@@ -213,10 +213,11 @@ random_chromosome = [random.randint(0,1) for p in range(chromosome_bits_length)]
 # create solution with random chromosome
 s = Solution(parameter_dict)
 s.chromosome_bits = [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1]
+s.translate_chromosome_bits(feature_pos_dict)
 print(s.chromosome_bits)
 
-s.get_classification_result(feature_pos_dict, input_data_dict)
-
+s.get_classification_result(input_data_dict)
+print (s.feature_dict)
 #---------------------------------------------------------------------------------------------------
 #:::create_empty_chromosome_bits test ; DATA:2017-2-14
 #====================================================================================================

@@ -16,6 +16,7 @@ class Solution():
     _all = []
     def __init__(self, parameter_dict):
         self.chromosome_bits = []
+        self.feature_dict = collections.defaultdict(lambda : {})
         self.fitness = 0.0
         self.is_f_computed = False
         self.shard_fitness = 0.0
@@ -28,6 +29,7 @@ class Solution():
         self.__class__.name_id += 1
         self.__class__._all.append(self)
         self.parameter_dict = parameter_dict
+
 
     @classmethod
     def all(cls):
@@ -46,9 +48,7 @@ class Solution():
         distance = 1/same_results_set
         return distance
 
-    # input_data_dict:
-    # (datetime.date(2011,6,24), defaultdict{'MRK':Feature(quarter = '2', stock = 'MRK',....), 'VZ':Feature(....)})
-    def get_classification_result(self, feature_pos_dict, input_data_dict):
+    def translate_chromosome_bits(self, feature_pos_dict):
 
         def compute_solution_feature_value(is_sign_bit, int_value_bits, decimal_value_bits):
             # big endian eg. 0101 -> 10
@@ -78,6 +78,41 @@ class Solution():
                 else:
                     return feature_value
 
+        #:::translate_chromosome_bits:::
+        chromosome_bits = self.chromosome_bits
+        for feature_id, value_dict in feature_pos_dict.items():
+            # get the index
+            feature_name = value_dict['name']
+            feature_pos_list = value_dict['pos']
+            is_include_index = feature_pos_list[0]
+            operator_index = feature_pos_list[1]
+            is_sign_index = feature_pos_list[2]
+            int_value_index = feature_pos_list[3]
+            decimal_value_index = feature_pos_list[4]
+            # get the bit_value_list
+            is_include = chromosome_bits[is_include_index[0]:is_include_index[1]][0]
+            operator_bits = chromosome_bits[operator_index[0]:operator_index[1]]
+            # convert int to str
+            operator_bits = [str(x) for x in operator_bits]
+            operator_bits_str = ''.join(operator_bits)
+            is_sign_bit = chromosome_bits[is_sign_index[0]:is_sign_index[1]]
+            int_value_bits = chromosome_bits[int_value_index[0]:int_value_index[1]]
+            decimal_value_bits = chromosome_bits[decimal_value_index[0]:decimal_value_index[1]]
+
+            solution_feature_value = compute_solution_feature_value(is_sign_bit, int_value_bits, decimal_value_bits)
+
+            # ============================================
+            # translate the solution value and save in dict
+            self.feature_dict[feature_name]['is_include'] = is_include
+            self.feature_dict[feature_name]['operator'] = operator_bits_str
+            self.feature_dict[feature_name]['value'] = solution_feature_value
+
+
+
+    # input_data_dict:
+    # (datetime.date(2011,6,24), defaultdict{'MRK':Feature(quarter = '2', stock = 'MRK',....), 'VZ':Feature(....)})
+    def get_classification_result(self, input_data_dict):
+
         def compare_data_solution_value(operator_bits_str, data_feature_value, solution_feature_value):
             # <
             if operator_bits_str == '00':
@@ -103,8 +138,8 @@ class Solution():
                     return True
                 else:
                     return False
-        #:::get_classification_result:::
 
+        #:::get_classification_result:::
         # logging
         logger1.debug("============get_classification_result START!!============")
         logger1.debug("chromosome_bits: {}".format(self.chromosome_bits))
@@ -123,27 +158,15 @@ class Solution():
                 is_target_chosen = True
                 while is_target_chosen == True:
                 # feature_id : '8', value_dict['name']:'percent_change_price', value_dict['pos']:[(0,1),(1,3),(3,4),(4,8),(8,15)]
-                    for feature_id, value_dict in feature_pos_dict.items():
-                        feature_name = value_dict['name']
-                        feature_pos_list = value_dict['pos']
-                        is_include_index = feature_pos_list[0]
-                        operator_index = feature_pos_list[1]
-                        is_sign_index = feature_pos_list[2]
-                        int_value_index = feature_pos_list[3]
-                        decimal_value_index = feature_pos_list[4]
-
-                        #
-                        is_include = chromosome_bits[is_include_index[0]:is_include_index[1]]
+                    for feature_name, feature_detail_dict in self.feature_dict.items():
+                        # check the current feature is turned on
+                        is_include = feature_detail_dict['is_include']
                         if not is_include:
+                            logger1.debug("date:{}, stock:{},feature_name:{} is not included".format(date_object, target,feature_name))
                             continue
-                        operator_bits = chromosome_bits[operator_index[0]:operator_index[1]]
-                        # convert int to str
-                        operator_bits = [str(x) for x in operator_bits]
-                        operator_bits_str = ''.join(operator_bits)
-                        is_sign_bit = chromosome_bits[is_sign_index[0]:is_sign_index[1]]
-                        int_value_bits = chromosome_bits[int_value_index[0]:int_value_index[1]]
-                        decimal_value_bits = chromosome_bits[decimal_value_index[0]:decimal_value_index[1]]
 
+                        operator_bits_str = feature_detail_dict['operator']
+                        solution_feature_value = feature_detail_dict['value']
                         # check the feature_value in data is valid
                         try:
                             data_feature_value = float(feature_value_dict[feature_name])
@@ -153,10 +176,12 @@ class Solution():
                             logger1.error("CHECK YOUR DATA")
                             sys.exit(0)
 
-                        solution_feature_value = compute_solution_feature_value(is_sign_bit, int_value_bits, decimal_value_bits)
-                        is_feature_satisfied = compare_data_solution_value(operator_bits_str, data_feature_value, solution_feature_value)
 
+                        # ============test whether the solution will choose the current stock
+                        is_feature_satisfied = compare_data_solution_value(operator_bits_str, data_feature_value,
+                                                                           solution_feature_value)
                         #==========================logging==========================
+                        # only log the included feature
                         logger1.debug("date:{}, stock:{}, feature_name:{}, data_feature_value:{},"
                                       " solution_feature_value:{}, operator: {} is_satisfied:{}".format(
                             date_object, target, feature_name, data_feature_value, solution_feature_value,
