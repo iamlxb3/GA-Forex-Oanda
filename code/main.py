@@ -14,6 +14,7 @@ from evolution import OffspringGeneration, CrossOver, Mutation
 
 #================================================
 import random
+import pprint
 
 
 
@@ -63,11 +64,11 @@ logger1.info("create input_data_dict successful")
 
 
 
-# ==================================SIMPLE UNIT TEST=================================================
-# ===================================================================================================
-#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-# #:::test for fitness function:::
+# # ==================================SIMPLE UNIT TEST=================================================
+# # ===================================================================================================
+# # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#
+# #:::test for fitness function:::  out-dated test
 # #==================================================================================================
 # # debug: create population_dict
 # date_list = input_data_dict.keys()
@@ -201,26 +202,39 @@ logger1.info("create input_data_dict successful")
 # #====================================================================================================
 
 
-#====================================================================================================
-#::: select stocks :::
-#----------------------------------TEST CODE--------------------------------------------------------
-
-ga = GeneticAlgorithm()
-empty_chromosome_bits, chromosome_bits_length = ga.create_empty_chromosome_bits(parameter_dict)
-feature_pos_dict = ga.create_feature_pos_dict(parameter_dict)
-print (feature_pos_dict)
-random_chromosome = [random.randint(0,1) for p in range(chromosome_bits_length)]
-# create solution with random chromosome
-s = Solution(parameter_dict)
-s.chromosome_bits = [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1]
-s.translate_chromosome_bits(feature_pos_dict)
-print(s.chromosome_bits)
-
-s.get_classification_result(input_data_dict)
-print (s.feature_dict)
-#---------------------------------------------------------------------------------------------------
-#:::create_empty_chromosome_bits test ; DATA:2017-2-14
-#====================================================================================================
+# #====================================================================================================
+# #::: select stocks test:::
+# #----------------------------------TEST CODE--------------------------------------------------------
+#
+# ga = GeneticAlgorithm()
+# empty_chromosome_bits, chromosome_bits_length = ga.create_empty_chromosome_bits(parameter_dict)
+# feature_pos_dict = ga.create_feature_pos_dict(parameter_dict)
+# print (feature_pos_dict)
+# solution_num = 100
+# for i in range(solution_num):
+#     # (1) create solution with random chromosome
+#     random_chromosome = [random.randint(0,1) for p in range(chromosome_bits_length)]
+#     s = Solution(parameter_dict)
+#     s.chromosome_bits = random_chromosome
+#     #s.chromosome_bits = [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1]
+#     # (2) translate chromosome bits list to decimal value
+#     s.translate_chromosome_bits(feature_pos_dict)
+#     # (3) get the classfiled result in each day
+#     s.get_classification_result(input_data_dict)
+#     # (4) filter the solution with limited target returns
+#     input_data_num = len(input_data_dict.keys())
+#     is_s_not_removed = s.filter_solution(input_data_num)
+#     # (5) compute the fitness for solution
+#     if is_s_not_removed:
+#         american_stock_fitness = AmericanStockFitness(parameter_dict)
+#         american_stock_fitness(input_data_dict, s)
+#
+# top_solutions_list = sorted([(solution.name, solution.fitness) for solution in Solution._all], key = lambda x:x[1], reverse = True)[0:10]
+# print (top_solutions_list)
+# print ("Found solution num:{}".format(len(Solution._all)))
+# #---------------------------------------------------------------------------------------------------
+# #:::create_empty_chromosome_bits test ; DATA:2017-2-14
+# #====================================================================================================
 
 
 

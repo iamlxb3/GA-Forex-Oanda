@@ -1,0 +1,24 @@
+2017-02-16 15:27:31,860 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-02-16 15:27:31,860 - logger1 - INFO - solution_name: 76, result:1.2749516666666667
+2017-02-16 15:27:31,860 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 2, 11), 'KRFT'),
+ (datetime.date(2011, 3, 4), 'MRK'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 3, 18), 'PFE'),
+ (datetime.date(2011, 1, 28), 'DD')]
+2017-02-16 15:27:31,860 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000005D36874620>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '01', #<=
+                                       'value': 85},
+             'percent_change_price': {'is_include': 0,
+                                      'operator': '01',#<=
+                                      'value': 11.126},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '11',#>=
+                                                     'value': 54.11},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '11',#>=
+                                              'value': 0.967}})
+2017-02-16 15:27:31,860 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-02-16 15:27:31,876 - logger1 - INFO - 

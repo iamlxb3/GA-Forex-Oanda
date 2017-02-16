@@ -56,8 +56,7 @@ para_dict['SGA']['max_population_num'] = 9
 # mode: TS-Tournament Selection, RWS-Roulette Wheel Selection, SUS-Stochastic Universal Sampling, RK-Rank Selection
 para_dict['SGA']['parent_select_mode'] = 'TS'
 para_dict['SGA']['TS']['TS_K'] = 3
-
-
+para_dict['SGA']['target_return_percent'] = 5
 
 with open('parameter.json', 'w') as f:
   json.dump(para_dict, f, ensure_ascii = False, indent = 4)

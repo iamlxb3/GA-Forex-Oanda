@@ -6,6 +6,7 @@ from pjslib.logger import logger1
 import os
 import sys
 import collections
+import math
 
 
 
@@ -14,10 +15,12 @@ import collections
 class Solution():
     name_id = 0
     _all = []
+
     def __init__(self, parameter_dict):
         self.chromosome_bits = []
         self.feature_dict = collections.defaultdict(lambda : {})
         self.fitness = 0.0
+        self.testing_fitness = 0.0
         self.is_f_computed = False
         self.shard_fitness = 0.0
         self.m_i = 0.0
@@ -31,6 +34,7 @@ class Solution():
         self.parameter_dict = parameter_dict
 
 
+
     @classmethod
     def all(cls):
         return cls._all
@@ -42,6 +46,31 @@ class Solution():
     @classmethod
     def compute_fitness(cls):
         all_solutions = cls._all
+
+    def filter_solution(self, input_data_num):
+        """filter_solution with too few targets return"""
+        target_return_percent = self.parameter_dict['SGA']['target_return_percent'] / 100
+        classified_target_num = len(self.classification_result_list)
+
+        threshold = math.ceil(input_data_num * target_return_percent)
+        logger1.debug("#Solution Filter#")
+        if classified_target_num < threshold:
+            self.__class__._all.remove(self)
+            logger1.debug("Solution removed!!!!, name: {}, classification_result_list:{}, classified_target_num:{}"
+                          "target_return_percent: {}%, input_data_num:{}, threshold:{}"
+                          .format(self.name, self.classification_result_list, classified_target_num,
+                                  target_return_percent*100, input_data_num, threshold))
+            logger1.debug("#Solution Filter End#")
+            return False
+        else:
+            logger1.debug("Solution returned target number passed, name: {}, classification_result_list:{}, "
+                          "classified_target_num:{}, target_return_percent: {}%, input_data_num:{}"
+                          ", threshold:{} "
+                            .format(self.name, self.classification_result_list, classified_target_num,
+                                    target_return_percent * 100, input_data_num, threshold))
+            logger1.debug("#Solution Filter End#")
+            return True
+
 
     def compute_distance(self, solution1, solution2):
         same_results_set = set(solution1.classification_result_list) & set(solution2.classification_result_list)
@@ -150,7 +179,9 @@ class Solution():
         decisive_feature = self.parameter_dict['input']['raw_data_dict'][decisive_feature_index]
 
         chromosome_bits = self.chromosome_bits
-        input_data_list = list(input_data_dict.items())
+        # sort the input_data_list
+        input_data_list = sorted(list(input_data_dict.items()), key = lambda x:x[0])
+
         for date_object, target_dict in input_data_list:
             # target: 'MRK','VZ', feature_value_tuple: Feature(quarter = '2', stock = 'MRK',....)
             for target,feature_value_tuple in target_dict.items():
@@ -194,7 +225,6 @@ class Solution():
                             is_target_chosen = False
 
                     if is_target_chosen == True:
-                        date_target_tuple = (date_object, target)
                         # chose only 1 target every day, based on decisive feature
                         target_decisive_feature_tuple = (target, float(feature_value_dict[decisive_feature]))
                         self.classification_result_dict[date_object].append(target_decisive_feature_tuple)
@@ -203,7 +233,7 @@ class Solution():
                         is_target_chosen = False
 
         # chose only 1 target every day, based on decisive feature
-        for date_object, target_decisive_feature_tuple_pairs in self.classification_result_dict.items():
+        for date_object, target_decisive_feature_tuple_pairs in sorted(list(self.classification_result_dict.items()), key = lambda x:x[0]):
             if len(target_decisive_feature_tuple_pairs) > 1:
                 chosen_tuple = sorted(target_decisive_feature_tuple_pairs, key = lambda x:x[1], reverse = True)[0]
                 date_target_tuple = (date_object, chosen_tuple[0])
@@ -219,6 +249,8 @@ class Solution():
         logger1.debug("classification_result_list: {}".format(self.classification_result_list))
         logger1.debug("============get_classification_result END!!============")
 
+        # return
+        return self.classification_result_list
 
 
     def compute_m_i(self, tabu_list):
