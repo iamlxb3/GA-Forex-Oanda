@@ -51,7 +51,7 @@ para_dict['input']['raw_data_dict'] = {
                                         15:'percent_return_next_dividend',
                                         }
 para_dict['input']['next_price_str'] = 'percent_change_next_weeks_price'
-para_dict['evolution']['mutation']['flip_bit_num'] = 2
+para_dict['evolution']['mutation']['flip_bit_num'] = 3
 para_dict['evolution']['mutation']['mode'] = 'random_flip'
 # cross_over, mode = 'uniform', 'multi_point', 'one_point'
 para_dict['evolution']['cross_over']['mode'] = 'uniform'
@@ -66,8 +66,8 @@ para_dict['SGA']['no_progress_generation'] = 10
 para_dict['SGA']['buy_sell_switch'] = 1
 
 #DSGA
-# mutation rate
-para_dict['DSGA']['M'] = 0.2
+# mutation rate 0.5 -> 50%
+para_dict['DSGA']['M'] = 1
 # seed radius >>> 1/11 = 0.09090909090909091, max 1
 para_dict['DSGA']['IS'] = 0.095
 # radius delta

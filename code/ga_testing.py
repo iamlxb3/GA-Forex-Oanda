@@ -55,11 +55,18 @@ for string in sell_tuple:
     # -(a) translate
     s.translate_chromosome_bits(ga.feature_pos_dict)
     # -(c) get the classfiled result in each day
-    s.get_classification_result(parameter_dict, testing_data_dict)
+    classification_result = s.get_classification_result(parameter_dict, testing_data_dict)
+    if not classification_result:
+        print("No stocks returned for {} chromosome".format(string))
+        continue
     # -(d) compute fitness
     american_stock_fitness = AmericanStockFitness(parameter_dict)
     american_stock_fitness(testing_data_dict, s)
     testing_output_path = "result/{}_chromosome_testing.txt".format(string)
+    print("{} fitness:{}".format(string, s.fitness))
+    for result_tuple in sorted(s.classification_result_list, key=lambda x: x[0]):
+        print(str(result_tuple[0]) + ',' + str(result_tuple[1]))
+
     with open(testing_output_path, 'w', encoding = 'utf-8') as f:
         f.write(str(s.name) + '\n')
         f.write(chromosome + '\n')

@@ -69,6 +69,7 @@ class GeneticAlgorithm():
         # save the chromosome with highest fitness
         highest_solution = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)[0]
         fitness = highest_solution.fitness
+        print ("highest fitness:{}".format(fitness))
         chromosome = [str(x) for x in highest_solution.chromosome_bits]
         chromosome_str = ','.join(chromosome)
         buy_sell_switch = self.parameter_dict['SGA']['buy_sell_switch']
