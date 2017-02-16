@@ -375,7 +375,6 @@ class Solution():
                             if is_buy == 1:
                                 target_decisive_feature_tuple = (target, float(feature_value_dict[decisive_feature]))
                             elif is_buy == 0:
-
                                 target_decisive_feature_tuple = (target, (-1)*float(feature_value_dict[decisive_feature]))
 
 

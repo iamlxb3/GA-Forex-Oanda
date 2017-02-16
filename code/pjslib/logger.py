@@ -26,3 +26,18 @@ hdlr_1.setFormatter(formatter)
 # add ch to logger
 logger1.addHandler(ch)
 logger1.addHandler(hdlr_1)
+
+
+#:::logger2
+
+# create logger
+logger2 = logging.getLogger('logger2')
+# set level
+logger2.setLevel(logging.INFO)
+# save to file
+hdlr_2 = logging.FileHandler('testing_logging.log')
+hdlr_2.setFormatter(formatter)
+# command line
+# add ch to logger
+logger2.addHandler(ch)
+logger2.addHandler(hdlr_2)

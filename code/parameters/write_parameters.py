@@ -7,6 +7,8 @@ para_dict = collections.defaultdict(lambda: collections.defaultdict(lambda:{}))
 para_dict['input']['raw_data_path'] = ''
 para_dict['input']['raw_data_file_name'] = 'cleaned_data.txt'
 para_dict['input']['feature_choice_str'] = '0,1,3,4,5,6,7,8,9,10,11,12,13,14,15'
+#testing
+para_dict['testing']['raw_data_file_path'] = ''
 
 #-------------------------------------------------switch bit------operator_bit------valuebit
 # -------
@@ -79,3 +81,17 @@ para_dict['DSGA']['eliminate_ratio'] = 0.25
 
 with open('parameter.json', 'w') as f:
   json.dump(para_dict, f, ensure_ascii = False, indent = 4)
+
+
+#=======================================================================================================================
+#=======================================================================================================================
+#=====================================================TESTING===========================================================
+#=======================================================================================================================
+#=======================================================================================================================
+testing_para_dict = collections.defaultdict(lambda: collections.defaultdict(lambda:{}))
+testing_para_dict['data_file_path'] = ''
+testing_para_dict['is_single_testing_data_file'] = False
+testing_para_dict['chromosome_path'] = ''
+
+with open('testing_parameter.json', 'w') as f:
+  json.dump(testing_para_dict, f, ensure_ascii = False, indent = 4)

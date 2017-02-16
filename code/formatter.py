@@ -4,6 +4,7 @@ from pjslib.general import accepts
 from pjslib.logger import logger1
 #================================================
 import os
+import sys
 import datetime, time
 import json
 import pprint
@@ -37,6 +38,12 @@ class Formatter():
             path = os.path.join(folder_path, file_name)
             
         self.path = path
+        # testing_path, if not customize file_path, assign the training path to testing path
+        self.testing_file_path =parameter_dict['testing']['raw_data_file_path']
+        self.testing_file_path = self.path
+
+
+
         self.feature_choice_list = [int(x) for x in feature_choice_list]
         self.raw_data_dict = parameter_dict['input']['raw_data_dict']
         # set a span of the training date
@@ -49,7 +56,7 @@ class Formatter():
     def output_dict(self, target_dict):
         pass
         
-    def format_and_create_dict(self, path, feature_choice_list):
+    def format_and_create_dict(self, path, feature_choice_list, testing = False):
         def create_namedtuple(raw_data_dict, feature_choice_list):
             tuple_str_list = [raw_data_dict[str(x)] + ' ' for x in feature_choice_list]
             tuple_str = ''.join(tuple_str_list)
@@ -66,6 +73,9 @@ class Formatter():
         Feature_namedtuple = create_namedtuple(self.raw_data_dict, self.feature_choice_list)
         print (Feature_namedtuple._fields)
         #--------------------:::format_and_create_dict:::------------------
+        if testing == True:
+            path = self.testing_file_path
+
         with open(path, 'r', encoding = 'utf-8') as f:
             input_data_dict = defaultdict(lambda: defaultdict(lambda: tuple))
             for line in f:
@@ -81,8 +91,12 @@ class Formatter():
                     if self.restrict_training_date:
                         training_date_start = convert_date_str_to_date_object(self.training_date_start)
                         training_date_end = convert_date_str_to_date_object(self.training_date_end)
-                        if not (training_date_start <= date <= training_date_end):
-                            continue
+                        if testing == False:
+                            if not (training_date_start <= date <= training_date_end):
+                                continue
+                        else:
+                            if not (date > training_date_end):
+                                continue
                     #
                     feature_chosen_tuple__date_key = Feature_namedtuple._make([line_list[x] for x in feature_choice_list])
                     input_data_dict[date][stock] = feature_chosen_tuple__date_key

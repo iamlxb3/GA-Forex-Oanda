@@ -13,6 +13,8 @@ from solution import Solution
 import matplotlib.pyplot as plt
 from fitness import AmericanStockFitness
 
+
+
 class GeneticAlgorithm():
     def __init__(self, parameter_dict, input_data_dict):
 
@@ -58,12 +60,23 @@ class GeneticAlgorithm():
         # the number of date or hour or week
         self.input_data_num = len(self.input_data_dict.keys())
 
-    def save_info_to_file(self):
-
+    def save_info_to_file(self, Solution):
         current_path = os.path.dirname(os.path.abspath(__file__))
         path = os.path.join(current_path,'result', 'ga_info.txt')
         with open(path,'w', encoding = 'utf-8') as f:
             json.dump(self.generation_dict, f, indent = 4)
+
+        # save the chromosome with highest fitness
+        highest_solution = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)[0]
+        fitness = highest_solution.fitness
+        chromosome = [str(x) for x in highest_solution.chromosome_bits]
+        chromosome_str = ','.join(chromosome)
+        buy_sell_switch = self.parameter_dict['SGA']['buy_sell_switch']
+        buy_sell_dict = {1:'buy', 0:'sell'}
+        buy_sell_str = buy_sell_dict[buy_sell_switch]
+        with open('chromosome/{}_chromosome.txt'.format(buy_sell_str), 'w', encoding = 'utf-8') as f:
+            f.write(chromosome_str)
+            f.write('\nfitness:{}'.format(fitness))
 
     #TODO
     def plot_generation_trend(self):
@@ -80,7 +93,8 @@ class GeneticAlgorithm():
         plt.plot(x_list, fitness_list, 'rx', label="fitness")
         plt.plot(x_list, s_fitness_list, 'bx', label="s_fitness")
         plt.legend(loc=2)
-        plt.savefig('fitness.png')
+        path = os.path.join("result", 'fitness.png')
+        plt.savefig(path)
         plt.show()
 
 

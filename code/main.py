@@ -83,7 +83,7 @@ while not ga.END:
     ga.END = True
 
 # END
-ga.save_info_to_file()
+ga.save_info_to_file(Solution)
 ga.plot_generation_trend()
 
 #================TEMP PRINT===============
