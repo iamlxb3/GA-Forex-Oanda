@@ -18,6 +18,8 @@ class AmericanStockFitness():
 
     # population_dict：{‘asd':((datetime_object1,EUR), (datetime_object2,USD), (datetime_object3,JPY),...)}
     def __call__(self, input_data_dict, solution):
+        if solution.is_f_computed:
+            return
         # predicted_stock_sequence is sorted by time, from past to future
         population_name = solution.name
         predicted_stock_sequence_tuple = solution.classification_result_list
@@ -33,11 +35,11 @@ class AmericanStockFitness():
             elif is_buy == 0:
                 value = (-1) * float(features_dict[self._next_price_str])
             average_sum += value
-            print('profit_percent: ', float(features_dict[self._next_price_str]))
+            #print('profit_percent: ', float(features_dict[self._next_price_str]))
 
         average = average_sum/predicted_days_num
-        print('average: ', float(average))
-        solution.fitness = average
+        #print('average: ', float(average))
+        solution.fitness = "{:.3f}".format(average)
         solution.is_f_computed = True
         logger1.info("----------SOLUTION_INFO-----------------------")
         logger1.info("solution_name: {}, result:{}"

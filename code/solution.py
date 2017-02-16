@@ -25,6 +25,7 @@ class Solution():
         self.testing_fitness = 0.0
         self.is_f_computed = False
         self.shared_fitness = 0.0
+        self.is_sf_computed = False
         self.m_i = 0.0
         self.isSeed = False
         self.solutions_of_same_species_list = []
@@ -34,12 +35,14 @@ class Solution():
         self.name = self.__class__.name_id
         self.__class__.name_id += 1
         self.__class__._all.append(self)
-        self.__class__._all.append(self)
 
     @classmethod
     def replace_converged_seeds(cls):
         pass
 
+    @classmethod
+    def clear_seed_list(cls):
+        cls.seed_list = []
 
     @classmethod
     def compute_distance(cls, solution1, solution2):
@@ -67,9 +70,12 @@ class Solution():
         # you do not need
         if tabu_list:
             for solution in cls._all:
+                if solution.is_sf_computed:
+                    continue
                 fitness = solution.fitness
                 shared_fitness = compute_m_i(fitness, tabu_list)
                 solution.shared_fitness = shared_fitness
+                solution.is_sf_computed = True
                 logger1.debug("solution: {}, shared_fitness:{}".format(solution.name, solution.shared_fitness))
 
         elif tabu_list == []:
@@ -143,12 +149,12 @@ class Solution():
             # update the set of solutions in seed areas
             solutions_in_seed_species_set.update(set(one_species_solutions_list))
             left_solution_num = get_left_solution_num(one_species_solutions_list, eliminate_ratio)
-            removed_solution_num += left_solution_num
             for i, solution in enumerate(one_species_solutions_list):
                 # delete the trailing solutions
                 if i > left_solution_num:
                     try:
                         cls._all.remove(solution)
+                        removed_solution_num += left_solution_num
                         # temp logging
                         logger1.info("removed solution:{}, fitness: {} in seed".format(solution.name, solution.fitness))
                     except ValueError:
@@ -186,8 +192,10 @@ class Solution():
     def compute_fitness(cls):
         all_solutions = cls._all
 
-    def filter_solution(self, parameter_dict, input_data_num):
+    def filter_solution_by_target_return(self, ga):
         """filter_solution with too few targets return"""
+        input_data_num = ga.input_data_num
+        parameter_dict = ga.parameter_dict
         target_return_percent = parameter_dict['SGA']['target_return_percent'] / 100
         classified_target_num = len(self.classification_result_list)
 

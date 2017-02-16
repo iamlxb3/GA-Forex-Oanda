@@ -111,8 +111,6 @@ class OffspringGeneration():
             logger1.debug("child1 chromosome_bits:{}, child2 chromosome_bits:{}".format(c1.chromosome_bits, c2.chromosome_bits))
             logger1.debug("Two children have been created!!")
         logger1.debug("populaton pool is fool now, total solutions number : {}".format(population_now))
-
-
         return temp_offsprings_pool
 
 

@@ -52,6 +52,8 @@ class GeneticAlgorithm():
         self.small_generation = 0
         self.big_generation = 0
         self.END = False
+        # the number of date or hour or week
+        self.input_data_num = len(self.input_data_dict.keys())
 
     def logging(self, Solution, generation = 's'):
         if generation == 's':
@@ -62,12 +64,22 @@ class GeneticAlgorithm():
             logger1.info("big generation: {}".format(self.big_generation))
             logger1.info("small generation: {}, {} solution survived."
                          .format(self.small_generation, len(Solution._all)))
+            logger1.info("Species Found:{}"
+                         .format(len(Solution.seed_list)))
+            # logging seed
+            logger1.info("SEED INFORMATION")
+            sorted_seed_list = sorted(Solution.seed_list, key = lambda x:x.shared_fitness, reverse = True)
+            for i, seed in enumerate(sorted_seed_list):
+                logger1.info("Rank:{}, Seed name:{}, fitness:{}, shared_fitness:{}"
+                .format(i, seed.name, seed.fitness, seed.shared_fitness))
+                logger1.info("Seed returned :{}"
+                .format([stock_tuple for stock_tuple in sorted(seed.classification_result_list, key = lambda x:x[0])]))
             logger1.info("----top5 fitness found in this generation----")
             for i, solution in enumerate(top_5_solution):
                 rank = i + 1
                 logger1.info(
                              "rank:{}， name:{}, fitness:{}, shared_fitness:{}"
-                             "isSeed:{}, \nchromosome_bits: {}"
+                             "  ,isSeed:{}, \nchromosome_bits: {}"
                              .format(rank, solution.name, solution.fitness,
                                      solution.shared_fitness, solution.isSeed,
                                      solution.chromosome_bits))
@@ -107,14 +119,11 @@ class GeneticAlgorithm():
             # (c) get the classfiled result in each day
             s.get_classification_result(self.parameter_dict, self.input_data_dict)
             # (d) filter the solution with limited target returns
-            input_data_num = len(self.input_data_dict.keys())
-            is_s_not_removed = s.filter_solution(self.parameter_dict, input_data_num)
+            is_s_not_removed = s.filter_solution_by_target_return(self)
             # (e) compute the fitness for solution
             if is_s_not_removed:
                 american_stock_fitness = AmericanStockFitness(parameter_dict)
                 american_stock_fitness(self.input_data_dict, s)
-
-
 
     def process_new_solutions(self,new_generation_list):
         """Translate chromosome_bits, find targets, compute fitness"""
@@ -124,8 +133,7 @@ class GeneticAlgorithm():
             # (c) get the classfiled result in each day
             s.get_classification_result(self.parameter_dict, self.input_data_dict)
             # (d) filter the solution with limited target returns
-            input_data_num = len(self.input_data_dict.keys())
-            is_s_not_removed = s.filter_solution(self.parameter_dict, input_data_num)
+            is_s_not_removed = s.filter_solution_by_target_return(self)
             # (e) compute the fitness for solution
             if is_s_not_removed:
                 american_stock_fitness = AmericanStockFitness(self.parameter_dict)
