@@ -55,7 +55,7 @@ class GeneticAlgorithm():
 
     def logging(self, Solution, generation = 's'):
         if generation == 's':
-            top_5_solution = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)
+            top_5_solution = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)[0:5]
             logger1.info("\n\n")
             logger1.info("###Small Generation Logging###")
             logger1.info("==============================")

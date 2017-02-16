@@ -147,18 +147,28 @@ class Solution():
             for i, solution in enumerate(one_species_solutions_list):
                 # delete the trailing solutions
                 if i > left_solution_num:
-                    cls._all.remove(solution)
+                    try:
+                        cls._all.remove(solution)
+                        # temp logging
+                        logger1.info("removed solution:{}, fitness: {} in seed".format(solution.name, solution.fitness))
+                    except ValueError:
+                        logger1.debug("Value Error, {} solution has been deleted!!".format(solution.name))
         logger1.info("{} solutions have been removed in seed areas".format(removed_solution_num))
 
         # start remove the solutions out of the seed area
 
-        solutions_in_wild_list = sorted(list(set(cls._all) - solutions_in_seed_species_set), key = lambda x:x.shared_fitness)
+        solutions_in_wild_list = sorted(list(set(cls._all) - solutions_in_seed_species_set), key = lambda x:x.shared_fitness, reverse = True )
         left_solution_num = get_left_solution_num(solutions_in_wild_list, eliminate_ratio)
         removed_solution_num = 0.0
         for i, solution in enumerate(solutions_in_wild_list):
             # delete the trailing solutions
             if i > left_solution_num:
-                cls._all.remove(solution)
+                try:
+                    cls._all.remove(solution)
+                    # temp logging
+                    logger1.info("removed solution:{}, fitness: {} in wild".format(solution.name, solution.fitness))
+                except ValueError:
+                    logger1.debug("Value Error, {} solution has been deleted!!".format(solution.name))
                 removed_solution_num += 1
         logger1.info("{} solutions have been removed in wild".format(removed_solution_num))
         logger1.info("Solution removal END!!!")
