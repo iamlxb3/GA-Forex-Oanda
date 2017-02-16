@@ -8,6 +8,7 @@ from pjslib.logger import logger1
 from read_parameters import ReadParameters
 from formatter import Formatter
 from ga import GeneticAlgorithm
+from ga import SeedRadius
 from fitness import AmericanStockFitness
 from solution import Solution
 from evolution import OffspringGeneration, CrossOver, Mutation
@@ -38,6 +39,11 @@ import pprint
 reader1 = ReadParameters()
 parameter_dict = reader1.read_parameters(reader1.path)
 logger1.info("read parameters successful")
+# seed radius
+IS = parameter_dict['DSGA']['IS']
+# radius delta
+SD = parameter_dict['DSGA']['SD']
+seed_radius = SeedRadius(parameter_dict)
 
 
 # (2.) put data into dict
@@ -47,6 +53,7 @@ logger1.info("create input_data_dict successful")
 
 # (3.) create initial parents
 ga = GeneticAlgorithm(parameter_dict, input_data_dict)
+ga.seed_radius = seed_radius
 ga.create_initial_parents()
 off_spring_generation = OffspringGeneration(parameter_dict)
 
@@ -58,7 +65,7 @@ while not ga.END:
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)
         # (5.) compute shared fitness
-        Solution.compute_shared_fitness(ga.tabu_list)
+        Solution.compute_shared_fitness(ga)
         # (6.) find seed solution
         Solution.find_seed_solution(ga)
         # (7.) filter_solution_pool and ready for new parents
@@ -66,6 +73,7 @@ while not ga.END:
         ga.small_generation += 1
     Solution.replace_converged_seeds()
     ga.monitor_progress(Solution)
+    ga.seed_radius.add()
     ga.big_generation += 1
     # TEST
     ga.END = True

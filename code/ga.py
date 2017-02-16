@@ -126,3 +126,25 @@ class GeneticAlgorithm():
         self.empty_chromosome_bits = empty_chromosome_bits
         chromosome_bits_length = len(empty_chromosome_bits)
         return empty_chromosome_bits, chromosome_bits_length
+
+
+class SeedRadius:
+    def __init__(self, parameter_dict):
+        self.initial_IS = float(parameter_dict['DSGA']['IS'])
+        # radius delta
+        self.initial_SD = float(parameter_dict['DSGA']['SD'])
+        self._IS = self.initial_IS
+        self._SD = self.initial_SD
+
+    @property
+    def IS(self):
+        return self._IS
+
+    def add(self):
+        self._IS += self._SD
+        logger1.debug("#SeedRadius#")
+        logger1.debug("Add SD, SD:{}, IS:{}".format(self._SD, self._IS))
+        logger1.debug("#SeedRadius END#")
+
+    def __str__(self):
+        return ("IS:{}, SD:{}".format(self._IS,self._SD))

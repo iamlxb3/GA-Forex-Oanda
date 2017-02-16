@@ -64,15 +64,17 @@ para_dict['SGA']['no_progress_generation'] = 10
 
 #DSGA
 # mutation rate
-para_dict['DSGA']['M'] = 0.05
-# seed raius
-para_dict['DSGA']['IS'] = 0.05
-# raius delta
-para_dict['DSGA']['SD'] = 0.05
+para_dict['DSGA']['M'] = 0.2
+# seed radius >>> 1/11 = 0.09090909090909091, max 1
+para_dict['DSGA']['IS'] = 0.095
+# radius delta
+para_dict['DSGA']['SD'] = 0.01
 # reevalution loop count
 para_dict['DSGA']['RLC'] = 1
 # convergence limit
-para_dict['DSGA']['CL'] = 4
+para_dict['DSGA']['CL'] = 5
+
+
 
 with open('parameter.json', 'w') as f:
   json.dump(para_dict, f, ensure_ascii = False, indent = 4)

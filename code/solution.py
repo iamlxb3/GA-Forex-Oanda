@@ -15,6 +15,7 @@ import math
 class Solution():
     name_id = 0
     _all = []
+    max_distance = 2
 
     def __init__(self):
         self.chromosome_bits = []
@@ -31,14 +32,50 @@ class Solution():
         self.name = self.__class__.name_id
         self.__class__.name_id += 1
         self.__class__._all.append(self)
+        self.__class__._all.append(self)
 
     @classmethod
     def replace_converged_seeds(cls):
         pass
 
+
     @classmethod
-    def compute_shared_fitness(cls, tabu_list):
-        pass
+    def compute_distance(cls, solution1, solution2):
+        same_results_set = set(solution1.classification_result_list) & set(solution2.classification_result_list)
+        if not same_results_set:
+            distance = cls.max_distance
+        else:
+            distance = 1/same_results_set
+        return distance
+
+    @classmethod
+    def compute_shared_fitness(cls, ga):
+        # TODO , compute_m_i here is modified, because the one in the paper has some problem as far as I can see
+        def compute_m_i(fitness, tabu_list):
+            m_i_all = 0.0
+            for tabu_solution in tabu_list:
+                distance = cls.compute_distance(fitness, tabu_solution)
+                m_i = fitness * distance
+                m_i_all += m_i
+            return m_i_all
+
+        # :::compute_shared_fitness:::
+        tabu_list = ga.tabu_list
+        # you do not need
+        if tabu_list:
+            for solution in cls._all:
+                fitness = solution.fitness
+                shared_fitness = compute_m_i(fitness, tabu_list)
+                solution.shared_fitness = shared_fitness
+                logger1.debug("solution: {}, shared_fitness:{}".format(solution.name, solution.shared_fitness))
+
+        elif tabu_list == []:
+            # assgin the fitness value to the shard_fitness in the 1st iteration
+            for solution in cls._all:
+                solution.shard_fitness = solution.fitness
+            logger1.info("NO tabu_list Found!")
+            return
+
 
     @classmethod
     def find_seed_solution(cls, ga):
@@ -88,10 +125,6 @@ class Solution():
             return True
 
 
-    def compute_distance(self, solution1, solution2):
-        same_results_set = set(solution1.classification_result_list) & set(solution2.classification_result_list)
-        distance = 1/same_results_set
-        return distance
 
     def translate_chromosome_bits(self, feature_pos_dict):
 
@@ -277,8 +310,7 @@ class Solution():
         return self.classification_result_list
 
 
-    def compute_m_i(self, tabu_list):
-        pass
+
 
 
 

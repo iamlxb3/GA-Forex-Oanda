@@ -91,8 +91,10 @@ class OffspringGeneration():
             # mutation
             logger1.debug("===============MUTATION START=======================")
             mutation = Mutation(self.parameter_dict)
-            c1_chbits = mutation(c1_chbits)
-            c2_chbits = mutation(c2_chbits)
+            is_mutation = mutation.is_mutation()
+            if is_mutation:
+                c1_chbits = mutation(c1_chbits)
+                c2_chbits = mutation(c2_chbits)
             logger1.debug("===============MUTATION END=========================")
             # create solution object
             c1 = Solution()
@@ -104,9 +106,13 @@ class OffspringGeneration():
             # count entire population
             population_now += 2
             logger1.debug("child1 created name:{}, child2 created name:{}".format(c1.name, c2.name))
+            if is_mutation:
+                logger1.info("Mutation happened!! child1_name:{}, child2_name:{}".format(c1.name, c2.name))
             logger1.debug("child1 chromosome_bits:{}, child2 chromosome_bits:{}".format(c1.chromosome_bits, c2.chromosome_bits))
             logger1.debug("Two children have been created!!")
         logger1.debug("populaton pool is fool now, total solutions number : {}".format(population_now))
+
+
         return temp_offsprings_pool
 
 
@@ -199,6 +205,15 @@ class Mutation():
     def __init__(self, parameter_dict):
         self.flip_bit_num = parameter_dict['evolution']['mutation']['flip_bit_num']
         self.mode = parameter_dict['evolution']['mutation']['mode']
+        self.mutation_rate = float(parameter_dict['DSGA']['M'])
+
+    def is_mutation(self):
+        random_number = random.random()
+        if random_number < self.mutation_rate:
+            return True
+        else:
+            return False
+
 
     def __call__(self, chromosome_bits):
         mode = self.mode
