@@ -61,7 +61,7 @@ off_spring_generation = OffspringGeneration(parameter_dict)
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(20):
+    for i in range(5):
         # (4.) offspring generation , return target, compute fitness
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)
@@ -83,7 +83,8 @@ while not ga.END:
     ga.END = True
 
 # END
-ga.write_result_to_file()
+ga.save_info_to_file()
+ga.plot_generation_trend()
 
 #================TEMP PRINT===============
 top_solutions_list = sorted([(solution.name, solution.fitness) for solution in Solution._all], key = lambda x:x[1], reverse = True)[0:10]

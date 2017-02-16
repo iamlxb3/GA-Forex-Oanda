@@ -18,7 +18,7 @@ ch.setFormatter(formatter)
 # create logger
 logger1 = logging.getLogger('logger1')
 # set level
-logger1.setLevel(logging.INFO)
+logger1.setLevel(logging.ERROR)
 # save to file
 hdlr_1 = logging.FileHandler('logging.log')
 hdlr_1.setFormatter(formatter)

@@ -19,7 +19,7 @@
     },
     "SGA": {
         "parent_select_mode": "TS",
-        "buy_sell_switch": 1,
+        "buy_sell_switch": 0,
         "target_return_percent": 10,
         "intial_solution_number": 30,
         "no_progress_generation": 10,

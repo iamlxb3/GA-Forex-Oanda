@@ -6,9 +6,11 @@ from pjslib.logger import logger1
 import os
 import sys
 import re
+import json
 import collections
 import random
 from solution import Solution
+import matplotlib.pyplot as plt
 from fitness import AmericanStockFitness
 
 class GeneticAlgorithm():
@@ -51,9 +53,36 @@ class GeneticAlgorithm():
         self.no_progress_generation = 0
         self.small_generation = 0
         self.big_generation = 0
+        self.generation_dict = collections.defaultdict(lambda :{})
         self.END = False
         # the number of date or hour or week
         self.input_data_num = len(self.input_data_dict.keys())
+
+    def save_info_to_file(self):
+
+        current_path = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(current_path,'result', 'ga_info.txt')
+        with open(path,'w', encoding = 'utf-8') as f:
+            json.dump(self.generation_dict, f, indent = 4)
+
+    #TODO
+    def plot_generation_trend(self):
+        #self.generation_dict
+        # self.generation_dict['s_g_trend'][self.small_generation]
+        x_list = []
+        fitness_list = []
+        s_fitness_list = []
+        for s_g, top_seed_tuple in self.generation_dict['s_g_trend'].items():
+            x_list.append(s_g)
+            fitness_list.append(top_seed_tuple[1])
+            s_fitness_list.append(top_seed_tuple[2])
+        # display and save file
+        plt.plot(x_list, fitness_list, 'rx', label="fitness")
+        plt.plot(x_list, s_fitness_list, 'bx', label="s_fitness")
+        plt.legend(loc=2)
+        plt.savefig('fitness.png')
+        plt.show()
+
 
     def logging(self, Solution, generation = 's'):
         if generation == 's':
@@ -69,6 +98,10 @@ class GeneticAlgorithm():
             # logging seed
             logger1.info("SEED INFORMATION")
             sorted_seed_list = sorted(Solution.seed_list, key = lambda x:x.shared_fitness, reverse = True)
+            #　save the highest fitness
+            self.generation_dict['s_g_trend'][self.small_generation] = \
+                (sorted_seed_list[0].name, sorted_seed_list[0].fitness, sorted_seed_list[0].shared_fitness)
+
             for i, seed in enumerate(sorted_seed_list):
                 logger1.info("Rank:{}, Seed name:{}, fitness:{}, shared_fitness:{}"
                 .format(i, seed.name, seed.fitness, seed.shared_fitness))
@@ -82,7 +115,7 @@ class GeneticAlgorithm():
                              "  ,isSeed:{}, \nchromosome_bits: {}"
                              .format(rank, solution.name, solution.fitness,
                                      solution.shared_fitness, solution.isSeed,
-                                     solution.chromosome_bits))
+                                     ''.join([str(x) for x in solution.chromosome_bits])))
             logger1.info("\n\n")
 
         elif generation == 'b':
@@ -91,10 +124,6 @@ class GeneticAlgorithm():
             logger1.info("highest fitness in this Big Generation, name, fitness")
             logger1.info("highest fitness so far, name, fitness")
             logger1.info("no progress generation: {}".format(self.no_progress_generation))
-
-
-    def write_result_to_file(self):
-        pass
 
     def monitor_progress(self, Solution):
         # TODO use highest_value
