@@ -1,0 +1,51 @@
+2017-02-17 20:17:08,503 - logger3 - INFO - id 1 test ok...
+2017-02-17 20:17:08,519 - logger3 - INFO - solution chromosome: 1111010010001110100010000011001001111001001011010
+2017-02-17 20:17:08,519 - logger3 - INFO - solution feature dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x000000F84B8B1AE8>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 242},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '11',
+                                      'value': 2.5},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '11',
+                                                     'value': -17},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '01',
+                                              'value': 0.6875}})
+2017-02-17 20:17:08,519 - logger3 - INFO - solution decisive feature: 'days_to_next_dividend'
+2017-02-17 20:17:08,519 - logger3 - INFO - solution fitness: '3.627'
+2017-02-17 20:17:08,519 - logger3 - INFO - solution returned_result: [(datetime.date(2011, 2, 4), 'DIS'), (datetime.date(2011, 2, 11), 'DIS')]
+2017-02-17 20:17:08,519 - logger3 - INFO - ===============================================================
+2017-02-17 20:23:05,654 - logger3 - INFO - id 1 test ok...
+2017-02-17 20:23:05,655 - logger3 - INFO - solution chromosome: 1111010010001110100010000011001001111001001011010
+2017-02-17 20:23:05,657 - logger3 - INFO - solution feature dict: {'days_to_next_dividend': {'is_include': 1, 'operator': '10', 'value': 242},
+ 'percent_change_price': {'is_include': 1, 'operator': '11', 'value': 2.5},
+ 'percent_change_volume_over_last_wek': {'is_include': 1,
+                                         'operator': '11',
+                                         'value': -17},
+ 'percent_return_next_dividend': {'is_include': 0,
+                                  'operator': '01',
+                                  'value': 0.6875}}
+2017-02-17 20:23:05,660 - logger3 - INFO - solution decisive feature: 'days_to_next_dividend'
+2017-02-17 20:23:05,661 - logger3 - INFO - solution fitness: '3.627'
+2017-02-17 20:23:05,662 - logger3 - INFO - solution returned_result: [(datetime.date(2011, 2, 4), 'DIS'), (datetime.date(2011, 2, 11), 'DIS')]
+2017-02-17 20:23:05,663 - logger3 - INFO - Training End Date: '3/25/2011'
+2017-02-17 20:23:05,663 - logger3 - INFO - ===============================================================
+2017-02-17 20:23:51,128 - logger3 - INFO - id 1 test ok...
+2017-02-17 20:23:51,128 - logger3 - INFO - solution chromosome: 1111010010001110100010000011001001111001001011010
+2017-02-17 20:23:51,128 - logger3 - INFO - solution feature dict: 
+{'days_to_next_dividend': {'is_include': 1, 'operator': '10', 'value': 242},>242
+ 'percent_change_price': {'is_include': 1, 'operator': '11', 'value': 2.5},>=
+ 'percent_change_volume_over_last_wek': {'is_include': 1,
+                                         'operator': '11',>=
+                                         'value': -17},
+ 'percent_return_next_dividend': {'is_include': 0,
+                                  'operator': '01',
+                                  'value': 0.6875}}
+
+2017-02-17 20:23:51,128 - logger3 - INFO - solution decisive feature: 'days_to_next_dividend'
+2017-02-17 20:23:51,128 - logger3 - INFO - solution fitness: '3.627'
+2017-02-17 20:23:51,128 - logger3 - INFO - solution returned_result: [(datetime.date(2011, 2, 4), 'DIS'), (datetime.date(2011, 2, 11), 'DIS')]
+2017-02-17 20:23:51,128 - logger3 - INFO - Training End Date: '3/25/2011'
+2017-02-17 20:23:51,128 - logger3 - INFO - ===============================================================

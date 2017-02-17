@@ -65,7 +65,7 @@ off_spring_generation = OffspringGeneration(parameter_dict)
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(5):
+    for i in range(1000):
         # (4.) offspring generation , return target, compute fitness
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)
@@ -91,10 +91,23 @@ ga.save_info_to_file(Solution)
 ga.plot_generation_trend()
 
 #================TEMP PRINT===============
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+#pp.pprint(stuff)
+
 top_solutions_list = sorted([(solution.name, solution.fitness) for solution in Solution._all], key = lambda x:x[1], reverse = True)[0:10]
 print (top_solutions_list)
-print ("Found solution num:{}".format(len(Solution._all)))
 
+print ("Found solution num:{}".format(len(Solution._all)))
+# print stocks returned by the highest solution
+highest_soltuion = sorted(Solution._all, key = lambda x:x.fitness)[0]
+pp.pprint(highest_soltuion.feature_dict)
+print("chromosome_bits: ",highest_soltuion.chromosome_bits)
+print("decisive_feature: ",highest_soltuion.decisive_feature)
+classification_result_list = highest_soltuion.classification_result_list
+for stock in classification_result_list:
+    print (stock)
+# ================TEMP PRINT END===============
 
 # (5.) continue running unless no better solution is found in n iterations
 # (6.) loop n iterations

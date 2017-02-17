@@ -18,7 +18,7 @@ ch.setFormatter(formatter)
 # create logger
 logger1 = logging.getLogger('logger1')
 # set level
-logger1.setLevel(logging.INFO)
+logger1.setLevel(logging.ERROR)
 # save to file
 hdlr_1 = logging.FileHandler('logging.log')
 hdlr_1.setFormatter(formatter)
@@ -41,3 +41,17 @@ hdlr_2.setFormatter(formatter)
 # add ch to logger
 logger2.addHandler(ch)
 logger2.addHandler(hdlr_2)
+
+#:::logger3
+
+# create logger
+logger3 = logging.getLogger('logger3')
+# set level
+logger3.setLevel(logging.INFO)
+# save to file
+hdlr_3 = logging.FileHandler('testing/code_testing_logging.log')
+hdlr_3.setFormatter(formatter)
+# command line
+# add ch to logger
+logger3.addHandler(ch)
+logger3.addHandler(hdlr_3)

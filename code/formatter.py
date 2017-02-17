@@ -22,9 +22,10 @@ from collections import namedtuple, defaultdict
 
 
 class Formatter():
-    def __init__(self, parameter_dict):
+    def __init__(self, parameter_dict, path = ''):
         self.parameter_dict = parameter_dict
-        path = parameter_dict['input']['raw_data_path']
+        if not path:
+            path = parameter_dict['input']['raw_data_path']
         file_name = parameter_dict['input']['raw_data_file_name']
         feature_choice_list = parameter_dict['input']['feature_choice_str'].split(',')
         
@@ -129,6 +130,7 @@ class Formatter():
             date = datetime.datetime(*date[:3])
             date = datetime.date(year=date.year, month=date.month, day=date.day)
             return date
+
         Feature_namedtuple = create_namedtuple(self.raw_data_dict, self.feature_choice_list)
         print (Feature_namedtuple._fields)
         #--------------------:::format_and_create_dict:::------------------

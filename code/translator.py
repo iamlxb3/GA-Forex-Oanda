@@ -134,7 +134,7 @@ ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 #=======================USER_INPUT=======================
 feature_id_value_dict = {}
 feature_id_value_dict['decisive_feature_pos'] = 3
-feature_id_value_dict[8] = (1,'1,0','+','0.6')
+feature_id_value_dict[8] = (1,'1,0','-','0.6')
 feature_id_value_dict[9] = (1,'0,1','-','32')
 feature_id_value_dict[14] = (1,'1,1','+','52')
 feature_id_value_dict[15] = (1,'0,1','+','0.25')

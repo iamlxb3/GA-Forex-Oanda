@@ -250,7 +250,7 @@ class Solution():
             int_value = convert_binary_to_decimal(int_value_bits)
             decimal_value = get_fractional_value(decimal_value_bits)
             feature_value  = int_value + decimal_value
-            print("is_sign_bit: ", is_sign_bit)
+
             if is_sign_bit == []:
                 return feature_value
             else:
