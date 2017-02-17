@@ -55,7 +55,7 @@ for string in sell_tuple:
     # -(a) translate
     s.translate_chromosome_bits(ga.feature_pos_dict)
     # -(c) get the classfiled result in each day
-    classification_result = s.get_classification_result(parameter_dict, testing_data_dict)
+    classification_result = s.get_classification_result(ga)
     if not classification_result:
         print("No stocks returned for {} chromosome".format(string))
         continue

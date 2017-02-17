@@ -15,10 +15,11 @@ para_dict['testing']['raw_data_file_path'] = ''
 # eg. (4,11,1), bit 4 is a sign bit
 #  on/off bit    operator_bits     sign_bit     int_value_bits      decimal_bits
 # (1,            2,                1,           4,                  7             )
-para_dict['input']['data_pos_in_chromosome'][8] = (1, 2, 1, 4, 4)
-para_dict['input']['data_pos_in_chromosome'][9] = (1, 2, 1, 9, 1)
-para_dict['input']['data_pos_in_chromosome'][14] = (1, 2, 0, 8, 0)
-para_dict['input']['data_pos_in_chromosome'][15] = (1, 2, 0, 2, 4)
+para_dict['input']['data_pos_in_chromosome'][8] = (1, 2, 1, 4, 4) #0
+para_dict['input']['data_pos_in_chromosome'][9] = (1, 2, 1, 9, 1) #1
+para_dict['input']['data_pos_in_chromosome'][14] = (1, 2, 0, 8, 0) #2
+para_dict['input']['data_pos_in_chromosome'][15] = (1, 2, 0, 2, 4) #3
+#
 para_dict['input']['feature_decide_bit_len'] = 3
 
 para_dict['input']['restrict_training_date'] = True
