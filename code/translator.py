@@ -133,9 +133,9 @@ ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 
 #=======================USER_INPUT=======================
 feature_id_value_dict = {}
-feature_id_value_dict['decisive_feature_pos'] = 0
+feature_id_value_dict['decisive_feature_pos'] = 3
 feature_id_value_dict[8] = (1,'1,0','+','0.6')
-feature_id_value_dict[9] = (1,'0,1','+','32')
+feature_id_value_dict[9] = (1,'0,1','-','32')
 feature_id_value_dict[14] = (1,'1,1','+','52')
 feature_id_value_dict[15] = (1,'0,1','+','0.25')
 #=======================USER_INPUT=======================
@@ -145,7 +145,7 @@ feature_id_value_dict[15] = (1,'0,1','+','0.25')
 translator = Translator(ga, feature_id_value_dict)
 print("=========Translator Ready!!============")
 chromosome_list = translator.translate_into_chromosome()
-print ("chromosome_list [42:46] {}".format(chromosome_list[42:46]))
+print ("chromosome_list [15:16] {}".format(chromosome_list[15:16]))
 translator.chromosome_len
 print(translator)
 #==========value to chromosome===========================
