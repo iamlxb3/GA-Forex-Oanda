@@ -161,7 +161,7 @@ class GeneticAlgorithm():
             # (b) translate chromosome bits list to decimal value
             s.translate_chromosome_bits(feature_pos_dict)
             # (c) get the classfiled result in each day
-            s.get_classification_result(self.parameter_dict, self.input_data_dict)
+            s.get_classification_result(self)
             # (d) filter the solution with limited target returns
             is_s_not_removed = s.filter_solution_by_target_return(self)
             # (e) compute the fitness for solution
@@ -205,6 +205,9 @@ class GeneticAlgorithm():
                 empty_chromosome_bits.extend([0 for x in range(int_value_bits)])
             if decimal_value_bits:
                 empty_chromosome_bits.extend([0 for x in range(decimal_value_bits)])
+
+        # add the decisive feature chosen bit to the end of the chromosome
+        empty_chromosome_bits.append([0 for x in range(parameter_dict['input']['feature_decide_bit_len'])])
         self.empty_chromosome_bits = empty_chromosome_bits
         chromosome_bits_length = len(empty_chromosome_bits)
         return empty_chromosome_bits, chromosome_bits_length

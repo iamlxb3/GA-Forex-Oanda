@@ -95,5 +95,5 @@ class translator:
 
 
 
-        pass
+
 

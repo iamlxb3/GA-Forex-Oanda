@@ -287,7 +287,7 @@ class Solution():
 
     # input_data_dict:
     # (datetime.date(2011,6,24), defaultdict{'MRK':Feature(quarter = '2', stock = 'MRK',....), 'VZ':Feature(....)})
-    def get_classification_result(self, parameter_dict, input_data_dict):
+    def get_classification_result(self, ga):
 
         def compare_data_solution_value(operator_bits_str, data_feature_value, solution_feature_value):
             # <
@@ -322,6 +322,8 @@ class Solution():
         logger1.debug("solution name: {}".format(self.name))
 
         # get the decisive feature if more than 1 target is seleted each time frame
+        parameter_dict = ga.parameter_dict
+        input_data_dict = ga.input_data_dict
         is_decisive_feature, decisive_feature_index = parameter_dict['input']['decisive_feature']
         decisive_feature = parameter_dict['input']['raw_data_dict'][str(decisive_feature_index)]
         chromosome_bits = self.chromosome_bits
@@ -369,6 +371,28 @@ class Solution():
                             continue
                         else:
                             is_target_chosen = False
+
+                    # find the decisive feature according to the bits
+                    #=================================================================================
+                    feature_pos_dict = ga.feature_pos_dict
+                    feature_decisive_bit_len = parameter_dict['input']['feature_decide_bit_len']
+                    target_chosen_bits_list = self.chromosome_bits[(-1)*feature_decisive_bit_len:]
+                    # this id is not the same as the one in the para dict,
+                    feature_id_chosen = sum([2**i for i,x in enumerate(target_chosen_bits_list) if x == 1])
+                    print (feature_pos_dict)
+                    # feature_pos_dict: {'14':{'pos':[(26, 27), (27,29), (29,29), (29,37), (37,37)], 'name':... },'15':....}
+                    sorted_feature_value_dict = sorted(list(feature_pos_dict.items()), key = lambda x:int(x[0]))
+                    feature_num = len(sorted_feature_value_dict)
+                    # use the default decisive feature if the index is too big
+                    if feature_id_chosen + 1 > feature_num:
+                        print ("feature_id_chosen too big!!".format(target_chosen_bits_list))
+                        pass
+                    else:
+                        decisive_feature_index = sorted_feature_value_dict[feature_id_chosen][0]
+                        decisive_feature = parameter_dict['input']['raw_data_dict'][str(decisive_feature_index)]
+                    print ("decisive_feature chosen: {}, chosen_bits_list： {}"
+                           .format(decisive_feature, target_chosen_bits_list))
+                    # =================================================================================
 
                     if is_target_chosen == True:
                         # chose only 1 target every day, based on decisive feature, if it is sell, revert the sign
