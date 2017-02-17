@@ -227,6 +227,7 @@ class Solution():
             # big endian eg. 0101 -> 10
             def get_fractional_value(binary_list):
                 """input should be the fractional binary part"""
+                # TODO, check the input
                 binary_list = [int(x) for x in binary_list]
                 fractional_value = 0
                 for i,bit in enumerate(binary_list):
@@ -238,6 +239,7 @@ class Solution():
 
             def convert_binary_to_decimal(binary_list):
                 decimal_value = 0
+                # TODO, check the input
                 binary_list = [int(x) for x in binary_list]
                 for i, binary_value in enumerate(binary_list):
                     if binary_value == 1:

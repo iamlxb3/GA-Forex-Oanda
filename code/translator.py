@@ -28,7 +28,6 @@ class Translator:
 
     @property
     def chromosome_len(self):
-        print(len(self.empty_chromosome_bits))
         return len(self.empty_chromosome_bits)
 
     def __str__(self):
@@ -71,7 +70,7 @@ class Translator:
 
             try:
                 temp_decimal_value = feature_value_tuple[3].split('.')[1]
-                decimal_value = float(temp_decimal_value)/(len(temp_decimal_value) * 10)
+                decimal_value = float(temp_decimal_value)/10 ** (len(temp_decimal_value))
             except IndexError:
                 decimal_value = 0
             # ----------------------------------------------------------------------
@@ -97,7 +96,6 @@ class Translator:
             else:
                 int_bits_list = [0 for x in range(int_max_bit_len)]
                 int_bits_list[0:computed_int_bits_list_len] = computed_int_bits_list
-                print('feature_id:{}, int_bits_list: {}'.format(feature_id, int_bits_list))
             int_bits_pos = feature_pos_dict[str(feature_id)]['pos'][3]
             self.empty_chromosome_bits[int_bits_pos[0]:int_bits_pos[1]] = int_bits_list
             # (5.) get decimal bits
@@ -105,6 +103,7 @@ class Translator:
             decimal_bits_len = len(decimal_bits_list)
             binary_sqaure_list = [x+1 for x in range(decimal_bits_len)]
             #binary_sqaure_list.reverse()
+
             for i in binary_sqaure_list:
                 decimal_loop_value = 0.5**i
                 if decimal_value < decimal_loop_value:
@@ -138,7 +137,7 @@ feature_id_value_dict['decisive_feature_pos'] = 0
 feature_id_value_dict[8] = (1,'1,0','+','0.6')
 feature_id_value_dict[9] = (1,'0,1','+','32')
 feature_id_value_dict[14] = (1,'1,1','+','52')
-feature_id_value_dict[15] = (1,'0,1','+','0.69')
+feature_id_value_dict[15] = (1,'0,1','+','0.25')
 #=======================USER_INPUT=======================
 
 
@@ -146,7 +145,7 @@ feature_id_value_dict[15] = (1,'0,1','+','0.69')
 translator = Translator(ga, feature_id_value_dict)
 print("=========Translator Ready!!============")
 chromosome_list = translator.translate_into_chromosome()
-print ("chromosome_list [16:25], int: {}".format(chromosome_list[16:25]))
+print ("chromosome_list [42:46] {}".format(chromosome_list[42:46]))
 translator.chromosome_len
 print(translator)
 #==========value to chromosome===========================

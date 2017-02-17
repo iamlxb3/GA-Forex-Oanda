@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="translator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="translator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/translator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-803">
-              <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+            <state relative-caret-position="520">
+              <caret line="71" column="73" lean-forward="false" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="73" />
               <folding>
                 <element signature="e#21#69#0" expanded="true" />
               </folding>
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/solution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="33" />
+            <state relative-caret-position="281">
+              <caret line="343" column="74" lean-forward="false" selection-start-line="343" selection-start-column="71" selection-end-line="343" selection-end-column="74" />
               <folding>
                 <element signature="e#21#69#0" expanded="true" />
               </folding>
@@ -54,7 +54,7 @@
       <file leaf-file-name="write_parameters.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/parameters/write_parameters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="-1387">
               <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
               <folding />
             </state>
@@ -112,7 +112,6 @@
       <find>OffspringGeneration</find>
       <find>profit</find>
       <find>debug</find>
-      <find>print</find>
       <find>mutation</find>
       <find>filter_solution</find>
       <find>get_classification_result</find>
@@ -125,6 +124,7 @@
       <find>pprint</find>
       <find>translate_chromosome_bits</find>
       <find>feature_pos_dict</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>chromosome_bits</replace>
@@ -848,24 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/parameters/write_parameters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/translator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-803">
-          <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
-          <folding>
-            <element signature="e#21#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -878,8 +860,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/solution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="33" />
+        <state relative-caret-position="281">
+          <caret line="343" column="74" lean-forward="false" selection-start-line="343" selection-start-column="71" selection-end-line="343" selection-end-column="74" />
+          <folding>
+            <element signature="e#21#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/parameters/write_parameters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1387">
+          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/translator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="71" column="73" lean-forward="false" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="73" />
           <folding>
             <element signature="e#21#69#0" expanded="true" />
           </folding>
