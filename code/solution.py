@@ -244,7 +244,7 @@ class Solution():
             # :::compute_solution_feature_value:::
             int_value = convert_binary_to_decimal(int_value_bits)
             decimal_value = get_fractional_value(decimal_value_bits)
-            print ("decimal_value:", decimal_value)
+            #print ("decimal_value:", decimal_value)
             feature_value  = int_value + decimal_value
             if is_sign_bit == []:
                 return feature_value

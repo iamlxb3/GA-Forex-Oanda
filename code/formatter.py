@@ -82,11 +82,20 @@ class Formatter():
             var = np.var(value_list)
             max_value = max(value_list)
             min_value = min(value_list)
-            average = sum(value_list) / float(len(value_list))
+            pos_value_list = [x for x in value_list if x>=0]
+            neg_value_list = [x for x in value_list if x < 0]
+            pos_average = 0.0
+            neg_average = 0.0
+            if pos_value_list:
+                pos_average = sum(pos_value_list) / float(len(pos_value_list))
+            if neg_value_list:
+                neg_average = sum(neg_value_list) / float(len(neg_value_list))
+
             feature_value_dict[feature]['var'] = var
             feature_value_dict[feature]['max_value'] = max_value
             feature_value_dict[feature]['min_value'] = min_value
-            feature_value_dict[feature]['average'] = average
+            feature_value_dict[feature]['pos_average'] = pos_average
+            feature_value_dict[feature]['neg_average'] = neg_average
             feature_value_dict[feature].pop('value_list')
 
 

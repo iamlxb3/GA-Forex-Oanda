@@ -195,7 +195,6 @@ class GeneticAlgorithm():
             sign_bit = feature_bit_config[2]
             int_value_bits = feature_bit_config[3]
             decimal_value_bits = feature_bit_config[4]
-
             if switch_bit:
                 empty_chromosome_bits.append(0)
             if operator_bits:
