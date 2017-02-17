@@ -65,7 +65,7 @@ off_spring_generation = OffspringGeneration(parameter_dict)
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(1000):
+    for i in range(2):
         # (4.) offspring generation , return target, compute fitness
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)

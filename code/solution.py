@@ -33,6 +33,7 @@ class Solution():
         self.classification_result_list = []
         self.classification_result_num = 0.0
         self.decisive_feature = ''
+        self.is_multiple_return = False
         self.name = self.__class__.name_id
         self.__class__.name_id += 1
         self.__class__._all.append(self)
@@ -415,17 +416,30 @@ class Solution():
                         #logger1.info("self.classification_result_dict[date_object]: {}".format(self.classification_result_dict[date_object]))
                         is_target_chosen = False
 
-        # chose only 1 target every day, based on decisive feature
-        for date_object, target_decisive_feature_tuple_pairs in sorted(list(self.classification_result_dict.items()), key = lambda x:x[0]):
-            if len(target_decisive_feature_tuple_pairs) > 1:
-                chosen_tuple = sorted(target_decisive_feature_tuple_pairs, key = lambda x:x[1], reverse = True)[0]
-                date_target_tuple = (date_object, chosen_tuple[0])
-                self.classification_result_list.append(date_target_tuple)
-            elif len(target_decisive_feature_tuple_pairs) == 1:
-                date_target_tuple = (date_object, target_decisive_feature_tuple_pairs[0][0])
-                self.classification_result_list.append(date_target_tuple)
-            else:
-                logger1.error("ERROR, CHECK target_decisive_feature_tuple_pairs!!")
+        # multiple_return_switch
+        # single return for one day
+        multiple_return_switch = parameter_dict['SGA']['multiple_return_switch']
+        if multiple_return_switch == 0:
+            # chose only 1 target every day, based on decisive feature
+            for date_object, target_decisive_feature_tuple_pairs in sorted(list(self.classification_result_dict.items()), key = lambda x:x[0]):
+                if len(target_decisive_feature_tuple_pairs) > 1:
+                    chosen_tuple = sorted(target_decisive_feature_tuple_pairs, key = lambda x:x[1], reverse = True)[0]
+                    date_target_tuple = (date_object, chosen_tuple[0])
+                    self.classification_result_list.append(date_target_tuple)
+                elif len(target_decisive_feature_tuple_pairs) == 1:
+                    date_target_tuple = (date_object, target_decisive_feature_tuple_pairs[0][0])
+                    self.classification_result_list.append(date_target_tuple)
+                else:
+                    logger1.error("ERROR, CHECK target_decisive_feature_tuple_pairs!!")
+        # multiple return for one day
+        elif multiple_return_switch == 1:
+            self.is_multiple_return = True
+            for date_object, target_decisive_feature_tuple_pairs in sorted(
+                    list(self.classification_result_dict.items()), key=lambda x: x[0]):
+                for temp_date_target_tuple in target_decisive_feature_tuple_pairs:
+                    date_target_tuple  = (date_object, temp_date_target_tuple[0])
+                    self.classification_result_list.append(date_target_tuple)
+
 
 
         #logging

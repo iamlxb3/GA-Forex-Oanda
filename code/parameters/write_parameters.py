@@ -67,6 +67,7 @@ para_dict['SGA']['intial_solution_number'] = 30
 para_dict['SGA']['target_return_percent'] = 75
 para_dict['SGA']['no_progress_generation'] = 10
 para_dict['SGA']['buy_sell_switch'] = 1
+para_dict['SGA']['multiple_return_switch'] = 1
 
 #DSGA
 # mutation rate 0.5 -> 50%
