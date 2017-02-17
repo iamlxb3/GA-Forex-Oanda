@@ -18,18 +18,32 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="100" />
-              <folding />
+            <state relative-caret-position="459">
+              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="e#21#69#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="translator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="translator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/translator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="132" column="26" lean-forward="false" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+            <state relative-caret-position="-803">
+              <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+              <folding>
+                <element signature="e#21#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/solution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="33" />
               <folding>
                 <element signature="e#21#69#0" expanded="true" />
               </folding>
@@ -50,7 +64,7 @@
       <file leaf-file-name="ga.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/ga.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="281">
               <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="29" />
               <folding>
                 <element signature="e#21#69#0" expanded="true" />
@@ -62,21 +76,9 @@
       <file leaf-file-name="fitness.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/fitness.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="38" />
+            <state relative-caret-position="486">
+              <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="35" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solution.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/solution.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="29" />
-              <folding>
-                <element signature="e#21#69#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,13 +116,15 @@
       <find>mutation</find>
       <find>filter_solution</find>
       <find>get_classification_result</find>
-      <find>feature_pos_dict</find>
       <find>logger1</find>
       <find>logger1.info</find>
       <find>classification_result</find>
       <find>bit_flip</find>
       <find>SOLUTION_INFO</find>
       <find>create_feature_pos_dict</find>
+      <find>pprint</find>
+      <find>translate_chromosome_bits</find>
+      <find>feature_pos_dict</find>
     </findStrings>
     <replaceStrings>
       <replace>chromosome_bits</replace>
@@ -141,10 +145,10 @@
         <option value="$PROJECT_DIR$/code/main.py" />
         <option value="$PROJECT_DIR$/code/ga.py" />
         <option value="$PROJECT_DIR$/code/pjslib/logger.py" />
-        <option value="$PROJECT_DIR$/code/solution.py" />
         <option value="$PROJECT_DIR$/code/fitness.py" />
         <option value="$PROJECT_DIR$/code/ga_testing.py" />
         <option value="$PROJECT_DIR$/code/parameters/write_parameters.py" />
+        <option value="$PROJECT_DIR$/code/solution.py" />
         <option value="$PROJECT_DIR$/code/translator.py" />
       </list>
     </option>
@@ -439,7 +443,7 @@
         <state relative-caret-position="3564">
           <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
           <folding>
-            <element signature="e#21#69#0" expanded="false" />
+            <element signature="e#21#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -532,7 +536,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#21#69#0" expanded="false" />
+            <element signature="e#21#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -615,7 +619,7 @@
         <state relative-caret-position="2025">
           <caret line="84" column="31" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="36" />
           <folding>
-            <element signature="e#21#69#0" expanded="false" />
+            <element signature="e#21#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -700,7 +704,7 @@
         <state relative-caret-position="837">
           <caret line="40" column="35" lean-forward="false" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
           <folding>
-            <element signature="e#21#69#0" expanded="false" />
+            <element signature="e#21#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -818,35 +822,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/solution.py">
+    <entry file="file://$PROJECT_DIR$/code/ga_testing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="29" />
-          <folding>
-            <element signature="e#21#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/fitness.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="38" />
+        <state relative-caret-position="243">
+          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/ga.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="281">
           <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="29" />
           <folding>
             <element signature="e#21#69#0" expanded="true" />
@@ -854,10 +840,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/ga_testing.py">
+    <entry file="file://$PROJECT_DIR$/code/fitness.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        <state relative-caret-position="486">
+          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -872,8 +858,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/translator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="132" column="26" lean-forward="false" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+        <state relative-caret-position="-803">
+          <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+          <folding>
+            <element signature="e#21#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#21#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="33" />
           <folding>
             <element signature="e#21#69#0" expanded="true" />
           </folding>

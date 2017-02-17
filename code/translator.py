@@ -68,7 +68,6 @@ class Translator:
             para_is_sign = chromosome_value_len_tuple[2]
 
             int_value = int(feature_value_tuple[3].split('.')[0])
-            print ("feature_value_tuple: ", feature_value_tuple)
 
             try:
                 temp_decimal_value = feature_value_tuple[3].split('.')[1]
@@ -87,16 +86,18 @@ class Translator:
                 sign_pos = feature_pos_dict[str(feature_id)]['pos'][2]
                 self.empty_chromosome_bits[sign_pos[0]:sign_pos[1]] = [sign_value]
             # (4.) get int_bits, pos 3
-            int_bits_list  = list("{0:b}".format(int_value))
-            int_bits_list.reverse()
+            computed_int_bits_list  = list("{0:b}".format(int_value))
+            computed_int_bits_list.reverse()
+            computed_int_bits_list = [int(x) for x in computed_int_bits_list]
             int_max_bit_len = chromosome_value_len_tuple[3]
-            int_bits_len = len(int_bits_list)
-            if int_bits_len > int_max_bit_len:
+            computed_int_bits_list_len = len(computed_int_bits_list)
+            if computed_int_bits_list_len > int_max_bit_len:
                 print ("int out of range, too big!!")
                 sys.exit(0)
             else:
                 int_bits_list = [0 for x in range(int_max_bit_len)]
-                int_bits_list[0:len(int_bits_list)] = int_bits_list
+                int_bits_list[0:computed_int_bits_list_len] = computed_int_bits_list
+                print('feature_id:{}, int_bits_list: {}'.format(feature_id, int_bits_list))
             int_bits_pos = feature_pos_dict[str(feature_id)]['pos'][3]
             self.empty_chromosome_bits[int_bits_pos[0]:int_bits_pos[1]] = int_bits_list
             # (5.) get decimal bits
@@ -129,13 +130,15 @@ formatter1 = Formatter(parameter_dict)
 input_data_dict = formatter1.format_and_create_dict(formatter1.path, formatter1.feature_choice_list)
 ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 
+
+
 #=======================USER_INPUT=======================
 feature_id_value_dict = {}
 feature_id_value_dict['decisive_feature_pos'] = 0
 feature_id_value_dict[8] = (1,'1,0','+','0.6')
-feature_id_value_dict[9] = (0,'0,1','+','32')
-feature_id_value_dict[14] = (0,'1,1','+','52')
-feature_id_value_dict[15] = (0,'0,1','+','0.69')
+feature_id_value_dict[9] = (1,'0,1','+','32')
+feature_id_value_dict[14] = (1,'1,1','+','52')
+feature_id_value_dict[15] = (1,'0,1','+','0.69')
 #=======================USER_INPUT=======================
 
 
@@ -143,13 +146,22 @@ feature_id_value_dict[15] = (0,'0,1','+','0.69')
 translator = Translator(ga, feature_id_value_dict)
 print("=========Translator Ready!!============")
 chromosome_list = translator.translate_into_chromosome()
+print ("chromosome_list [16:25], int: {}".format(chromosome_list[16:25]))
 translator.chromosome_len
 print(translator)
 #==========value to chromosome===========================
 
 #==========chromosome to value===========================
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+#pp.pprint(stuff)
 
 
 
+s = Solution()
+feature_pos_dict= ga.feature_pos_dict
+s.chromosome_bits = chromosome_list
+s.translate_chromosome_bits(feature_pos_dict)
+pp.pprint(s.feature_dict)
 
 #==========chromosome to value===========================

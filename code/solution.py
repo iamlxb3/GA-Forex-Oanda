@@ -227,6 +227,7 @@ class Solution():
             # big endian eg. 0101 -> 10
             def get_fractional_value(binary_list):
                 """input should be the fractional binary part"""
+                binary_list = [int(x) for x in binary_list]
                 fractional_value = 0
                 for i,bit in enumerate(binary_list):
                     i = i + 1
@@ -237,6 +238,7 @@ class Solution():
 
             def convert_binary_to_decimal(binary_list):
                 decimal_value = 0
+                binary_list = [int(x) for x in binary_list]
                 for i, binary_value in enumerate(binary_list):
                     if binary_value == 1:
                         decimal_value += 2**i
@@ -245,7 +247,6 @@ class Solution():
             # :::compute_solution_feature_value:::
             int_value = convert_binary_to_decimal(int_value_bits)
             decimal_value = get_fractional_value(decimal_value_bits)
-            #print ("decimal_value:", decimal_value)
             feature_value  = int_value + decimal_value
             if is_sign_bit == []:
                 return feature_value
@@ -275,6 +276,7 @@ class Solution():
             is_sign_bit = chromosome_bits[is_sign_index[0]:is_sign_index[1]]
             int_value_bits = chromosome_bits[int_value_index[0]:int_value_index[1]]
             decimal_value_bits = chromosome_bits[decimal_value_index[0]:decimal_value_index[1]]
+
 
             solution_feature_value = compute_solution_feature_value(is_sign_bit, int_value_bits, decimal_value_bits)
 
