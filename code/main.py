@@ -17,22 +17,6 @@ from evolution import OffspringGeneration, CrossOver, Mutation
 import random
 import pprint
 
-# #======TEMP
-# # (2) translate chromosome bits list to decimal value
-# s.translate_chromosome_bits(feature_pos_dict)
-# # (3) get the classfiled result in each day
-# s.get_classification_result(input_data_dict)
-# # (4) filter the solution with limited target returns
-# input_data_num = len(input_data_dict.keys())
-# is_s_not_removed = s.filter_solution(input_data_num)
-# # (5) compute the fitness for solution
-# if is_s_not_removed:
-#     american_stock_fitness = AmericanStockFitness(parameter_dict)
-#     american_stock_fitness(input_data_dict, s)
-# top_solutions_list = sorted([(solution.name, solution.fitness) for solution in Solution._all], key = lambda x:x[1], reverse = True)[0:10]
-# print (top_solutions_list)
-# print ("Found solution num:{}".format(len(Solution._all)))
-# #TEMP END
 
 logger1.info("Genetic Algorithm Starting......")
 # (1.) read parameters
@@ -65,7 +49,7 @@ off_spring_generation = OffspringGeneration(parameter_dict)
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(2):
+    for i in range(5):
         # (4.) offspring generation , return target, compute fitness
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)
@@ -78,7 +62,14 @@ while not ga.END:
         ga.small_generation += 1
         ga.logging(Solution,'s')
         Solution.clear_seed_list()
-    Solution.replace_converged_seeds()
+
+    # delete converged solutions and randomly create new ones, fitness computed
+    Solution.replace_converged_solutions(ga)
+    # update_tabu_list, set all is_sf_computed to False
+    Solution.update_tabu_list(ga)
+    # compute the new shared fitness for all
+    Solution.compute_shared_fitness(ga)
+    # monitor
     ga.monitor_progress(Solution)
     ga.seed_radius.add()
     ga.big_generation += 1

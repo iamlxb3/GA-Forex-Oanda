@@ -67,7 +67,7 @@ para_dict['SGA']['intial_solution_number'] = 30
 para_dict['SGA']['target_return_percent'] = 75
 para_dict['SGA']['no_progress_generation'] = 10
 para_dict['SGA']['buy_sell_switch'] = 1
-para_dict['SGA']['multiple_return_switch'] = 1
+para_dict['SGA']['multiple_return_switch'] = 0
 
 #DSGA
 # mutation rate 0.5 -> 50%
@@ -80,6 +80,7 @@ para_dict['DSGA']['SD'] = 0.01
 para_dict['DSGA']['RLC'] = 1
 # convergence limit
 para_dict['DSGA']['CL'] = 5
+para_dict['DSGA']['Parent_Choose'] = 'f'
 para_dict['DSGA']['seed_max_ratio'] = 0.6
 para_dict['DSGA']['eliminate_ratio'] = 0.25
 

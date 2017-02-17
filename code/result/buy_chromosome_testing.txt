@@ -1,26 +1,14 @@
 0
 0,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,0,0,1,0,0,1,0,0,0,0,0,1,0,1,1,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,1,1
-fitness: -0.862
+fitness: 0.350
 stock return..
 2011-04-01,T
 2011-04-08,CSCO
 2011-04-15,KRFT
-2011-04-29,XOM
-2011-04-29,MMM
-2011-04-29,PG
-2011-04-29,HD
-2011-04-29,MRK
-2011-04-29,BA
-2011-04-29,MSFT
-2011-04-29,WMT
 2011-04-29,HPQ
-2011-04-29,DD
-2011-04-29,KO
-2011-04-29,VZ
 2011-05-06,AA
-2011-05-13,CSCO
 2011-05-13,DIS
 2011-05-20,HPQ
 2011-06-17,HPQ
 feature_dict
-{"days_to_next_dividend": {"operator": "01", "value": 134, "is_include": 0}, "percent_change_price": {"operator": "11", "value": -14.6875, "is_include": 0}, "percent_change_volume_over_last_wek": {"operator": "11", "value": 73, "is_include": 1}, "percent_return_next_dividend": {"operator": "00", "value": 2.25, "is_include": 0}}
+{"percent_return_next_dividend": {"is_include": 0, "operator": "00", "value": 2.25}, "percent_change_volume_over_last_wek": {"is_include": 1, "operator": "11", "value": 73}, "days_to_next_dividend": {"is_include": 0, "operator": "01", "value": 134}, "percent_change_price": {"is_include": 0, "operator": "11", "value": -14.6875}}

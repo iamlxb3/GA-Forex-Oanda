@@ -168,6 +168,8 @@ class GeneticAlgorithm():
             if is_s_not_removed:
                 american_stock_fitness = AmericanStockFitness(parameter_dict)
                 american_stock_fitness(self.input_data_dict, s)
+            # (f) s_fitness fix
+            s.shared_fitness = s.fitness
 
     def process_new_solutions(self,new_generation_list):
         """Translate chromosome_bits, find targets, compute fitness"""

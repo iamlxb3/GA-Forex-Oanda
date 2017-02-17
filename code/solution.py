@@ -7,7 +7,7 @@ import os
 import sys
 import collections
 import math
-
+import random
 
 
 
@@ -16,6 +16,9 @@ class Solution():
     name_id = 0
     _all = []
     seed_list = []
+    conserved_seed_list = []
+    top_solution_list = []
+    converged_solution_set = set()
     max_distance = 2
 
     def __init__(self):
@@ -30,6 +33,7 @@ class Solution():
         self.isSeed = False
         self.solutions_of_same_species_list = []
         self.classification_result_dict = collections.defaultdict(lambda : [])
+        # self.classification_result_list is sorted
         self.classification_result_list = []
         self.classification_result_num = 0.0
         self.decisive_feature = ''
@@ -39,11 +43,69 @@ class Solution():
         self.__class__._all.append(self)
 
     @classmethod
-    def replace_converged_seeds(cls):
-        pass
+    def update_tabu_list(cls, ga):
+        ga.tabu_list = list(set(cls.conserved_seed_list) | set(cls.top_solution_list))
+        for solution in cls._all:
+            solution.is_sf_computed = False
+
+    @classmethod
+    def find_converged_solutions(cls,ga):
+        # initailize
+        cls.converged_solution_set = set()
+        cls.top_solution_list = []
+        ##
+        converge_limit = ga.parameter_dipara_dict['DSGA']['CL']
+
+        converge_dict = collections.defaultdict(lambda :[])
+        all_solution = cls._all
+        for solution in all_solution:
+            returned_result = solution.classification_result_list
+            converge_dict[returned_result].append(solution)
+
+        for converge_list, solution_list in converge_dict.items():
+            if len(solution_list) < converge_limit:
+                logger1.debug("CONVERGE GIVE UP, TOO few solutions converged in this species: {},"
+                              "converge_limit: {}"
+                              .format(len(solution_list), converge_limit))
+                break
+
+
+            # add the top solution in every species,ready for tabu list
+            solution_list = sorted(solution_list, key=lambda x: x.fitness, reverse=True)
+            top_solution = solution_list[0]
+            cls.top_solution_list.append(top_solution)
+            for i, solution in enumerate(solution_list):
+                # skip 0, because the species best solution should be kept
+                if i!= 0:
+                    cls.converged_solution_set.add(solution)
+                    logger1.debug("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
+                                  .format(solution.name, solution.fitness))
+
+    @classmethod
+    def replace_converged_solutions(cls,ga):
+        cls.find_converged_solutions(ga)
+        solution_set_for_delete = cls.converged_solution_set - set(cls.conserved_seed_list)
+        solution_delete_num  = len(solution_set_for_delete)
+        for solution in solution_set_for_delete:
+            cls._all.remove(solution)
+            logger1.debug("#SOLUTION_REMOVE# removing solution, name: {}, fitness: {}"
+                          .format(solution.name, solution.fitness))
+        # randomly create new solutions
+        new_generation_list = []
+        for i in range(solution_delete_num):
+            _, chromosome_bits_length = ga.create_empty_chromosome_bits(ga.parameter_dict)
+            random_chromosome = [random.randint(0, 1) for p in range(chromosome_bits_length)]
+            s = Solution()
+            s.chromosome_bits = random_chromosome
+            new_generation_list.append(s)
+        ga.process_new_solutions(new_generation_list)
+
+
 
     @classmethod
     def clear_seed_list(cls):
+        # conserve seed list for replacement and updating tabu list
+        cls.conserved_seed_list = cls.seed_list
         cls.seed_list = []
 
     @classmethod

@@ -10,6 +10,7 @@ from solution import Solution
 
 class OffspringGeneration():
     def __init__(self, parameter_dict):
+        self.parent_choose = parameter_dict['DSGA']['Parent_Choose']
         self.max_population_num = parameter_dict['SGA']['max_population_num']
         self.parent_select_mode = parameter_dict['SGA']['parent_select_mode']
         self.TS_K = parameter_dict['SGA']['TS']['TS_K']
@@ -75,7 +76,11 @@ class OffspringGeneration():
         #:::__call__
         temp_offsprings_pool = []
         population_now = len(parents_list)
-        compare_tuple_list = [(parent, parent.fitness) for parent in parents_list]
+        # using fitness to choose parent
+        if self.parent_choose == 'f':
+            compare_tuple_list = [(parent, parent.fitness) for parent in parents_list]
+        elif self.parent_choose == 's_f':
+            compare_tuple_list = [(parent, parent.shared_fitness) for parent in parents_list]
         while population_now <= self.max_population_num-2:
             compare_tuple_list_copy = compare_tuple_list.copy()
             logger1.debug("===============START PARENT SELECTION===============")
