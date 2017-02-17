@@ -48,6 +48,8 @@ class AmericanStockFitness():
                      .format(pprint.pformat(len(''.join([str(x) for x in solution.chromosome_bits])))))
         logger1.info("chromosome: {}"
                      .format(pprint.pformat(''.join([str(x) for x in solution.chromosome_bits]))))
+        logger1.info("decisive feature:{}\n"
+                     .format(solution.decisive_feature))
         logger1.info("classification_result:\n{}"
                      .format(pprint.pformat(solution.classification_result_list)))
         logger1.info("feature_dict: {}"

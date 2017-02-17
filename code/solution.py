@@ -32,6 +32,7 @@ class Solution():
         self.classification_result_dict = collections.defaultdict(lambda : [])
         self.classification_result_list = []
         self.classification_result_num = 0.0
+        self.decisive_feature = ''
         self.name = self.__class__.name_id
         self.__class__.name_id += 1
         self.__class__._all.append(self)
@@ -379,19 +380,18 @@ class Solution():
                     target_chosen_bits_list = self.chromosome_bits[(-1)*feature_decisive_bit_len:]
                     # this id is not the same as the one in the para dict,
                     feature_id_chosen = sum([2**i for i,x in enumerate(target_chosen_bits_list) if x == 1])
-                    print (feature_pos_dict)
                     # feature_pos_dict: {'14':{'pos':[(26, 27), (27,29), (29,29), (29,37), (37,37)], 'name':... },'15':....}
                     sorted_feature_value_dict = sorted(list(feature_pos_dict.items()), key = lambda x:int(x[0]))
                     feature_num = len(sorted_feature_value_dict)
                     # use the default decisive feature if the index is too big
                     if feature_id_chosen + 1 > feature_num:
-                        print ("feature_id_chosen too big!!".format(target_chosen_bits_list))
                         pass
                     else:
                         decisive_feature_index = sorted_feature_value_dict[feature_id_chosen][0]
                         decisive_feature = parameter_dict['input']['raw_data_dict'][str(decisive_feature_index)]
-                    print ("decisive_feature chosen: {}, chosen_bits_list： {}"
-                           .format(decisive_feature, target_chosen_bits_list))
+                    logger1.debug("solution name :{}, decisive_feature chosen: {}, chosen_bits_list： {}"
+                           .format(self.name, decisive_feature, target_chosen_bits_list))
+                    self.decisive_feature = decisive_feature
                     # =================================================================================
 
                     if is_target_chosen == True:
