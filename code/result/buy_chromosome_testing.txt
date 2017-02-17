@@ -1,10 +1,7 @@
 0
-0,0,1,0,0,0,0,1,1,0,1,1,1,1,1,1,1,0,0,1,0,1,1,0,0,1,0,0,1,0,0,1,1,1,1,0,1,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,1,1,1,0
-fitness: 0.740
+1,0,1,1,0,0,0,1,0,1,0,0,1,0,0,1,1,0,1,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,0,0,1,0,1,1,0,0,1,1,1,1
+fitness: -1.736
 stock return..
-2011-04-15,KRFT
-2011-04-29,PG
-2011-05-13,DIS
-2011-06-17,HPQ
+2011-06-03,DIS
 feature_dict
-{"percent_change_volume_over_last_wek": {"value": 77.2, "operator": "10", "is_include": 1}, "days_to_next_dividend": {"value": 69, "operator": "11", "is_include": 1}, "percent_change_price": {"value": 8.125, "operator": "01", "is_include": 0}, "percent_return_next_dividend": {"value": 0.46799999999999997, "operator": "10", "is_include": 0}}
+{"percent_return_next_dividend": {"is_include": 1, "operator": "11", "value": 0.9730000000000001}, "percent_change_volume_over_last_wek": {"is_include": 1, "operator": "10", "value": 20.12}, "days_to_next_dividend": {"is_include": 1, "operator": "11", "value": 114}, "percent_change_price": {"is_include": 1, "operator": "01", "value": 8.18}}

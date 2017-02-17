@@ -6,4 +6,4 @@ stock return..
 2011-04-21,INTC
 2011-04-29,INTC
 feature_dict
-{"percent_change_volume_over_last_wek": {"operator": "00", "value": 164.5, "is_include": 1}, "days_to_next_dividend": {"operator": "00", "value": 70, "is_include": 1}, "percent_return_next_dividend": {"operator": "01", "value": 0.522, "is_include": 0}, "percent_change_price": {"operator": "11", "value": 5.102, "is_include": 1}}
+{"percent_return_next_dividend": {"is_include": 0, "operator": "01", "value": 0.522}, "percent_change_volume_over_last_wek": {"is_include": 1, "operator": "00", "value": 164.5}, "days_to_next_dividend": {"is_include": 1, "operator": "00", "value": 70}, "percent_change_price": {"is_include": 1, "operator": "11", "value": 5.102}}

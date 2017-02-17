@@ -8,6 +8,7 @@ import sys
 import datetime, time
 import json
 import pprint
+import collections
 pp = pprint.PrettyPrinter(indent=4)
 from collections import namedtuple, defaultdict
 
@@ -22,6 +23,7 @@ from collections import namedtuple, defaultdict
 
 class Formatter():
     def __init__(self, parameter_dict):
+        self.parameter_dict = parameter_dict
         path = parameter_dict['input']['raw_data_path']
         file_name = parameter_dict['input']['raw_data_file_name']
         feature_choice_list = parameter_dict['input']['feature_choice_str'].split(',')
@@ -51,6 +53,54 @@ class Formatter():
         if self.restrict_training_date:
             self.training_date_start = parameter_dict['input']['training_date_start']
             self.training_date_end = parameter_dict['input']['training_date_end']
+
+    def compute_chosen_feature_value_range(self):
+
+        def write_feature_pos_list_to_file(feature_value_dict):
+            with open('feature_range/feature_range.txt', 'w', encoding = 'utf-8') as f:
+                json.dump(feature_value_dict, f, indent = 4)
+
+        path = self.path
+        feature_value_dict = collections.defaultdict(lambda: {})
+        feature_pos_list = list(self.parameter_dict['input']['data_pos_in_chromosome'].keys())
+        feature_pos_list = [int(x) for x in feature_pos_list]
+        feature_id_name_dict = self.parameter_dict['input']['raw_data_dict']
+        for pos in feature_pos_list:
+            feature_value_dict[pos]['name'] = feature_id_name_dict[str(pos)]
+            feature_value_dict[pos]['value_list'] = []
+
+        with open(path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line_list = line.strip().split(',')
+                for pos in feature_pos_list:
+                    feature_value_dict[pos]['value_list'].append(float(line_list[pos]))
+
+        # compute max, min, average,
+        import numpy as np
+        for feature, value_dict in feature_value_dict.items():
+            value_list = value_dict['value_list']
+            var = np.var(value_list)
+            max_value = max(value_list)
+            min_value = min(value_list)
+            average = sum(value_list) / float(len(value_list))
+            feature_value_dict[feature]['var'] = var
+            feature_value_dict[feature]['max_value'] = max_value
+            feature_value_dict[feature]['min_value'] = min_value
+            feature_value_dict[feature]['average'] = average
+            feature_value_dict[feature].pop('value_list')
+
+
+
+
+        #write_feature_pos_list_to_file
+        write_feature_pos_list_to_file(feature_value_dict)
+
+
+        #for pos in feature_pos_list:
+
+
+
+        pass
 
 
     def output_dict(self, target_dict):

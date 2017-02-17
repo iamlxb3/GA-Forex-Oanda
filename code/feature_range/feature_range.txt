@@ -1,0 +1,30 @@
+{
+    "8": {
+        "max_value": 9.88223,
+        "name": "percent_change_price",
+        "var": 6.265754075879321,
+        "min_value": -15.4229,
+        "average": 0.030140427638888797
+    },
+    "9": {
+        "max_value": 327.4089238,
+        "name": "percent_change_volume_over_last_wek",
+        "var": 1641.490604549324,
+        "min_value": -61.43317522,
+        "average": 5.593626545062501
+    },
+    "14": {
+        "max_value": 329.0,
+        "name": "days_to_next_dividend",
+        "var": 2102.231155478395,
+        "min_value": 0.0,
+        "average": 52.25972222222222
+    },
+    "15": {
+        "max_value": 1.56421,
+        "name": "percent_return_next_dividend",
+        "var": 0.09294253167320418,
+        "min_value": 0.0655738,
+        "average": 0.6915641252777778
+    }
+}

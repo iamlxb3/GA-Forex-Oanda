@@ -1,0 +1,42 @@
+(BIT4) 表示个位数   0.1      1+2+4+8 = 15
+(BIT7) 表示十位数   0.01     1+2+4+8+16+32+64
+(BIT10) 表示百位数  0.001    1+2+4+8+16+32+64+128+256+512
+(BIT14) 表示千位数   0.0001   1+2+4+8+16+32+64+128+256+512+1024+2048+...8191
+
+
+BIT3: sum:0.875
+BIT4: sum:0.9375
+BIT6: sum:0.984375
+
+
+
+bit:1, decimal_value:0.5
+bit:2, decimal_value:0.25
+bit:3, decimal_value:0.125
+bit:4, decimal_value:0.0625
+bit:5, decimal_value:0.03125
+bit:6, decimal_value:0.015625
+bit:7, decimal_value:0.0078125
+bit:8, decimal_value:0.00390625
+bit:9, decimal_value:0.001953125
+bit:10, decimal_value:0.0009765625
+bit:11, decimal_value:0.00048828125
+bit:12, decimal_value:0.000244140625
+bit:13, decimal_value:0.0001220703125
+bit:14, decimal_value:6.103515625e-05
+bit:15, decimal_value:3.0517578125e-05
+bit:16, decimal_value:1.52587890625e-05
+bit:17, decimal_value:7.62939453125e-06
+bit:18, decimal_value:3.814697265625e-06
+bit:19, decimal_value:1.9073486328125e-06
+bit:20, decimal_value:9.5367431640625e-07
+bit:21, decimal_value:4.76837158203125e-07
+bit:22, decimal_value:2.384185791015625e-07
+bit:23, decimal_value:1.1920928955078125e-07
+bit:24, decimal_value:5.960464477539063e-08
+bit:25, decimal_value:2.9802322387695312e-08
+bit:26, decimal_value:1.4901161193847656e-08
+bit:27, decimal_value:7.450580596923828e-09
+bit:28, decimal_value:3.725290298461914e-09
+bit:29, decimal_value:1.862645149230957e-09
+bit:30, decimal_value:9.313225746154785e-10

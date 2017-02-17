@@ -224,6 +224,16 @@ class Solution():
 
         def compute_solution_feature_value(is_sign_bit, int_value_bits, decimal_value_bits):
             # big endian eg. 0101 -> 10
+            def get_fractional_value(binary_list):
+                """input should be the fractional binary part"""
+                fractional_value = 0
+                for i,bit in enumerate(binary_list):
+                    i = i + 1
+                    if bit == 1:
+                        x_square = 0.5 ** i
+                        fractional_value += x_square
+                return fractional_value
+
             def convert_binary_to_decimal(binary_list):
                 decimal_value = 0
                 for i, binary_value in enumerate(binary_list):
@@ -231,16 +241,10 @@ class Solution():
                         decimal_value += 2**i
                 return decimal_value
 
-            def get_real_decimal_value(temp_decimal_value):
-                while temp_decimal_value >= 1:
-                    temp_decimal_value /= 10
-                decimal_value = temp_decimal_value
-                return decimal_value
-
             # :::compute_solution_feature_value:::
             int_value = convert_binary_to_decimal(int_value_bits)
-            temp_decimal_value = convert_binary_to_decimal(decimal_value_bits)
-            decimal_value = get_real_decimal_value(temp_decimal_value)
+            decimal_value = get_fractional_value(decimal_value_bits)
+            print ("decimal_value:", decimal_value)
             feature_value  = int_value + decimal_value
             if is_sign_bit == []:
                 return feature_value
