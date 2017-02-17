@@ -37,12 +37,8 @@ class Translator:
 
     def translate_into_chromosome(self):
         for feature_id, feature_value_tuple in self.feature_id_value_dict.items():
-            if feature_id == 'buy_or_sell':
-                buy_or_sell_bit = feature_value_tuple
-                self.empty_chromosome_bits[0] = buy_or_sell_bit
-                continue
 
-            elif feature_id == 'decisive_feature_pos':
+            if feature_id == 'decisive_feature_pos':
                 # feature_pos_dict: {'14':{'pos':[(26, 27), (27,29), (29,29), (29,37), (37,37)], 'name':... },'15':....}
                 # get first_decisive_feature_pos
                 feature_pos_num = feature_value_tuple
@@ -135,7 +131,6 @@ ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 
 #=======================USER_INPUT=======================
 feature_id_value_dict = {}
-feature_id_value_dict['buy_or_sell'] = 0
 feature_id_value_dict['decisive_feature_pos'] = 0
 feature_id_value_dict[8] = (1,'1,0','+','0.6')
 feature_id_value_dict[9] = (0,'0,1','+','32')
@@ -147,9 +142,14 @@ feature_id_value_dict[15] = (0,'0,1','+','0.69')
 #==========value to chromosome===========================
 translator = Translator(ga, feature_id_value_dict)
 print("=========Translator Ready!!============")
-translator.translate_into_chromosome()
+chromosome_list = translator.translate_into_chromosome()
 translator.chromosome_len
 print(translator)
 #==========value to chromosome===========================
 
+#==========chromosome to value===========================
 
+
+
+
+#==========chromosome to value===========================
