@@ -30,6 +30,7 @@ class Solution():
         self.is_f_computed = False
         self.shared_fitness = 0.0
         self.is_sf_computed = False
+        self.profit = 0.0
         self.m_i = 0.0
         self.isSeed = False
         self.solutions_of_same_species_list = []
@@ -39,9 +40,33 @@ class Solution():
         self.classification_result_num = 0.0
         self.decisive_feature = ''
         self.is_multiple_return = False
+        #return_value_by_time_dict: 'date_objec:{0.9,0.8}, ...}
+        self.return_value_by_time_dict = collections.defaultdict(lambda : [])
         self.name = self.__class__.name_id
         self.__class__.name_id += 1
         self.__class__._all.append(self)
+
+    @classmethod
+    def compute_profit(cls):
+        solutions_list = cls._all
+        for solution in solutions_list:
+            return_value_by_time_list = sorted(solution.return_value_by_time_dict.items(), key = lambda x:x[0])
+            initial_capital = 1
+            capital = initial_capital
+            for date, value_unit_time_list in return_value_by_time_list:
+                temp_profit = 0
+                # iterate by stocks, buy multiple stocks
+                for value in value_unit_time_list:
+                    profit = capital * (value/100)
+                    temp_profit += profit
+                capital += temp_profit
+                print ("solution name:{}, capital:{}, temp_profit:{}".format(solution.name, capital, temp_profit))
+            profit = (capital - initial_capital) / initial_capital
+            profit = float("{:2.1f}".format(profit*100))
+            print("solution name:{}, profit:{}".format(solution.name, profit))
+            solution.profit = profit
+
+
 
     @classmethod
     def process_b_g(cls):

@@ -87,6 +87,7 @@
         "parent_select_mode": "TS",
         "target_return_percent": 75,
         "buy_sell_switch": 1,
+        "multiple_return_switch": 0,
         "intial_solution_number": 30,
         "TS": {
             "TS_K": 3

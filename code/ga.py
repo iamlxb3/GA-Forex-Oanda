@@ -61,6 +61,16 @@ class GeneticAlgorithm():
         # the number of date or hour or week
         self.input_data_num = len(self.input_data_dict.keys())
 
+    def get_top_10_data(self, Solution):
+        final_top_10_data_list = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)[0:10]
+        final_top_10_data_dict = collections.defaultdict(lambda :0)
+        for solution in final_top_10_data_list:
+            #
+            chromosome_bits = ''.join([str(x) for x in solution.chromosome_bits])
+            final_top_10_data_dict[solution.name] = (solution.fitness, solution.profit, chromosome_bits)
+
+        self.final_top_10_data_dict = final_top_10_data_dict
+
     def save_info_to_file(self, Solution):
         current_path = os.path.dirname(os.path.abspath(__file__))
         path = os.path.join(current_path,'result', 'ga_info.txt')
@@ -68,18 +78,27 @@ class GeneticAlgorithm():
             json.dump(self.generation_dict, f, indent = 4)
 
         # save the chromosome with highest fitness
-        highest_solution = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)[0]
-        fitness = highest_solution.fitness
-        print ("highest fitness:{}".format(fitness))
-        chromosome = [str(x) for x in highest_solution.chromosome_bits]
-        chromosome_str = ','.join(chromosome)
         buy_sell_switch = self.parameter_dict['SGA']['buy_sell_switch']
         buy_sell_dict = {1:'buy', 0:'sell'}
         buy_sell_str = buy_sell_dict[buy_sell_switch]
-        with open('chromosome/{}_chromosome.txt'.format(buy_sell_str), 'w', encoding = 'utf-8') as f:
-            f.write(chromosome_str)
-            f.write('\nfitness:{}'.format(fitness))
 
+        #final_top_10_data_dict[solution.name] = (solution.fitness, solution.profit, chromosome_bits)
+        sorted_final_top_10_data = sorted(list(self.final_top_10_data_dict.items()), key = lambda x:x[1][1],
+                                          reverse = True)
+
+        with open('chromosome/{}_chromosome.txt'.format(buy_sell_str), 'w', encoding = 'utf-8') as f:
+            for solution_name, solution_tuple in sorted_final_top_10_data:
+                chromosome_bits = solution_tuple[2]
+                f.write(chromosome_bits)
+                f.write("---------[{}]\n".format(solution_name))
+            f.write("#CHROMOSOME_END\n\n\n")
+
+            for solution_name, solution_tuple in sorted_final_top_10_data:
+                fitness = solution_tuple[0]
+                profit = solution_tuple[1]
+                f.write("Solution name: {}, ".format(solution_name))
+                f.write("profit: {}, ".format(profit))
+                f.write("fitness: {}\n".format(fitness))
 
 
     #TODO

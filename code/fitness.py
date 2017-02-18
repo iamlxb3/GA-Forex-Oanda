@@ -35,6 +35,10 @@ class AmericanStockFitness():
             elif is_buy == 0:
                 value = (-1) * float(features_dict[self._next_price_str])
             average_sum += value
+
+            # update return_value_by_time_list
+            solution.return_value_by_time_dict[date].append(value)
+
             #print('profit_percent: ', float(features_dict[self._next_price_str]))
 
         average = average_sum/predicted_days_num

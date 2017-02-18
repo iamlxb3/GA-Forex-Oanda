@@ -45,7 +45,7 @@ ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 ga.seed_radius = seed_radius
 ga.create_initial_parents()
 off_spring_generation = OffspringGeneration(parameter_dict)
-big_loop  = 30
+big_loop  = 2
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
@@ -71,6 +71,8 @@ while not ga.END:
     Solution.update_tabu_list(ga)
     # compute the new shared fitness for all
     Solution.compute_shared_fitness(ga)
+    # compute the profit for all
+    Solution.compute_profit()
     # monitor
     ga.monitor_progress(Solution)
 
@@ -83,6 +85,7 @@ while not ga.END:
         ga.END = True
 
 # END
+ga.get_top_10_data(Solution)
 ga.save_info_to_file(Solution)
 ga.plot_generation_trend()
 
@@ -96,13 +99,19 @@ print (top_solutions_list)
 
 print ("Found solution num:{}".format(len(Solution._all)))
 # print stocks returned by the highest solution
-highest_soltuion = sorted(Solution._all, key = lambda x:x.fitness)[0]
+highest_soltuion = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)[0]
 pp.pprint(highest_soltuion.feature_dict)
 print("chromosome_bits: ",highest_soltuion.chromosome_bits)
 print("decisive_feature: ",highest_soltuion.decisive_feature)
 classification_result_list = highest_soltuion.classification_result_list
 for stock in classification_result_list:
     print (stock)
+
+with open ("temp_print.txt", 'w') as f:
+    for stock in classification_result_list:
+        date_str = stock[0].strftime("%Y-%m-%d")
+        f.write(str((date_str, stock[1])))
+        f.write('\n')
 # ================TEMP PRINT END===============
 
 # (5.) continue running unless no better solution is found in n iterations
