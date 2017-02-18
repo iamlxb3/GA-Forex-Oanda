@@ -39,7 +39,7 @@ class AmericanStockFitness():
 
         average = average_sum/predicted_days_num
         #print('average: ', float(average))
-        solution.fitness = "{:.3f}".format(average)
+        solution.fitness = float("{:.3f}".format(average))
         solution.is_f_computed = True
         logger1.info("----------SOLUTION_INFO-----------------------")
         logger1.info("solution_name: {}, result:{}"

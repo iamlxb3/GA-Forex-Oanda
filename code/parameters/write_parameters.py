@@ -65,13 +65,13 @@ para_dict['SGA']['parent_select_mode'] = 'TS'
 para_dict['SGA']['TS']['TS_K'] = 3
 para_dict['SGA']['intial_solution_number'] = 30
 para_dict['SGA']['target_return_percent'] = 75
-para_dict['SGA']['no_progress_generation'] = 10
+para_dict['SGA']['no_progress_generation'] = 50
 para_dict['SGA']['buy_sell_switch'] = 1
 para_dict['SGA']['multiple_return_switch'] = 0
 
 #DSGA
 # mutation rate 0.5 -> 50%
-para_dict['DSGA']['M'] = 1
+para_dict['DSGA']['M'] = 0.5
 # seed radius >>> 1/11 = 0.09090909090909091, max 1
 para_dict['DSGA']['IS'] = 0.095
 # radius delta
@@ -79,7 +79,7 @@ para_dict['DSGA']['SD'] = 0.01
 # reevalution loop count
 para_dict['DSGA']['RLC'] = 1
 # TODO convergence limit, is it >= or >
-para_dict['DSGA']['CL'] = 3
+para_dict['DSGA']['CL'] = 4
 para_dict['DSGA']['Parent_Choose'] = 'f'
 para_dict['DSGA']['seed_max_ratio'] = 0.6
 para_dict['DSGA']['eliminate_ratio'] = 0.25

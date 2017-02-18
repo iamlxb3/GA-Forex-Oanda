@@ -45,11 +45,11 @@ ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 ga.seed_radius = seed_radius
 ga.create_initial_parents()
 off_spring_generation = OffspringGeneration(parameter_dict)
-big_loop  = 1
+big_loop  = 100
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(50):
+    for i in range(40):
         # (4.) offspring generation , return target, compute fitness
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)
@@ -63,6 +63,8 @@ while not ga.END:
         ga.logging(Solution,'s')
         Solution.clear_seed_list()
 
+    # save the highest solution
+    Solution.process_b_g()
     # delete converged solutions and randomly create new ones, fitness computed
     Solution.replace_converged_solutions(ga)
     # update_tabu_list, set all is_sf_computed to False
@@ -71,6 +73,7 @@ while not ga.END:
     Solution.compute_shared_fitness(ga)
     # monitor
     ga.monitor_progress(Solution)
+
     ga.seed_radius.add()
     ga.big_generation += 1
     ga.logging(Solution, 'b')

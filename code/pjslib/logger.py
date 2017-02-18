@@ -20,7 +20,7 @@ logger1 = logging.getLogger('logger1')
 # set level
 logger1.setLevel(logging.ERROR)
 # save to file
-hdlr_1 = logging.FileHandler('logging.log')
+hdlr_1 = logging.FileHandler('logging/logging.log')
 hdlr_1.setFormatter(formatter)
 # command line
 # add ch to logger
@@ -35,7 +35,7 @@ logger2 = logging.getLogger('logger2')
 # set level
 logger2.setLevel(logging.INFO)
 # save to file
-hdlr_2 = logging.FileHandler('testing_logging.log')
+hdlr_2 = logging.FileHandler('logging/testing_logging.log')
 hdlr_2.setFormatter(formatter)
 # command line
 # add ch to logger
@@ -62,9 +62,21 @@ logger_t = logging.getLogger('logger_temp')
 # set level
 logger_t.setLevel(logging.INFO)
 # save to file
-hdlr_t = logging.FileHandler('temp_logging.log')
+hdlr_t = logging.FileHandler('logging/temp_logging.log')
 hdlr_t.setFormatter(formatter)
 # command line
 # add ch to logger
 logger_t.addHandler(ch)
 logger_t.addHandler(hdlr_t)
+
+# create logger
+logger_bg = logging.getLogger('logger_bg')
+# set level
+logger_bg.setLevel(logging.INFO)
+# save to file
+hdlr_bg = logging.FileHandler('logging/bg_logging.log')
+hdlr_bg.setFormatter(formatter)
+# command line
+# add ch to logger
+logger_bg.addHandler(ch)
+logger_bg.addHandler(hdlr_bg)

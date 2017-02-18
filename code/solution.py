@@ -20,6 +20,7 @@ class Solution():
     top_solution_list = []
     converged_solution_set = set()
     max_distance = 2
+    highest_solution_list = []
 
     def __init__(self):
         self.chromosome_bits = []
@@ -41,6 +42,12 @@ class Solution():
         self.name = self.__class__.name_id
         self.__class__.name_id += 1
         self.__class__._all.append(self)
+
+    @classmethod
+    def process_b_g(cls):
+        highest_solution = sorted(cls._all, key = lambda x:x.fitness, reverse = True)[0]
+        cls.highest_solution_list.append(highest_solution)
+
 
     @classmethod
     def update_tabu_list(cls, ga):

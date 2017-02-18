@@ -1,7 +1,7 @@
 # import from pjslib
 from pjslib.general import get_upper_folder_path
 from pjslib.general import accepts
-from pjslib.logger import logger1
+from pjslib.logger import logger1, logger_bg
 #================================================
 import os
 import sys
@@ -56,6 +56,7 @@ class GeneticAlgorithm():
         self.small_generation = 0
         self.big_generation = 0
         self.generation_dict = collections.defaultdict(lambda :{})
+        self.b_generation_dict = collections.defaultdict(lambda: {})
         self.END = False
         # the number of date or hour or week
         self.input_data_num = len(self.input_data_dict.keys())
@@ -79,10 +80,12 @@ class GeneticAlgorithm():
             f.write(chromosome_str)
             f.write('\nfitness:{}'.format(fitness))
 
+
+
     #TODO
     def plot_generation_trend(self):
-        #self.generation_dict
-        # self.generation_dict['s_g_trend'][self.small_generation]
+        # solution fitness, seed fitness, solution shared_fitness
+        # =======================================================
         seed_list = [] # highest seed fitness
         s_list = [] # highest solution fitness
         fitness_list = []
@@ -100,13 +103,81 @@ class GeneticAlgorithm():
             seed_list.append(s_g)
             seed_fitness_list.append(top_seed_tuple[1])
         # display and save file
-        plt.plot(seed_list, seed_fitness_list, 'rx', label="h_seed_fitness")
+        plt.plot(seed_list, seed_fitness_list, 'rx', label="h_seed_fitness_by_highest_sf")
         plt.plot(s_list, fitness_list, 'bx', label="solution_fitness")
-        plt.plot(s_list, shared_fitness_list, 'gx', label="solution_shared_fitness")
+        shared_fitness_list = [x / 10 for x in shared_fitness_list]
+        plt.plot(s_list, shared_fitness_list, 'g-', label="solution_shared_fitness")
+        plt.title('fitness_trend')
         plt.legend(loc=2)
-        path = os.path.join("result", 'fitness.png')
+        path = os.path.join("result", 'fitness_trend.png')
         plt.savefig(path)
         plt.show()
+        # seed list trend
+        # =======================================================
+        # (seed_list_len, sorted_seed_list[0].fitness, sorted_seed_list[0].shared_fitness)
+        x_list = []
+        seed_size = []
+        h_seed_fitness = []
+        h_seed_shared_fitness = []
+        for key, value_tuple in self.generation_dict['seed_list_size'].items():
+            x_list.append(key)
+            seed_size.append(value_tuple[0])
+            h_seed_fitness.append(value_tuple[1])
+            h_seed_shared_fitness.append(value_tuple[2])
+        fig = plt.figure(1)
+        ax = fig.add_subplot(111)
+        ax.plot(x_list, seed_size, 'rx', label="seed_list_size")
+        ax.plot(x_list, h_seed_fitness, 'bx', label="seed_fitness_sorted_by_sf")
+        h_seed_shared_fitness = [x / 10 for x in h_seed_shared_fitness]
+        ax.plot(x_list, h_seed_shared_fitness, 'g-', label="seed_sf")
+        ax.set_title('seed_size_trend')
+        handles, labels = ax.get_legend_handles_labels()
+        lgd = ax.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.1))
+        ax.grid('on')
+        path = os.path.join("result", 'seed_trend.png')
+        fig.show()
+        fig.savefig(path, bbox_extra_artists=(lgd,), bbox_inches='tight')
+        plt.show()
+
+
+        # =======================================================
+        # PLOT FOR BIG GENERATION
+
+        #self.b_generation_dict[self.big_generation] = (self.tabu_list, self.seed_radius.IS,
+        #                                               self.no_progress_generation, highest_solution.fitness)
+        generation_list = []
+        tabu_len_list = []
+        radius_list = []
+        no_p_list = []
+        h_s_list = []
+
+        for generation, value_tuple in self.b_generation_dict.items():
+            generation_list.append(generation)
+            tabu_len_list.append(value_tuple[0])
+            radius_list.append(value_tuple[1])
+            no_p_list.append(value_tuple[2])
+            h_s_list.append(value_tuple[3])
+
+        fig = plt.figure(1)
+        ax = fig.add_subplot(111)
+        # /10, too big
+        tabu_len_list = [x/10 for x in tabu_len_list]
+        ax.plot(generation_list, tabu_len_list, 'r-', label="tabu_list_size")
+        ax.plot(generation_list, radius_list, 'cx', label="radius")
+        ax.plot(generation_list, no_p_list, 'gx', label="no progress b_generation")
+        ax.plot(generation_list, h_s_list, 'bx', label="highest fitness seed")
+
+        ax.set_title('BG Trend')
+        handles, labels = ax.get_legend_handles_labels()
+        lgd = ax.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.1))
+        ax.grid('on')
+        path = os.path.join("result", 'big_generation_trend.png')
+        fig.show()
+        fig.savefig(path, bbox_extra_artists=(lgd,), bbox_inches='tight')
+        plt.show()
+
+
+
 
 
     def logging(self, Solution, generation = 's'):
@@ -131,8 +202,10 @@ class GeneticAlgorithm():
             #　save the highest fitness of seed
             self.generation_dict['s_fitness_g_trend'][self.small_generation] = \
                 (sorted_solution_list[0].name, sorted_solution_list[0].fitness, sorted_solution_list[0].shared_fitness)
-
-
+            # save the seed list size trend
+            seed_list_len = len(sorted_seed_list)
+            self.generation_dict['seed_list_size'][self.small_generation] = \
+                (seed_list_len, sorted_seed_list[0].fitness, sorted_seed_list[0].shared_fitness)
             for i, seed in enumerate(sorted_seed_list):
                 logger1.info("Rank:{}, Seed name:{}, fitness:{}, shared_fitness:{}"
                 .format(i, seed.name, seed.fitness, seed.shared_fitness))
@@ -150,15 +223,43 @@ class GeneticAlgorithm():
             logger1.info("\n\n")
 
         elif generation == 'b':
-            logger1.info("\n\n\n")
-            logger1.info("<<<<<<<<<<<<<<<<<<<<<<<<<<Big Generation Logging>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-            logger1.info("highest fitness in this Big Generation, name, fitness")
-            logger1.info("highest fitness so far, name, fitness")
-            logger1.info("no progress generation: {}".format(self.no_progress_generation))
+            logger_bg.info("\n\n\n")
+            logger_bg.info("<<<<<<<<<<<<<<<<<<<<<<<<<<Big Generation Logging>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+            logger_bg.info("---------------Big_LOOP :{}---------------")
+            logger_bg.info("Radius :{}".format(self.seed_radius.IS))
+            tabu_list = [(s.name, s.fitness, s.shared_fitness) for s in self.tabu_list]
+            # sorted by fitness
+            tabu_list = sorted(tabu_list, key = lambda x:x[1], reverse = True)
+            logger_bg.info("Tabu_list :{}, len: {}".format(tabu_list, len(self.tabu_list)))
+            seed_list = Solution.conserved_seed_list
+            seed_list = [(x.name, x.fitness, x.shared_fitness) for x in seed_list]
+            logger_bg.info("seed_list: {}, len: {}".format(seed_list, len(seed_list)))
+            logger_bg.info('no_progress_generation: {}'.format(self.no_progress_generation))
+            highest_solution = Solution.highest_solution_list[-1]
+            logger_bg.info("highest fitness in this Big Generation, name: {}, fitness: {}"
+                           .format(highest_solution.name, highest_solution.fitness))
+            logger_bg.info("<<<<<<<<<<<<<<<<<<<<<<<<<<BG Logging END>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+            # create bg dict for plotting
+            self.b_generation_dict[self.big_generation] = (len(self.tabu_list), self.seed_radius.IS,
+                                                           self.no_progress_generation, highest_solution.fitness)
+
+
+
+
+
+
+
 
     def monitor_progress(self, Solution):
         # TODO use highest_value
-        self.no_progress_generation += 1
+        highest_solution_list = Solution.highest_solution_list
+        if len(highest_solution_list) < 2:
+            return
+        if highest_solution_list[-1].fitness <= highest_solution_list[-2].fitness:
+            self.no_progress_generation += 1
+        # set to 0 if new highest found
+        elif highest_solution_list[-1].fitness > highest_solution_list[-2].fitness:
+            self.no_progress_generation = 0
         no_progress_generation_threshold = self.parameter_dict['SGA']['no_progress_generation']
         if self.no_progress_generation > no_progress_generation_threshold:
             self.END = True
