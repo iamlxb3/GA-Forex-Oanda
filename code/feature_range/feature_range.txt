@@ -1,34 +1,34 @@
 {
     "8": {
         "neg_average": -1.8626000515406143,
-        "min_value": -15.4229,
-        "name": "percent_change_price",
+        "max_value": 9.88223,
         "var": 6.265754075879321,
+        "min_value": -15.4229,
         "pos_average": 1.8915959402203864,
-        "max_value": 9.88223
+        "name": "percent_change_price"
     },
     "9": {
         "neg_average": -22.09826394468168,
-        "min_value": -61.43317522,
-        "name": "percent_change_volume_over_last_wek",
+        "max_value": 327.4089238,
         "var": 1641.490604549324,
+        "min_value": -61.43317522,
         "pos_average": 32.526835103580844,
-        "max_value": 327.4089238
+        "name": "percent_change_volume_over_last_wek"
     },
     "14": {
         "neg_average": 0.0,
-        "min_value": 0.0,
-        "name": "days_to_next_dividend",
+        "max_value": 329.0,
         "var": 2102.231155478395,
+        "min_value": 0.0,
         "pos_average": 52.25972222222222,
-        "max_value": 329.0
+        "name": "days_to_next_dividend"
     },
     "15": {
         "neg_average": 0.0,
-        "min_value": 0.0655738,
-        "name": "percent_return_next_dividend",
+        "max_value": 1.56421,
         "var": 0.09294253167320418,
+        "min_value": 0.0655738,
         "pos_average": 0.6915641252777778,
-        "max_value": 1.56421
+        "name": "percent_return_next_dividend"
     }
 }

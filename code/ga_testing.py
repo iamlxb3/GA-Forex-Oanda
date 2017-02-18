@@ -6,6 +6,7 @@ from pjslib.logger import logger2
 import os
 import sys
 import json
+import re
 import collections
 import random
 from solution import Solution
@@ -40,42 +41,69 @@ for string in sell_tuple:
 
     chromosome_path = "chromosome/{}_chromosome.txt".format(string)
     with open(chromosome_path, 'r', encoding = 'utf-8') as f:
-        chromosome = f.readlines()[0].strip()
-        chromosome_bits = chromosome.split(',')
-        # convert str to int
-        buy_chromosome_bits = [int(x) for x in chromosome_bits]
-        print(chromosome_bits, len(chromosome_bits))
+        for line in f:
+            print(line)
+            is_CHROMOSOME_end = re.findall("CHROMOSOME_END", line)
+            if is_CHROMOSOME_end:
+                break
+            chromosome = re.findall(r'[0-9,]+', line)[0]
+            chromosome_bits = chromosome.split(',')
+            # convert str to int
+            buy_chromosome_bits = [int(x) for x in chromosome_bits]
 
-    #(4.) create solution
-    s = Solution()
-    s.chromosome_bits = buy_chromosome_bits
 
-    #(5.) compute fitness
-    ga = GeneticAlgorithm(parameter_dict, testing_data_dict)
-    # -(a) translate
-    s.translate_chromosome_bits(ga.feature_pos_dict)
-    # -(c) get the classfiled result in each day
-    classification_result = s.get_classification_result(ga)
-    if not classification_result:
-        print("No stocks returned for {} chromosome".format(string))
-        continue
-    # -(d) compute fitness
-    american_stock_fitness = AmericanStockFitness(parameter_dict)
-    american_stock_fitness(testing_data_dict, s)
-    testing_output_path = "result/{}_chromosome_testing.txt".format(string)
-    print("{} fitness:{}".format(string, s.fitness))
-    for result_tuple in sorted(s.classification_result_list, key=lambda x: x[0]):
-        print(str(result_tuple[0]) + ',' + str(result_tuple[1]))
+            #(4.) create solution
+            s = Solution()
+            s.chromosome_bits = buy_chromosome_bits
 
-    with open(testing_output_path, 'w', encoding = 'utf-8') as f:
-        f.write(str(s.name) + '\n')
-        f.write(chromosome + '\n')
-        f.write('fitness: {}\n'.format(s.fitness))
-        f.write('stock return..\n')
-        for result_tuple in sorted(s.classification_result_list, key = lambda x:x[0]):
-            f.write(str(result_tuple[0]) + ',' + str(result_tuple[1]) + '\n')
-        f.write('feature_dict\n')
-        json.dump(s.feature_dict,f)
+            #(5.) compute fitness
+            ga = GeneticAlgorithm(parameter_dict, testing_data_dict)
+            # -(a) translate
+            s.translate_chromosome_bits(ga.feature_pos_dict)
+            # -(c) get the classfiled result in each day
+            classification_result = s.get_classification_result(ga)
+            if not classification_result:
+                print("No stocks returned for {} chromosome".format(string))
+                continue
+            # -(d) compute fitness
+            american_stock_fitness = AmericanStockFitness(parameter_dict)
+            american_stock_fitness(testing_data_dict, s)
+            testing_output_path = "test_data_result/{}_chromosome_testing.txt".format(string)
+
+
+    Solution.compute_profit()
+    sorted_solution_list = sorted(Solution._all, key = lambda x:x.profit, reverse = True)
+
+    # remove file
+    is_testing_output_path = os.path.exists(testing_output_path)
+    if is_testing_output_path:
+        os.remove(testing_output_path)
+
+    for s in sorted_solution_list:
+        print("--------------------------------------------------------------")
+        print("name:{}, fitness:{}, profit:{}".format(s.name, s.fitness, s.profit))
+        for result_tuple in s.classification_result_list:
+            print(str(result_tuple[0]) + ',' + str(result_tuple[1]))
+        print("--------------------------------------------------------------")
+
+        # get chromeosome
+        chromosome_list = [str(x) for x in s.chromosome_bits]
+        chromosome = ''.join(chromosome_list)
+
+        with open(testing_output_path, 'a', encoding = 'utf-8') as f:
+            f.write("\n==========================================================================================\n")
+            f.write("name: {}\n".format(s.name))
+            f.write(chromosome + '\n')
+            f.write('profit: {}\n'.format(s.profit))
+            f.write('fitness: {}\n'.format(s.fitness))
+            f.write('stock return..\n')
+            f.write('-------------------------------------------------\n')
+            for result_tuple in sorted(s.classification_result_list, key = lambda x:x[0]):
+                f.write(str(result_tuple[0]) + ',' + str(result_tuple[1]) + '\n')
+            f.write('-------------------------------------------------\n')
+            f.write('feature_dict\n')
+            json.dump(s.feature_dict,f, indent= 4)
+            f.write("\n==========================================================================================\n")
 
 
 

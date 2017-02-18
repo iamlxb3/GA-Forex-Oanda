@@ -101,7 +101,7 @@ print ("Found solution num:{}".format(len(Solution._all)))
 # print stocks returned by the highest solution
 highest_soltuion = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)[0]
 pp.pprint(highest_soltuion.feature_dict)
-print("chromosome_bits: ",highest_soltuion.chromosome_bits)
+print("chromosome_bits:{} , len:{}".format(highest_soltuion.chromosome_bits,len(highest_soltuion.chromosome_bits)))
 print("decisive_feature: ",highest_soltuion.decisive_feature)
 classification_result_list = highest_soltuion.classification_result_list
 for stock in classification_result_list:

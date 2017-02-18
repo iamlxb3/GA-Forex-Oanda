@@ -60,10 +60,10 @@ class Solution():
                     profit = capital * (value/100)
                     temp_profit += profit
                 capital += temp_profit
-                print ("solution name:{}, capital:{}, temp_profit:{}".format(solution.name, capital, temp_profit))
+                #print ("solution name:{}, capital:{}, temp_profit:{}".format(solution.name, capital, temp_profit))
             profit = (capital - initial_capital) / initial_capital
             profit = float("{:2.1f}".format(profit*100))
-            print("solution name:{}, profit:{}".format(solution.name, profit))
+            #print("solution name:{}, profit:{}".format(solution.name, profit))
             solution.profit = profit
 
 
@@ -101,8 +101,8 @@ class Solution():
         for i,list1 in enumerate(converge_dict_value_list):
             converge_dict_value_list[i] = [x.name for x in list1]
 
-        print ("converge_dict_value_list :{}".format(pprint.pformat(converge_dict_value_list)))
-        print("converge_limit :{}".format(converge_limit))
+        #print ("converge_dict_value_list :{}".format(pprint.pformat(converge_dict_value_list)))
+        #print("converge_limit :{}".format(converge_limit))
 
         for converge_list, solution_list in converge_dict.items():
             if len(solution_list) < converge_limit:
@@ -131,14 +131,14 @@ class Solution():
         #TEMP PRINT
         converged_solution_set_print = [x.name for x in cls.converged_solution_set]
         conserved_seed_list_print = [x.name for x in cls.conserved_seed_list]
-        print("converged_solution_set: ", converged_solution_set_print)
-        print("conserved_seed_list: ", conserved_seed_list_print)
+        #print("converged_solution_set: ", converged_solution_set_print)
+        #print("conserved_seed_list: ", conserved_seed_list_print)
 
         # TEMP PRINT
         solution_set_for_delete = cls.converged_solution_set - set(cls.conserved_seed_list)
         solution_delete_num  = len(solution_set_for_delete)
-        print ("solution_delete_num: ", solution_delete_num)
-        print("solution_set_for_delete: ", solution_set_for_delete)
+        #print ("solution_delete_num: ", solution_delete_num)
+        #print("solution_set_for_delete: ", solution_set_for_delete)
         for solution in solution_set_for_delete:
             cls._all.remove(solution)
             logger1.info("#SOLUTION_REMOVE# removing solution, name: {}, fitness: {}"

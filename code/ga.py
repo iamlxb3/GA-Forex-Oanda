@@ -66,7 +66,7 @@ class GeneticAlgorithm():
         final_top_10_data_dict = collections.defaultdict(lambda :0)
         for solution in final_top_10_data_list:
             #
-            chromosome_bits = ''.join([str(x) for x in solution.chromosome_bits])
+            chromosome_bits = ','.join([str(x) for x in solution.chromosome_bits])
             final_top_10_data_dict[solution.name] = (solution.fitness, solution.profit, chromosome_bits)
 
         self.final_top_10_data_dict = final_top_10_data_dict
