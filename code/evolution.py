@@ -76,7 +76,7 @@ class OffspringGeneration():
         #:::__call__
         temp_offsprings_pool = []
         population_now = len(parents_list)
-        # using fitness to choose parent
+        # using fitness/shared_fitness to choose parent
         if self.parent_choose == 'f':
             compare_tuple_list = [(parent, parent.fitness) for parent in parents_list]
         elif self.parent_choose == 's_f':

@@ -78,8 +78,8 @@ para_dict['DSGA']['IS'] = 0.095
 para_dict['DSGA']['SD'] = 0.01
 # reevalution loop count
 para_dict['DSGA']['RLC'] = 1
-# convergence limit
-para_dict['DSGA']['CL'] = 5
+# TODO convergence limit, is it >= or >
+para_dict['DSGA']['CL'] = 3
 para_dict['DSGA']['Parent_Choose'] = 'f'
 para_dict['DSGA']['seed_max_ratio'] = 0.6
 para_dict['DSGA']['eliminate_ratio'] = 0.25

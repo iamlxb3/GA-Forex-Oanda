@@ -1,5 +1,5 @@
 {
-    "chromosome_path": "",
     "data_file_path": "",
-    "is_single_testing_data_file": false
+    "is_single_testing_data_file": false,
+    "chromosome_path": ""
 }

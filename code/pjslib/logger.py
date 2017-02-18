@@ -55,3 +55,16 @@ hdlr_3.setFormatter(formatter)
 # add ch to logger
 logger3.addHandler(ch)
 logger3.addHandler(hdlr_3)
+
+
+# create logger
+logger_t = logging.getLogger('logger_temp')
+# set level
+logger_t.setLevel(logging.INFO)
+# save to file
+hdlr_t = logging.FileHandler('temp_logging.log')
+hdlr_t.setFormatter(formatter)
+# command line
+# add ch to logger
+logger_t.addHandler(ch)
+logger_t.addHandler(hdlr_t)

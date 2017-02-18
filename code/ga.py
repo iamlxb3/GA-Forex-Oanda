@@ -83,16 +83,26 @@ class GeneticAlgorithm():
     def plot_generation_trend(self):
         #self.generation_dict
         # self.generation_dict['s_g_trend'][self.small_generation]
-        x_list = []
+        seed_list = [] # highest seed fitness
+        s_list = [] # highest solution fitness
         fitness_list = []
-        s_fitness_list = []
+        seed_fitness_list = []
+        shared_fitness_list = []
+        # self.generation_dict['s_fitness_g_trend']:
+        # s_g: small generation
+        # (sorted_solution_list[0].name, sorted_solution_list[0].fitness, sorted_solution_list[0].shared_fitness)
+        for s_g, top_solution_tuple in self.generation_dict['s_fitness_g_trend'].items():
+            s_list.append(s_g)
+            fitness_list.append(top_solution_tuple[1])
+            shared_fitness_list.append(top_solution_tuple[2])
+
         for s_g, top_seed_tuple in self.generation_dict['s_g_trend'].items():
-            x_list.append(s_g)
-            fitness_list.append(top_seed_tuple[1])
-            s_fitness_list.append(top_seed_tuple[2])
+            seed_list.append(s_g)
+            seed_fitness_list.append(top_seed_tuple[1])
         # display and save file
-        plt.plot(x_list, fitness_list, 'rx', label="fitness")
-        plt.plot(x_list, s_fitness_list, 'bx', label="s_fitness")
+        plt.plot(seed_list, seed_fitness_list, 'rx', label="h_seed_fitness")
+        plt.plot(s_list, fitness_list, 'bx', label="solution_fitness")
+        plt.plot(s_list, shared_fitness_list, 'gx', label="solution_shared_fitness")
         plt.legend(loc=2)
         path = os.path.join("result", 'fitness.png')
         plt.savefig(path)
@@ -113,9 +123,15 @@ class GeneticAlgorithm():
             # logging seed
             logger1.info("SEED INFORMATION")
             sorted_seed_list = sorted(Solution.seed_list, key = lambda x:x.shared_fitness, reverse = True)
-            #　save the highest fitness
+            #　save the highest fitness of seed
             self.generation_dict['s_g_trend'][self.small_generation] = \
                 (sorted_seed_list[0].name, sorted_seed_list[0].fitness, sorted_seed_list[0].shared_fitness)
+            # logging highest solution
+            sorted_solution_list = sorted(Solution._all, key = lambda x:x.fitness, reverse = True)
+            #　save the highest fitness of seed
+            self.generation_dict['s_fitness_g_trend'][self.small_generation] = \
+                (sorted_solution_list[0].name, sorted_solution_list[0].fitness, sorted_solution_list[0].shared_fitness)
+
 
             for i, seed in enumerate(sorted_seed_list):
                 logger1.info("Rank:{}, Seed name:{}, fitness:{}, shared_fitness:{}"
@@ -213,7 +229,7 @@ class GeneticAlgorithm():
 
         self.empty_chromosome_bits = empty_chromosome_bits
         chromosome_bits_length = len(empty_chromosome_bits)
-        print (empty_chromosome_bits, len(empty_chromosome_bits))
+        #print (empty_chromosome_bits, len(empty_chromosome_bits))
         return empty_chromosome_bits, chromosome_bits_length
 
 

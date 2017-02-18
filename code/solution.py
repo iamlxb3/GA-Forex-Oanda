@@ -1,14 +1,14 @@
 # import from pjslib
 from pjslib.general import get_upper_folder_path
 from pjslib.general import accepts
-from pjslib.logger import logger1
+from pjslib.logger import logger1, logger_t
 #================================================
 import os
 import sys
 import collections
 import math
 import random
-
+import pprint
 
 
 
@@ -47,6 +47,8 @@ class Solution():
         ga.tabu_list = list(set(cls.conserved_seed_list) | set(cls.top_solution_list))
         for solution in cls._all:
             solution.is_sf_computed = False
+        tabu_list_display = [(s.name, s.fitness) for s in ga.tabu_list]
+        logger1.info("#TABU_LIST# tabu_list has been updated, content:{}".format(tabu_list_display))
 
     @classmethod
     def find_converged_solutions(cls,ga):
@@ -54,41 +56,60 @@ class Solution():
         cls.converged_solution_set = set()
         cls.top_solution_list = []
         ##
-        converge_limit = ga.parameter_dipara_dict['DSGA']['CL']
+        converge_limit = ga.parameter_dict['DSGA']['CL']
 
         converge_dict = collections.defaultdict(lambda :[])
         all_solution = cls._all
         for solution in all_solution:
-            returned_result = solution.classification_result_list
+            returned_result = tuple(solution.classification_result_list)
             converge_dict[returned_result].append(solution)
+
+        converge_dict_value_list = list(converge_dict.values())
+        converge_dict_value_list = sorted(converge_dict_value_list, key = lambda x:len(x), reverse = True)
+        for i,list1 in enumerate(converge_dict_value_list):
+            converge_dict_value_list[i] = [x.name for x in list1]
+
+        print ("converge_dict_value_list :{}".format(pprint.pformat(converge_dict_value_list)))
+        print("converge_limit :{}".format(converge_limit))
 
         for converge_list, solution_list in converge_dict.items():
             if len(solution_list) < converge_limit:
-                logger1.debug("CONVERGE GIVE UP, TOO few solutions converged in this species: {},"
+                logger1.info("CONVERGE GIVE UP, TOO few solutions converged in this species: {},"
                               "converge_limit: {}"
                               .format(len(solution_list), converge_limit))
-                break
-
+                continue
 
             # add the top solution in every species,ready for tabu list
             solution_list = sorted(solution_list, key=lambda x: x.fitness, reverse=True)
             top_solution = solution_list[0]
             cls.top_solution_list.append(top_solution)
+            #
             for i, solution in enumerate(solution_list):
                 # skip 0, because the species best solution should be kept
                 if i!= 0:
                     cls.converged_solution_set.add(solution)
-                    logger1.debug("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
+                    logger1.info("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
+                                  .format(solution.name, solution.fitness))
+                    logger_t.info("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
                                   .format(solution.name, solution.fitness))
 
     @classmethod
     def replace_converged_solutions(cls,ga):
         cls.find_converged_solutions(ga)
+        #TEMP PRINT
+        converged_solution_set_print = [x.name for x in cls.converged_solution_set]
+        conserved_seed_list_print = [x.name for x in cls.conserved_seed_list]
+        print("converged_solution_set: ", converged_solution_set_print)
+        print("conserved_seed_list: ", conserved_seed_list_print)
+
+        # TEMP PRINT
         solution_set_for_delete = cls.converged_solution_set - set(cls.conserved_seed_list)
         solution_delete_num  = len(solution_set_for_delete)
+        print ("solution_delete_num: ", solution_delete_num)
+        print("solution_set_for_delete: ", solution_set_for_delete)
         for solution in solution_set_for_delete:
             cls._all.remove(solution)
-            logger1.debug("#SOLUTION_REMOVE# removing solution, name: {}, fitness: {}"
+            logger1.info("#SOLUTION_REMOVE# removing solution, name: {}, fitness: {}"
                           .format(solution.name, solution.fitness))
         # randomly create new solutions
         new_generation_list = []
@@ -121,10 +142,11 @@ class Solution():
     @classmethod
     def compute_shared_fitness(cls, ga):
         # TODO , compute_m_i here is modified, because the one in the paper has some problem as far as I can see
-        def compute_m_i(fitness, tabu_list):
+        def compute_m_i(solution, tabu_list):
+            fitness = float(solution.fitness)
             m_i_all = 0.0
             for tabu_solution in tabu_list:
-                distance = cls.compute_distance(fitness, tabu_solution)
+                distance = cls.compute_distance(solution, tabu_solution)
                 m_i = fitness * distance
                 m_i_all += m_i
             return m_i_all
@@ -137,15 +159,15 @@ class Solution():
                 if solution.is_sf_computed:
                     continue
                 fitness = solution.fitness
-                shared_fitness = compute_m_i(fitness, tabu_list)
-                solution.shared_fitness = shared_fitness
+                shared_fitness = compute_m_i(solution, tabu_list)
+                solution.shared_fitness = float(shared_fitness)
                 solution.is_sf_computed = True
                 logger1.debug("solution: {}, shared_fitness:{}".format(solution.name, solution.shared_fitness))
 
         elif tabu_list == []:
             # assgin the fitness value to the shared_fitness in the 1st iteration
             for solution in cls._all:
-                solution.shared_fitness = solution.fitness
+                solution.shared_fitness = float(solution.fitness)
             logger1.info("NO tabu_list Found!")
             return
 
