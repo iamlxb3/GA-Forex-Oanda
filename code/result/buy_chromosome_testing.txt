@@ -1,16 +1,19 @@
 0
-1,0,0,1,0,0,0,0,1,0,0,0,1,0,1,1,0,1,1,1,0,0,1,0,0,1,1,0,1,1,0,1,0,1,0,0,0,1,1,1,0,0,1,0,1,1,1,0,0
-fitness: 2.092
+1,0,1,1,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,0,0,1,0,0,1,1,1,0,0,1,1,1,1,0,1,0
+fitness: -0.026
 stock return..
-2011-04-08,PG
-2011-04-15,INTC
-2011-04-21,PFE
-2011-05-06,CVX
-2011-05-13,CVX
-2011-05-20,JNJ
-2011-05-27,MCD
-2011-06-03,GE
-2011-06-10,GE
-2011-06-24,T
+2011-04-01,MRK
+2011-04-08,DIS
+2011-04-15,DIS
+2011-04-21,DIS
+2011-04-29,VZ
+2011-05-06,VZ
+2011-05-13,DIS
+2011-05-20,DIS
+2011-05-27,DIS
+2011-06-03,DIS
+2011-06-10,DIS
+2011-06-17,DIS
+2011-06-24,DIS
 feature_dict
-{"days_to_next_dividend": {"operator": "01", "value": 21, "is_include": 1}, "percent_return_next_dividend": {"operator": "11", "value": 0.6875, "is_include": 1}, "percent_change_price": {"operator": "00", "value": 0.5, "is_include": 1}, "percent_change_volume_over_last_wek": {"operator": "01", "value": 78.5, "is_include": 1}}
+{"percent_return_next_dividend": {"value": 0.9375, "is_include": 1, "operator": "11"}, "percent_change_price": {"value": 14.5, "is_include": 1, "operator": "01"}, "percent_change_volume_over_last_wek": {"value": 216, "is_include": 0, "operator": "00"}, "days_to_next_dividend": {"value": 35, "is_include": 0, "operator": "10"}}

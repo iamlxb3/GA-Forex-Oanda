@@ -387,6 +387,31 @@ class Solution():
     # (datetime.date(2011,6,24), defaultdict{'MRK':Feature(quarter = '2', stock = 'MRK',....), 'VZ':Feature(....)})
     def get_classification_result(self, ga):
 
+        def find_the_decisive_feature(ga):
+            # find the decisive feature according to the bits
+            # =================================================================================
+            feature_pos_dict = ga.feature_pos_dict
+            parameter_dict = ga.parameter_dict
+            feature_decisive_bit_len = parameter_dict['input']['feature_decide_bit_len']
+            target_chosen_bits_list = self.chromosome_bits[(-1) * feature_decisive_bit_len:]
+            # this id is not the same as the one in the para dict,
+            feature_id_chosen = sum([2 ** i for i, x in enumerate(target_chosen_bits_list) if x == 1])
+            # feature_pos_dict: {'14':{'pos':[(26, 27), (27,29), (29,29), (29,37), (37,37)], 'name':... },'15':....}
+            sorted_feature_value_dict = sorted(list(feature_pos_dict.items()), key=lambda x: int(x[0]))
+            feature_num = len(sorted_feature_value_dict)
+            # use the default decisive feature if the index is too big
+            if feature_id_chosen + 1 > feature_num:
+                # use the default feature index
+                decisive_feature_index = parameter_dict['input']['decisive_feature'][1]
+            else:
+                decisive_feature_index = sorted_feature_value_dict[feature_id_chosen][0]
+
+            decisive_feature = parameter_dict['input']['raw_data_dict'][str(decisive_feature_index)]
+            logger1.debug("solution name :{}, decisive_feature chosen: {}, chosen_bits_list： {}"
+                          .format(self.name, decisive_feature, target_chosen_bits_list))
+            self.decisive_feature = decisive_feature
+            # =================================================================================
+
         def compare_data_solution_value(operator_bits_str, data_feature_value, solution_feature_value):
             # <
             if operator_bits_str == '00':
@@ -414,6 +439,8 @@ class Solution():
                     return False
 
         #:::get_classification_result:::
+        # (1) find the decisive feature
+        find_the_decisive_feature(ga)
         # logging
         logger1.debug("============get_classification_result START!!============")
         logger1.debug("chromosome_bits: {}".format(self.chromosome_bits))
@@ -435,10 +462,14 @@ class Solution():
                 is_target_chosen = True
                 while is_target_chosen == True:
                 # feature_id : '8', value_dict['name']:'percent_change_price', value_dict['pos']:[(0,1),(1,3),(3,4),(4,8),(8,15)]
+                    feature_num = len(self.feature_dict.items())
+                    is_not_include_f_num = 0
                     for feature_name, feature_detail_dict in self.feature_dict.items():
+
                         # check the current feature is turned on
                         is_include = feature_detail_dict['is_include']
                         if not is_include:
+                            is_not_include_f_num += 1
                             logger1.debug("date:{}, stock:{},feature_name:{} is not included".format(date_object, target,feature_name))
                             continue
 
@@ -470,42 +501,43 @@ class Solution():
                         else:
                             is_target_chosen = False
 
-                    # find the decisive feature according to the bits
-                    #=================================================================================
-                    feature_pos_dict = ga.feature_pos_dict
-                    feature_decisive_bit_len = parameter_dict['input']['feature_decide_bit_len']
-                    target_chosen_bits_list = self.chromosome_bits[(-1)*feature_decisive_bit_len:]
-                    # this id is not the same as the one in the para dict,
-                    feature_id_chosen = sum([2**i for i,x in enumerate(target_chosen_bits_list) if x == 1])
-                    # feature_pos_dict: {'14':{'pos':[(26, 27), (27,29), (29,29), (29,37), (37,37)], 'name':... },'15':....}
-                    sorted_feature_value_dict = sorted(list(feature_pos_dict.items()), key = lambda x:int(x[0]))
-                    feature_num = len(sorted_feature_value_dict)
-                    # use the default decisive feature if the index is too big
-                    if feature_id_chosen + 1 > feature_num:
-                        pass
-                    else:
-                        decisive_feature_index = sorted_feature_value_dict[feature_id_chosen][0]
-                        decisive_feature = parameter_dict['input']['raw_data_dict'][str(decisive_feature_index)]
-                    logger1.debug("solution name :{}, decisive_feature chosen: {}, chosen_bits_list： {}"
-                           .format(self.name, decisive_feature, target_chosen_bits_list))
-                    self.decisive_feature = decisive_feature
-                    # =================================================================================
-
-                    if is_target_chosen == True:
+                    # # find the decisive feature according to the bits
+                    # #=================================================================================
+                    # feature_pos_dict = ga.feature_pos_dict
+                    # feature_decisive_bit_len = parameter_dict['input']['feature_decide_bit_len']
+                    # target_chosen_bits_list = self.chromosome_bits[(-1)*feature_decisive_bit_len:]
+                    # # this id is not the same as the one in the para dict,
+                    # feature_id_chosen = sum([2**i for i,x in enumerate(target_chosen_bits_list) if x == 1])
+                    # # feature_pos_dict: {'14':{'pos':[(26, 27), (27,29), (29,29), (29,37), (37,37)], 'name':... },'15':....}
+                    # sorted_feature_value_dict = sorted(list(feature_pos_dict.items()), key = lambda x:int(x[0]))
+                    # feature_num = len(sorted_feature_value_dict)
+                    # # use the default decisive feature if the index is too big
+                    # if feature_id_chosen + 1 > feature_num:
+                    #     pass
+                    # else:
+                    #     decisive_feature_index = sorted_feature_value_dict[feature_id_chosen][0]
+                    #     decisive_feature = parameter_dict['input']['raw_data_dict'][str(decisive_feature_index)]
+                    # logger1.debug("solution name :{}, decisive_feature chosen: {}, chosen_bits_list： {}"
+                    #        .format(self.name, decisive_feature, target_chosen_bits_list))
+                    # self.decisive_feature = decisive_feature
+                    # # =================================================================================
+                    # TODO test this feature
+                    # at lesat one feature should be turned on
+                    if is_target_chosen == True and (is_not_include_f_num != feature_num):
                         # chose only 1 target every day, based on decisive feature, if it is sell, revert the sign
                         if is_decisive_feature == 0:
-                            target_decisive_feature_tuple = (target, float(feature_value_dict[decisive_feature]))
+                            target_decisive_feature_tuple = (target, float(feature_value_dict[self.decisive_feature]))
                         elif is_decisive_feature == 1:
                             is_buy = self.chromosome_bits[0]
                             if is_buy == 1:
-                                target_decisive_feature_tuple = (target, float(feature_value_dict[decisive_feature]))
+                                target_decisive_feature_tuple = (target, float(feature_value_dict[self.decisive_feature]))
                             elif is_buy == 0:
-                                target_decisive_feature_tuple = (target, (-1)*float(feature_value_dict[decisive_feature]))
+                                target_decisive_feature_tuple = (target, (-1)*float(feature_value_dict[self.decisive_feature]))
 
 
                         self.classification_result_dict[date_object].append(target_decisive_feature_tuple)
                         #logger1.info("self.classification_result_dict[date_object]: {}".format(self.classification_result_dict[date_object]))
-                        is_target_chosen = False
+                    is_target_chosen = False
 
         # multiple_return_switch
         # single return for one day

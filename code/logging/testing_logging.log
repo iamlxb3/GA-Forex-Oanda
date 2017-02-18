@@ -10,3 +10,7 @@
 2017-02-18 12:18:01,887 - logger2 - INFO - Sell/Buy Switch :1
 2017-02-18 12:18:01,887 - logger2 - INFO - read testing parameters successful
 2017-02-18 12:18:01,950 - logger2 - INFO - Create Testing_data_dict Successful
+2017-02-18 12:32:08,538 - logger2 - INFO - Genetic Algorithm Starting......
+2017-02-18 12:32:08,538 - logger2 - INFO - Sell/Buy Switch :1
+2017-02-18 12:32:08,538 - logger2 - INFO - read testing parameters successful
+2017-02-18 12:32:08,601 - logger2 - INFO - Create Testing_data_dict Successful

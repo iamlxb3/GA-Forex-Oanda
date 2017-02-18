@@ -75,7 +75,7 @@ para_dict['DSGA']['M'] = 0.5
 # seed radius >>> 1/11 = 0.09090909090909091, max 1
 para_dict['DSGA']['IS'] = 0.095
 # radius delta
-para_dict['DSGA']['SD'] = 0.01
+para_dict['DSGA']['SD'] = 0.005
 # reevalution loop count
 para_dict['DSGA']['RLC'] = 1
 # TODO convergence limit, is it >= or >

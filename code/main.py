@@ -45,11 +45,11 @@ ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 ga.seed_radius = seed_radius
 ga.create_initial_parents()
 off_spring_generation = OffspringGeneration(parameter_dict)
-big_loop  = 100
+big_loop  = 30
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(40):
+    for i in range(10):
         # (4.) offspring generation , return target, compute fitness
         current_solution_pool = off_spring_generation(Solution.all())
         ga.process_new_solutions(current_solution_pool)
