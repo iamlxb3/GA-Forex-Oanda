@@ -46,7 +46,11 @@ for string in sell_tuple:
             is_CHROMOSOME_end = re.findall("CHROMOSOME_END", line)
             if is_CHROMOSOME_end:
                 break
-            chromosome = re.findall(r'[0-9,]+', line)[0]
+            try:
+                chromosome = re.findall(r'[0-9,]+', line)[0]
+            except IndexError:
+                logger2.error("Check your {} chromosome!!".format(string))
+                sys.exit(0)
             chromosome_bits = chromosome.split(',')
             # convert str to int
             buy_chromosome_bits = [int(x) for x in chromosome_bits]
@@ -106,5 +110,6 @@ for string in sell_tuple:
             f.write("\n==========================================================================================\n")
 
 
-
+    # clear the solution for buy or sell
+    Solution._clear()
 

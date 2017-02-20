@@ -90,3 +90,25 @@
 2017-02-18 19:54:39,440 - logger2 - INFO - Sell/Buy Switch :1
 2017-02-18 19:54:39,441 - logger2 - INFO - read testing parameters successful
 2017-02-18 19:54:39,506 - logger2 - INFO - Create Testing_data_dict Successful
+2017-02-19 18:13:35,397 - logger2 - INFO - Genetic Algorithm Starting......
+2017-02-19 18:13:35,400 - logger2 - INFO - Sell/Buy Switch :1
+2017-02-19 18:13:35,400 - logger2 - INFO - read testing parameters successful
+2017-02-19 18:13:35,464 - logger2 - INFO - Create Testing_data_dict Successful
+2017-02-20 21:18:35,137 - logger2 - INFO - Genetic Algorithm Starting......
+2017-02-20 21:18:35,137 - logger2 - INFO - Sell/Buy Switch :1
+2017-02-20 21:18:35,137 - logger2 - INFO - read testing parameters successful
+2017-02-20 21:18:35,200 - logger2 - INFO - Create Testing_data_dict Successful
+2017-02-20 21:19:22,060 - logger2 - INFO - Genetic Algorithm Starting......
+2017-02-20 21:19:22,060 - logger2 - INFO - Sell/Buy Switch :1
+2017-02-20 21:19:22,060 - logger2 - INFO - read testing parameters successful
+2017-02-20 21:19:22,123 - logger2 - INFO - Create Testing_data_dict Successful
+2017-02-20 21:21:33,873 - logger2 - INFO - Genetic Algorithm Starting......
+2017-02-20 21:21:33,873 - logger2 - INFO - Sell/Buy Switch :1
+2017-02-20 21:21:33,873 - logger2 - INFO - read testing parameters successful
+2017-02-20 21:21:33,935 - logger2 - INFO - Create Testing_data_dict Successful
+2017-02-20 21:21:34,232 - logger2 - ERROR - Check your 1011101011001011111001100011011011100100100101110 chromosome!!
+2017-02-20 21:21:42,081 - logger2 - INFO - Genetic Algorithm Starting......
+2017-02-20 21:21:42,097 - logger2 - INFO - Sell/Buy Switch :1
+2017-02-20 21:21:42,097 - logger2 - INFO - read testing parameters successful
+2017-02-20 21:21:42,144 - logger2 - INFO - Create Testing_data_dict Successful
+2017-02-20 21:21:42,456 - logger2 - ERROR - Check your sell chromosome!!

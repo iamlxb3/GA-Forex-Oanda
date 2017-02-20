@@ -1,0 +1,22 @@
+{
+    "general": {
+        "refresh_time": 15
+    },
+    "trading": {
+        "order": {
+            "default_stop_profit": 5000,
+            "postion_fill": "DEFAULT",
+            "default_stop_loss": 500,
+            "timeInForce": "GTC",
+            "type": "LIMIT"
+        },
+        "strategy": {
+            "is_1_day_include": true,
+            "is_7_day_include": false,
+            "is_3_day_include": true
+        }
+    },
+    "data": {
+        "path": ""
+    }
+}
