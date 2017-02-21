@@ -21,7 +21,7 @@ def connect_to_stream():
     account_id = '101-004-5027528-001'
     instruments = "EUR_USD"
     body =  { "order": {
-    "units": "100",
+    "units": "10",
     "instrument": "EUR_USD",
     "timeInForce": "FOK",
     "type": "MARKET",
@@ -34,7 +34,16 @@ def connect_to_stream():
         "Content-Type": "application/json",
         'Authorization' : 'Bearer ' + access_token,
               }
-    response = requests.post(url, headers = headers, json = body)
+    # response = requests.post(url, headers = headers, json = body)
+    # pp.pprint("response state: {}".format(response.status_code))
+    # print("------------------------------------------------")
+    # pp.pprint(response.json())
+
+    get_all_positions_url = "https://" + domain + "/v3/accounts/{}/openPositions".format(account_id)
+    url = get_all_positions_url
+    print ("url: ", url)
+    response = requests.get(url, headers = headers)
+
     pp.pprint("response state: {}".format(response.status_code))
     print("------------------------------------------------")
     pp.pprint(response.json())

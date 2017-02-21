@@ -1,7 +1,7 @@
 # import from pjslib
 from pjslib.general import get_upper_folder_path
 from pjslib.general import accepts
-from pjslib.logger import logger2
+from pjslib.logger import logger1,logger2
 #================================================
 import os
 import sys
@@ -9,6 +9,7 @@ import json
 import re
 import collections
 import random
+
 from solution import Solution
 from formatter import Formatter
 from read_parameters import ReadParameters
@@ -16,9 +17,7 @@ from ga import GeneticAlgorithm
 from fitness import AmericanStockFitness
 
 
-
-
-def ga_classifier():
+def oanda_ga_classifier():
     # TODO
     def get_chromosome_path_list(oanda_parameter_dict):
         chromosome_path_list = []

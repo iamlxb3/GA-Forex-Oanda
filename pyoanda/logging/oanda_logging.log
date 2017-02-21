@@ -1,0 +1,477 @@
+2017-02-21 12:20:00,598 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:20:00,598 - oanda_logger - INFO - Time: 2017-02-21 12:20:00
+2017-02-21 12:20:00,598 - oanda_logger - INFO - All_pos_list: []
+2017-02-21 12:20:00,598 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:20:00,598 - oanda_logger - INFO - =============================No Close Out=============================
+2017-02-21 12:20:00,613 - oanda_logger - INFO - Time: 2017-02-21 12:20:00
+2017-02-21 12:20:00,613 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:20:00,613 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:20:00,613 - oanda_logger - INFO - Hold position: []
+2017-02-21 12:20:00,613 - oanda_logger - INFO - No close_out!
+2017-02-21 12:20:00,613 - oanda_logger - INFO - =============================Return Trading END==========================
+
+2017-02-21 12:22:34,330 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:22:34,330 - oanda_logger - INFO - Time: 2017-02-21 12:22:33
+2017-02-21 12:22:34,330 - oanda_logger - INFO - All_pos_list: []
+2017-02-21 12:22:34,330 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:22:34,330 - oanda_logger - INFO - =============================No Close Out=============================
+2017-02-21 12:22:34,330 - oanda_logger - INFO - Time: 2017-02-21 12:22:33
+2017-02-21 12:22:34,330 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:22:34,330 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:22:34,330 - oanda_logger - INFO - Hold position: []
+2017-02-21 12:22:34,330 - oanda_logger - INFO - No close_out!
+2017-02-21 12:22:34,330 - oanda_logger - INFO - =============================Return Trading END==========================
+
+2017-02-21 12:23:25,703 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:23:25,718 - oanda_logger - INFO - Time: 2017-02-21 12:23:25
+2017-02-21 12:23:25,718 - oanda_logger - INFO - All_pos_list: []
+2017-02-21 12:23:25,718 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:23:25,718 - oanda_logger - INFO - =============================No Close Out=============================
+2017-02-21 12:23:25,718 - oanda_logger - INFO - Time: 2017-02-21 12:23:25
+2017-02-21 12:23:25,718 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:23:25,718 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:23:25,718 - oanda_logger - INFO - Hold position: []
+2017-02-21 12:23:25,718 - oanda_logger - INFO - No close_out!
+2017-02-21 12:23:25,718 - oanda_logger - INFO - =============================Return Trading END==========================
+
+2017-02-21 12:23:26,157 - oanda_logger - INFO - =============================Oanda Trading=============================
+2017-02-21 12:23:26,157 - oanda_logger - INFO - Trading Time: 2017-02-21 12:23:25
+2017-02-21 12:23:26,157 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:23:26,157 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:23:26,157 - oanda_logger - INFO - Instrument chosen: EUR_USD
+2017-02-21 12:23:26,157 - oanda_logger - INFO - status_code: 400
+2017-02-21 12:23:26,157 - oanda_logger - INFO - response_content: {'errorMessage': "Invalid value specified for 'order.units'"}
+2017-02-21 12:23:26,157 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:23:26,563 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:23:26,563 - oanda_logger - INFO - Time: 2017-02-21 12:23:26
+2017-02-21 12:23:26,579 - oanda_logger - INFO - All_pos_list: []
+2017-02-21 12:23:26,579 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:23:34,987 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:23:34,987 - oanda_logger - INFO - Time: 2017-02-21 12:23:34
+2017-02-21 12:23:34,987 - oanda_logger - INFO - All_pos_list: []
+2017-02-21 12:23:34,987 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:23:34,987 - oanda_logger - INFO - =============================No Close Out=============================
+2017-02-21 12:23:34,987 - oanda_logger - INFO - Time: 2017-02-21 12:23:34
+2017-02-21 12:23:34,987 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:23:34,987 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:23:34,987 - oanda_logger - INFO - Hold position: []
+2017-02-21 12:23:34,987 - oanda_logger - INFO - No close_out!
+2017-02-21 12:23:34,987 - oanda_logger - INFO - =============================Return Trading END==========================
+
+2017-02-21 12:23:35,424 - oanda_logger - INFO - =============================Oanda Trading=============================
+2017-02-21 12:23:35,424 - oanda_logger - INFO - Trading Time: 2017-02-21 12:23:34
+2017-02-21 12:23:35,424 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:23:35,424 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:23:35,424 - oanda_logger - INFO - Instrument chosen: EUR_USD
+2017-02-21 12:23:35,424 - oanda_logger - INFO - status_code: 400
+2017-02-21 12:23:35,424 - oanda_logger - INFO - response_content: {'errorMessage': "Invalid value specified for 'order.units'"}
+2017-02-21 12:23:35,424 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:23:35,831 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:23:35,831 - oanda_logger - INFO - Time: 2017-02-21 12:23:35
+2017-02-21 12:23:35,831 - oanda_logger - INFO - All_pos_list: []
+2017-02-21 12:23:35,831 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:24:52,515 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:24:52,518 - oanda_logger - INFO - Time: 2017-02-21 12:24:52
+2017-02-21 12:24:52,519 - oanda_logger - INFO - All_pos_list: []
+2017-02-21 12:24:52,519 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:24:52,521 - oanda_logger - INFO - =============================No Close Out=============================
+2017-02-21 12:24:52,522 - oanda_logger - INFO - Time: 2017-02-21 12:24:52
+2017-02-21 12:24:52,522 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:24:52,523 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:24:52,523 - oanda_logger - INFO - Hold position: []
+2017-02-21 12:24:52,524 - oanda_logger - INFO - No close_out!
+2017-02-21 12:24:52,524 - oanda_logger - INFO - =============================Return Trading END==========================
+
+2017-02-21 12:24:52,939 - oanda_logger - INFO - =============================Oanda Trading=============================
+2017-02-21 12:24:52,939 - oanda_logger - INFO - Trading Time: 2017-02-21 12:24:52
+2017-02-21 12:24:52,939 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:24:52,939 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:24:52,954 - oanda_logger - INFO - Instrument chosen: EUR_USD
+2017-02-21 12:24:52,954 - oanda_logger - INFO - status_code: 201
+2017-02-21 12:24:52,954 - oanda_logger - INFO - response_content: {'lastTransactionID': '38',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '37',
+                            'id': '37',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'DEFAULT',
+                            'reason': 'CLIENT_ORDER',
+                            'time': '2017-02-21T12:24:53.691122817Z',
+                            'timeInForce': 'FOK',
+                            'type': 'MARKET_ORDER',
+                            'units': '-10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3604',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '37',
+                          'financing': '0.0000',
+                          'id': '38',
+                          'instrument': 'EUR_USD',
+                          'orderID': '37',
+                          'pl': '0.0000',
+                          'price': '1.05356',
+                          'reason': 'MARKET_ORDER',
+                          'time': '2017-02-21T12:24:53.691122817Z',
+                          'tradeOpened': {'tradeID': '38', 'units': '-10'},
+                          'type': 'ORDER_FILL',
+                          'units': '-10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['37', '38']}
+2017-02-21 12:24:52,954 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:24:53,376 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:24:53,376 - oanda_logger - INFO - Time: 2017-02-21 12:24:52
+2017-02-21 12:24:53,376 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:24:53,392 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:25:01,879 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:25:01,879 - oanda_logger - INFO - Time: 2017-02-21 12:25:01
+2017-02-21 12:25:01,879 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:25:01,879 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:25:02,798 - oanda_logger - INFO - =============================Oanda Close Out=============================
+2017-02-21 12:25:02,798 - oanda_logger - INFO - Close Out Time: 2017-02-21 12:25:01
+2017-02-21 12:25:02,813 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:25:02,813 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:25:02,813 - oanda_logger - INFO - Close Out instrument chosen: EUR_USD
+2017-02-21 12:25:02,813 - oanda_logger - INFO - status_code: 200
+2017-02-21 12:25:02,813 - oanda_logger - INFO - response_content: {'lastTransactionID': '40',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '39',
+                            'id': '39',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'REDUCE_ONLY',
+                            'reason': 'TRADE_CLOSE',
+                            'time': '2017-02-21T12:25:03.550129154Z',
+                            'timeInForce': 'FOK',
+                            'tradeClose': {'tradeID': '38', 'units': 'ALL'},
+                            'type': 'MARKET_ORDER',
+                            'units': '10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3590',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '39',
+                          'financing': '0.0000',
+                          'id': '40',
+                          'instrument': 'EUR_USD',
+                          'orderID': '39',
+                          'pl': '-0.0014',
+                          'price': '1.05373',
+                          'reason': 'MARKET_ORDER_TRADE_CLOSE',
+                          'time': '2017-02-21T12:25:03.550129154Z',
+                          'tradesClosed': [{'financing': '0.0000',
+                                            'realizedPL': '-0.0014',
+                                            'tradeID': '38',
+                                            'units': '10'}],
+                          'type': 'ORDER_FILL',
+                          'units': '10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['39', '40']}
+
+2017-02-21 12:25:02,813 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:25:03,251 - oanda_logger - INFO - =============================Oanda Trading=============================
+2017-02-21 12:25:03,251 - oanda_logger - INFO - Trading Time: 2017-02-21 12:25:02
+2017-02-21 12:25:03,251 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:25:03,251 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:25:03,251 - oanda_logger - INFO - Instrument chosen: EUR_USD
+2017-02-21 12:25:03,251 - oanda_logger - INFO - status_code: 201
+2017-02-21 12:25:03,251 - oanda_logger - INFO - response_content: {'lastTransactionID': '42',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '41',
+                            'id': '41',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'DEFAULT',
+                            'reason': 'CLIENT_ORDER',
+                            'time': '2017-02-21T12:25:03.997119406Z',
+                            'timeInForce': 'FOK',
+                            'type': 'MARKET_ORDER',
+                            'units': '10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3590',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '41',
+                          'financing': '0.0000',
+                          'id': '42',
+                          'instrument': 'EUR_USD',
+                          'orderID': '41',
+                          'pl': '0.0000',
+                          'price': '1.05373',
+                          'reason': 'MARKET_ORDER',
+                          'time': '2017-02-21T12:25:03.997119406Z',
+                          'tradeOpened': {'tradeID': '42', 'units': '10'},
+                          'type': 'ORDER_FILL',
+                          'units': '10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['41', '42']}
+2017-02-21 12:25:03,266 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:25:03,667 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:25:03,667 - oanda_logger - INFO - Time: 2017-02-21 12:25:03
+2017-02-21 12:25:03,667 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:25:03,667 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:26:28,709 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:26:28,709 - oanda_logger - INFO - Time: 2017-02-21 12:26:28
+2017-02-21 12:26:28,709 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:26:28,709 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:26:29,599 - oanda_logger - INFO - =============================Oanda Close Out=============================
+2017-02-21 12:26:29,599 - oanda_logger - INFO - Close Out Time: 2017-02-21 12:26:28
+2017-02-21 12:26:29,599 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:26:29,599 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:26:29,599 - oanda_logger - INFO - Close Out instrument chosen: EUR_USD
+2017-02-21 12:26:29,599 - oanda_logger - INFO - status_code: 200
+2017-02-21 12:26:29,615 - oanda_logger - INFO - response_content: {'lastTransactionID': '44',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '43',
+                            'id': '43',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'REDUCE_ONLY',
+                            'reason': 'TRADE_CLOSE',
+                            'time': '2017-02-21T12:26:30.355149613Z',
+                            'timeInForce': 'FOK',
+                            'tradeClose': {'tradeID': '42', 'units': 'ALL'},
+                            'type': 'MARKET_ORDER',
+                            'units': '-10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3584',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '43',
+                          'financing': '0.0000',
+                          'id': '44',
+                          'instrument': 'EUR_USD',
+                          'orderID': '43',
+                          'pl': '-0.0006',
+                          'price': '1.05365',
+                          'reason': 'MARKET_ORDER_TRADE_CLOSE',
+                          'time': '2017-02-21T12:26:30.355149613Z',
+                          'tradesClosed': [{'financing': '0.0000',
+                                            'realizedPL': '-0.0006',
+                                            'tradeID': '42',
+                                            'units': '-10'}],
+                          'type': 'ORDER_FILL',
+                          'units': '-10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['43', '44']}
+
+2017-02-21 12:26:29,615 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:26:33,035 - oanda_logger - INFO - =============================Oanda Trading=============================
+2017-02-21 12:26:33,035 - oanda_logger - INFO - Trading Time: 2017-02-21 12:26:32
+2017-02-21 12:26:33,035 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:26:33,035 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:26:33,035 - oanda_logger - INFO - Instrument chosen: EUR_USD
+2017-02-21 12:26:33,035 - oanda_logger - INFO - status_code: 201
+2017-02-21 12:26:33,035 - oanda_logger - INFO - response_content: {'lastTransactionID': '46',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '45',
+                            'id': '45',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'DEFAULT',
+                            'reason': 'CLIENT_ORDER',
+                            'time': '2017-02-21T12:26:33.780034617Z',
+                            'timeInForce': 'FOK',
+                            'type': 'MARKET_ORDER',
+                            'units': '-10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3584',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '45',
+                          'financing': '0.0000',
+                          'id': '46',
+                          'instrument': 'EUR_USD',
+                          'orderID': '45',
+                          'pl': '0.0000',
+                          'price': '1.05365',
+                          'reason': 'MARKET_ORDER',
+                          'time': '2017-02-21T12:26:33.780034617Z',
+                          'tradeOpened': {'tradeID': '46', 'units': '-10'},
+                          'type': 'ORDER_FILL',
+                          'units': '-10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['45', '46']}
+2017-02-21 12:26:33,051 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:26:36,790 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:26:36,790 - oanda_logger - INFO - Time: 2017-02-21 12:26:36
+2017-02-21 12:26:36,790 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:26:36,790 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:26:42,195 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:26:42,195 - oanda_logger - INFO - Time: 2017-02-21 12:26:41
+2017-02-21 12:26:42,195 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:26:42,195 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:26:43,017 - oanda_logger - INFO - =============================Oanda Close Out=============================
+2017-02-21 12:26:43,017 - oanda_logger - INFO - Close Out Time: 2017-02-21 12:26:41
+2017-02-21 12:26:43,017 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:26:43,017 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:26:43,017 - oanda_logger - INFO - Close Out instrument chosen: EUR_USD
+2017-02-21 12:26:43,017 - oanda_logger - INFO - status_code: 200
+2017-02-21 12:26:43,017 - oanda_logger - INFO - response_content: {'lastTransactionID': '48',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '47',
+                            'id': '47',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'REDUCE_ONLY',
+                            'reason': 'TRADE_CLOSE',
+                            'time': '2017-02-21T12:26:43.768687025Z',
+                            'timeInForce': 'FOK',
+                            'tradeClose': {'tradeID': '46', 'units': 'ALL'},
+                            'type': 'MARKET_ORDER',
+                            'units': '10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3575',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '47',
+                          'financing': '0.0000',
+                          'id': '48',
+                          'instrument': 'EUR_USD',
+                          'orderID': '47',
+                          'pl': '-0.0009',
+                          'price': '1.05376',
+                          'reason': 'MARKET_ORDER_TRADE_CLOSE',
+                          'time': '2017-02-21T12:26:43.768687025Z',
+                          'tradesClosed': [{'financing': '0.0000',
+                                            'realizedPL': '-0.0009',
+                                            'tradeID': '46',
+                                            'units': '10'}],
+                          'type': 'ORDER_FILL',
+                          'units': '10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['47', '48']}
+
+2017-02-21 12:26:43,033 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:26:46,455 - oanda_logger - INFO - =============================Oanda Trading=============================
+2017-02-21 12:26:46,455 - oanda_logger - INFO - Trading Time: 2017-02-21 12:26:46
+2017-02-21 12:26:46,455 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:26:46,455 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:26:46,455 - oanda_logger - INFO - Instrument chosen: EUR_USD
+2017-02-21 12:26:46,455 - oanda_logger - INFO - status_code: 201
+2017-02-21 12:26:46,471 - oanda_logger - INFO - response_content: {'lastTransactionID': '50',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '49',
+                            'id': '49',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'DEFAULT',
+                            'reason': 'CLIENT_ORDER',
+                            'time': '2017-02-21T12:26:47.209665749Z',
+                            'timeInForce': 'FOK',
+                            'type': 'MARKET_ORDER',
+                            'units': '10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3575',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '49',
+                          'financing': '0.0000',
+                          'id': '50',
+                          'instrument': 'EUR_USD',
+                          'orderID': '49',
+                          'pl': '0.0000',
+                          'price': '1.05374',
+                          'reason': 'MARKET_ORDER',
+                          'time': '2017-02-21T12:26:47.209665749Z',
+                          'tradeOpened': {'tradeID': '50', 'units': '10'},
+                          'type': 'ORDER_FILL',
+                          'units': '10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['49', '50']}
+2017-02-21 12:26:46,471 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:26:49,941 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:26:49,941 - oanda_logger - INFO - Time: 2017-02-21 12:26:49
+2017-02-21 12:26:49,941 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:26:49,941 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:26:55,423 - oanda_logger - INFO - =============================All positions=============================
+2017-02-21 12:26:55,423 - oanda_logger - INFO - Time: 2017-02-21 12:26:54
+2017-02-21 12:26:55,423 - oanda_logger - INFO - All_pos_list: ['EUR_USD']
+2017-02-21 12:26:55,439 - oanda_logger - INFO - =============================All positions END==========================
+
+2017-02-21 12:26:56,298 - oanda_logger - INFO - =============================Oanda Close Out=============================
+2017-02-21 12:26:56,298 - oanda_logger - INFO - Close Out Time: 2017-02-21 12:26:54
+2017-02-21 12:26:56,314 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:26:56,314 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:26:56,314 - oanda_logger - INFO - Close Out instrument chosen: EUR_USD
+2017-02-21 12:26:56,314 - oanda_logger - INFO - status_code: 200
+2017-02-21 12:26:56,314 - oanda_logger - INFO - response_content: {'lastTransactionID': '52',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '51',
+                            'id': '51',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'REDUCE_ONLY',
+                            'reason': 'TRADE_CLOSE',
+                            'time': '2017-02-21T12:26:57.048262895Z',
+                            'timeInForce': 'FOK',
+                            'tradeClose': {'tradeID': '50', 'units': 'ALL'},
+                            'type': 'MARKET_ORDER',
+                            'units': '-10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3565',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '51',
+                          'financing': '0.0000',
+                          'id': '52',
+                          'instrument': 'EUR_USD',
+                          'orderID': '51',
+                          'pl': '-0.0010',
+                          'price': '1.05362',
+                          'reason': 'MARKET_ORDER_TRADE_CLOSE',
+                          'time': '2017-02-21T12:26:57.048262895Z',
+                          'tradesClosed': [{'financing': '0.0000',
+                                            'realizedPL': '-0.0010',
+                                            'tradeID': '50',
+                                            'units': '-10'}],
+                          'type': 'ORDER_FILL',
+                          'units': '-10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['51', '52']}
+
+2017-02-21 12:26:56,314 - oanda_logger - INFO - =============================Oanda Trading END==========================
+
+2017-02-21 12:26:59,770 - oanda_logger - INFO - =============================Oanda Trading=============================
+2017-02-21 12:26:59,770 - oanda_logger - INFO - Trading Time: 2017-02-21 12:26:59
+2017-02-21 12:26:59,770 - oanda_logger - INFO - Day buy: a
+2017-02-21 12:26:59,770 - oanda_logger - INFO - Day sell: b
+2017-02-21 12:26:59,770 - oanda_logger - INFO - Instrument chosen: EUR_USD
+2017-02-21 12:26:59,785 - oanda_logger - INFO - status_code: 201
+2017-02-21 12:26:59,785 - oanda_logger - INFO - response_content: {'lastTransactionID': '54',
+ 'orderCreateTransaction': {'accountID': '101-004-5027528-001',
+                            'batchID': '53',
+                            'id': '53',
+                            'instrument': 'EUR_USD',
+                            'positionFill': 'DEFAULT',
+                            'reason': 'CLIENT_ORDER',
+                            'time': '2017-02-21T12:27:00.517557224Z',
+                            'timeInForce': 'FOK',
+                            'type': 'MARKET_ORDER',
+                            'units': '-10',
+                            'userID': 5027528},
+ 'orderFillTransaction': {'accountBalance': '99999.3565',
+                          'accountID': '101-004-5027528-001',
+                          'batchID': '53',
+                          'financing': '0.0000',
+                          'id': '54',
+                          'instrument': 'EUR_USD',
+                          'orderID': '53',
+                          'pl': '0.0000',
+                          'price': '1.05362',
+                          'reason': 'MARKET_ORDER',
+                          'time': '2017-02-21T12:27:00.517557224Z',
+                          'tradeOpened': {'tradeID': '54', 'units': '-10'},
+                          'type': 'ORDER_FILL',
+                          'units': '-10',
+                          'userID': 5027528},
+ 'relatedTransactionIDs': ['53', '54']}
+2017-02-21 12:26:59,785 - oanda_logger - INFO - =============================Oanda Trading END==========================
+

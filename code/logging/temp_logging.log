@@ -4548,3 +4548,10 @@
 2017-02-19 16:28:50,639 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 13349, fitness: 1.816
 2017-02-19 16:28:50,640 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 13331, fitness: 1.803
 2017-02-19 16:28:50,641 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 13359, fitness: 1.803
+2017-02-21 11:45:50,751 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 490, fitness: 0.689
+2017-02-21 11:45:50,751 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 542, fitness: 0.689
+2017-02-21 11:45:50,751 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 495, fitness: 1.648
+2017-02-21 11:45:50,751 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 496, fitness: 1.648
+2017-02-21 11:45:50,751 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 505, fitness: 1.648
+2017-02-21 11:45:50,751 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 533, fitness: 1.648
+2017-02-21 11:45:50,751 - logger_temp - INFO - #CONVERGE# Add solution to converge list, name: 536, fitness: 1.648

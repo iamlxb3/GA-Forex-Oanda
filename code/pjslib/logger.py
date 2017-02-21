@@ -80,3 +80,16 @@ hdlr_bg.setFormatter(formatter)
 # add ch to logger
 logger_bg.addHandler(ch)
 logger_bg.addHandler(hdlr_bg)
+
+# =========================================
+# create logger
+oanda_logger = logging.getLogger('oanda_logger')
+# set level
+oanda_logger.setLevel(logging.INFO)
+# save to file
+hdlr_1 = logging.FileHandler('logging/oanda_logging.log')
+hdlr_1.setFormatter(formatter)
+# command line
+# add ch to logger
+oanda_logger.addHandler(ch)
+oanda_logger.addHandler(hdlr_1)
