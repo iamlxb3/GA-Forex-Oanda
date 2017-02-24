@@ -5,7 +5,7 @@ import os
 
 def get_upper_folder_path(num, path = ''):
     if not path:
-        path = os.path.abspath(__file__)
+        path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     else:
         path = os.path.dirname(path)
     num -= 1

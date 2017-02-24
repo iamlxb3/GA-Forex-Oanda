@@ -28,16 +28,15 @@ t_parameters_dict['data']['path'] = ''
 
 
 # data
+p_data_parameters_dict = collections.defaultdict(lambda: collections.defaultdict(lambda:{}))
 p_data_parameters_dict['data_path'] = ''
 p_data_parameters_dict['mode'] = 'testing' # testing, trading
-p_data_parameters_dict['start_date'] = ''
-p_data_parameters_dict['end_date'] = ''
-p_data_parameters_dict['instruments'] = ['USD_CAD']
-p_data_parameters_dict['canleFormat'] = 'midpoint'
+p_data_parameters_dict['date_range'] = 365
+p_data_parameters_dict['candle_format'] = 'midpoint'
 p_data_parameters_dict['granularity'] = 'D'
 p_data_parameters_dict['alignmentTimezone'] = 'America'
 
 # writing to json
-with open('trading_parameter.json', 'w') as f:
-  json.dump(parameters_dict, f, ensure_ascii = False, indent = 4)
+with open('p_data_parameters.json', 'w') as f:
+  json.dump(p_data_parameters_dict, f, ensure_ascii = False, indent = 4)
 

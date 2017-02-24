@@ -1,0 +1,8 @@
+{
+    "date_range": 365,
+    "granularity": "D",
+    "mode": "testing",
+    "candle_format": "midpoint",
+    "data_path": "",
+    "alignmentTimezone": "America"
+}
