@@ -136,8 +136,15 @@ class Formatter():
         #--------------------:::format_and_create_dict:::------------------
         if testing == True:
             path = self.testing_file_path
-
-        with open(path, 'r', encoding = 'utf-8') as f:
+        # encoding back-off
+        encoding = 'utf-8'
+        try:
+            open(path, 'r', encoding = encoding).read()
+        except UnicodeDecodeError:
+            encoding = 'gbk'
+        #
+        print ("path: ", path)
+        with open(path, 'r', encoding = encoding) as f:
             input_data_dict = defaultdict(lambda: defaultdict(lambda: tuple))
             for line in f:
                 try:
