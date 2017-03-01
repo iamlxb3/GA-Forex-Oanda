@@ -12,7 +12,7 @@ def find_upper_level_folder_path(num, path = ''):
 import os
 import json
 
-class ReadParameters():
+class SubReader():
     def __init__(self, path = ''):
         if not path:
             current_folder_path = find_upper_level_folder_path(1)
@@ -20,16 +20,11 @@ class ReadParameters():
         self.path = path
        
     def read_parameters(self, path):
-        # encode back-off
-        encoding = 'utf-8'
-        try:
-            open(path, 'r', encoding = encoding).read()
-        except UnicodeDecodeError:
-            encoding = 'gbk'
-
-        with open(path, 'r', encoding = encoding) as f:
+        with open(path, 'r', encoding = 'utf-8') as f:
             parameter_dict = json.load(f)
-
         return parameter_dict
         
+    def write_json(self, path, dict):
+        with open(path, 'w') as f:
+          json.dump(dict, f, ensure_ascii = False, indent = 4)
 

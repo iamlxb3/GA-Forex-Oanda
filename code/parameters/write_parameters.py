@@ -98,5 +98,5 @@ para_dict['DSGA']['eliminate_ratio'] = 0.25
 #testing
 para_dict['testing']['raw_data_file_path'] = ''
 
-with open('parameter.json', 'w') as f:
+with open('parameter.json', 'w', encoding = 'utf-8') as f:
   json.dump(para_dict, f, ensure_ascii = False, indent = 4)
