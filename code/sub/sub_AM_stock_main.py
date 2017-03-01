@@ -19,18 +19,18 @@ def run_python(path):
     subprocess.call("python {}".format(path), shell=True, cwd = cwd)
         
         
-# create path for python folder and files 
-# (1.) formatter
+# run AM-stock GA
+# (1.) get AM-stock GA main path
 code_main_folder = find_upper_level_folder_path(2)
-formatter__path = os.path.join(code_main_folder, 'formatter.py')
-main__path = os.path.join(code_main_folder, 'main.py')
-
-
+AM_S_main__path = os.path.join(code_main_folder, 'main.py')
+AM_S_main_w_parameter__path = os.path.join(code_main_folder, 'parameters', 'write_parameters.py')
 
 
 #:::RUN:::
-#(1.) formatter
-run_python(main__path)
+# (1.) write the AM-stock GA into json
+run_python(AM_S_main_w_parameter__path)
+# (2.) run AM-stock GA
+run_python(AM_S_main__path)
 
 
 
