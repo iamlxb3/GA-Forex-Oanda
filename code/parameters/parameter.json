@@ -1,31 +1,49 @@
 {
     "SGA": {
+        "parent_select_mode": "TS",
         "multiple_return_switch": 0,
-        "no_progress_generation": 50,
-        "intial_solution_number": 30,
+        "max_population_num": 60,
         "buy_sell_switch": 1,
         "target_return_percent": 75,
-        "max_population_num": 60,
-        "parent_select_mode": "TS",
+        "intial_solution_number": 30,
         "TS": {
             "TS_K": 3
-        }
+        },
+        "no_progress_generation": 50
+    },
+    "DSGA": {
+        "IS": 0.095,
+        "SD": 0.005,
+        "CL": 4,
+        "Parent_Choose": "f",
+        "seed_max_ratio": 0.6,
+        "M": 0.5,
+        "eliminate_ratio": 0.25,
+        "RLC": 1
+    },
+    "testing": {
+        "raw_data_file_path": ""
     },
     "input": {
+        "training_date_start": "1/14/2011",
         "feature_decide_bit_len": 3,
+        "decisive_feature": [
+            1,
+            8
+        ],
         "data_pos_in_chromosome": {
+            "14": [
+                1,
+                2,
+                0,
+                8,
+                0
+            ],
             "15": [
                 1,
                 2,
                 0,
                 2,
-                4
-            ],
-            "8": [
-                1,
-                2,
-                1,
-                4,
                 4
             ],
             "9": [
@@ -35,57 +53,39 @@
                 9,
                 1
             ],
-            "14": [
+            "8": [
                 1,
                 2,
-                0,
-                8,
-                0
+                1,
+                4,
+                4
             ]
         },
-        "next_price_str": "percent_change_next_weeks_price",
-        "training_date_start": "1/14/2011",
-        "restrict_training_date": true,
-        "raw_data_file_name": "cleaned_data.txt",
-        "raw_data_path": "D:\\我的坚果云\\我的坚果云\\SLP\\dissertation\\main\\data\\cleaned_data.txt",
         "training_testing_ratio": "8,2",
-        "feature_choice_str": "0,1,3,4,5,6,7,8,9,10,11,12,13,14,15",
+        "training_date_end": "3/25/2011",
+        "raw_data_path": "D:\\我的坚果云\\我的坚果云\\SLP\\dissertation\\main\\data\\cleaned_data.txt",
         "raw_data_dict": {
-            "10": "previous_weeks_volume",
-            "6": "close",
-            "9": "percent_change_volume_over_last_wek",
-            "3": "open",
-            "7": "volume",
-            "8": "percent_change_price",
-            "12": "next_weeks_close",
-            "1": "stock",
-            "15": "percent_return_next_dividend",
-            "2": "date",
-            "13": "percent_change_next_weeks_price",
-            "11": "next_weeks_open",
-            "0": "quarter",
             "14": "days_to_next_dividend",
+            "15": "percent_return_next_dividend",
+            "11": "next_weeks_open",
+            "13": "percent_change_next_weeks_price",
             "4": "high",
-            "5": "low"
+            "8": "percent_change_price",
+            "1": "stock",
+            "10": "previous_weeks_volume",
+            "5": "low",
+            "12": "next_weeks_close",
+            "6": "close",
+            "7": "volume",
+            "0": "quarter",
+            "3": "open",
+            "9": "percent_change_volume_over_last_wek",
+            "2": "date"
         },
-        "decisive_feature": [
-            1,
-            8
-        ],
-        "training_date_end": "3/25/2011"
-    },
-    "testing": {
-        "raw_data_file_path": ""
-    },
-    "DSGA": {
-        "IS": 0.095,
-        "SD": 0.005,
-        "eliminate_ratio": 0.25,
-        "CL": 4,
-        "Parent_Choose": "f",
-        "RLC": 1,
-        "seed_max_ratio": 0.6,
-        "M": 0.5
+        "raw_data_file_name": "cleaned_data.txt",
+        "restrict_training_date": true,
+        "next_price_str": "percent_change_next_weeks_price",
+        "feature_choice_str": "0,1,3,4,5,6,7,8,9,10,11,12,13,14,15"
     },
     "evolution": {
         "mutation": {

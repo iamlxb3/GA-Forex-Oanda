@@ -50,12 +50,56 @@ class ReadForexData:
                     feature_str = ','.join(day_features)
                     f.write(feature_str)
                     f.write('\n')
-
-
-    def format_forex_data_file_into_new_feature(self):
-        # TODO
-        pass
-
+                    
+    #['_', 'AUD_USD', '02/21/2017', '-0.12', '0.1', '-0.2', '0.31', '6162', '26.63',
+    # '0.4', '1.8', '1.8', '3.2', '0.48', '0.64', '0.84', '-0.047', '-0.238', '-0.471\
+    # n']
+    
+    def get_data_distribution(self, file_path):
+        feature_all_value_dict = collections.defaultdict(lambda:[])
+        feature_value_distribution_dict = collections.defaultdict(lambda:[])
+        with open(file_path, 'r', encoding = 'utf-8') as f:
+            for line in (f):
+                feature_list = line.split(',')
+                for i, feature in enumerate(feature_list):
+                    if i < 3:
+                        continue
+                    feature_all_value_dict[i].append(float(feature.strip()))
+        
+        # compute max, min, etc
+        for feature_id, feature_value_list in feature_all_value_dict.items():
+            max_value = max(feature_value_list)
+            min_value = min(feature_value_list)
+            zero_list = [0 for x in feature_value_list if x == 0]
+            # pos
+            pos_feature_value_list = [x for x in feature_value_list if x > 0]
+            if len(pos_feature_value_list) > 0:
+                pos_average = sum(pos_feature_value_list) / len(pos_feature_value_list)
+            else:
+                pos_average = 0
+            # neg
+            neg_feature_value_list = [x for x in feature_value_list if x < 0]
+            if len(neg_feature_value_list) > 0:
+                neg_average = sum(neg_feature_value_list) / len(neg_feature_value_list)
+            else:
+                neg_average = 0
+            # zero_num
+            zero_num = len(zero_list)
+            feature_value_distribution_dict[feature_id] = (max_value, min_value, pos_average, neg_average, zero_num)
+    
+        # write everything to file
+        with open ('feature_value_distribution_dict.txt', 'w', encoding = 'utf-8') as f:
+            feature_value_distribution_list = list(feature_value_distribution_dict.items())
+            for feature_id, value_tuple in feature_value_distribution_list:
+                max_value = value_tuple[0]
+                min_value = value_tuple[1]
+                pos_average = value_tuple[2]
+                neg_average = value_tuple[3]
+                zero_num = value_tuple[4]
+                f.write("Feature_id: {}, max: {}, min: {}, pos_average: {}, neg_average: {}, zero_num: {}"
+                .format(feature_id, max_value, min_value, pos_average, neg_average, zero_num))
+                f.write('\n')
+    
     def read_onanda_data(self):
         def compute_std(day, day_forex_list, feature, i, instrument):
             variance_list = []

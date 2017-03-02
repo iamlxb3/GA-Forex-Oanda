@@ -127,3 +127,18 @@
 2017-03-01 22:00:53,576 - logger2 - INFO - read testing parameters successful
 2017-03-01 22:00:53,654 - logger2 - INFO - Create Testing_data_dict Successful
 2017-03-01 22:00:53,936 - logger2 - ERROR - Check your sell chromosome!!
+2017-03-02 02:36:17,107 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-02 02:36:17,107 - logger2 - INFO - Sell/Buy Switch :1
+2017-03-02 02:36:17,107 - logger2 - INFO - read testing parameters successful
+2017-03-02 02:36:17,170 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-02 02:36:17,467 - logger2 - ERROR - Check your sell chromosome!!
+2017-03-02 02:37:14,307 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-02 02:37:14,307 - logger2 - INFO - Sell/Buy Switch :1
+2017-03-02 02:37:14,307 - logger2 - INFO - read testing parameters successful
+2017-03-02 02:37:14,370 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-02 02:37:14,651 - logger2 - ERROR - Check your sell chromosome!!
+2017-03-02 03:01:40,670 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-02 03:01:40,670 - logger2 - INFO - Sell/Buy Switch :1
+2017-03-02 03:01:40,670 - logger2 - INFO - read testing parameters successful
+2017-03-02 03:01:40,732 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-02 03:01:41,013 - logger2 - ERROR - Check your sell chromosome!!

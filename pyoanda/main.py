@@ -14,10 +14,6 @@ from read_parameters import ReadParameters
 from read_forex_data import ReadForexData
 from oanda_trading import OandaTrading
 
-code_path = os.path.join(get_upper_folder_path(4), 'code')
-print ("code_path: ", code_path)
-sys.path.insert(0, code_path)
-
 
 #from oanda_ga_classifier import ga_classifier
 
