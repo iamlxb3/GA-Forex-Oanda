@@ -49,6 +49,18 @@ for chromosome_1 in chosen_chromosome_dict['1']:
             print(chromosome_combo)
             chromosome_combo_list.append(chromosome_combo)
 
+
+
+
+
+
+
+
+
+
+
+
+
 # # create path for python folder and files
 # # (1.) reader
 # code_read_forex_data_folder = find_upper_level_folder_path(2)
