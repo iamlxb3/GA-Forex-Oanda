@@ -106,7 +106,7 @@ class Solution():
 
         for converge_list, solution_list in converge_dict.items():
             if len(solution_list) < converge_limit:
-                logger1.info("CONVERGE GIVE UP, TOO few solutions converged in this species: {},"
+                logger1.debug("CONVERGE GIVE UP, TOO few solutions converged in this species: {},"
                               "converge_limit: {}"
                               .format(len(solution_list), converge_limit))
                 continue
@@ -120,9 +120,9 @@ class Solution():
                 # skip 0, because the species best solution should be kept
                 if i!= 0:
                     cls.converged_solution_set.add(solution)
-                    logger1.info("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
+                    logger1.debug("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
                                   .format(solution.name, solution.fitness))
-                    logger_t.info("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
+                    logger_t.debug("#CONVERGE# Add solution to converge list, name: {}, fitness: {}"
                                   .format(solution.name, solution.fitness))
 
     @classmethod
@@ -237,13 +237,13 @@ class Solution():
             if is_seed:
                 solution.isSeed = True
                 cls.seed_list.append(solution)
-                logger1.info("#SEED FOUND#")
-                logger1.info("Seed name:{}, seed shared_fitness:{}, seed fitness:{}, seed list size:{}"
+                logger1.debug("#SEED FOUND#")
+                logger1.debug("Seed name:{}, seed shared_fitness:{}, seed fitness:{}, seed list size:{}"
                              ", current seed radius:{}, small_generation:{}, big_generation:{}"
                               .format(solution.name, solution.shared_fitness, solution.fitness,
                                       len(cls.seed_list), seed_radius_value, ga.small_generation,
                                       ga.big_generation))
-                logger1.info("#SEED FOUND END#")
+                logger1.debug("#SEED FOUND END#")
 
 
     @classmethod

@@ -161,3 +161,46 @@
 2017-02-18 19:14:29,964 - logger3 - INFO - solution returned_result: [(datetime.date(2011, 2, 4), 'DIS'), (datetime.date(2011, 2, 11), 'DIS')]
 2017-02-18 19:14:29,964 - logger3 - INFO - Training End Date: '3/25/2011'
 2017-02-18 19:14:29,964 - logger3 - INFO - ===============================================================
+2017-03-02 07:12:54,602 - logger3 - INFO - id 2 test ok...
+2017-03-02 07:12:54,602 - logger3 - INFO - solution chromosome: 1101100011101110100001110001001011100111000110010
+2017-03-02 07:12:54,602 - logger3 - INFO - solution feature dict: 
+{'days_to_next_dividend': {'is_include': 0, 'operator': '10', 'value': 58},
+ 'percent_change_price': {'is_include': 1, 'operator': '10', 'value': 1.875},
+ 'percent_change_volume_over_last_wek': {'is_include': 1,
+                                         'operator': '11',
+                                         'value': -225},
+ 'percent_return_next_dividend': {'is_include': 1,
+                                  'operator': '11',
+                                  'value': 0.375}}
+
+2017-03-02 07:12:54,602 - logger3 - INFO - solution decisive feature: 'days_to_next_dividend'
+2017-03-02 07:12:54,602 - logger3 - INFO - solution fitness: 1.895
+2017-03-02 07:12:54,602 - logger3 - INFO - solution returned_result: [(datetime.date(2011, 1, 14), 'AXP'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'DIS'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'MCD'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-03-02 07:12:54,602 - logger3 - INFO - Training End Date: '3/25/2011'
+2017-03-02 07:12:54,617 - logger3 - INFO - ===============================================================
+2017-03-02 07:12:54,711 - logger3 - INFO - id 1 test ok...
+2017-03-02 07:12:54,711 - logger3 - INFO - solution chromosome: 1111010010001110100010000011001001111001001011010
+2017-03-02 07:12:54,711 - logger3 - INFO - solution feature dict: 
+{'days_to_next_dividend': {'is_include': 1, 'operator': '10', 'value': 242},
+ 'percent_change_price': {'is_include': 1, 'operator': '11', 'value': 2.5},
+ 'percent_change_volume_over_last_wek': {'is_include': 1,
+                                         'operator': '11',
+                                         'value': -17},
+ 'percent_return_next_dividend': {'is_include': 0,
+                                  'operator': '01',
+                                  'value': 0.6875}}
+
+2017-03-02 07:12:54,711 - logger3 - INFO - solution decisive feature: 'days_to_next_dividend'
+2017-03-02 07:12:54,711 - logger3 - INFO - solution fitness: 3.627
+2017-03-02 07:12:54,711 - logger3 - INFO - solution returned_result: [(datetime.date(2011, 2, 4), 'DIS'), (datetime.date(2011, 2, 11), 'DIS')]
+2017-03-02 07:12:54,711 - logger3 - INFO - Training End Date: '3/25/2011'
+2017-03-02 07:12:54,727 - logger3 - INFO - ===============================================================

@@ -162,8 +162,6 @@ class GeneticAlgorithm():
         # =======================================================
         # PLOT FOR BIG GENERATION
 
-        #self.b_generation_dict[self.big_generation] = (self.tabu_list, self.seed_radius.IS,
-        #                                               self.no_progress_generation, highest_solution.fitness)
         generation_list = []
         tabu_len_list = []
         radius_list = []
@@ -179,6 +177,7 @@ class GeneticAlgorithm():
 
         fig = plt.figure(1)
         ax = fig.add_subplot(111)
+        print ("no_p_list")
         # /10, too big
         tabu_len_list = [x/10 for x in tabu_len_list]
         ax.plot(generation_list, tabu_len_list, 'r-', label="tabu_list_size")

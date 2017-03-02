@@ -26631,3 +26631,64 @@ chromosome_bits: 0100010101111100101111000011100101011001000111001
 2017-03-02 07:07:12,496 - logger1 - INFO - CONVERGE GIVE UP, TOO few solutions converged in this species: 1,converge_limit: 4
 2017-03-02 07:07:12,496 - logger1 - INFO - CONVERGE GIVE UP, TOO few solutions converged in this species: 2,converge_limit: 4
 2017-03-02 07:07:12,496 - logger1 - INFO - #TABU_LIST# tabu_list has been updated, content:[(151, 0.423), (39, 0.994), (101, -0.116), (72, 0.416), (126, -0.334), (163, 0.63), (21, -0.133), (5, 0.931), (127, -0.158), (76, 0.165), (108, 1.173), (134, 0.098), (98, 0.712), (14, 1.021), (100, 1.315), (167, 1.14), (131, 0.19), (95, 0.408), (27, 0.808), (94, 0.514), (104, 0.943), (162, 0.563), (128, 0.341), (130, 0.092), (44, -0.009), (159, -0.276), (105, 0.993), (34, 0.36), (11, 0.653), (70, 0.047), (149, 0.397), (67, 0.823), (153, 0.037), (122, 0.213), (164, 0.468), (157, -0.179), (0, 0.894)]
+2017-03-02 07:12:54,570 - logger1 - INFO - feature_pos_dict: defaultdict(<function GeneticAlgorithm.__init__.<locals>.create_feature_pos_dict.<locals>.<lambda> at 0x0000007C55F28840>, {'9': {'pos': [(12, 13), (13, 15), (15, 16), (16, 25), (25, 26)], 'name': 'percent_change_volume_over_last_wek'}, '15': {'pos': [(37, 38), (38, 40), (40, 40), (40, 42), (42, 46)], 'name': 'percent_return_next_dividend'}, '8': {'pos': [(0, 1), (1, 3), (3, 4), (4, 8), (8, 12)], 'name': 'percent_change_price'}, '14': {'pos': [(26, 27), (27, 29), (29, 29), (29, 37), (37, 37)], 'name': 'days_to_next_dividend'}})
+2017-03-02 07:12:54,586 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-03-02 07:12:54,586 - logger1 - INFO - solution_name: 0, result:1.8954591099999998
+2017-03-02 07:12:54,586 - logger1 - INFO - chromosome_length: 49
+2017-03-02 07:12:54,586 - logger1 - INFO - chromosome: '1101100011101110100001110001001011100111000110010'
+2017-03-02 07:12:54,586 - logger1 - INFO - decisive feature:days_to_next_dividend
+
+2017-03-02 07:12:54,586 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 1, 14), 'AXP'),
+ (datetime.date(2011, 1, 21), 'GE'),
+ (datetime.date(2011, 1, 28), 'CAT'),
+ (datetime.date(2011, 2, 4), 'DIS'),
+ (datetime.date(2011, 2, 11), 'DIS'),
+ (datetime.date(2011, 2, 18), 'CVX'),
+ (datetime.date(2011, 2, 25), 'CVX'),
+ (datetime.date(2011, 3, 4), 'MCD'),
+ (datetime.date(2011, 3, 18), 'CVX'),
+ (datetime.date(2011, 3, 25), 'DIS')]
+2017-03-02 07:12:54,586 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000007C55F0EF28>,
+            {'days_to_next_dividend': {'is_include': 0,
+                                       'operator': '10',
+                                       'value': 58},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '10',
+                                      'value': 1.875},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '11',
+                                                     'value': -225},
+             'percent_return_next_dividend': {'is_include': 1,
+                                              'operator': '11',
+                                              'value': 0.375}})
+2017-03-02 07:12:54,602 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-03-02 07:12:54,602 - logger1 - INFO - 
+
+
+2017-03-02 07:12:54,680 - logger1 - INFO - feature_pos_dict: defaultdict(<function GeneticAlgorithm.__init__.<locals>.create_feature_pos_dict.<locals>.<lambda> at 0x0000007C55FA0620>, {'9': {'pos': [(12, 13), (13, 15), (15, 16), (16, 25), (25, 26)], 'name': 'percent_change_volume_over_last_wek'}, '15': {'pos': [(37, 38), (38, 40), (40, 40), (40, 42), (42, 46)], 'name': 'percent_return_next_dividend'}, '8': {'pos': [(0, 1), (1, 3), (3, 4), (4, 8), (8, 12)], 'name': 'percent_change_price'}, '14': {'pos': [(26, 27), (27, 29), (29, 29), (29, 37), (37, 37)], 'name': 'days_to_next_dividend'}})
+2017-03-02 07:12:54,695 - logger1 - INFO - ----------SOLUTION_INFO-----------------------
+2017-03-02 07:12:54,695 - logger1 - INFO - solution_name: 1, result:3.62687
+2017-03-02 07:12:54,695 - logger1 - INFO - chromosome_length: 49
+2017-03-02 07:12:54,695 - logger1 - INFO - chromosome: '1111010010001110100010000011001001111001001011010'
+2017-03-02 07:12:54,695 - logger1 - INFO - decisive feature:days_to_next_dividend
+
+2017-03-02 07:12:54,695 - logger1 - INFO - classification_result:
+[(datetime.date(2011, 2, 4), 'DIS'), (datetime.date(2011, 2, 11), 'DIS')]
+2017-03-02 07:12:54,711 - logger1 - INFO - feature_dict: defaultdict(<function Solution.__init__.<locals>.<lambda> at 0x0000007C55F22B70>,
+            {'days_to_next_dividend': {'is_include': 1,
+                                       'operator': '10',
+                                       'value': 242},
+             'percent_change_price': {'is_include': 1,
+                                      'operator': '11',
+                                      'value': 2.5},
+             'percent_change_volume_over_last_wek': {'is_include': 1,
+                                                     'operator': '11',
+                                                     'value': -17},
+             'percent_return_next_dividend': {'is_include': 0,
+                                              'operator': '01',
+                                              'value': 0.6875}})
+2017-03-02 07:12:54,711 - logger1 - INFO - ----------SOLUTION_INFO END-------------------
+2017-03-02 07:12:54,711 - logger1 - INFO - 
+
+
