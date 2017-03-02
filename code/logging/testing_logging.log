@@ -152,3 +152,8 @@
 2017-03-02 06:45:38,574 - logger2 - INFO - read testing parameters successful
 2017-03-02 06:45:38,746 - logger2 - INFO - Create Testing_data_dict Successful
 2017-03-02 06:45:39,406 - logger2 - ERROR - Check your sell chromosome!!
+2017-03-02 07:06:34,450 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-02 07:06:34,450 - logger2 - INFO - Sell/Buy Switch :1
+2017-03-02 07:06:34,450 - logger2 - INFO - read testing parameters successful
+2017-03-02 07:06:34,512 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-02 07:06:34,793 - logger2 - ERROR - Check your sell chromosome!!

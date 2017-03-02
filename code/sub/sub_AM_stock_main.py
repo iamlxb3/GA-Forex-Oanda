@@ -54,9 +54,9 @@ parameter_dict['input']['raw_data_path'] = AM_S_data_path
 sub_reader.write_json(AM_S_main_parameter_json__path, parameter_dict)
 
 # (3.) run AM-stock GA
-if is_test:
+if is_train:
     run_python(AM_S_main__path)
-elif is_train:
+elif is_test:
     run_python(AM_S_testing_path)
 
 
