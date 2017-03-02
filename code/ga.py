@@ -1,7 +1,7 @@
 # import from pjslib
 from pjslib.general import get_upper_folder_path
 from pjslib.general import accepts
-from pjslib.logger import logger1, logger_bg
+from pjslib.logger import logger1, logger_bg, logger_s
 #================================================
 import os
 import sys
@@ -225,10 +225,13 @@ class GeneticAlgorithm():
             self.generation_dict['seed_list_size'][self.small_generation] = \
                 (seed_list_len, sorted_seed_list[0].fitness, sorted_seed_list[0].shared_fitness)
             for i, seed in enumerate(sorted_seed_list):
-                logger1.info("Rank:{}, Seed name:{}, fitness:{}, shared_fitness:{}"
+                # Seed returned detail
+                logger_s.info("=====================Seed Returned Detail=====================")
+                logger_s.info("Rank:{}, Seed name:{}, fitness:{}, shared_fitness:{}"
                 .format(i, seed.name, seed.fitness, seed.shared_fitness))
-                logger1.info("Seed returned :{}"
+                logger_s.info("Seed returned :{}"
                 .format([stock_tuple for stock_tuple in sorted(seed.classification_result_list, key = lambda x:x[0])]))
+                logger_s.info("=====================Seed Returned Detail END=====================\n")
             logger1.info("----top5 fitness found in this generation----")
             for i, solution in enumerate(top_5_solution):
                 rank = i + 1

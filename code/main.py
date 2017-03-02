@@ -49,7 +49,7 @@ big_loop  = 2
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']
-    for i in range(2):
+    for i in range(10):
         # (4.) offspring generation , return target, compute fitness
         print ("ALL_solutions: ", Solution.all())
         current_solution_pool = off_spring_generation(Solution.all())

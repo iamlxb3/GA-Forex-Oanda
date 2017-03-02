@@ -14,7 +14,7 @@ ch = logging.StreamHandler()
 ch.setFormatter(formatter)
 #================================================================
 
-
+# :::logger1
 # create logger
 logger1 = logging.getLogger('logger1')
 # set level
@@ -26,6 +26,24 @@ hdlr_1.setFormatter(formatter)
 # add ch to logger
 logger1.addHandler(ch)
 logger1.addHandler(hdlr_1)
+
+# :::logger_s
+# create logger
+logger_s = logging.getLogger('logger_s')
+# set level
+logger_s.setLevel(logging.INFO)
+# save to file
+hdlr_s = logging.FileHandler('logging/logging_seed.log')
+hdlr_s.setFormatter(formatter)
+# command line
+# add ch to logger
+logger_s.addHandler(ch)
+logger_s.addHandler(hdlr_s)
+
+
+
+
+
 
 
 #:::logger2

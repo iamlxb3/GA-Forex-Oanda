@@ -46,21 +46,21 @@ class AmericanStockFitness():
         #print('average: ', float(average))
         solution.fitness = float("{:.3f}".format(average))
         solution.is_f_computed = True
-        logger1.info("----------SOLUTION_INFO-----------------------")
-        logger1.info("solution_name: {}, result:{}"
+        logger1.debug("----------SOLUTION_INFO-----------------------")
+        logger1.debug("solution_name: {}, result:{}"
                      .format(population_name, average, pprint.pformat(solution.classification_result_list)))
-        logger1.info("chromosome_length: {}"
+        logger1.debug("chromosome_length: {}"
                      .format(pprint.pformat(len(''.join([str(x) for x in solution.chromosome_bits])))))
-        logger1.info("chromosome: {}"
+        logger1.debug("chromosome: {}"
                      .format(pprint.pformat(''.join([str(x) for x in solution.chromosome_bits]))))
-        logger1.info("decisive feature:{}\n"
+        logger1.debug("decisive feature:{}\n"
                      .format(solution.decisive_feature))
-        logger1.info("classification_result:\n{}"
+        logger1.debug("classification_result:\n{}"
                      .format(pprint.pformat(solution.classification_result_list)))
-        logger1.info("feature_dict: {}"
+        logger1.debug("feature_dict: {}"
                      .format(pprint.pformat(solution.feature_dict)))
-        logger1.info("----------SOLUTION_INFO END-------------------")
-        logger1.info("\n\n")
+        logger1.debug("----------SOLUTION_INFO END-------------------")
+        logger1.debug("\n\n")
         # return tuple
         return (population_name, average)
 
