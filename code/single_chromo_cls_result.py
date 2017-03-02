@@ -15,8 +15,13 @@ from read_parameters import ReadParameters
 from ga import GeneticAlgorithm
 from fitness import AmericanStockFitness
 
+
+# TODO, pending for this feature, it has to include buy, sell switch, too complicated
+# should be imported into
+
 # chromosome_type = '1_day', '3_day', '7_day'
-def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_path, data_path, output_path):
+def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_path, data_path, output_path,
+                                 trading = False):
     # (1.) read the parameters
     logger2.info("Genetic Algorithm Starting......")
     reader1 = ReadParameters()
@@ -37,6 +42,7 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     s.translate_chromosome_bits(ga.feature_pos_dict)
     # -(c) get the classfiled result in each day
     classification_result = s.get_classification_result(ga)
+    classification_result_1_day = sorted(classification_result, key = lambda x:x[0], reverse = True)[0]
     classification_result_str = ','.join(classification_result)
 
     # (5.) judge buy or sell
@@ -51,9 +57,14 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
         print ("ERROR!!! check your chromosome_bits_list: ", chromosome_bits)
 
     # (6.) write the data to file
-    with open(output_path, 'a', encoding = 'utf-8') as f:
-        f.write("[buy_or_sell]{}[END]-[chromosome_type]{}[END]-[cls_result]{}[END]\n"
-                .format(buy_or_sell, chromosome_type, classification_result_str))
+    if trading == False:
+        with open(output_path, 'a', encoding = 'utf-8') as f:
+            f.write("[buy_or_sell]{}[END]-[chromosome_type]{}[END]-[cls_result]{}[END]\n"
+                    .format(buy_or_sell, chromosome_type, classification_result))
+    elif trading == True:
+        with open(output_path, 'a', encoding = 'utf-8') as f:
+            f.write("[buy_or_sell]{}[END]-[chromosome_type]{}[END]-[cls_result]{}[END]\n"
+                    .format(buy_or_sell, chromosome_type, classification_result_1_day))
 
     # return
     return classification_result

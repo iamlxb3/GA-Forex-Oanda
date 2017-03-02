@@ -1,68 +1,45 @@
 {
-    "testing": {
-        "raw_data_file_path": ""
-    },
-    "DSGA": {
-        "IS": 0.095,
-        "M": 0.5,
-        "SD": 0.005,
-        "CL": 4,
-        "Parent_Choose": "f",
-        "seed_max_ratio": 0.6,
-        "RLC": 1,
-        "eliminate_ratio": 0.25
-    },
-    "SGA": {
-        "intial_solution_number": 30,
-        "TS": {
-            "TS_K": 3
+    "evolution": {
+        "cross_over": {
+            "mode": "uniform"
         },
-        "multiple_return_switch": 0,
-        "no_progress_generation": 50,
-        "max_population_num": 60,
-        "target_return_percent": 5,
-        "buy_sell_switch": 1,
-        "parent_select_mode": "TS"
+        "mutation": {
+            "flip_bit_num": 3,
+            "mode": "random_flip"
+        }
     },
     "input": {
+        "training_date_end": "11/30/2016",
+        "feature_decide_bit_len": 4,
+        "decisive_feature": [
+            1,
+            3
+        ],
+        "raw_data_path": "",
         "raw_data_dict": {
-            "18": "profit_7_day",
-            "7": "volume",
+            "0": "Blank",
+            "1": "instrument",
+            "2": "time",
             "3": "openMid_1_day_percent",
             "4": "highMid_1_day_percent",
-            "9": "openMid_3_day_std",
-            "12": "volume_7_day_std",
-            "8": "volume_1_day_percent",
-            "15": "lower_shadow_percent",
-            "0": "Blank",
-            "2": "time",
-            "17": "profit_3_day",
-            "1": "instrument",
-            "10": "openMid_7_day_std",
-            "13": "real_body_percent",
-            "16": "profit_1_day",
             "5": "lowMid_percent",
-            "14": "upper_shadow_percent",
             "6": "closeMid_1_day_percent",
-            "11": "volume_3_day_std"
+            "7": "volume",
+            "8": "volume_1_day_percent",
+            "9": "openMid_3_day_std",
+            "10": "openMid_7_day_std",
+            "11": "volume_3_day_std",
+            "12": "volume_7_day_std",
+            "13": "real_body_percent",
+            "14": "upper_shadow_percent",
+            "15": "lower_shadow_percent",
+            "16": "profit_1_day",
+            "17": "profit_3_day",
+            "18": "profit_7_day"
         },
-        "training_date_end": "11/30/2016",
         "training_date_start": "01/07/2016",
-        "restrict_training_date": true,
-        "next_price_str": "profit_1_day",
-        "raw_data_path": "D:\\我的坚果云\\我的坚果云\\SLP\\dissertation\\main\\data\\oanda\\oanda_forex_testing_data.txt",
-        "feature_choice_str": "0,1,3,4,5,6,7,8,13,14,15,16",
-        "training_testing_ratio": "8,2",
         "raw_data_file_name": "cleaned_data.txt",
-        "feature_decide_bit_len": 4,
         "data_pos_in_chromosome": {
-            "7": [
-                1,
-                2,
-                0,
-                14,
-                0
-            ],
             "3": [
                 1,
                 2,
@@ -70,12 +47,12 @@
                 3,
                 4
             ],
-            "13": [
+            "4": [
                 1,
                 2,
-                0,
-                6,
-                0
+                1,
+                3,
+                4
             ],
             "5": [
                 1,
@@ -84,19 +61,19 @@
                 3,
                 4
             ],
-            "14": [
-                1,
-                2,
-                0,
-                6,
-                0
-            ],
             "6": [
                 1,
                 2,
                 1,
                 3,
                 4
+            ],
+            "7": [
+                1,
+                2,
+                0,
+                14,
+                0
             ],
             "8": [
                 1,
@@ -105,33 +82,56 @@
                 11,
                 0
             ],
-            "15": [
+            "13": [
                 1,
                 2,
                 0,
                 6,
                 0
             ],
-            "4": [
+            "14": [
                 1,
                 2,
+                0,
+                6,
+                0
+            ],
+            "15": [
                 1,
-                3,
-                4
+                2,
+                0,
+                6,
+                0
             ]
         },
-        "decisive_feature": [
-            1,
-            3
-        ]
+        "next_price_str": "profit_1_day",
+        "feature_choice_str": "0,1,3,4,5,6,7,8,13,14,15,16",
+        "training_testing_ratio": "8,2",
+        "restrict_training_date": true
     },
-    "evolution": {
-        "cross_over": {
-            "mode": "uniform"
+    "testing": {
+        "raw_data_file_path": ""
+    },
+    "DSGA": {
+        "IS": 0.095,
+        "M": 0.5,
+        "seed_max_ratio": 0.6,
+        "eliminate_ratio": 0.25,
+        "Parent_Choose": "f",
+        "CL": 4,
+        "RLC": 1,
+        "SD": 0.005
+    },
+    "SGA": {
+        "TS": {
+            "TS_K": 3
         },
-        "mutation": {
-            "mode": "random_flip",
-            "flip_bit_num": 3
-        }
+        "parent_select_mode": "TS",
+        "buy_sell_switch": 1,
+        "no_progress_generation": 50,
+        "target_return_percent": 15,
+        "intial_solution_number": 30,
+        "multiple_return_switch": 0,
+        "max_population_num": 60
     }
 }

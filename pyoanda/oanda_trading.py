@@ -35,15 +35,63 @@ class OandaTrading():
     def update_data(self, start_time, end_time, mode = 'trading'):
         pass
 
+    # ga_classifier_result_dict {'1_day':{'buy':['USD/JPY'], 'sell':['USD/JPY']},...}
     def get_day_buy_sell(self, ga_classifier_result_dict):
-        day_buy = 'a'
-        day_sell = 'b'
+        #
+        is_1_day_buy = True
+        is_1_day_sell = True
+        is_3_day_buy = True
+        is_3_day_sell = True
+        is_7_day_buy = False
+        is_7_day_sell = False
+        #
+        buy_list = []
+        sell_list = []
+        # buy
+        if is_1_day_buy:
+            buy_list.append(ga_classifier_result_dict['1_day_buy'])
+        if is_3_day_buy:
+            buy_list.append(ga_classifier_result_dict['3_day_buy'])
+        if is_7_day_buy:
+            buy_list.append(ga_classifier_result_dict['7_day_buy'])
+        for i, instrument_list in enumerate(buy_list):
+            if i == 0:
+                buy_set = set(instrument_list)
+                continue
+            else:
+                buy_set = buy_set & set(instrument_list)
+        # buy end
+
+        # sell
+        if is_1_day_sell:
+            sell_list.append(ga_classifier_result_dict['1_day_sell'])
+        if is_3_day_sell:
+            sell_list.append(ga_classifier_result_dict['3_day_sell'])
+        if is_7_day_sell:
+            sell_list.append(ga_classifier_result_dict['7_day_sell'])
+        for i, instrument_list in enumerate(sell_list):
+            if i == 0:
+                sell_set = set(instrument_list)
+                continue
+            else:
+                sell_set = sell_set & set(instrument_list)
+        # sell end
+
+        day_buy = list(buy_set)
+        day_sell = list(sell_set)
+
         return day_buy, day_sell
 
     def get_trade_instrument(self, day_buy, day_sell):
-        instrument = 'EUR_USD'
-        sell_or_buy = 'sell'
-        trade_instruments_tuple = [(instrument, sell_or_buy)]
+        trade_instruments_tuple = []
+        for instrument in day_buy:
+            trade_instruments_tuple.append(instrument, 'buy')
+
+        for instrument in day_sell:
+            trade_instruments_tuple.append(instrument, 'sell')
+
+        time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
+        oanda_logger.info("Trading decision: {}, Time: {}".format(trade_instruments_tuple, time))
         return trade_instruments_tuple
 
     def get_close_out_instrument(self, day_buy, day_sell):

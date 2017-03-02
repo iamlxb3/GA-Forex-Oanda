@@ -7,18 +7,52 @@ import random
 import pprint
 import os
 import sys
+
 import schedule
 import time
 #================================================
 from read_parameters import ReadParameters
 from read_forex_data import ReadForexData
 from oanda_trading import OandaTrading
-
-
+from sub.sub_reader import SubReader
+#=====================SUB_PROCESS================
+import subprocess
+def run_python(path):
+    cwd = os.path.dirname(os.path.realpath(path))
+    subprocess.call("python {}".format(path), shell=True, cwd = cwd)
 #from oanda_ga_classifier import ga_classifier
+#========================================================================
 
+
+
+
+#=================================================WRITE OANDA PARAMETERS================================================
+# create sub_reader
+sub_reader = SubReader()
+
+code_main_folder = get_upper_folder_path(2)
+# WRITE GA oanda parameters
+oanda_main_w_parameter__path = os.path.join(code_main_folder, 'code', 'parameters', 'write_oanda_parameters.py')
+oanda_main_parameter_json__path = os.path.join(code_main_folder, 'code', 'parameters', 'parameter.json')
+run_python(oanda_main_w_parameter__path)
+# WRITE process data oanda parameters
+p_data_parameters__path = os.path.join(code_main_folder, 'pyoanda', 'parameters', 'write_parameters.py')
+p_data_parameters_json__path = os.path.join(code_main_folder, 'pyoanda', 'parameters', 'p_data_parameters.json')
+p_data_parameters_dict = sub_reader.read_parameters(p_data_parameters_json__path)
+# get the data path
+oanda_forex_trading_data_path = os.path.join(code_main_folder, 'data', 'oanda', 'oanda_forex_testing_data.txt')
+
+
+run_python(p_data_parameters__path)
+# modify parameters and save new json
+
+p_data_parameters_dict['date_range'] = 20
+p_data_parameters_dict['mode'] = 'trading'
+sub_reader.write_json(p_data_parameters_json__path, p_data_parameters_dict)
+#=================================================WRITE OANDA PARAMETERS END============================================
 
 # =========================================READING UP-TO-DATE-FOREX-DATA================================================
+# set mode to trading
 # (1.) read parameters
 reader1 = ReadParameters(file_name = 'p_data_parameters.json')
 parameter_dict = reader1.read_parameters(reader1.path)
@@ -27,13 +61,6 @@ print(parameter_dict)
 read_forex_data = ReadForexData(parameter_dict)
 read_forex_data.read_onanda_data()
 read_forex_data.write_forex_dict_to_file()
-
-
-
-
-
-
-
 # =========================================READING UP-TO-DATE-FOREX-DATA================================================
 
 

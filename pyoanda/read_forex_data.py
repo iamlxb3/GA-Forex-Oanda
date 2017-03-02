@@ -126,10 +126,16 @@ class ReadForexData:
             response_status_code = response.status_code
             print("response_status_code: ", response_status_code)
             day_forex_list = dict(response.json())['candles']
+            print (day_forex_list)
 
             for i, day_forex_dict in enumerate(day_forex_list):
-                if i < ignore_date_num or i > len(day_forex_list) - 1 - ignore_date_num: # -1-7
-                    continue
+                if self.mode == 'testing':
+                    if i < ignore_date_num or i > len(day_forex_list) - 1 - ignore_date_num: # -1-7
+                        continue
+                elif self.mode == 'trading':
+                    if i < ignore_date_num:
+                        continue
+
                 time = day_forex_dict['time']
                 time = re.findall(r'([0-9]+-[0-9]+-[0-9]+)', time)[0]
                 time_list = time.split('-')
@@ -153,12 +159,20 @@ class ReadForexData:
                 lowMid_1_day_ago = day_forex_list[i - 1]['lowMid']
                 lowMid_percent = float("{:2.2f}".format(100*((lowMid - lowMid_1_day_ago)/ lowMid)))
                 # closeMid
-                closeMid = day_forex_dict['closeMid']
-                closeMid_1_day_ago = day_forex_list[i - 1]['closeMid']
-                closeMid_1_day_later = day_forex_list[i + 1]['closeMid']
-                closeMid_3_day_later = day_forex_list[i + 3]['closeMid']
-                closeMid_7_day_later = day_forex_list[i + 7]['closeMid']
-                closeMid_1_day_percent = float("{:2.2f}".format(100*((closeMid - closeMid_1_day_ago)/ closeMid)))
+                if self.mode == 'trading':
+                    closeMid = 0.0
+                    closeMid_1_day_ago = day_forex_list[i - 1]['closeMid']
+                    closeMid_1_day_later = 0.0
+                    closeMid_3_day_later = 0.0
+                    closeMid_7_day_later = 0.0
+                    closeMid_1_day_percent = 0.0
+                elif self.mode == 'testing':
+                    closeMid = day_forex_dict['closeMid']
+                    closeMid_1_day_ago = day_forex_list[i - 1]['closeMid']
+                    closeMid_1_day_later = day_forex_list[i + 1]['closeMid']
+                    closeMid_3_day_later = day_forex_list[i + 3]['closeMid']
+                    closeMid_7_day_later = day_forex_list[i + 7]['closeMid']
+                    closeMid_1_day_percent = float("{:2.2f}".format(100*((closeMid - closeMid_1_day_ago)/ closeMid)))
                 # volume
                 volume = day_forex_dict['volume']
                 volume_1_day_ago = day_forex_list[i - 1]['volume']
@@ -166,9 +180,14 @@ class ReadForexData:
                 volume_3_day_std = compute_std(3, day_forex_list, 'volume', i, instrument)
                 volume_7_day_std = compute_std(7, day_forex_list, 'volume', i, instrument)
                 # profit
-                profit_1_day = float("{:2.3f}".format(100*((closeMid_1_day_later - closeMid) / closeMid)))
-                profit_3_day = float("{:2.3f}".format(100*((closeMid_3_day_later - closeMid) / closeMid)))
-                profit_7_day = float("{:2.3f}".format(100*((closeMid_7_day_later - closeMid) / closeMid)))
+                if self.mode == 'trading':
+                    profit_1_day = 0.0
+                    profit_3_day = 0.0
+                    profit_7_day = 0.0
+                elif self.mode == 'testing':
+                    profit_1_day = float("{:2.3f}".format(100*((closeMid_1_day_later - closeMid) / closeMid)))
+                    profit_3_day = float("{:2.3f}".format(100*((closeMid_3_day_later - closeMid) / closeMid)))
+                    profit_7_day = float("{:2.3f}".format(100*((closeMid_7_day_later - closeMid) / closeMid)))
                 # custom feature
                 real_body_percent = float("{:2.2f}".format(100*abs((openMid - closeMid) / (highMid - lowMid))))
                 upper_shadow_percent = float("{:2.2f}".format(100*abs((highMid - openMid) / (highMid - lowMid))))
