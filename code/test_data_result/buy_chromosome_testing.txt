@@ -1,439 +1,1242 @@
 
 ==========================================================================================
-name: 1
-0101100100000010011001110001110001010111100010001
-profit: 3.7
-fitness: 0.295
-stock return..
--------------------------------------------------
-2011-04-01,MRK
-2011-04-08,VZ
-2011-04-15,T
-2011-04-21,VZ
-2011-04-29,T
-2011-05-06,VZ
-2011-05-13,VZ
-2011-05-20,VZ
-2011-05-27,VZ
-2011-06-03,VZ
-2011-06-10,VZ
-2011-06-17,VZ
-2011-06-24,T
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "value": -230,
-        "is_include": 0,
-        "operator": "01"
-    },
-    "days_to_next_dividend": {
-        "value": 81,
-        "is_include": 0,
-        "operator": "11"
-    },
-    "percent_return_next_dividend": {
-        "value": 1.125,
-        "is_include": 1,
-        "operator": "11"
-    },
-    "percent_change_price": {
-        "value": 9,
-        "is_include": 0,
-        "operator": "10"
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 7
-1001100011000101010110101110010101001011011111000
-profit: 2.1
-fitness: 0.216
-stock return..
--------------------------------------------------
-2011-04-01,IBM
-2011-04-08,JPM
-2011-04-15,JNJ
-2011-04-21,MSFT
-2011-04-29,IBM
-2011-05-06,AXP
-2011-05-13,MCD
-2011-05-20,XOM
-2011-05-27,DD
-2011-06-03,PFE
-2011-06-10,MMM
-2011-06-17,KRFT
-2011-06-24,IBM
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "value": 346.5,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "days_to_next_dividend": {
-        "value": 149,
-        "is_include": 1,
-        "operator": "00"
-    },
-    "percent_return_next_dividend": {
-        "value": 2.9375,
-        "is_include": 0,
-        "operator": "11"
-    },
-    "percent_change_price": {
-        "value": 1.75,
-        "is_include": 1,
-        "operator": "00"
-    }
-}
-==========================================================================================
-
-==========================================================================================
 name: 6
-1001101001100101110011100011001100111010100111000
-profit: 1.7
-fitness: 0.451
+01111011111110010111010111101001000001010010001011110001110110011000100111111000010110100000111101111000001
+profit: 4.9
+fitness: 0.072
 stock return..
 -------------------------------------------------
-2011-04-01,DIS
-2011-04-08,DIS
-2011-04-15,DIS
-2011-04-21,DIS
+2016-12-01,USD_JPY
+2016-12-02,USD_CAD
+2016-12-04,EUR_USD
+2016-12-05,USD_JPY
+2016-12-06,AUD_USD
+2016-12-07,GBP_USD
+2016-12-08,GBP_USD
+2016-12-09,AUD_USD
+2016-12-11,USD_CAD
+2016-12-12,USD_JPY
+2016-12-13,GBP_USD
+2016-12-14,AUD_USD
+2016-12-15,USD_CAD
+2016-12-16,USD_CAD
+2016-12-18,USD_CHF
+2016-12-19,USD_CHF
+2016-12-20,USD_CHF
+2016-12-21,AUD_USD
+2016-12-22,USD_JPY
+2016-12-23,AUD_USD
+2016-12-26,EUR_USD
+2016-12-27,USD_CHF
+2016-12-28,GBP_USD
+2016-12-29,USD_CAD
+2016-12-30,EUR_USD
+2017-01-02,USD_JPY
+2017-01-03,USD_JPY
+2017-01-05,USD_CHF
+2017-01-06,USD_CAD
+2017-01-08,EUR_USD
+2017-01-09,USD_CAD
+2017-01-10,GBP_USD
+2017-01-11,USD_CHF
+2017-01-12,GBP_USD
+2017-01-13,USD_JPY
+2017-01-15,AUD_USD
+2017-01-16,USD_CAD
+2017-01-18,AUD_USD
+2017-01-19,USD_JPY
+2017-01-20,USD_CAD
+2017-01-22,AUD_USD
+2017-01-23,USD_CHF
+2017-01-24,EUR_USD
+2017-01-25,USD_JPY
+2017-01-26,USD_CHF
+2017-01-27,USD_CHF
+2017-01-29,USD_JPY
+2017-01-30,USD_CHF
+2017-01-31,AUD_USD
+2017-02-01,USD_CHF
+2017-02-02,AUD_USD
+2017-02-03,USD_JPY
+2017-02-05,AUD_USD
+2017-02-06,USD_JPY
+2017-02-07,AUD_USD
+2017-02-08,AUD_USD
+2017-02-09,GBP_USD
+2017-02-10,USD_CHF
+2017-02-12,USD_CAD
+2017-02-13,EUR_USD
+2017-02-14,EUR_USD
+2017-02-15,AUD_USD
+2017-02-16,USD_CAD
+2017-02-17,USD_CAD
+2017-02-19,GBP_USD
+2017-02-20,GBP_USD
+2017-02-21,USD_CAD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "value": 115,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "days_to_next_dividend": {
-        "value": 230,
+    "highMid_1_day_percent": {
+        "operator": "10",
         "is_include": 1,
-        "operator": "10"
+        "value": -5.8125
     },
-    "percent_return_next_dividend": {
-        "value": 1.4375,
+    "upper_shadow_percent": {
+        "operator": "10",
         "is_include": 0,
-        "operator": "10"
+        "value": 48
     },
-    "percent_change_price": {
-        "value": 5.375,
+    "real_body_percent": {
+        "operator": "00",
         "is_include": 1,
-        "operator": "00"
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 9
-1001101000000101010110101100010101001011010101001
-profit: -2.4
-fitness: -0.156
-stock return..
--------------------------------------------------
-2011-04-01,CAT
-2011-04-08,CSCO
-2011-04-15,PG
-2011-04-21,XOM
-2011-04-29,AXP
-2011-05-06,AXP
-2011-05-13,KRFT
-2011-05-20,AXP
-2011-05-27,HPQ
-2011-06-03,PFE
-2011-06-10,MMM
-2011-06-17,HD
-2011-06-24,DD
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "value": 346.5,
-        "is_include": 0,
-        "operator": "10"
+        "value": 52
     },
-    "days_to_next_dividend": {
-        "value": 149,
+    "volume_1_day_percent": {
+        "operator": "01",
         "is_include": 0,
-        "operator": "00"
+        "value": 1992
     },
-    "percent_return_next_dividend": {
-        "value": 2.3125,
+    "openMid_1_day_percent": {
+        "operator": "11",
         "is_include": 0,
-        "operator": "11"
+        "value": 5.9375
     },
-    "percent_change_price": {
-        "value": 5,
+    "volume": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 14110
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 5.125
+    },
+    "closeMid_1_day_percent": {
+        "operator": "00",
+        "is_include": 0,
+        "value": -5.125
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
         "is_include": 1,
-        "operator": "00"
+        "value": 15
     }
 }
 ==========================================================================================
 
 ==========================================================================================
 name: 2
-0110101001000100010101100011011101111010111111110
-profit: -2.6
-fitness: -2.589
+01110011111110000011010110101001000001010000001011110001110110011100111111111000010110100100111101101100001
+profit: 4.7
+fitness: 0.073
 stock return..
 -------------------------------------------------
-2011-04-01,DIS
+2016-12-01,USD_JPY
+2016-12-02,USD_CHF
+2016-12-04,EUR_USD
+2016-12-05,USD_JPY
+2016-12-06,EUR_USD
+2016-12-08,AUD_USD
+2016-12-09,USD_CHF
+2016-12-11,USD_CHF
+2016-12-12,USD_JPY
+2016-12-13,USD_CHF
+2016-12-15,USD_CAD
+2016-12-16,USD_CHF
+2016-12-18,GBP_USD
+2016-12-19,USD_CHF
+2016-12-20,AUD_USD
+2016-12-21,USD_CHF
+2016-12-22,EUR_USD
+2016-12-23,AUD_USD
+2016-12-26,EUR_USD
+2016-12-27,GBP_USD
+2016-12-28,GBP_USD
+2016-12-29,EUR_USD
+2016-12-30,USD_CAD
+2017-01-02,USD_JPY
+2017-01-03,USD_JPY
+2017-01-05,AUD_USD
+2017-01-06,USD_CAD
+2017-01-08,AUD_USD
+2017-01-10,GBP_USD
+2017-01-11,GBP_USD
+2017-01-12,AUD_USD
+2017-01-13,USD_JPY
+2017-01-15,EUR_USD
+2017-01-16,USD_JPY
+2017-01-18,AUD_USD
+2017-01-19,USD_CAD
+2017-01-20,USD_CAD
+2017-01-22,AUD_USD
+2017-01-23,USD_JPY
+2017-01-24,USD_JPY
+2017-01-25,USD_CHF
+2017-01-26,USD_CHF
+2017-01-27,USD_CHF
+2017-01-29,USD_JPY
+2017-01-30,EUR_USD
+2017-01-31,AUD_USD
+2017-02-01,USD_CHF
+2017-02-02,AUD_USD
+2017-02-03,USD_CHF
+2017-02-05,GBP_USD
+2017-02-06,USD_JPY
+2017-02-07,AUD_USD
+2017-02-08,USD_CAD
+2017-02-09,USD_CAD
+2017-02-10,USD_JPY
+2017-02-12,EUR_USD
+2017-02-13,EUR_USD
+2017-02-14,USD_CAD
+2017-02-15,AUD_USD
+2017-02-16,USD_CAD
+2017-02-17,USD_CAD
+2017-02-19,GBP_USD
+2017-02-20,GBP_USD
+2017-02-21,AUD_USD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "value": -106,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "days_to_next_dividend": {
-        "value": 247,
+    "highMid_1_day_percent": {
+        "operator": "10",
         "is_include": 1,
-        "operator": "10"
+        "value": -0.8125
     },
-    "percent_return_next_dividend": {
-        "value": 3.9375,
+    "upper_shadow_percent": {
+        "operator": "10",
         "is_include": 0,
-        "operator": "10"
+        "value": 50
     },
-    "percent_change_price": {
-        "value": -5.25,
-        "is_include": 0,
-        "operator": "11"
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 3
-0101100101011100100101100011110101110010100111110
-profit: -6.6
-fitness: -0.479
-stock return..
--------------------------------------------------
-2011-04-01,DIS
-2011-04-08,DIS
-2011-04-15,DIS
-2011-04-21,DIS
-2011-04-29,DIS
-2011-05-06,DIS
-2011-05-13,DIS
-2011-05-20,DIS
-2011-05-27,DIS
-2011-06-03,DIS
-2011-06-10,DIS
-2011-06-17,DIS
-2011-06-24,DIS
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "value": -105,
+    "real_body_percent": {
+        "operator": "00",
         "is_include": 1,
-        "operator": "10"
+        "value": 52
     },
-    "days_to_next_dividend": {
-        "value": 117,
+    "volume_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 2041
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 4.9375
+    },
+    "volume": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 14110
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": -5.125
+    },
+    "closeMid_1_day_percent": {
+        "operator": "00",
+        "is_include": 0,
+        "value": -5
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
         "is_include": 1,
-        "operator": "11"
-    },
-    "percent_return_next_dividend": {
-        "value": 1.4375,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "percent_change_price": {
-        "value": 9.3125,
-        "is_include": 0,
-        "operator": "10"
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 4
-0111101111000100011101000011010001110010111110110
-profit: -6.6
-fitness: -0.479
-stock return..
--------------------------------------------------
-2011-04-01,DIS
-2011-04-08,DIS
-2011-04-15,DIS
-2011-04-21,DIS
-2011-04-29,DIS
-2011-05-06,DIS
-2011-05-13,DIS
-2011-05-20,DIS
-2011-05-27,DIS
-2011-06-03,DIS
-2011-06-10,DIS
-2011-06-17,DIS
-2011-06-24,DIS
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "value": -46,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "days_to_next_dividend": {
-        "value": 113,
-        "is_include": 1,
-        "operator": "10"
-    },
-    "percent_return_next_dividend": {
-        "value": 3.875,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "percent_change_price": {
-        "value": 13.75,
-        "is_include": 0,
-        "operator": "11"
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 5
-0110110100010100101101001011011001110010110111110
-profit: -6.6
-fitness: -0.479
-stock return..
--------------------------------------------------
-2011-04-01,DIS
-2011-04-08,DIS
-2011-04-15,DIS
-2011-04-21,DIS
-2011-04-29,DIS
-2011-05-06,DIS
-2011-05-13,DIS
-2011-05-20,DIS
-2011-05-27,DIS
-2011-06-03,DIS
-2011-06-10,DIS
-2011-06-17,DIS
-2011-06-24,DIS
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "value": -301,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "days_to_next_dividend": {
-        "value": 115,
-        "is_include": 1,
-        "operator": "10"
-    },
-    "percent_return_next_dividend": {
-        "value": 3.4375,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "percent_change_price": {
-        "value": -11.0625,
-        "is_include": 0,
-        "operator": "11"
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 8
-0001111011100111111011100011000100100010011101100
-profit: -6.9
-fitness: -0.519
-stock return..
--------------------------------------------------
-2011-04-01,BAC
-2011-04-08,T
-2011-04-15,CSCO
-2011-04-21,KRFT
-2011-04-29,JPM
-2011-05-06,CSCO
-2011-05-13,AA
-2011-05-20,DIS
-2011-05-27,INTC
-2011-06-03,MCD
-2011-06-10,IBM
-2011-06-17,MCD
-2011-06-24,BAC
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "value": 119,
-        "is_include": 0,
-        "operator": "11"
-    },
-    "days_to_next_dividend": {
-        "value": 36,
-        "is_include": 1,
-        "operator": "10"
-    },
-    "percent_return_next_dividend": {
-        "value": 2.8125,
-        "is_include": 0,
-        "operator": "10"
-    },
-    "percent_change_price": {
-        "value": 7.875,
-        "is_include": 0,
-        "operator": "00"
+        "value": 27
     }
 }
 ==========================================================================================
 
 ==========================================================================================
 name: 0
-0010110100010000101111001011010010100110000111110
-profit: -8.2
-fitness: -0.622
+01111011110110011010100111111000100111011110000110110001111110100010100100111000010110110011110100111010010
+profit: 4.6
+fitness: 0.069
 stock return..
 -------------------------------------------------
-2011-04-01,UTX
-2011-04-08,JPM
-2011-04-15,JPM
-2011-04-21,JPM
-2011-04-29,JPM
-2011-05-06,JPM
-2011-05-13,IBM
-2011-05-20,IBM
-2011-05-27,CAT
-2011-06-03,IBM
-2011-06-10,IBM
-2011-06-17,IBM
-2011-06-24,IBM
+2016-12-01,AUD_USD
+2016-12-02,USD_CHF
+2016-12-04,AUD_USD
+2016-12-05,AUD_USD
+2016-12-06,AUD_USD
+2016-12-07,GBP_USD
+2016-12-08,AUD_USD
+2016-12-09,AUD_USD
+2016-12-11,USD_CHF
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CHF
+2016-12-16,USD_CHF
+2016-12-18,AUD_USD
+2016-12-19,USD_CHF
+2016-12-20,AUD_USD
+2016-12-21,AUD_USD
+2016-12-22,USD_CHF
+2016-12-23,AUD_USD
+2016-12-26,AUD_USD
+2016-12-27,USD_CHF
+2016-12-28,AUD_USD
+2016-12-29,USD_CHF
+2016-12-30,USD_CHF
+2017-01-02,USD_JPY
+2017-01-03,AUD_USD
+2017-01-05,AUD_USD
+2017-01-06,AUD_USD
+2017-01-08,USD_CHF
+2017-01-09,USD_CAD
+2017-01-10,AUD_USD
+2017-01-11,USD_CHF
+2017-01-12,AUD_USD
+2017-01-13,AUD_USD
+2017-01-15,USD_CHF
+2017-01-16,AUD_USD
+2017-01-18,AUD_USD
+2017-01-19,USD_CHF
+2017-01-20,AUD_USD
+2017-01-22,AUD_USD
+2017-01-23,AUD_USD
+2017-01-24,AUD_USD
+2017-01-25,USD_CHF
+2017-01-26,USD_CHF
+2017-01-27,AUD_USD
+2017-01-29,USD_CHF
+2017-01-30,AUD_USD
+2017-01-31,AUD_USD
+2017-02-01,USD_CHF
+2017-02-02,AUD_USD
+2017-02-03,AUD_USD
+2017-02-05,AUD_USD
+2017-02-06,AUD_USD
+2017-02-07,AUD_USD
+2017-02-08,AUD_USD
+2017-02-09,AUD_USD
+2017-02-10,USD_CHF
+2017-02-12,USD_CHF
+2017-02-13,AUD_USD
+2017-02-14,AUD_USD
+2017-02-15,AUD_USD
+2017-02-16,AUD_USD
+2017-02-17,USD_CAD
+2017-02-19,AUD_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "value": -317,
-        "is_include": 0,
-        "operator": "00"
-    },
-    "days_to_next_dividend": {
-        "value": 41,
+    "highMid_1_day_percent": {
+        "operator": "10",
         "is_include": 1,
-        "operator": "10"
+        "value": -3.625
     },
-    "percent_return_next_dividend": {
-        "value": 0.4375,
-        "is_include": 1,
-        "operator": "10"
-    },
-    "percent_change_price": {
-        "value": -11.0625,
+    "upper_shadow_percent": {
+        "operator": "11",
         "is_include": 0,
-        "operator": "01"
+        "value": 60
+    },
+    "real_body_percent": {
+        "operator": "00",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": -1610
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 5.875
+    },
+    "volume": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 16155
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 7.0625
+    },
+    "closeMid_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 5.875
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 46
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 1
+01111011110110011110110110111101100111011110001100110001111110100010100100111000010110110011110100111010010
+profit: 4.6
+fitness: 0.069
+stock return..
+-------------------------------------------------
+2016-12-01,AUD_USD
+2016-12-02,USD_CHF
+2016-12-04,AUD_USD
+2016-12-05,AUD_USD
+2016-12-06,AUD_USD
+2016-12-07,GBP_USD
+2016-12-08,AUD_USD
+2016-12-09,AUD_USD
+2016-12-11,USD_CHF
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CHF
+2016-12-16,USD_CHF
+2016-12-18,AUD_USD
+2016-12-19,USD_CHF
+2016-12-20,AUD_USD
+2016-12-21,AUD_USD
+2016-12-22,USD_CHF
+2016-12-23,AUD_USD
+2016-12-26,AUD_USD
+2016-12-27,USD_CHF
+2016-12-28,AUD_USD
+2016-12-29,USD_CHF
+2016-12-30,USD_CHF
+2017-01-02,USD_JPY
+2017-01-03,AUD_USD
+2017-01-05,AUD_USD
+2017-01-06,AUD_USD
+2017-01-08,USD_CHF
+2017-01-09,USD_CAD
+2017-01-10,AUD_USD
+2017-01-11,USD_CHF
+2017-01-12,AUD_USD
+2017-01-13,AUD_USD
+2017-01-15,USD_CHF
+2017-01-16,AUD_USD
+2017-01-18,AUD_USD
+2017-01-19,USD_CHF
+2017-01-20,AUD_USD
+2017-01-22,AUD_USD
+2017-01-23,AUD_USD
+2017-01-24,AUD_USD
+2017-01-25,USD_CHF
+2017-01-26,USD_CHF
+2017-01-27,AUD_USD
+2017-01-29,USD_CHF
+2017-01-30,AUD_USD
+2017-01-31,AUD_USD
+2017-02-01,USD_CHF
+2017-02-02,AUD_USD
+2017-02-03,AUD_USD
+2017-02-05,AUD_USD
+2017-02-06,AUD_USD
+2017-02-07,AUD_USD
+2017-02-08,AUD_USD
+2017-02-09,AUD_USD
+2017-02-10,USD_CHF
+2017-02-12,USD_CHF
+2017-02-13,AUD_USD
+2017-02-14,AUD_USD
+2017-02-15,AUD_USD
+2017-02-16,AUD_USD
+2017-02-17,USD_CAD
+2017-02-19,AUD_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "highMid_1_day_percent": {
+        "operator": "10",
+        "is_include": 1,
+        "value": -7.6875
+    },
+    "upper_shadow_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 60
+    },
+    "real_body_percent": {
+        "operator": "00",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": -1610
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 5.875
+    },
+    "volume": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 16153
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": -7.6875
+    },
+    "closeMid_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 5.875
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 46
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 7
+01111011111110001011100111001101000011010011001001110000110110111010110100011010010110010001110101110001010
+profit: 2.6
+fitness: 0.039
+stock return..
+-------------------------------------------------
+2016-12-01,AUD_USD
+2016-12-02,USD_CHF
+2016-12-04,EUR_USD
+2016-12-05,AUD_USD
+2016-12-06,USD_CHF
+2016-12-07,GBP_USD
+2016-12-08,USD_CAD
+2016-12-09,USD_CHF
+2016-12-11,GBP_USD
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CAD
+2016-12-16,USD_JPY
+2016-12-18,GBP_USD
+2016-12-19,USD_CHF
+2016-12-20,USD_CHF
+2016-12-21,USD_JPY
+2016-12-22,USD_JPY
+2016-12-23,USD_JPY
+2016-12-26,EUR_USD
+2016-12-27,USD_CHF
+2016-12-28,AUD_USD
+2016-12-29,GBP_USD
+2016-12-30,USD_JPY
+2017-01-02,USD_JPY
+2017-01-03,AUD_USD
+2017-01-05,USD_CAD
+2017-01-06,AUD_USD
+2017-01-08,EUR_USD
+2017-01-09,USD_CAD
+2017-01-10,GBP_USD
+2017-01-11,EUR_USD
+2017-01-12,USD_CHF
+2017-01-13,GBP_USD
+2017-01-15,EUR_USD
+2017-01-16,AUD_USD
+2017-01-18,AUD_USD
+2017-01-19,USD_CAD
+2017-01-20,USD_CAD
+2017-01-22,GBP_USD
+2017-01-23,AUD_USD
+2017-01-24,USD_JPY
+2017-01-25,EUR_USD
+2017-01-26,USD_CHF
+2017-01-27,GBP_USD
+2017-01-29,EUR_USD
+2017-01-30,USD_CAD
+2017-01-31,USD_JPY
+2017-02-01,EUR_USD
+2017-02-02,USD_CAD
+2017-02-03,GBP_USD
+2017-02-05,GBP_USD
+2017-02-06,AUD_USD
+2017-02-07,USD_JPY
+2017-02-08,GBP_USD
+2017-02-09,EUR_USD
+2017-02-10,USD_CHF
+2017-02-12,EUR_USD
+2017-02-13,USD_CHF
+2017-02-14,USD_CHF
+2017-02-15,GBP_USD
+2017-02-16,AUD_USD
+2017-02-17,USD_CAD
+2017-02-19,EUR_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "highMid_1_day_percent": {
+        "operator": "10",
+        "is_include": 1,
+        "value": -2.875
+    },
+    "upper_shadow_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 56
+    },
+    "real_body_percent": {
+        "operator": "01",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 1114
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 5.9375
+    },
+    "volume": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 13852
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 4.625
+    },
+    "closeMid_1_day_percent": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 5.1875
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 7
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 3
+01110011111111000010010110111101100010011110000101110100011110101110100100111000010110110010110100111010000
+profit: 0.7
+fitness: 0.011
+stock return..
+-------------------------------------------------
+2016-12-01,GBP_USD
+2016-12-02,USD_CHF
+2016-12-04,USD_JPY
+2016-12-05,AUD_USD
+2016-12-06,USD_CHF
+2016-12-08,USD_CAD
+2016-12-09,AUD_USD
+2016-12-11,USD_CAD
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CHF
+2016-12-16,EUR_USD
+2016-12-18,USD_CHF
+2016-12-19,USD_JPY
+2016-12-20,AUD_USD
+2016-12-21,GBP_USD
+2016-12-22,USD_CHF
+2016-12-23,AUD_USD
+2016-12-26,AUD_USD
+2016-12-27,GBP_USD
+2016-12-28,USD_CHF
+2016-12-29,USD_CAD
+2016-12-30,USD_CHF
+2017-01-02,USD_JPY
+2017-01-03,USD_JPY
+2017-01-05,GBP_USD
+2017-01-06,USD_CAD
+2017-01-08,AUD_USD
+2017-01-09,USD_CAD
+2017-01-10,GBP_USD
+2017-01-11,EUR_USD
+2017-01-12,GBP_USD
+2017-01-13,USD_CHF
+2017-01-15,USD_CAD
+2017-01-16,USD_JPY
+2017-01-18,AUD_USD
+2017-01-19,EUR_USD
+2017-01-20,USD_CHF
+2017-01-22,AUD_USD
+2017-01-23,USD_JPY
+2017-01-24,USD_JPY
+2017-01-25,AUD_USD
+2017-01-26,USD_CHF
+2017-01-27,EUR_USD
+2017-01-29,USD_CHF
+2017-01-30,AUD_USD
+2017-01-31,GBP_USD
+2017-02-01,USD_CHF
+2017-02-02,USD_CAD
+2017-02-03,EUR_USD
+2017-02-05,GBP_USD
+2017-02-06,AUD_USD
+2017-02-07,USD_JPY
+2017-02-08,AUD_USD
+2017-02-09,USD_CAD
+2017-02-10,EUR_USD
+2017-02-12,EUR_USD
+2017-02-13,AUD_USD
+2017-02-14,USD_CAD
+2017-02-15,GBP_USD
+2017-02-16,USD_CAD
+2017-02-17,USD_CAD
+2017-02-19,GBP_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "highMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 1,
+        "value": -0.5625
+    },
+    "upper_shadow_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 52
+    },
+    "real_body_percent": {
+        "operator": "00",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 1611
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 4.9375
+    },
+    "volume": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 15453
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": -7.6875
+    },
+    "closeMid_1_day_percent": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 4.875
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 46
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 4
+01011010110110000011000110001001100100011111000010110001111100000111110101111000010110000001110111111101101
+profit: -0.5
+fitness: -0.007
+stock return..
+-------------------------------------------------
+2016-12-01,AUD_USD
+2016-12-02,USD_CHF
+2016-12-04,USD_JPY
+2016-12-05,AUD_USD
+2016-12-06,USD_CHF
+2016-12-08,USD_CAD
+2016-12-09,GBP_USD
+2016-12-11,USD_CAD
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CHF
+2016-12-16,EUR_USD
+2016-12-18,AUD_USD
+2016-12-19,USD_JPY
+2016-12-20,EUR_USD
+2016-12-21,GBP_USD
+2016-12-22,USD_CHF
+2016-12-23,GBP_USD
+2016-12-26,AUD_USD
+2016-12-27,GBP_USD
+2016-12-28,USD_CHF
+2016-12-29,USD_CAD
+2016-12-30,USD_CHF
+2017-01-02,USD_JPY
+2017-01-03,USD_JPY
+2017-01-05,USD_CHF
+2017-01-06,USD_CAD
+2017-01-08,AUD_USD
+2017-01-09,USD_CAD
+2017-01-10,GBP_USD
+2017-01-11,EUR_USD
+2017-01-12,GBP_USD
+2017-01-13,GBP_USD
+2017-01-15,USD_CAD
+2017-01-16,USD_JPY
+2017-01-18,AUD_USD
+2017-01-19,EUR_USD
+2017-01-20,USD_CHF
+2017-01-22,AUD_USD
+2017-01-23,USD_JPY
+2017-01-24,USD_JPY
+2017-01-25,AUD_USD
+2017-01-26,USD_CHF
+2017-01-27,EUR_USD
+2017-01-29,USD_CHF
+2017-01-30,AUD_USD
+2017-01-31,GBP_USD
+2017-02-01,USD_CHF
+2017-02-02,USD_CAD
+2017-02-03,EUR_USD
+2017-02-05,USD_JPY
+2017-02-06,AUD_USD
+2017-02-07,USD_JPY
+2017-02-08,AUD_USD
+2017-02-09,USD_CAD
+2017-02-10,EUR_USD
+2017-02-12,EUR_USD
+2017-02-13,AUD_USD
+2017-02-14,USD_CAD
+2017-02-15,GBP_USD
+2017-02-16,USD_CAD
+2017-02-17,USD_CAD
+2017-02-19,GBP_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "highMid_1_day_percent": {
+        "operator": "10",
+        "is_include": 1,
+        "value": -0.75
+    },
+    "upper_shadow_percent": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 56
+    },
+    "real_body_percent": {
+        "operator": "00",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "00",
+        "is_include": 0,
+        "value": -1887
+    },
+    "openMid_1_day_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 5.375
+    },
+    "volume": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 7962
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": -4.1875
+    },
+    "closeMid_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": -4.9375
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 31
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 5
+01110011111110000011000110111101000111010010001001110000111110010100110100011000010110110011110101111100011
+profit: -0.5
+fitness: -0.007
+stock return..
+-------------------------------------------------
+2016-12-01,AUD_USD
+2016-12-02,USD_CHF
+2016-12-04,USD_JPY
+2016-12-05,AUD_USD
+2016-12-06,USD_CHF
+2016-12-08,USD_CAD
+2016-12-09,GBP_USD
+2016-12-11,USD_CAD
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CHF
+2016-12-16,EUR_USD
+2016-12-18,AUD_USD
+2016-12-19,USD_JPY
+2016-12-20,EUR_USD
+2016-12-21,GBP_USD
+2016-12-22,USD_CHF
+2016-12-23,GBP_USD
+2016-12-26,AUD_USD
+2016-12-27,GBP_USD
+2016-12-28,USD_CHF
+2016-12-29,USD_CAD
+2016-12-30,USD_CHF
+2017-01-02,USD_JPY
+2017-01-03,USD_JPY
+2017-01-05,USD_CHF
+2017-01-06,USD_CAD
+2017-01-08,AUD_USD
+2017-01-09,USD_CAD
+2017-01-10,GBP_USD
+2017-01-11,EUR_USD
+2017-01-12,GBP_USD
+2017-01-13,GBP_USD
+2017-01-15,USD_CAD
+2017-01-16,USD_JPY
+2017-01-18,AUD_USD
+2017-01-19,EUR_USD
+2017-01-20,USD_CHF
+2017-01-22,AUD_USD
+2017-01-23,USD_JPY
+2017-01-24,USD_JPY
+2017-01-25,AUD_USD
+2017-01-26,USD_CHF
+2017-01-27,EUR_USD
+2017-01-29,USD_CHF
+2017-01-30,AUD_USD
+2017-01-31,GBP_USD
+2017-02-01,USD_CHF
+2017-02-02,USD_CAD
+2017-02-03,EUR_USD
+2017-02-05,USD_JPY
+2017-02-06,AUD_USD
+2017-02-07,USD_JPY
+2017-02-08,AUD_USD
+2017-02-09,USD_CAD
+2017-02-10,EUR_USD
+2017-02-12,EUR_USD
+2017-02-13,AUD_USD
+2017-02-14,USD_CAD
+2017-02-15,GBP_USD
+2017-02-16,USD_CAD
+2017-02-17,USD_CAD
+2017-02-19,GBP_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "highMid_1_day_percent": {
+        "operator": "10",
+        "is_include": 1,
+        "value": -0.75
+    },
+    "upper_shadow_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 60
+    },
+    "real_body_percent": {
+        "operator": "00",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": -1113
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 4.9375
+    },
+    "volume": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 15900
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": -7.625
+    },
+    "closeMid_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 5.125
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 31
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 8
+01111011111111000011000111111000000110011000001100110100111110010100110110011000010110110010110101111110011
+profit: -0.6
+fitness: -0.008
+stock return..
+-------------------------------------------------
+2016-12-01,AUD_USD
+2016-12-02,USD_CHF
+2016-12-04,USD_JPY
+2016-12-05,AUD_USD
+2016-12-06,USD_CHF
+2016-12-08,USD_CAD
+2016-12-09,GBP_USD
+2016-12-11,USD_CAD
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CHF
+2016-12-16,EUR_USD
+2016-12-18,AUD_USD
+2016-12-19,USD_JPY
+2016-12-20,EUR_USD
+2016-12-21,GBP_USD
+2016-12-22,USD_CHF
+2016-12-23,GBP_USD
+2016-12-26,AUD_USD
+2016-12-27,GBP_USD
+2016-12-28,USD_CHF
+2016-12-29,USD_CAD
+2016-12-30,USD_CHF
+2017-01-02,USD_JPY
+2017-01-03,USD_JPY
+2017-01-05,USD_CHF
+2017-01-06,USD_CAD
+2017-01-08,EUR_USD
+2017-01-09,USD_CAD
+2017-01-10,GBP_USD
+2017-01-11,EUR_USD
+2017-01-12,GBP_USD
+2017-01-13,GBP_USD
+2017-01-15,USD_CAD
+2017-01-16,USD_JPY
+2017-01-18,AUD_USD
+2017-01-19,EUR_USD
+2017-01-20,USD_CHF
+2017-01-22,AUD_USD
+2017-01-23,USD_JPY
+2017-01-24,USD_JPY
+2017-01-25,AUD_USD
+2017-01-26,USD_CHF
+2017-01-27,EUR_USD
+2017-01-29,USD_CHF
+2017-01-30,AUD_USD
+2017-01-31,GBP_USD
+2017-02-01,USD_CHF
+2017-02-02,USD_CAD
+2017-02-03,EUR_USD
+2017-02-05,USD_JPY
+2017-02-06,AUD_USD
+2017-02-07,USD_JPY
+2017-02-08,AUD_USD
+2017-02-09,USD_CAD
+2017-02-10,EUR_USD
+2017-02-12,EUR_USD
+2017-02-13,AUD_USD
+2017-02-14,USD_CAD
+2017-02-15,GBP_USD
+2017-02-16,USD_CAD
+2017-02-17,USD_CAD
+2017-02-19,GBP_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "highMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 1,
+        "value": -0.75
+    },
+    "upper_shadow_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 52
+    },
+    "real_body_percent": {
+        "operator": "00",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": -1241
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 5.9375
+    },
+    "volume": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 15961
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 7
+    },
+    "closeMid_1_day_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 4.5
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 63
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 9
+01111010111111000011000111011000100010011011000010110001111110100000100100111000010110010011110101111000011
+profit: -0.6
+fitness: -0.008
+stock return..
+-------------------------------------------------
+2016-12-01,AUD_USD
+2016-12-02,USD_CHF
+2016-12-04,USD_JPY
+2016-12-05,AUD_USD
+2016-12-06,USD_CHF
+2016-12-08,USD_CAD
+2016-12-09,GBP_USD
+2016-12-11,USD_CAD
+2016-12-12,USD_CAD
+2016-12-13,USD_CHF
+2016-12-14,AUD_USD
+2016-12-15,USD_CHF
+2016-12-16,EUR_USD
+2016-12-18,AUD_USD
+2016-12-19,USD_JPY
+2016-12-20,EUR_USD
+2016-12-21,GBP_USD
+2016-12-22,USD_CHF
+2016-12-23,GBP_USD
+2016-12-26,AUD_USD
+2016-12-27,GBP_USD
+2016-12-28,USD_CHF
+2016-12-29,USD_CAD
+2016-12-30,USD_CHF
+2017-01-02,USD_JPY
+2017-01-03,USD_JPY
+2017-01-05,USD_CHF
+2017-01-06,USD_CAD
+2017-01-08,EUR_USD
+2017-01-09,USD_CAD
+2017-01-10,GBP_USD
+2017-01-11,EUR_USD
+2017-01-12,GBP_USD
+2017-01-13,GBP_USD
+2017-01-15,USD_CAD
+2017-01-16,USD_JPY
+2017-01-18,AUD_USD
+2017-01-19,EUR_USD
+2017-01-20,USD_CHF
+2017-01-22,AUD_USD
+2017-01-23,USD_JPY
+2017-01-24,USD_JPY
+2017-01-25,AUD_USD
+2017-01-26,USD_CHF
+2017-01-27,EUR_USD
+2017-01-29,USD_CHF
+2017-01-30,AUD_USD
+2017-01-31,GBP_USD
+2017-02-01,USD_CHF
+2017-02-02,USD_CAD
+2017-02-03,EUR_USD
+2017-02-05,USD_JPY
+2017-02-06,AUD_USD
+2017-02-07,USD_JPY
+2017-02-08,AUD_USD
+2017-02-09,USD_CAD
+2017-02-10,EUR_USD
+2017-02-12,EUR_USD
+2017-02-13,AUD_USD
+2017-02-14,USD_CAD
+2017-02-15,GBP_USD
+2017-02-16,USD_CAD
+2017-02-17,USD_CAD
+2017-02-19,GBP_USD
+2017-02-20,AUD_USD
+2017-02-21,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "highMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 1,
+        "value": -0.75
+    },
+    "upper_shadow_percent": {
+        "operator": "01",
+        "is_include": 0,
+        "value": 60
+    },
+    "real_body_percent": {
+        "operator": "00",
+        "is_include": 1,
+        "value": 52
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": -1608
+    },
+    "openMid_1_day_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 5.4375
+    },
+    "volume": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 16154
+    },
+    "lowMid_percent": {
+        "operator": "11",
+        "is_include": 0,
+        "value": 6.0625
+    },
+    "closeMid_1_day_percent": {
+        "operator": "00",
+        "is_include": 0,
+        "value": 4.6875
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "is_include": 0,
+        "value": 15
     }
 }
 ==========================================================================================

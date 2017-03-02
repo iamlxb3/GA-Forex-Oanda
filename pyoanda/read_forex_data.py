@@ -170,9 +170,9 @@ class ReadForexData:
                 profit_3_day = float("{:2.3f}".format(100*((closeMid_3_day_later - closeMid) / closeMid)))
                 profit_7_day = float("{:2.3f}".format(100*((closeMid_7_day_later - closeMid) / closeMid)))
                 # custom feature
-                real_body_percent = float("{:2.2f}".format(abs((openMid - closeMid) / (highMid - lowMid))))
-                upper_shadow_percent = float("{:2.2f}".format(abs((highMid - openMid) / (highMid - lowMid))))
-                lower_shadow_percent = float("{:2.2f}".format(abs((closeMid - lowMid) / (highMid - lowMid))))
+                real_body_percent = float("{:2.2f}".format(100*abs((openMid - closeMid) / (highMid - lowMid))))
+                upper_shadow_percent = float("{:2.2f}".format(100*abs((highMid - openMid) / (highMid - lowMid))))
+                lower_shadow_percent = float("{:2.2f}".format(100*abs((closeMid - lowMid) / (highMid - lowMid))))
                 # 1,AA,1/14/2011,$16.71,$16.71,$15.64,$15.97,242963398,-4.42849,1.380223028,239655616,$16.19,$15.79,
                 # -2.47066,19,0.187852
                 day_forex_tuple = ('_', instrument, time, openMid_1_day_percent, highMid_1_day_percent, lowMid_percent,

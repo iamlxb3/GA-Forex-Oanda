@@ -29,15 +29,14 @@ def run_python(path):
 # (1.) get GA main path (training)
 code_main_folder = find_upper_level_folder_path(3)
 GA_main__path = os.path.join(code_main_folder, 'code', 'main.py')
-oanda_main_w_parameter__path = os.path.join(code_main_folder, 'code', 'parameters', 'write_parameters.py')
+#oanda_main_w_parameter__path = os.path.join(code_main_folder, 'code', 'parameters', 'write_parameters.py')
+oanda_main_w_parameter__path = os.path.join(code_main_folder, 'code', 'parameters', 'write_oanda_parameters.py')
 oanda_main_parameter_json__path = os.path.join(code_main_folder, 'code', 'parameters', 'parameter.json')
-#oanda_main_w_parameter__path = os.path.join(code_main_folder, 'code', 'parameters', 'write_oanda_parameters.py')
-#oanda_main_parameter_json__path = os.path.join(code_main_folder, 'code', 'parameters', 'oanda_parameter.json')
 # (2.) get GA testing path
 GA_testing_path = os.path.join(code_main_folder, 'code', 'ga_testing.py')
 # (3.) get data_path
-oanda_data_path = os.path.join(code_main_folder, 'data', 'cleaned_data.txt')
-#oanda_data_path = os.path.join(code_main_folder, 'data', 'oanda', 'oanda_forex_testing_data.txt')
+#oanda_data_path = os.path.join(code_main_folder, 'data', 'cleaned_data.txt')
+oanda_data_path = os.path.join(code_main_folder, 'data', 'oanda', 'oanda_forex_testing_data.txt')
 # =====================================================================================================
 
 

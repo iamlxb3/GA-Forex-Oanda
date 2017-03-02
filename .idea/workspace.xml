@@ -15,14 +15,78 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="write_oanda_parameters.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="write_oanda_parameters.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/parameters/write_oanda_parameters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+            <state relative-caret-position="-1485">
+              <caret line="8" column="71" lean-forward="false" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="53" column="49" lean-forward="true" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ga.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/ga.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="313" column="28" lean-forward="false" selection-start-line="313" selection-start-column="26" selection-end-line="313" selection-end-column="47" />
+              <folding>
+                <element signature="e#474#2553#0" expanded="false" />
+                <element signature="e#2604#3078#0" expanded="false" />
+                <element signature="e#3131#4591#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logger.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/pjslib/logger.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/solution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="evolution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/evolution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-192">
+              <caret line="80" column="85" lean-forward="false" selection-start-line="80" selection-start-column="73" selection-end-line="80" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fitness.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/fitness.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,10 +149,8 @@
         <option value="$PROJECT_DIR$/code/translator.py" />
         <option value="$PROJECT_DIR$/test_ga.py" />
         <option value="$PROJECT_DIR$/code/evolution.py" />
-        <option value="$PROJECT_DIR$/code/fitness.py" />
         <option value="$PROJECT_DIR$/code/parameters/parameter.json" />
         <option value="$PROJECT_DIR$/code/test_ga.py" />
-        <option value="$PROJECT_DIR$/code/ga.py" />
         <option value="$PROJECT_DIR$/code/ga_testing.py" />
         <option value="$PROJECT_DIR$/pyoanda/parameters/parameter.json" />
         <option value="$PROJECT_DIR$/code/sub/sub_oanda_training.py" />
@@ -96,7 +158,6 @@
         <option value="$PROJECT_DIR$/code/solution.py" />
         <option value="$PROJECT_DIR$/pyoanda/ga_classifier.py" />
         <option value="$PROJECT_DIR$/pyoanda/oanda_ga_classifier.py" />
-        <option value="$PROJECT_DIR$/code/pjslib/logger.py" />
         <option value="$PROJECT_DIR$/code/oanda_ga_classifier.py" />
         <option value="$PROJECT_DIR$/pyoanda/test1.py" />
         <option value="$PROJECT_DIR$/pyoanda/oanda_trading.py" />
@@ -107,11 +168,14 @@
         <option value="$PROJECT_DIR$/pyoanda/pjslib/general.py" />
         <option value="$PROJECT_DIR$/data/oanda/oanda_forex_testing_data.txt" />
         <option value="$PROJECT_DIR$/pyoanda/read_forex_data.py" />
-        <option value="$PROJECT_DIR$/code/main.py" />
         <option value="$PROJECT_DIR$/code/parameters/write_parameters.py" />
         <option value="$PROJECT_DIR$/code/read_parameters.py" />
         <option value="$PROJECT_DIR$/code/formatter.py" />
         <option value="$PROJECT_DIR$/code/parameters/write_oanda_parameters.py" />
+        <option value="$PROJECT_DIR$/code/fitness.py" />
+        <option value="$PROJECT_DIR$/code/main.py" />
+        <option value="$PROJECT_DIR$/code/ga.py" />
+        <option value="$PROJECT_DIR$/code/pjslib/logger.py" />
       </list>
     </option>
   </component>
@@ -224,7 +288,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="parameters" />
+              <option name="myItemId" value="pjslib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -589,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/evolution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1917">
-          <caret line="78" column="38" lean-forward="false" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyoanda/parameters/parameter.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -617,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/pjslib/logger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/sub/sub_oanda_training.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -635,13 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -747,16 +790,8 @@
         <state relative-caret-position="891">
           <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
           <folding>
-            <marker date="1488423700075" expanded="true" signature="2503:2509" ph="{...}" />
+            <marker date="1488438070266" expanded="true" signature="3263:3269" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/fitness.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1010">
-          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,14 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
           <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -800,24 +827,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/ga.py">
+    <entry file="file://$PROJECT_DIR$/code/fitness.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="100" column="56" lean-forward="false" selection-start-line="100" selection-start-column="56" selection-end-line="100" selection-end-column="56" />
-          <folding>
-            <element signature="e#474#2553#0" expanded="false" />
-            <element signature="e#2604#3078#0" expanded="false" />
-            <element signature="e#3131#4591#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="648">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/parameters/write_oanda_parameters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+        <state relative-caret-position="-1485">
+          <caret line="8" column="71" lean-forward="false" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/evolution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="80" column="85" lean-forward="false" selection-start-line="80" selection-start-column="73" selection-end-line="80" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="53" column="49" lean-forward="true" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/pjslib/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/ga.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="313" column="28" lean-forward="false" selection-start-line="313" selection-start-column="26" selection-end-line="313" selection-end-column="47" />
+          <folding>
+            <element signature="e#474#2553#0" expanded="false" />
+            <element signature="e#2604#3078#0" expanded="false" />
+            <element signature="e#3131#4591#0" expanded="false" />
           </folding>
         </state>
       </provider>

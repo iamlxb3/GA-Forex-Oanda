@@ -289,23 +289,30 @@ class GeneticAlgorithm():
         empty_chromosome_bits, chromosome_bits_length = self.create_empty_chromosome_bits(parameter_dict)
         feature_pos_dict = self.feature_pos_dict
         intial_solution_number = parameter_dict['SGA']['intial_solution_number']
-        for i in range(intial_solution_number):
-            # (a) create solution with random chromosome
-            random_chromosome = [random.randint(0, 1) for p in range(chromosome_bits_length)]
-            s = Solution()
-            s.chromosome_bits = random_chromosome
-            # (b) translate chromosome bits list to decimal value
-            s.translate_chromosome_bits(feature_pos_dict)
-            # (c) get the classfiled result in each day
-            s.get_classification_result(self)
-            # (d) filter the solution with limited target returns
-            is_s_not_removed = s.filter_solution_by_target_return(self)
-            # (e) compute the fitness for solution
-            if is_s_not_removed:
-                american_stock_fitness = AmericanStockFitness(parameter_dict)
-                american_stock_fitness(self.input_data_dict, s)
-            # (f) s_fitness fix
-            s.shared_fitness = s.fitness
+
+        # make sure the initial parent number exceed a threshold
+        solution_num_now = len(Solution._all)
+        while solution_num_now < intial_solution_number:
+            for i in range(intial_solution_number):
+                # (a) create solution with random chromosome
+                random_chromosome = [random.randint(0, 1) for p in range(chromosome_bits_length)]
+                s = Solution()
+                s.chromosome_bits = random_chromosome
+                # (b) translate chromosome bits list to decimal value
+                s.translate_chromosome_bits(feature_pos_dict)
+                # (c) get the classfiled result in each day
+                s.get_classification_result(self)
+                # (d) filter the solution with limited target returns
+                is_s_not_removed = s.filter_solution_by_target_return(self)
+                # (e) compute the fitness for solution
+                if is_s_not_removed:
+                    american_stock_fitness = AmericanStockFitness(parameter_dict)
+                    american_stock_fitness(self.input_data_dict, s)
+                # (f) s_fitness fix
+                s.shared_fitness = s.fitness
+            solution_num_now = len(Solution._all)
+            logger1.info("Initial parent number now :{}".format(solution_num_now))
+
 
     def process_new_solutions(self,new_generation_list):
         """Translate chromosome_bits, find targets, compute fitness"""

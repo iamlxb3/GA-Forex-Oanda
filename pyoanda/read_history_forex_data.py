@@ -23,8 +23,8 @@ parameter_dict = reader1.read_parameters(reader1.path)
 print(parameter_dict)
 # (2.) read forex data
 read_forex_data = ReadForexData(parameter_dict)
-#read_forex_data.read_onanda_data()
-#read_forex_data.write_forex_dict_to_file()
+read_forex_data.read_onanda_data()
+read_forex_data.write_forex_dict_to_file()
 
 # ===========================================get the max, min and average of the data
 read_forex_data.get_data_distribution(read_forex_data.file_path)

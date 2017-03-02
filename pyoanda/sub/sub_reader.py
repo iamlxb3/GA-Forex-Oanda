@@ -20,8 +20,15 @@ class SubReader():
         self.path = path
        
     def read_parameters(self, path):
-        with open(path, 'r', encoding = 'utf-8') as f:
+        encoding = 'utf-8'
+        try:
+            open(path, 'r', encoding = encoding).read()
+        except UnicodeDecodeError:
+            encoding = 'gbk'
+
+        with open(path, 'r', encoding = encoding) as f:
             parameter_dict = json.load(f)
+
         return parameter_dict
         
     def write_json(self, path, dict):

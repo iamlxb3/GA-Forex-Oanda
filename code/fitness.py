@@ -30,6 +30,7 @@ class AmericanStockFitness():
         for date,stock in predicted_stock_sequence_tuple:
             features_tuple = input_data_dict[date][stock]
             features_dict = dict(features_tuple._asdict())
+            #print ("features_dict: ", features_dict)
             if is_buy == 1:
                 value = float(features_dict[self._next_price_str])
             elif is_buy == 0:
