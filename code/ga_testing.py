@@ -10,7 +10,7 @@ import re
 import collections
 import random
 from solution import Solution
-from formatter import Formatter
+from formatter_0 import Formatter
 from read_parameters import ReadParameters
 from ga import GeneticAlgorithm
 from fitness import AmericanStockFitness

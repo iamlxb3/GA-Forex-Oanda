@@ -6,7 +6,7 @@ from pjslib.logger import logger1
 
 # import local .py files
 from read_parameters import ReadParameters
-from formatter import Formatter
+from formatter_0 import Formatter
 from ga import GeneticAlgorithm
 from ga import SeedRadius
 from fitness import AmericanStockFitness

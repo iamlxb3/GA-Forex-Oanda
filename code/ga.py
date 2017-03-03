@@ -17,7 +17,6 @@ parent_folder = get_upper_folder_path(1)
 sys.path.append(os.path.join(parent_folder, 'pjslib'))
 sys.path.append(os.path.join(parent_folder))
 
-
 # import from pjslib
 from general import get_upper_folder_path
 from general import accepts
