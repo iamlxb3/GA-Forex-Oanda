@@ -272,3 +272,231 @@
 2017-03-03 15:59:19,447 - logger2 - INFO - chromosome_bits: [1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
 2017-03-03 15:59:19,462 - logger2 - INFO - Genetic Algorithm Starting......
 2017-03-03 15:59:19,462 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:05:38,407 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:05:38,423 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:07:08,703 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:07:08,719 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:07:08,734 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:07:08,734 - logger2 - INFO - chromosome_bits: [1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1]
+2017-03-03 16:07:08,734 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:07:08,750 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:09:53,541 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:09:53,557 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:09:53,573 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:09:53,574 - logger2 - INFO - chromosome_bits: [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1]
+2017-03-03 16:09:53,581 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:09:53,592 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:09:53,608 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:09:53,610 - logger2 - INFO - chromosome_bits: [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0]
+2017-03-03 16:10:22,572 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:10:22,588 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:10:22,603 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:10:22,603 - logger2 - INFO - chromosome_bits: ['1', '0', '0', '1', '0', '0', '0', '1', '1', '1', '1', '0', '1', '0', '1', '0', '1', '1', '1', '0', '0', '1', '0', '0', '1', '1', '0', '1', '1', '0', '1', '0', '1', '0', '1', '0', '1', '0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '1', '1', '1', '0', '1', '1', '1', '0', '1', '1', '1', '1', '0', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0', '1', '1', '0', '1', '1', '1', '1', '0', '0', '1', '0', '1', '0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '1', '1']
+2017-03-03 16:10:22,603 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:10:22,619 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:10:22,635 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:10:22,635 - logger2 - INFO - chromosome_bits: ['0', '0', '0', '1', '0', '1', '0', '1', '0', '0', '1', '0', '1', '1', '1', '0', '0', '0', '1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '0', '1', '1', '0', '1', '1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1', '1', '0', '0', '1', '1', '0', '0', '0', '1', '1', '1', '1', '0', '0', '1', '1', '1', '0', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '1', '0', '1', '0', '1', '0', '1', '1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '1', '0', '1', '1', '0', '1']
+2017-03-03 16:11:29,328 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:29,343 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:29,375 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:29,375 - logger2 - INFO - chromosome_bits: [0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1]
+2017-03-03 16:11:29,375 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:29,390 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:29,406 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:29,406 - logger2 - INFO - chromosome_bits: [1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0]
+2017-03-03 16:11:31,890 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:31,906 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:31,922 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:31,922 - logger2 - INFO - chromosome_bits: [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1]
+2017-03-03 16:11:31,937 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:31,937 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:31,953 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:31,953 - logger2 - INFO - chromosome_bits: [0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1]
+2017-03-03 16:11:33,587 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:33,611 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:33,633 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:33,635 - logger2 - INFO - chromosome_bits: [1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0]
+2017-03-03 16:11:33,644 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:33,664 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:33,682 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:33,683 - logger2 - INFO - chromosome_bits: [1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0]
+2017-03-03 16:11:35,452 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:35,468 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:35,484 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:35,484 - logger2 - INFO - chromosome_bits: [0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2017-03-03 16:11:35,484 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:35,499 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:35,515 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:35,515 - logger2 - INFO - chromosome_bits: [0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0]
+2017-03-03 16:11:37,156 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:37,171 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:37,187 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:37,187 - logger2 - INFO - chromosome_bits: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1]
+2017-03-03 16:11:37,203 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:37,218 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:37,218 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:37,218 - logger2 - INFO - chromosome_bits: [1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1]
+2017-03-03 16:11:38,859 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:38,890 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:38,890 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:38,906 - logger2 - INFO - chromosome_bits: [0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0]
+2017-03-03 16:11:38,906 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:38,921 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:38,937 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:38,937 - logger2 - INFO - chromosome_bits: [0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0]
+2017-03-03 16:11:40,548 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:40,563 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:40,579 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:40,579 - logger2 - INFO - chromosome_bits: [1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0]
+2017-03-03 16:11:40,594 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:40,610 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:40,626 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:40,626 - logger2 - INFO - chromosome_bits: [0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1]
+2017-03-03 16:11:42,204 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:42,220 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:42,235 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:42,235 - logger2 - INFO - chromosome_bits: [1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+2017-03-03 16:11:42,251 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:42,266 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:42,266 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:42,282 - logger2 - INFO - chromosome_bits: [0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0]
+2017-03-03 16:11:43,892 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:43,908 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:43,923 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:43,923 - logger2 - INFO - chromosome_bits: [1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1]
+2017-03-03 16:11:43,923 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:43,939 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:43,955 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:43,955 - logger2 - INFO - chromosome_bits: [0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0]
+2017-03-03 16:11:45,502 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:45,517 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:45,533 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:45,533 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1]
+2017-03-03 16:11:45,533 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:45,549 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:45,564 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:45,564 - logger2 - INFO - chromosome_bits: [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1]
+2017-03-03 16:11:47,190 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:47,206 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:47,221 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:47,221 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0]
+2017-03-03 16:11:47,221 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:47,237 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:47,253 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:47,253 - logger2 - INFO - chromosome_bits: [0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0]
+2017-03-03 16:11:49,515 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:49,531 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:49,546 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:49,562 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:49,593 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:49,593 - logger2 - INFO - chromosome_bits: [1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2017-03-03 16:11:51,238 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:51,254 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:51,269 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:51,269 - logger2 - INFO - chromosome_bits: [0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1]
+2017-03-03 16:11:51,285 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:51,300 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:51,316 - logger2 - INFO - No forex returned of any date for 1_day_sell
+2017-03-03 16:11:51,316 - logger2 - INFO - chromosome_bits: [1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1]
+2017-03-03 16:11:52,864 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:52,880 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:11:52,895 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:11:52,895 - logger2 - INFO - chromosome_bits: [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+2017-03-03 16:11:52,895 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:11:52,911 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:12:27,204 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:12:27,220 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:12:27,235 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:12:27,235 - logger2 - INFO - chromosome_bits: ['1', '0', '0', '1', '0', '0', '0', '1', '1', '1', '1', '0', '1', '0', '1', '0', '1', '1', '1', '0', '0', '1', '0', '0', '1', '1', '0', '1', '1', '0', '1', '0', '1', '0', '1', '0', '1', '0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '1', '1', '1', '0', '1', '1', '1', '0', '1', '1', '1', '1', '0', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0', '1', '1', '0', '1', '1', '1', '1', '0', '0', '1', '0', '1', '0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '1', '1']
+2017-03-03 16:12:27,235 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:12:27,251 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:13:17,314 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:13:17,329 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:13:17,345 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:13:17,345 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:13:17,361 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:13:17,376 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:13:44,578 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:13:44,594 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:13:44,610 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:13:44,610 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:13:44,610 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:13:44,625 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:16:43,111 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:16:43,127 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:16:43,143 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:16:43,143 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:16:43,143 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:16:43,158 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:17:32,424 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:17:32,439 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:17:32,455 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:17:32,455 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:17:32,471 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:17:32,486 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:21:08,470 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:21:08,486 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:21:08,502 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:21:08,502 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:21:08,502 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:21:08,517 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:27:28,050 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:27:28,066 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:27:28,097 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:27:28,097 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:27:28,097 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:27:28,113 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:33:56,562 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:33:56,578 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:33:56,593 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:33:56,593 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:33:56,593 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:33:56,609 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:36:40,778 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:36:40,793 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:36:40,808 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:36:40,809 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:36:40,817 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:36:40,836 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:50:47,547 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:50:47,563 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:50:47,579 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:50:47,579 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:50:47,594 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:50:47,610 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:51:43,487 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:51:43,503 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:51:43,519 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:51:43,519 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:51:43,519 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:51:43,534 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:57:07,618 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:57:07,624 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:57:07,640 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:57:07,640 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:57:07,640 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:57:07,655 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:57:16,048 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:57:16,064 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:57:16,079 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:57:16,079 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:57:16,095 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:57:16,095 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:59:12,859 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:59:12,874 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 16:59:12,890 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 16:59:12,890 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 16:59:12,890 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 16:59:12,906 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 17:00:24,187 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 17:00:24,203 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 17:00:24,218 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 17:00:24,218 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 17:00:24,218 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 17:00:24,234 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 17:01:31,408 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 17:01:31,424 - logger2 - INFO - Create Testing_data_dict Successful
+2017-03-03 17:01:31,439 - logger2 - INFO - No forex returned of any date for 1_day_buy
+2017-03-03 17:01:31,439 - logger2 - INFO - chromosome_bits: [1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1]
+2017-03-03 17:01:31,439 - logger2 - INFO - Genetic Algorithm Starting......
+2017-03-03 17:01:31,455 - logger2 - INFO - Create Testing_data_dict Successful

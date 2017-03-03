@@ -6,11 +6,14 @@ import datetime
 #================================================
 import requests
 import pprint
+import collections
+import sys
 
 
 
 class OandaTrading():
     def __init__(self):
+        self.pos_detail_dict = collections.defaultdict(lambda: '')
         self.isEnd = False
         self.domain = 'api-fxpractice.oanda.com'
         self.access_token = 'b53308ebd6ec5da20475f6e5481e3b7d-b17b9d81c15d6ec435cf875bcc41f4d9'
@@ -77,25 +80,46 @@ class OandaTrading():
                 sell_set = sell_set & set(instrument_list)
         # sell end
 
+        # if forex appear in both set, delete it
+        buy_set -= sell_set
+        sell_set -= buy_set
         day_buy = list(buy_set)
         day_sell = list(sell_set)
-
+        oanda_logger.info("day_buy: {}".format(day_buy))
+        oanda_logger.info("day_sell: {}".format(day_sell))
         return day_buy, day_sell
 
     def get_trade_instrument(self, day_buy, day_sell):
         trade_instruments_tuple = []
         for instrument in day_buy:
-            trade_instruments_tuple.append(instrument, 'buy')
+            trade_instruments_tuple.append((instrument, 'buy'))
 
         for instrument in day_sell:
-            trade_instruments_tuple.append(instrument, 'sell')
+            trade_instruments_tuple.append((instrument, 'sell'))
 
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
         oanda_logger.info("Trading decision: {}, Time: {}".format(trade_instruments_tuple, time))
         return trade_instruments_tuple
 
     def get_close_out_instrument(self, day_buy, day_sell):
+        print ("=============get_close_out_instrument===============")
+        instruments = []
+        # close out the sell trade
+        for instrument in day_buy:
+            for instrument_pos, buy_or_sell in self.pos_detail_dict.items():
+                if instrument == instrument_pos and buy_or_sell == 'sell':
+                    instruments.append(instrument_pos)
+        # close out the buy trade
+        for instrument in day_sell:
+            for instrument_pos, buy_or_sell in self.pos_detail_dict.items():
+                oanda_logger.debug("instrument: {}, instrument_pos:{}， buy_or_sell:{}"
+                                   .format(instrument, instrument_pos, buy_or_sell))
+                if instrument == instrument_pos and buy_or_sell == 'buy':
+                    instruments.append(instrument_pos)
+
+
         instruments = ['EUR_USD']
+
         return instruments
 
     def get_all_positions(self):
@@ -103,14 +127,36 @@ class OandaTrading():
         url = self.get_all_positions_url
         response = requests.get(url, headers = self.headers)
         positions_list = dict(response.json())['positions']
+        pprint.pprint(positions_list)
         all_pos_list = []
         for positions_dict in positions_list:
-            all_pos_list.append(positions_dict['instrument'])
+            instrument = positions_dict['instrument']
+            all_pos_list.append(instrument)
+
+            # get the pos detail(buy/sell)
+            long_units = int(positions_dict['long']['units'])
+            short_units = int(positions_dict['short']['units'])
+            if short_units != 0 and long_units == 0:
+                if short_units > 0:
+                    buy_or_sell = 'buy'
+                elif short_units < 0:
+                    buy_or_sell = 'sell'
+            elif long_units != 0 and short_units == 0:
+                if long_units > 0:
+                    buy_or_sell = 'buy'
+                elif long_units < 0:
+                    buy_or_sell = 'sell'
+            else:
+                oanda_logger.error("ERROR HAPPEND AT get_all_positions! long_unit, short unit")
+                sys.exit(0)
+            self.pos_detail_dict[instrument] = buy_or_sell
+
         # logging
         oanda_logger.info("=============================All positions=============================")
         oanda_logger.info("Time: {}".format(time))
         oanda_logger.info("All_pos_list: {}".format(all_pos_list))
         oanda_logger.info("Pos details:\n {}".format(pprint.pformat(response.json())))
+        oanda_logger.info("Buy/Sell details:\n {}".format(pprint.pformat(dict(self.pos_detail_dict))))
         oanda_logger.info("=============================All positions END==========================\n")
         return all_pos_list
 

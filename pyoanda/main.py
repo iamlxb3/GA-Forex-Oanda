@@ -24,7 +24,7 @@ def run_python(path):
 #from oanda_ga_classifier import ga_classifier
 #========================================================================
 # SET TRADING_TRACE_DATE
-TRADING_TRACE_DATE = 100
+TRADING_TRACE_DATE = 20
 
 
 
@@ -91,7 +91,11 @@ with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
         chromosome_type = re.findall(r'\[chromosome_type\]([A-Za-z0-9_]+)\[END\]-', line)[0]
         chromosome = re.findall(r'\[chromosome\]([0-9]+)\[END\]', line)[0]
         chromosome_bits = list(chromosome)
-        chromosome_bits = [random.sample([0,1],1)[0] for x in range(len(chromosome_bits))]
+        # convert str to int
+        chromosome_bits = [int(x) for x in chromosome_bits]
+        print ("len_chromosome: ", len(chromosome_bits))
+        #chromosome_bits = [random.sample([0,1],1)[0] for x in range(len(chromosome_bits))]
+
         oanda_logger.info("chromosome_bits: {}".format(''.join([str(x) for x in chromosome_bits])))
         #(chromosome_bits, chromosome_type, parameter_path, data_path, output_path, trading = False
         # cls_result_today: (datetime.date(2017, 2, 17), 'GBP_USD')
@@ -105,7 +109,8 @@ with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
             # test whether the fetech result is today
             date_cls = cls_result_today[0]
             if date_cls == today:
-                ga_classifier_result_dict[chromosome_type].append(cls_result_today)
+                ga_classifier_result_dict[chromosome_type].append(cls_result_today[1])
+                oanda_logger.info("{} has return forex {} for {}".format(chromosome_type, cls_result_today, today))
             else:
                 oanda_logger.info("{} has no forex return for {}".format(chromosome_type, date_cls))
 
@@ -123,32 +128,33 @@ oanda_logger.info("======================GETTING FOREX RETURN END===============
 
 
 # =========================================TRADING
+from oanda_trading import OandaTrading
+import time
+import schedule
 
-# oanda_trading = OandaTrading()
-#
-# # read parameters
-# trading_params = {}
-#
-#
-# def main_loop():
-#     # (1.) read parameters
-#     start_time = ''
-#     end_time = ''
-#     oanda_trading.update_data(start_time, end_time)
-#     #ga_classifier_result_dict = ga_classifier()
-#     ga_classifier_result_dict = ''
-#     day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
-#     oanda_trading.close_out(trading_params, day_buy, day_sell)
-#     time.sleep(3)
-#     oanda_trading.trade(trading_params, day_buy, day_sell)
-#     time.sleep(3)
-#     oanda_trading.get_all_positions()
-#
-#
-# schedule.every(5).seconds.do(main_loop)
-# while not oanda_trading.isEnd:
-#     schedule.run_pending()
-#     # schedule.every().day.at("10:30").do(job)
+oanda_trading = OandaTrading()
+
+# read parameters
+trading_params = {}
+
+
+def main_loop():
+    # (1.) read parameters
+    start_time = ''
+    end_time = ''
+    oanda_trading.update_data(start_time, end_time)
+    day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
+    oanda_trading.close_out(trading_params, day_buy, day_sell)
+    time.sleep(3)
+    oanda_trading.trade(trading_params, day_buy, day_sell)
+    time.sleep(3)
+    oanda_trading.get_all_positions()
+
+
+schedule.every(3).seconds.do(main_loop)
+while not oanda_trading.isEnd:
+    schedule.run_pending()
+    # schedule.every().day.at("10:30").do(job)
 
 
 
