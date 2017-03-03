@@ -1,4 +1,24 @@
 import logging
+import os
+
+def get_upper_folder_path(num, path = ''):
+    if not path:
+        path = os.path.dirname(os.path.abspath(__file__))
+    else:
+        path = os.path.dirname(path)
+    num -= 1
+    if num > 0:
+        return get_upper_folder_path(num, path = path)
+    else:
+        return path
+
+code_folder_path = get_upper_folder_path(2)
+
+
+
+
+
+
 
 # create formatter
 #=====================Formatter==================================
@@ -53,7 +73,8 @@ logger2 = logging.getLogger('logger2')
 # set level
 logger2.setLevel(logging.INFO)
 # save to file
-hdlr_2 = logging.FileHandler('logging/testing_logging.log')
+
+hdlr_2 = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'testing_logging.log'))
 hdlr_2.setFormatter(formatter)
 # command line
 # add ch to logger
@@ -67,7 +88,7 @@ logger3 = logging.getLogger('logger3')
 # set level
 logger3.setLevel(logging.INFO)
 # save to file
-hdlr_3 = logging.FileHandler('testing/code_testing_logging.log')
+hdlr_3 = logging.FileHandler(os.path.join(code_folder_path, 'testing', 'code_testing_logging.log'))
 hdlr_3.setFormatter(formatter)
 # command line
 # add ch to logger
@@ -80,7 +101,8 @@ logger_t = logging.getLogger('logger_temp')
 # set level
 logger_t.setLevel(logging.INFO)
 # save to file
-hdlr_t = logging.FileHandler('logging/temp_logging.log')
+
+hdlr_t = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'temp_logging.log'))
 hdlr_t.setFormatter(formatter)
 # command line
 # add ch to logger
@@ -92,22 +114,22 @@ logger_bg = logging.getLogger('logger_bg')
 # set level
 logger_bg.setLevel(logging.INFO)
 # save to file
-hdlr_bg = logging.FileHandler('logging/bg_logging.log')
+hdlr_bg = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'bg_logging.log'))
 hdlr_bg.setFormatter(formatter)
 # command line
 # add ch to logger
 logger_bg.addHandler(ch)
 logger_bg.addHandler(hdlr_bg)
 
-# =========================================
-# create logger
-oanda_logger = logging.getLogger('oanda_logger')
-# set level
-oanda_logger.setLevel(logging.INFO)
-# save to file
-hdlr_1 = logging.FileHandler('logging/oanda_logging.log')
-hdlr_1.setFormatter(formatter)
-# command line
-# add ch to logger
-oanda_logger.addHandler(ch)
-oanda_logger.addHandler(hdlr_1)
+# # =========================================
+# # create logger
+# oanda_logger = logging.getLogger('oanda_logger')
+# # set level
+# oanda_logger.setLevel(logging.INFO)
+# # save to file
+# hdlr_1 = logging.FileHandler('logging/oanda_logging.log')
+# hdlr_1.setFormatter(formatter)
+# # command line
+# # add ch to logger
+# oanda_logger.addHandler(ch)
+# oanda_logger.addHandler(hdlr_1)

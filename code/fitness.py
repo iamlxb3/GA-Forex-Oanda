@@ -1,7 +1,25 @@
-# import from pjslib
-from pjslib.general import get_upper_folder_path
-from pjslib.general import accepts
-from pjslib.logger import logger1
+# import from pjslib=====================================
+def get_upper_folder_path(num, path = ''):
+    if not path:
+        path = os.path.dirname(os.path.abspath(__file__))
+    else:
+        path = os.path.dirname(path)
+    num -= 1
+    if num > 0:
+        return get_upper_folder_path(num, path = path)
+    else:
+        return path
+
+import sys
+import os
+
+parent_folder = get_upper_folder_path(1)
+sys.path.append(os.path.join(parent_folder, 'pjslib'))
+sys.path.append(os.path.join(parent_folder))
+
+from general import get_upper_folder_path
+from general import accepts
+from logger import logger1
 #================================================
 import os
 import sys

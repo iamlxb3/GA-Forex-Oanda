@@ -1,28 +1,30 @@
 # import from pjslib
-from pjslib.general import get_upper_folder_path
-from pjslib.general import accepts
-from pjslib.logger import oanda_logger
-#================================================
-import random
-import pprint
+import collections
 import os
+import re
 import sys
 
-import schedule
-import time
-#================================================
-from read_parameters import ReadParameters
+from pjslib.general import get_upper_folder_path
+from pjslib.logger import oanda_logger
 from read_forex_data import ReadForexData
-from oanda_trading import OandaTrading
+from read_parameters import ReadParameters
 from sub.sub_reader import SubReader
+
 #=====================SUB_PROCESS================
+code_main_folder = get_upper_folder_path(2)
+sys.path.append(code_main_folder)
+sys.path.append(os.path.join(code_main_folder, 'code'))
+print(sys.path)
+#sys.path.append(os.path.join(code_main_folder, 'code', 'pjslib'))
+from single_chromo_cls_result import get_single_chromo_cls_result
 import subprocess
 def run_python(path):
     cwd = os.path.dirname(os.path.realpath(path))
     subprocess.call("python {}".format(path), shell=True, cwd = cwd)
 #from oanda_ga_classifier import ga_classifier
 #========================================================================
-
+# SET TRADING_TRACE_DATE
+TRADING_TRACE_DATE = 100
 
 
 
@@ -35,33 +37,89 @@ code_main_folder = get_upper_folder_path(2)
 oanda_main_w_parameter__path = os.path.join(code_main_folder, 'code', 'parameters', 'write_oanda_parameters.py')
 oanda_main_parameter_json__path = os.path.join(code_main_folder, 'code', 'parameters', 'parameter.json')
 run_python(oanda_main_w_parameter__path)
+
+# adjust parameters and write new json file, set the date range of prediction
+import datetime
+parameter_dict = sub_reader.read_parameters(oanda_main_parameter_json__path)
+today = datetime.datetime.today()
+delta = datetime.timedelta(days = TRADING_TRACE_DATE)
+previous_date_limit = today - delta
+today_str = datetime.datetime.today().strftime("%m/%d/%Y")
+previous_date_limit_str = previous_date_limit.strftime("%m/%d/%Y")
+parameter_dict['input']['training_date_start'] = previous_date_limit_str
+parameter_dict['input']['training_date_end'] = today_str
+sub_reader.write_json(oanda_main_parameter_json__path, parameter_dict)
+
+
 # WRITE process data oanda parameters
 p_data_parameters__path = os.path.join(code_main_folder, 'pyoanda', 'parameters', 'write_parameters.py')
 p_data_parameters_json__path = os.path.join(code_main_folder, 'pyoanda', 'parameters', 'p_data_parameters.json')
 p_data_parameters_dict = sub_reader.read_parameters(p_data_parameters_json__path)
 # get the data path
-oanda_forex_trading_data_path = os.path.join(code_main_folder, 'data', 'oanda', 'oanda_forex_testing_data.txt')
+oanda_forex_trading_data_path = os.path.join(code_main_folder, 'data', 'oanda', 'oanda_forex_trading_data.txt')
 
 
 run_python(p_data_parameters__path)
 # modify parameters and save new json
 
-p_data_parameters_dict['date_range'] = 20
+p_data_parameters_dict['date_range'] = TRADING_TRACE_DATE
 p_data_parameters_dict['mode'] = 'trading'
 sub_reader.write_json(p_data_parameters_json__path, p_data_parameters_dict)
 #=================================================WRITE OANDA PARAMETERS END============================================
 
-# =========================================READING UP-TO-DATE-FOREX-DATA================================================
-# set mode to trading
-# (1.) read parameters
-reader1 = ReadParameters(file_name = 'p_data_parameters.json')
-parameter_dict = reader1.read_parameters(reader1.path)
-print(parameter_dict)
-# (2.) read forex data
-read_forex_data = ReadForexData(parameter_dict)
-read_forex_data.read_onanda_data()
-read_forex_data.write_forex_dict_to_file()
-# =========================================READING UP-TO-DATE-FOREX-DATA================================================
+# # =========================================READING UP-TO-DATE-FOREX-DATA================================================
+# # set mode to trading
+# # (1.) read parameters
+# reader1 = ReadParameters(file_name = 'p_data_parameters.json')
+# parameter_dict = reader1.read_parameters(reader1.path)
+# print(parameter_dict)
+# # (2.) read forex data
+# read_forex_data = ReadForexData(parameter_dict)
+# read_forex_data.read_onanda_data()
+# read_forex_data.write_forex_dict_to_file()
+# # =========================================READING UP-TO-DATE-FOREX-DATA================================================
+
+# =========================================READ chromosome==============================================================
+oanda_logger.info("======================GETTING FOREX RETURN START======================")
+import random
+today = datetime.datetime.today()
+today = datetime.date(year = today.year, month = today.month, day = today.day)
+ga_classifier_result_dict = collections.defaultdict(lambda :[])
+chromosome_strategy_chosen_path = os.path.join(code_main_folder, 'pyoanda',  'chromosome_strategy_chosen.txt')
+with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
+    for line in f:
+        chromosome_type = re.findall(r'\[chromosome_type\]([A-Za-z0-9_]+)\[END\]-', line)[0]
+        chromosome = re.findall(r'\[chromosome\]([0-9]+)\[END\]', line)[0]
+        chromosome_bits = list(chromosome)
+        chromosome_bits = [random.sample([0,1],1)[0] for x in range(len(chromosome_bits))]
+        oanda_logger.info("chromosome_bits: {}".format(''.join([str(x) for x in chromosome_bits])))
+        #(chromosome_bits, chromosome_type, parameter_path, data_path, output_path, trading = False
+        # cls_result_today: (datetime.date(2017, 2, 17), 'GBP_USD')
+        cls_result_today = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
+                                              oanda_forex_trading_data_path)
+        # test whether this chromosome has return any forex for any date
+        if cls_result_today == None:
+            oanda_logger.info("{} has no forex return for any date".format(chromosome_type))
+            oanda_logger.info("chosen_date_and_forex: {}".format(cls_result_today))
+        else:
+            # test whether the fetech result is today
+            date_cls = cls_result_today[0]
+            if date_cls == today:
+                ga_classifier_result_dict[chromosome_type].append(cls_result_today)
+            else:
+                oanda_logger.info("{} has no forex return for {}".format(chromosome_type, date_cls))
+
+print ("ga_classifier_result_dict: ", ga_classifier_result_dict)
+
+oanda_logger.info("======================GETTING FOREX RETURN END======================")
+# =========================================READ chromosome END==============================================================
+
+
+
+
+
+
+
 
 
 # =========================================TRADING

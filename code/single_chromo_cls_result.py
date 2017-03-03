@@ -1,16 +1,38 @@
+def get_upper_folder_path(num, path = ''):
+    if not path:
+        path = os.path.dirname(os.path.abspath(__file__))
+    else:
+        path = os.path.dirname(path)
+    num -= 1
+    if num > 0:
+        return get_upper_folder_path(num, path = path)
+    else:
+        return path
+
+
+# =================================================
+import sys
+import os
 # import from pjslib
-from pjslib.general import get_upper_folder_path
-from pjslib.general import accepts
-from pjslib.logger import logger2
+parent_folder = get_upper_folder_path(1)
+sys.path.append(os.path.join(parent_folder, 'pjslib'))
+sys.path.append(os.path.join(parent_folder))
+
+from general import get_upper_folder_path
+from general import accepts
+from logger import logger2
+
+
+
 #================================================
 import os
-import sys
+
 import json
 import re
 import collections
 import random
 from solution import Solution
-from formatter import Formatter
+from formatter_0 import Formatter
 from read_parameters import ReadParameters
 from ga import GeneticAlgorithm
 from fitness import AmericanStockFitness
@@ -20,7 +42,7 @@ from fitness import AmericanStockFitness
 # should be imported into
 
 # chromosome_type = '1_day', '3_day', '7_day'
-def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_path, data_path, output_path,
+def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_path, data_path,
                                  trading = False):
     # (1.) read the parameters
     logger2.info("Genetic Algorithm Starting......")
@@ -42,8 +64,16 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     s.translate_chromosome_bits(ga.feature_pos_dict)
     # -(c) get the classfiled result in each day
     classification_result = s.get_classification_result(ga)
+    if not classification_result:
+        logger2.info("No forex returned of any date for {}".format(chromosome_type))
+        logger2.info("chromosome_bits: {}".format(chromosome_bits))
+        return None
+    # print ("testing_data_dict: ", testing_data_dict)
+    # print("parameter_dict: ", parameter_dict)
+    # print ("chromosome_bits: ", chromosome_bits)
+    print ("classification_result:", classification_result)
     classification_result_1_day = sorted(classification_result, key = lambda x:x[0], reverse = True)[0]
-    classification_result_str = ','.join(classification_result)
+
 
     # (5.) judge buy or sell
     is_buy_bit = chromosome_bits[0]
@@ -56,15 +86,15 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     else:
         print ("ERROR!!! check your chromosome_bits_list: ", chromosome_bits)
 
-    # (6.) write the data to file
-    if trading == False:
-        with open(output_path, 'a', encoding = 'utf-8') as f:
-            f.write("[buy_or_sell]{}[END]-[chromosome_type]{}[END]-[cls_result]{}[END]\n"
-                    .format(buy_or_sell, chromosome_type, classification_result))
-    elif trading == True:
-        with open(output_path, 'a', encoding = 'utf-8') as f:
-            f.write("[buy_or_sell]{}[END]-[chromosome_type]{}[END]-[cls_result]{}[END]\n"
-                    .format(buy_or_sell, chromosome_type, classification_result_1_day))
+    # # (6.) write the data to file
+    # if trading == False:
+    #     with open(output_path, 'a', encoding = 'utf-8') as f:
+    #         f.write("[buy_or_sell]{}[END]-[chromosome_type]{}[END]-[cls_result]{}[END]\n"
+    #                 .format(buy_or_sell, chromosome_type, classification_result))
+    # elif trading == True:
+    #     with open(output_path, 'a', encoding = 'utf-8') as f:
+    #         f.write("[buy_or_sell]{}[END]-[chromosome_type]{}[END]-[cls_result]{}[END]\n"
+    #                 .format(buy_or_sell, chromosome_type, classification_result_1_day))
 
     # return
-    return classification_result
+    return classification_result_1_day

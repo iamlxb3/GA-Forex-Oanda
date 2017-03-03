@@ -35,13 +35,13 @@ class OandaTrading():
     def update_data(self, start_time, end_time, mode = 'trading'):
         pass
 
-    # ga_classifier_result_dict {'1_day':{'buy':['USD/JPY'], 'sell':['USD/JPY']},...}
+    # ga_classifier_result_dict {'1_day_buy':['USD/JPY']}
     def get_day_buy_sell(self, ga_classifier_result_dict):
         #
         is_1_day_buy = True
         is_1_day_sell = True
-        is_3_day_buy = True
-        is_3_day_sell = True
+        is_3_day_buy = False
+        is_3_day_sell = False
         is_7_day_buy = False
         is_7_day_sell = False
         #

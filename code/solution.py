@@ -1,7 +1,28 @@
 # import from pjslib
-from pjslib.general import get_upper_folder_path
-from pjslib.general import accepts
-from pjslib.logger import logger1, logger_t
+def get_upper_folder_path(num, path = ''):
+    if not path:
+        path = os.path.dirname(os.path.abspath(__file__))
+    else:
+        path = os.path.dirname(path)
+    num -= 1
+    if num > 0:
+        return get_upper_folder_path(num, path = path)
+    else:
+        return path
+
+
+# =================================================
+import sys
+import os
+# import from pjslib
+parent_folder = get_upper_folder_path(1)
+sys.path.append(os.path.join(parent_folder, 'pjslib'))
+sys.path.append(os.path.join(parent_folder))
+
+
+from general import get_upper_folder_path
+from general import accepts
+from logger import logger1
 #================================================
 import os
 import sys
@@ -371,9 +392,9 @@ class Solution():
             if is_sign_bit == []:
                 return feature_value
             else:
-                if is_sign_bit[0] == 0:
+                if int(is_sign_bit[0]) == 0:
                     return feature_value * (-1)
-                elif is_sign_bit[0] == 1:
+                elif int(is_sign_bit[0]) == 1:
                     return feature_value
 
         #:::translate_chromosome_bits:::
@@ -399,7 +420,6 @@ class Solution():
 
 
             solution_feature_value = compute_solution_feature_value(is_sign_bit, int_value_bits, decimal_value_bits)
-
             # ============================================
             # translate the solution value and save in dict
             self.feature_dict[feature_name]['is_include'] = is_include
@@ -548,7 +568,7 @@ class Solution():
                     # # =================================================================================
                     # TODO test this feature
                     # at lesat one feature should be turned on
-                    if is_target_chosen == True and (is_not_include_f_num != feature_num):
+                    if (is_target_chosen == True) and (is_not_include_f_num != feature_num):
                         # chose only 1 target every day, based on decisive feature, if it is sell, revert the sign
                         if is_decisive_feature == 0:
                             target_decisive_feature_tuple = (target, float(feature_value_dict[self.decisive_feature]))
