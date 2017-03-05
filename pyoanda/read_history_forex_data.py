@@ -9,6 +9,7 @@ import os
 import sys
 import schedule
 import time
+import json
 
 
 from read_parameters import ReadParameters
@@ -20,6 +21,11 @@ from oanda_trading import OandaTrading
 # (1.) read parameters
 reader1 = ReadParameters(file_name = 'p_data_parameters.json')
 parameter_dict = reader1.read_parameters(reader1.path)
+# update mode to testing
+parameter_dict['mode'] = 'testing'
+with open('parameters/p_data_parameters.json', 'w', encoding = 'utf-8') as f:
+    json.dump(parameter_dict, f, indent = 4)
+    
 print(parameter_dict)
 # (2.) read forex data
 read_forex_data = ReadForexData(parameter_dict)

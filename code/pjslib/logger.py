@@ -38,14 +38,17 @@ ch.setFormatter(formatter)
 # create logger
 logger1 = logging.getLogger('logger1')
 # set level
-logger1.setLevel(logging.INFO)
+logger1.setLevel(logging.ERROR)
 # save to file
-hdlr_1 = logging.FileHandler('logging/logging.log')
+hdlr_1 = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'logging.log'))
 hdlr_1.setFormatter(formatter)
 # command line
 # add ch to logger
-logger1.addHandler(ch)
-logger1.addHandler(hdlr_1)
+
+if not logger1.handlers:
+    logger1.addHandler(ch)
+    logger1.addHandler(hdlr_1)
+
 
 # :::logger_s
 # create logger
@@ -53,12 +56,13 @@ logger_s = logging.getLogger('logger_s')
 # set level
 logger_s.setLevel(logging.INFO)
 # save to file
-hdlr_s = logging.FileHandler('logging/logging_seed.log')
+hdlr_s = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'logging_seed.log'))
 hdlr_s.setFormatter(formatter)
 # command line
 # add ch to logger
-logger_s.addHandler(ch)
-logger_s.addHandler(hdlr_s)
+if not logger_s.handlers:
+    logger_s.addHandler(ch)
+    logger_s.addHandler(hdlr_s)
 
 
 
@@ -71,15 +75,16 @@ logger_s.addHandler(hdlr_s)
 # create logger
 logger2 = logging.getLogger('logger2')
 # set level
-logger2.setLevel(logging.INFO)
+logger2.setLevel(logging.ERROR)
 # save to file
 
 hdlr_2 = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'testing_logging.log'))
 hdlr_2.setFormatter(formatter)
 # command line
 # add ch to logger
-logger2.addHandler(ch)
-logger2.addHandler(hdlr_2)
+if not logger2.handlers:
+    logger2.addHandler(ch)
+    logger2.addHandler(hdlr_2)
 
 #:::logger3
 
@@ -92,8 +97,9 @@ hdlr_3 = logging.FileHandler(os.path.join(code_folder_path, 'testing', 'code_tes
 hdlr_3.setFormatter(formatter)
 # command line
 # add ch to logger
-logger3.addHandler(ch)
-logger3.addHandler(hdlr_3)
+if not logger3.handlers:
+    logger3.addHandler(ch)
+    logger3.addHandler(hdlr_3)
 
 
 # create logger
@@ -106,8 +112,9 @@ hdlr_t = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'temp_log
 hdlr_t.setFormatter(formatter)
 # command line
 # add ch to logger
-logger_t.addHandler(ch)
-logger_t.addHandler(hdlr_t)
+if not logger_t.handlers:
+    logger_t.addHandler(ch)
+    logger_t.addHandler(hdlr_t)
 
 # create logger
 logger_bg = logging.getLogger('logger_bg')
@@ -118,8 +125,10 @@ hdlr_bg = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'bg_logg
 hdlr_bg.setFormatter(formatter)
 # command line
 # add ch to logger
-logger_bg.addHandler(ch)
-logger_bg.addHandler(hdlr_bg)
+if not logger_bg.handlers:
+    logger_bg.addHandler(ch)
+    logger_bg.addHandler(hdlr_bg)
+    logger_bg.progagate = False
 
 # # =========================================
 # # create logger

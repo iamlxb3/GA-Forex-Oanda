@@ -6,7 +6,7 @@ import json
 para_dict = collections.defaultdict(lambda: collections.defaultdict(lambda:{}))
 para_dict['input']['raw_data_path'] = ''
 para_dict['input']['raw_data_file_name'] = 'cleaned_data.txt'
-para_dict['input']['feature_choice_str'] = '0,1,3,4,5,6,7,8,13,14,15,16'
+para_dict['input']['feature_choice_str'] = '0,1,3,4,5,6,7,8,13,14,15,16,17,18'
 
 #-------------------------------------------------switch bit------operator_bit------valuebit
 # -------
@@ -26,7 +26,7 @@ para_dict['input']['data_pos_in_chromosome'][15] = (1, 2, 0, 6, 0) #1
 para_dict['input']['feature_decide_bit_len'] = 4
 
 para_dict['input']['restrict_training_date'] = True
-para_dict['input']['training_date_start'] = '01/07/2016'
+para_dict['input']['training_date_start'] = '12/16/2015'
 para_dict['input']['training_date_end'] = '11/30/2016'
 para_dict['input']['training_testing_ratio'] = '8,2'
 # determine the decisive feature
@@ -103,8 +103,8 @@ para_dict['SGA']['max_population_num'] = 60
 para_dict['SGA']['parent_select_mode'] = 'TS'
 para_dict['SGA']['TS']['TS_K'] = 3
 para_dict['SGA']['intial_solution_number'] = 30
-para_dict['SGA']['target_return_percent'] = 15
-para_dict['SGA']['no_progress_generation'] = 50
+para_dict['SGA']['target_return_percent'] = 40
+para_dict['SGA']['no_progress_generation'] = 200
 para_dict['SGA']['buy_sell_switch'] = 1
 para_dict['SGA']['multiple_return_switch'] = 0
 

@@ -1,344 +1,684 @@
 
 ==========================================================================================
-name: 0
-00110010010011110000000001011001110110100011100000111000001110001101001000110011110001101111000110011111000
-profit: 10.0
-fitness: 0.765
+name: 9
+10010011101000110110011001010000000100111111101111010011000011001001010100001110010101000011101110101000011
+profit: 3.7
+fitness: 0.451
 stock return..
 -------------------------------------------------
-2011-04-01,INTC
-2011-04-08,CAT
-2011-04-15,AA
-2011-04-21,IBM
-2011-04-29,HPQ
-2011-05-06,XOM
-2011-05-13,DIS
-2011-05-20,HPQ
-2011-05-27,TRV
-2011-06-03,DIS
-2011-06-10,CSCO
-2011-06-17,AA
-2011-06-24,BA
+2016-12-11,USD_CHF
+2016-12-22,AUD_USD
+2016-12-23,AUD_USD
+2016-12-26,AUD_USD
+2017-01-22,USD_CHF
+2017-01-29,AUD_USD
+2017-02-12,AUD_USD
+2017-02-17,AUD_USD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "operator": "11",
+    "openMid_1_day_percent": {
         "is_include": 1,
-        "value": 0.5
+        "value": 4.8125,
+        "operator": "00"
     },
-    "days_to_next_dividend": {
-        "operator": "11",
-        "is_include": 0,
-        "value": 220
-    },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": 4.25
-    },
-    "percent_return_next_dividend": {
-        "operator": "10",
-        "is_include": 0,
-        "value": 0.875
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 3
-00011101011011010010010101010111001101010010011010111100010010110101010000100110110110111000111001100110100
-profit: 3.9
-fitness: 3.879
-stock return..
--------------------------------------------------
-2011-05-20,HPQ
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "operator": "10",
+    "lowMid_percent": {
         "is_include": 1,
-        "value": 164.5
+        "value": 2,
+        "operator": "00"
     },
-    "days_to_next_dividend": {
-        "operator": "10",
-        "is_include": 0,
-        "value": 103
-    },
-    "percent_change_price": {
-        "operator": "00",
-        "is_include": 0,
-        "value": 11.375
-    },
-    "percent_return_next_dividend": {
-        "operator": "01",
+    "volume_1_day_percent": {
         "is_include": 1,
-        "value": 0.5625
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 1
-00101100111010100001010101000011001101000110011000110100100000111001011011000110101001000011010010101001010
-profit: 0.0
-fitness: 0.0
-stock return..
--------------------------------------------------
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "operator": "01",
-        "is_include": 1,
-        "value": -168.5
+        "value": 84,
+        "operator": "00"
     },
-    "days_to_next_dividend": {
-        "operator": "00",
+    "highMid_1_day_percent": {
         "is_include": 0,
-        "value": 102
+        "value": 5.5625,
+        "operator": "00"
     },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": -3.875
-    },
-    "percent_return_next_dividend": {
-        "operator": "00",
+    "lower_shadow_percent": {
         "is_include": 1,
-        "value": 2.5625
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 2
-00111101011011010111000110011111001101010000010110111100010000111101011010010110010110101000101001100110100
-profit: 0.0
-fitness: 0.0
-stock return..
--------------------------------------------------
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "operator": "10",
-        "is_include": 1,
-        "value": 398
+        "value": 10,
+        "operator": "11"
     },
-    "days_to_next_dividend": {
-        "operator": "11",
+    "closeMid_1_day_percent": {
         "is_include": 0,
-        "value": 103
+        "value": -6.9375,
+        "operator": "01"
     },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": 11.375
-    },
-    "percent_return_next_dividend": {
-        "operator": "01",
+    "volume": {
         "is_include": 1,
-        "value": 0.0625
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 4
-00111000010011010111100010011111100101110010010010100101010010111111111010000010110110101000101011100110101
-profit: 0.0
-fitness: 0.0
-stock return..
--------------------------------------------------
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "operator": "10",
+        "value": 8599,
+        "operator": "01"
+    },
+    "real_body_percent": {
         "is_include": 1,
-        "value": 286
+        "value": 20,
+        "operator": "11"
     },
-    "days_to_next_dividend": {
-        "operator": "11",
-        "is_include": 0,
-        "value": 79
-    },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": 1.25
-    },
-    "percent_return_next_dividend": {
-        "operator": "11",
+    "upper_shadow_percent": {
         "is_include": 1,
-        "value": 0.5625
+        "value": 28,
+        "operator": "00"
     }
 }
 ==========================================================================================
 
 ==========================================================================================
 name: 5
-00111011010001010011010010011111111101111010001100101110110011110111011101100110110010101100101001000110110
-profit: 0.0
-fitness: 0.0
+10010111100000000110001001000100000100111111101111100001000011100111110110001110110101101011101110100000010
+profit: -1.9
+fitness: -0.193
 stock return..
 -------------------------------------------------
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-13,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "operator": "10",
-        "is_include": 0,
-        "value": 300
-    },
-    "days_to_next_dividend": {
-        "operator": "11",
-        "is_include": 0,
-        "value": 127
-    },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": 13.25
-    },
-    "percent_return_next_dividend": {
-        "operator": "11",
+    "openMid_1_day_percent": {
         "is_include": 1,
-        "value": 1.5
+        "value": 6.75,
+        "operator": "00"
+    },
+    "lowMid_percent": {
+        "is_include": 1,
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -223,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": -4.5,
+        "operator": "00"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.9375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8463,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 22,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 29,
+        "operator": "10"
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 0
+10110111100000100110001001000100000100110111101111101011000011100011110110001110010101101011101110100000010
+profit: -2.7
+fitness: -0.247
+stock return..
+-------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-13,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "openMid_1_day_percent": {
+        "is_include": 1,
+        "value": 6.75,
+        "operator": "01"
+    },
+    "lowMid_percent": {
+        "is_include": 1,
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -222,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": 4.5,
+        "operator": "00"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.4375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8623,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 29,
+        "operator": "10"
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 1
+10110011100010100010001001000100000100111111101111110001000011100011110110001110010101101011101110100000010
+profit: -2.7
+fitness: -0.247
+stock return..
+-------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-13,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "openMid_1_day_percent": {
+        "is_include": 1,
+        "value": 4.75,
+        "operator": "01"
+    },
+    "lowMid_percent": {
+        "is_include": 1,
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -222,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": 0.5,
+        "operator": "10"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.9375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8479,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 29,
+        "operator": "10"
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 2
+10010001100000000110001001000100000100111111101111100001000011100111110110001110010101101011101110100000010
+profit: -2.7
+fitness: -0.247
+stock return..
+-------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-13,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "openMid_1_day_percent": {
+        "is_include": 1,
+        "value": 0.75,
+        "operator": "00"
+    },
+    "lowMid_percent": {
+        "is_include": 1,
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -223,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": -4.5,
+        "operator": "00"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.9375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8463,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 29,
+        "operator": "10"
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 3
+10010011100010100010001001000100000100111111101111100001000011100011110110001110010101101011101110100000010
+profit: -2.7
+fitness: -0.247
+stock return..
+-------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-13,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "openMid_1_day_percent": {
+        "is_include": 1,
+        "value": 4.75,
+        "operator": "00"
+    },
+    "lowMid_percent": {
+        "is_include": 1,
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -222,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": 0.5,
+        "operator": "10"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.9375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8463,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 29,
+        "operator": "10"
     }
 }
 ==========================================================================================
 
 ==========================================================================================
 name: 6
-00101001010011010010010110011111001111110010000110111100110000100110011101110110110110101100101001000110100
-profit: 0.0
-fitness: 0.0
+10110111100000100110101001000100000100111111101111101011000011100011110110001110010101101011101110110000010
+profit: -2.7
+fitness: -0.247
 stock return..
 -------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-13,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "operator": "10",
+    "openMid_1_day_percent": {
         "is_include": 1,
-        "value": 420
+        "value": 6.75,
+        "operator": "01"
     },
-    "days_to_next_dividend": {
-        "operator": "11",
-        "is_include": 0,
-        "value": 231
-    },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": -9.25
-    },
-    "percent_return_next_dividend": {
-        "operator": "11",
+    "lowMid_percent": {
         "is_include": 1,
-        "value": 0.5
-    }
-}
-==========================================================================================
-
-==========================================================================================
-name: 7
-00111011011011010111000110011111100101111010011000101100110010011111011101000110110010001100111011101110111
-profit: 0.0
-fitness: 0.0
-stock return..
--------------------------------------------------
--------------------------------------------------
-feature_dict
-{
-    "percent_change_volume_over_last_wek": {
-        "operator": "10",
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
         "is_include": 1,
-        "value": 398
+        "value": -222,
+        "operator": "10"
     },
-    "days_to_next_dividend": {
-        "operator": "11",
+    "highMid_1_day_percent": {
         "is_include": 0,
-        "value": 79
+        "value": 4.625,
+        "operator": "00"
     },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": 13.375
-    },
-    "percent_return_next_dividend": {
-        "operator": "11",
+    "lower_shadow_percent": {
         "is_include": 1,
-        "value": 1.5625
+        "value": 6,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.9375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8623,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 29,
+        "operator": "10"
     }
 }
 ==========================================================================================
 
 ==========================================================================================
 name: 8
-00111010110011010111100010011111100101111010010010000101000010011111111000000011110010011100101011101110111
-profit: 0.0
-fitness: 0.0
+10010111100000100110001001000100000100111111101111100001000011100011110110001110010101101011101110110000010
+profit: -2.7
+fitness: -0.247
 stock return..
 -------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-13,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "operator": "10",
+    "openMid_1_day_percent": {
         "is_include": 1,
-        "value": 286
+        "value": 6.75,
+        "operator": "00"
     },
-    "days_to_next_dividend": {
-        "operator": "11",
-        "is_include": 0,
-        "value": 79
-    },
-    "percent_change_price": {
-        "operator": "01",
-        "is_include": 0,
-        "value": 5.75
-    },
-    "percent_return_next_dividend": {
-        "operator": "11",
+    "lowMid_percent": {
         "is_include": 1,
-        "value": 1.5625
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -222,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": 4.5,
+        "operator": "00"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 6,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.9375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8463,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 29,
+        "operator": "10"
     }
 }
 ==========================================================================================
 
 ==========================================================================================
-name: 9
-00011101111000000001010010010111100101110110111000110110010010110101001010100110110110101000111001000110111
-profit: 0.0
-fitness: 0.0
+name: 4
+10110011100000100110001001000100000100110001101111101111000011100010110110001110010101100111101110100000010
+profit: -3.1
+fitness: -0.313
 stock return..
 -------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
 -------------------------------------------------
 feature_dict
 {
-    "percent_change_volume_over_last_wek": {
-        "operator": "00",
-        "is_include": 0,
-        "value": -296
-    },
-    "days_to_next_dividend": {
-        "operator": "10",
-        "is_include": 0,
-        "value": 79
-    },
-    "percent_change_price": {
-        "operator": "00",
-        "is_include": 0,
-        "value": 11.875
-    },
-    "percent_return_next_dividend": {
-        "operator": "11",
+    "openMid_1_day_percent": {
         "is_include": 1,
-        "value": 2.6875
+        "value": 4.75,
+        "operator": "01"
+    },
+    "lowMid_percent": {
+        "is_include": 1,
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -218,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": 4.5,
+        "operator": "00"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.0625,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8687,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 30,
+        "operator": "10"
+    }
+}
+==========================================================================================
+
+==========================================================================================
+name: 7
+10110111100000100010101001000100000100110111101111101011000011100011110110001110010101100111101110110000010
+profit: -3.1
+fitness: -0.313
+stock return..
+-------------------------------------------------
+2016-12-18,AUD_USD
+2016-12-21,AUD_USD
+2016-12-23,USD_CHF
+2016-12-26,USD_CHF
+2016-12-27,USD_CHF
+2017-02-10,AUD_USD
+2017-02-17,USD_CHF
+2017-02-20,USD_CHF
+2017-02-21,USD_CHF
+2017-02-23,AUD_USD
+-------------------------------------------------
+feature_dict
+{
+    "openMid_1_day_percent": {
+        "is_include": 1,
+        "value": 6.75,
+        "operator": "01"
+    },
+    "lowMid_percent": {
+        "is_include": 1,
+        "value": 0.5,
+        "operator": "00"
+    },
+    "volume_1_day_percent": {
+        "is_include": 1,
+        "value": -222,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": 0.625,
+        "operator": "00"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 6,
+        "operator": "11"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.4375,
+        "operator": "01"
+    },
+    "volume": {
+        "is_include": 1,
+        "value": 8623,
+        "operator": "01"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 20,
+        "operator": "11"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 30,
+        "operator": "10"
     }
 }
 ==========================================================================================

@@ -10,7 +10,7 @@ def find_upper_level_folder_path(num, path = ''):
     else:
         return path
 # ==================================================================
-       
+''' MAIN SUB FUNCTION FOR OANDA GA TRAINING AND TESTING '''
 # import subprocess
 import os
 import sys
@@ -24,7 +24,10 @@ def run_python(path):
     cwd = os.path.dirname(os.path.realpath(path))
     subprocess.call("python {}".format(path), shell=True, cwd = cwd)
         
-
+""" D:\我的坚果云\我的坚果云\SLP\dissertation\main\pyoanda read history data first: read_history_forex_data.py"""
+        
+        
+        
 # GET PATH
 # (1.) get GA main path (training)
 code_main_folder = find_upper_level_folder_path(3)
@@ -52,9 +55,14 @@ run_python(oanda_main_w_parameter__path)
 sub_reader = SubReader()
 parameter_dict = sub_reader.read_parameters(oanda_main_parameter_json__path)
 parameter_dict['input']['raw_data_path'] = oanda_data_path
+print ("oanda_data_path: ", oanda_data_path)
+parameter_dict['input']['next_price_str'] = 'profit_1_day'
+parameter_dict['input']['training_date_start'] = '05/08/2013'
+parameter_dict['input']['training_date_end'] = '02/01/2016'
+parameter_dict['SGA']['buy_sell_switch'] = 1
 sub_reader.write_json(oanda_main_parameter_json__path, parameter_dict)
 
-# (3.) run AM-stock GA
+# (3.) run  GA
 if is_test:
     run_python(GA_testing_path)
 elif is_train:

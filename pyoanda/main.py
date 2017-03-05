@@ -9,7 +9,7 @@ from pjslib.logger import oanda_logger
 from read_forex_data import ReadForexData
 from read_parameters import ReadParameters
 from sub.sub_reader import SubReader
-
+''' MAIN FUNCTION FOR TRADING '''
 #=====================SUB_PROCESS================
 code_main_folder = get_upper_folder_path(2)
 sys.path.append(code_main_folder)
@@ -100,7 +100,7 @@ with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
         #(chromosome_bits, chromosome_type, parameter_path, data_path, output_path, trading = False
         # cls_result_today: (datetime.date(2017, 2, 17), 'GBP_USD')
         cls_result_today = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
-                                              oanda_forex_trading_data_path)
+                                              oanda_forex_trading_data_path, trading = True)
         # test whether this chromosome has return any forex for any date
         if cls_result_today == None:
             oanda_logger.info("{} has no forex return for any date".format(chromosome_type))

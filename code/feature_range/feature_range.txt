@@ -1,34 +1,74 @@
 {
+    "3": {
+        "pos_average": 0.36984131326949066,
+        "max_value": 4.05,
+        "min_value": -17.05,
+        "neg_average": -0.40115862467494656,
+        "var": 0.34309954217289274,
+        "name": "openMid_1_day_percent"
+    },
+    "4": {
+        "pos_average": 0.34991803278688405,
+        "max_value": 3.61,
+        "min_value": -16.02,
+        "neg_average": -0.3554695360536582,
+        "var": 0.2905888257814531,
+        "name": "highMid_1_day_percent"
+    },
+    "5": {
+        "pos_average": 0.3340829809725128,
+        "max_value": 4.73,
+        "min_value": -21.35,
+        "neg_average": -0.3903331332532991,
+        "var": 0.35092121990488623,
+        "name": "lowMid_percent"
+    },
+    "6": {
+        "pos_average": 0.3721821684094632,
+        "max_value": 4.05,
+        "min_value": -17.05,
+        "neg_average": -0.39854681217690696,
+        "var": 0.3413769087669018,
+        "name": "closeMid_1_day_percent"
+    },
+    "7": {
+        "pos_average": 40586.93001686341,
+        "max_value": 312154.0,
+        "min_value": 404.0,
+        "neg_average": 0.0,
+        "var": 1220866980.597969,
+        "name": "volume"
+    },
     "8": {
-        "min_value": -15.4229,
-        "neg_average": -1.8626000515406143,
-        "max_value": 9.88223,
-        "var": 6.265754075879321,
-        "name": "percent_change_price",
-        "pos_average": 1.8915959402203864
+        "pos_average": 38.80862814895935,
+        "max_value": 95.22,
+        "min_value": -4921.0,
+        "neg_average": -191.9223498845261,
+        "var": 60358.36415232061,
+        "name": "volume_1_day_percent"
     },
-    "9": {
-        "min_value": -61.43317522,
-        "neg_average": -22.09826394468168,
-        "max_value": 327.4089238,
-        "var": 1641.490604549324,
-        "name": "percent_change_volume_over_last_wek",
-        "pos_average": 32.526835103580844
-    },
-    "14": {
+    "13": {
+        "pos_average": 45.06857504215868,
+        "max_value": 100.0,
         "min_value": 0.0,
         "neg_average": 0.0,
-        "max_value": 329.0,
-        "var": 2102.231155478395,
-        "name": "days_to_next_dividend",
-        "pos_average": 52.25972222222222
+        "var": 632.2835927137336,
+        "name": "real_body_percent"
+    },
+    "14": {
+        "pos_average": 50.29674676784689,
+        "max_value": 100.0,
+        "min_value": 0.0,
+        "neg_average": 0.0,
+        "var": 974.665330745879,
+        "name": "upper_shadow_percent"
     },
     "15": {
-        "min_value": 0.0655738,
+        "pos_average": 50.981852164137365,
+        "max_value": 100.0,
+        "min_value": 0.0,
         "neg_average": 0.0,
-        "max_value": 1.56421,
-        "var": 0.09294253167320418,
-        "name": "percent_return_next_dividend",
-        "pos_average": 0.6915641252777778
+        "var": 818.9235747875881,
+        "name": "lower_shadow_percent"
     }
 }

@@ -27,4 +27,15 @@ hdlr_1.setFormatter(formatter)
 oanda_logger.addHandler(ch)
 oanda_logger.addHandler(hdlr_1)
 
+# create logger
+strategy_logger = logging.getLogger('strategy_logger')
+# set level
+strategy_logger.setLevel(logging.INFO)
+# save to file
+hdlr_2 = logging.FileHandler('logging/strategy_logging.log')
+hdlr_2.setFormatter(formatter)
+# command line
+# add ch to logger
+strategy_logger.addHandler(ch)
+strategy_logger.addHandler(hdlr_2)
 

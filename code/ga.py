@@ -63,6 +63,7 @@ class GeneticAlgorithm():
 
         # --------------:::__init__:::----------------------
         self.parameter_dict = parameter_dict
+        self.sell_or_buy = parameter_dict['SGA']['buy_sell_switch']
         self.result_dict = collections.defaultdict(lambda :0)
         self.tabu_list = []
         self.current_solutions_list = []
@@ -319,6 +320,9 @@ class GeneticAlgorithm():
                 random_chromosome = [random.randint(0, 1) for p in range(chromosome_bits_length)]
                 s = Solution()
                 s.chromosome_bits = random_chromosome
+                # discard this chromosome if it doesn't match the buy/sell option
+                if not self.sell_or_buy == int(s.chromosome_bits[0]):
+                    continue
                 # (b) translate chromosome bits list to decimal value
                 s.translate_chromosome_bits(feature_pos_dict)
                 # (c) get the classfiled result in each day

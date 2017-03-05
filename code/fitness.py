@@ -65,8 +65,8 @@ class AmericanStockFitness():
         solution.fitness = float("{:.3f}".format(average))
         solution.is_f_computed = True
         logger1.debug("----------SOLUTION_INFO-----------------------")
-        logger1.debug("solution_name: {}, result:{}"
-                     .format(population_name, average, pprint.pformat(solution.classification_result_list)))
+        # logger1.debug("solution_name: {}, result:{}"
+        #              .format(population_name, average, pprint.pformat(solution.classification_result_list)))
         logger1.debug("chromosome_length: {}"
                      .format(pprint.pformat(len(''.join([str(x) for x in solution.chromosome_bits])))))
         logger1.debug("chromosome: {}"

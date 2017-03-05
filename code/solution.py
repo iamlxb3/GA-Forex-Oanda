@@ -22,7 +22,7 @@ sys.path.append(os.path.join(parent_folder))
 
 from general import get_upper_folder_path
 from general import accepts
-from logger import logger1
+from logger import logger1,logger_t
 #================================================
 import os
 import sys
@@ -265,6 +265,18 @@ class Solution():
                                       len(cls.seed_list), seed_radius_value, ga.small_generation,
                                       ga.big_generation))
                 logger1.debug("#SEED FOUND END#")
+
+
+
+    @classmethod
+    def remove_invalid_solution(cls, ga):
+        buy_or_sell = ga.parameter_dict['SGA']['buy_sell_switch']
+        all_solutions = cls._all
+        for solution in all_solutions:
+            solution_buy_or_sell = int(solution.chromosome_bits[0])
+            if solution_buy_or_sell != buy_or_sell:
+                cls._all.remove(solution)
+                logger1.debug("#SOLUTION REMOVE because of buy/sell option!!#ID:{}, ".format(solution.name))
 
 
     @classmethod

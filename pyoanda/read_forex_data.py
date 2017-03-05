@@ -198,7 +198,7 @@ class ReadForexData:
                                    closeMid_1_day_percent, volume, volume_1_day_percent, openMid_3_day_std,
                                    openMid_7_day_std, volume_3_day_std, volume_7_day_std,
                                    real_body_percent, upper_shadow_percent, lower_shadow_percent, profit_1_day,
-                                   profit_3_day, profit_7_day)
+                                   profit_3_day, profit_7_day, openMid)
                 self.forex_data_dict[instrument].append(day_forex_tuple)
 
 

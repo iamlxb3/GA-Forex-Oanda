@@ -43,7 +43,7 @@ from fitness import AmericanStockFitness
 
 # chromosome_type = '1_day', '3_day', '7_day'
 def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_path, data_path,
-                                 trading = False):
+                                 trading = False, return_data_dict = False):
     # (1.) read the parameters
     logger2.info("Genetic Algorithm Starting......")
     reader1 = ReadParameters()
@@ -71,7 +71,7 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     # print ("testing_data_dict: ", testing_data_dict)
     # print("parameter_dict: ", parameter_dict)
     # print ("chromosome_bits: ", chromosome_bits)
-    print ("classification_result:", classification_result)
+    #print ("classification_result:", classification_result)
     classification_result_1_day = sorted(classification_result, key = lambda x:x[0], reverse = True)[0]
 
 
@@ -97,4 +97,9 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     #                 .format(buy_or_sell, chromosome_type, classification_result_1_day))
 
     # return
-    return classification_result_1_day
+    if trading:
+        return classification_result_1_day
+    elif not trading and return_data_dict:
+        return classification_result, testing_data_dict
+    elif not trading:
+        return classification_result

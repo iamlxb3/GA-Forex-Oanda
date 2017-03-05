@@ -81,8 +81,10 @@ class OandaTrading():
         # sell end
 
         # if forex appear in both set, delete it
-        buy_set -= sell_set
-        sell_set -= buy_set
+        buy_set_complete = buy_set.copy()
+        sell_set_complete = sell_set.copy()
+        buy_set -= sell_set_complete
+        sell_set -= buy_set_complete
         day_buy = list(buy_set)
         day_sell = list(sell_set)
         oanda_logger.info("day_buy: {}".format(day_buy))
