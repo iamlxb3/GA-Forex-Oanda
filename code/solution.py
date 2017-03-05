@@ -553,6 +553,16 @@ class Solution():
                             operator_bits_str, is_feature_satisfied
                         ))
                         # ==========================logging end==========================
+
+                        #==========================logging==========================
+                        # only log the included feature
+                        logger_t.info("date:{}, stock:{}, feature_name:{}, data_feature_value:{},"
+                                      " solution_feature_value:{}, operator: {} is_satisfied:{}".format(
+                            date_object, target, feature_name, data_feature_value, solution_feature_value,
+                            operator_bits_str, is_feature_satisfied
+                        ))
+                        # ==========================logging end==========================
+
                         if is_feature_satisfied:
                             continue
                         else:

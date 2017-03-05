@@ -15,14 +15,44 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="oanda_trade_strategy_testing.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="oanda_trade_strategy_testing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyoanda/oanda_trade_strategy_testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="124" column="23" lean-forward="false" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="23" />
+            <state relative-caret-position="486">
+              <caret line="120" column="67" lean-forward="false" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="67" />
               <folding>
                 <element signature="e#324#334#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/solution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="558" column="57" lean-forward="true" selection-start-line="558" selection-start-column="54" selection-end-line="558" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logger.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/pjslib/logger.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="116" column="12" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single_chromo_cls_result.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/single_chromo_cls_result.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="65" column="55" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,46 +109,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="single_chromo_cls_result.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/single_chromo_cls_result.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formatter_0.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/formatter_0.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="154" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="write_oanda_parameters.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/parameters/write_oanda_parameters.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="791">
-              <caret line="85" column="40" lean-forward="false" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="read_history_forex_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyoanda/read_history_forex_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="26" column="44" lean-forward="false" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -145,7 +135,6 @@
       <find>compare_data_solution_value</find>
       <find>feature_dict</find>
       <find>format_and_create_dict</find>
-      <find>get_classification_result</find>
       <find>get_day_buy_sell</find>
       <find>get_trade_instrument</find>
       <find>ga_classifier_result_dict</find>
@@ -155,11 +144,12 @@
       <find>logger1</find>
       <find>filter_solution_pool</find>
       <find>input_data_dict</find>
-      <find>get_single_chromo_cls_result</find>
       <find>print</find>
       <find>self.date</find>
       <find>compute_profit</find>
+      <find>get_single_chromo_cls_result</find>
       <find>collections</find>
+      <find>get_classification_result</find>
     </findStrings>
     <replaceStrings>
       <replace>chromosome_bits</replace>
@@ -198,7 +188,6 @@
         <option value="$PROJECT_DIR$/code/parameters/parameter.json" />
         <option value="$PROJECT_DIR$/code/parameters/write_oanda_parameters.py" />
         <option value="$PROJECT_DIR$/code/ga.py" />
-        <option value="$PROJECT_DIR$/code/solution.py" />
         <option value="$PROJECT_DIR$/code/main.py" />
         <option value="$PROJECT_DIR$/pyoanda/parameters/p_data_parameters.json" />
         <option value="$PROJECT_DIR$/pyoanda/sub/oanda_sub.py" />
@@ -214,14 +203,15 @@
         <option value="$PROJECT_DIR$/pyoanda/pjslib/logger.py" />
         <option value="$PROJECT_DIR$/pyoanda/oanda_strategy.py" />
         <option value="$PROJECT_DIR$/pyoanda/oanda_trade_strategy_testing.py" />
+        <option value="$PROJECT_DIR$/code/solution.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-293" />
-    <option name="y" value="17" />
-    <option name="width" value="1932" />
-    <option name="height" value="1052" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -276,6 +266,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pjslib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,10 +458,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-293" y="17" width="1932" height="1052" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25444096" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25364584" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -686,16 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7317">
-          <caret line="271" column="31" lean-forward="false" selection-start-line="271" selection-start-column="8" selection-end-line="271" selection-end-column="31" />
-          <folding>
-            <element signature="e#354#364#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyoanda/parameters/p_data_parameters.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -736,14 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/pjslib/logger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -820,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/single_chromo_cls_result.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyoanda/s_logger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -862,13 +844,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/single_chromo_cls_result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="65" column="55" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pyoanda/oanda_trade_strategy_testing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="124" column="23" lean-forward="false" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="23" />
+        <state relative-caret-position="486">
+          <caret line="120" column="67" lean-forward="false" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="67" />
           <folding>
             <element signature="e#324#334#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/pjslib/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="116" column="12" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="558" column="57" lean-forward="true" selection-start-line="558" selection-start-column="54" selection-end-line="558" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
