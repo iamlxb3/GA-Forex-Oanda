@@ -556,11 +556,13 @@ class Solution():
 
                         #==========================logging==========================
                         # only log the included feature
+                        logger_t.info("=============================================================")
                         logger_t.info("date:{}, stock:{}, feature_name:{}, data_feature_value:{},"
                                       " solution_feature_value:{}, operator: {} is_satisfied:{}".format(
                             date_object, target, feature_name, data_feature_value, solution_feature_value,
                             operator_bits_str, is_feature_satisfied
                         ))
+                        logger_t.info("=============================================================\n")
                         # ==========================logging end==========================
 
                         if is_feature_satisfied:
@@ -604,6 +606,16 @@ class Solution():
 
                         self.classification_result_dict[date_object].append(target_decisive_feature_tuple)
                         #logger1.info("self.classification_result_dict[date_object]: {}".format(self.classification_result_dict[date_object]))
+
+                    # =======================TEMP LOGGING==============================================
+                    if is_target_chosen:
+                        logger_t.info("------------------Target Chosen!------------------------")
+                        logger_t.info("Date: {}, Target: {}, feature_value_tuple:\n {},"
+                                      " target_decisive_feature_tuple:\n{}"
+                                      .format(date_object, target, feature_value_tuple,target_decisive_feature_tuple))
+                        logger_t.info("--------------------------------------------------------\n\n")
+                    # =======================TEMP LOGGING==============================================
+
                     is_target_chosen = False
 
         # multiple_return_switch
