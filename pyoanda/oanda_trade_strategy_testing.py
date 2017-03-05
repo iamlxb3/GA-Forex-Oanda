@@ -95,10 +95,10 @@ for chromosome_1_buy in chromosome_combo_dict['1_day_buy']:
 print(chromosome_combo_list[-1])
 print(len(chromosome_combo_list))
 
+chromosome_combo_list = sorted(chromosome_combo_list)
 
 
-
-
+chromosome_combo_profit_list = []
 for chromosome_combo in chromosome_combo_list:
     buy_set = set()
     sell_set = set()
@@ -118,8 +118,15 @@ for chromosome_combo in chromosome_combo_list:
         if not is_chromosome_chosen:
             print ("chromosome_type chosen state: ", is_chromosome_chosen)
             continue
-        cls_result,testing_data_dict = get_single_chromo_cls_result(chromosome_bit_list, chromosome_type, oanda_main_parameter_json__path,
+        cls_result,testing_data_dict = get_single_chromo_cls_result(chromosome_bit_list, chromosome_type,
+                                                                    oanda_main_parameter_json__path,
                                                   oanda_forex_testing_data_path, return_data_dict = True)
+        with open('cls_result.txt', 'a') as f:
+            f.write("\n====================================================\n")
+            f.write(str(chromosome_detail))
+            for a in cls_result:
+                f.write(str(a) + '\n')
+
         if cls_result == None:
             cls_result = []
 
@@ -144,12 +151,33 @@ for chromosome_combo in chromosome_combo_list:
     sell_set -= buy_set_complete
     ga_buy_list = sorted(list(buy_set), key = lambda x:x[0])
     ga_sell_list = sorted(list(sell_set), key = lambda x: x[0])
+    # TEMP
+    with open('ga_buy_list.txt', 'a') as f:
+        for a in ga_buy_list:
+            f.write(str(a) + '\n')
+    with open('ga_sell_list.txt', 'a') as f:
+        for a in ga_sell_list:
+            f.write(str(a) + '\n')
+    # TEMP
     print ("buy_set_len", len(buy_set))
     print ("sell_set_len", len(sell_set))
     #(data_path, ga_buy_list, ga_sell_list):
     oanda_strategy = OandaStrategy(oanda_forex_testing_data_path, ga_buy_list, ga_sell_list)
     oanda_strategy.compute_profit()
-    sys.exit(0)
+    profit = float(oanda_strategy.get_profit())
+    print ("profit now!!-------------------------------------------------------------------:{}".format(profit))
+    chromosome_combo_profit_list.append((chromosome_combo, profit))
+
+
+chromosome_combo_profit_list = sorted(chromosome_combo_profit_list, key = lambda x:x[1], reverse = True)
+# write to file
+with open ("OANDA_STRATEGY_RESULT.txt", 'w', encoding = 'utf-8') as f:
+    for chromosome_combo in chromosome_combo_profit_list:
+        f.write("\n============================================\n")
+        f.write(str(chromosome_combo[0]))
+        f.write("\nProfit:{}\n".format(chromosome_combo[1]))
+        f.write("============================================\n")
+
 
 
 

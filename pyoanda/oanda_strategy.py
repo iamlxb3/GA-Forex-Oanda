@@ -66,9 +66,10 @@ class OandaStrategy:
     def close_out(self):
         new_close_out_pair_list = []
         for order_pos_tuple, close_out_tuple, capital, buy_or_sell in self.close_out_pair_list:
-            strategy_logger.info("======================TRANSACTION======================")
+
             if close_out_tuple == None:
-                strategy_logger.info("order:{} has not date for closed out!".format(order_pos_tuple))
+                strategy_logger.info("order:{} does not have date for closed out! Buy_or_sell:{}"
+                                     .format(order_pos_tuple, buy_or_sell))
                 continue
             if buy_or_sell == 'buy':
                 profit_factor = 1
@@ -83,6 +84,7 @@ class OandaStrategy:
                 close_out_price = float(self.data_dict[instrument][close_out_date])
                 close_out_profit = profit_factor * capital * ((close_out_price - order_price)/order_price)
                 self.capital += close_out_profit
+                strategy_logger.info("======================TRANSACTION======================")
                 strategy_logger.info("instrument:{}".format(instrument))
                 strategy_logger.info("order_date:{}, close_out_date:{}".format(order_date, close_out_date))
                 strategy_logger.info("order_price:{}, close_out_price:{}".format(order_price, close_out_price))
@@ -109,7 +111,9 @@ class OandaStrategy:
                 if sell_date > order_date and instrument == sell_instrument:
                     return sell_tuple
                 else:
-                    return None
+                    continue
+            # return None if no close out date is found
+            return None
         else:
             for buy_tuple in self.ga_buy_list:
                 buy_date = buy_tuple[0]
@@ -117,7 +121,8 @@ class OandaStrategy:
                 if buy_date > order_date and instrument == buy_instrument:
                     return buy_tuple
                 else:
-                    return None
+                    continue
+            return None
 
     def update_close_out_pair_list(self):
         # update close_out_pair_list for buy
@@ -141,24 +146,26 @@ class OandaStrategy:
 
 
     def get_profit(self):
-        profit = "{:2.2f}".format((self.capital - self.start_capital)/self.capital)
+        profit = float("{:2.2f}".format((self.capital - self.start_capital)/ self.start_capital))
+        strategy_logger.info("==================capital!!!:{}==================".format(self.capital))
+        strategy_logger.info("==================FINAL_PROFIT!!!:{}==================".format(profit))
         return profit
 
     def compute_profit(self):
         #strategy_logger.info("sell_list:{}".format(self.ga_sell_list))
         i = 0
-        while self.date <= self.date_list[-1]:
+        date_length = len(self.date_list)
+        while i <= date_length - 1:
+            self.date = self.date_list[i]
             self.update_close_out_pair_list()
             strategy_logger.debug("close_out_pair_list:{}".format(self.close_out_pair_list))
             #print ("close_out_pair_list: ", self.close_out_pair_list[0])
             self.close_out()
-            i += 1
-            self.date = self.date_list[i]
             if self.capital <= 0:
                 strategy_logger.info("==================GO bankruptcy!!!==================")
                 self.capital = 0
                 break
+            i += 1
 
-            print ("date: {}, capital:{}".format(self.date, self.capital))
 
 
