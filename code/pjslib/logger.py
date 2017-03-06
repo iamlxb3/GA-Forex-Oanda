@@ -23,6 +23,7 @@ code_folder_path = get_upper_folder_path(2)
 # create formatter
 #=====================Formatter==================================
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter_t = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
 #=====================Formatter==================================
 
 #=====================Command Line===============================
@@ -109,7 +110,7 @@ logger_t.setLevel(logging.INFO)
 # save to file
 
 hdlr_t = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'temp_logging.log'))
-hdlr_t.setFormatter(formatter)
+hdlr_t.setFormatter(formatter_t)
 # command line
 # add ch to logger
 if not logger_t.handlers:

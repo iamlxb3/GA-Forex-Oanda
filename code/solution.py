@@ -514,14 +514,17 @@ class Solution():
 
         for date_object, target_dict in input_data_list:
             # target: 'MRK','VZ', feature_value_tuple: Feature(quarter = '2', stock = 'MRK',....)
-            for target,feature_value_tuple in target_dict.items():
+            target_dict_items = sorted(list(target_dict.items()), key = lambda x:x[0])
+
+            for target,feature_value_tuple in target_dict_items:
                 feature_value_dict = dict(feature_value_tuple._asdict())
                 is_target_chosen = True
                 while is_target_chosen == True:
                 # feature_id : '8', value_dict['name']:'percent_change_price', value_dict['pos']:[(0,1),(1,3),(3,4),(4,8),(8,15)]
                     feature_num = len(self.feature_dict.items())
                     is_not_include_f_num = 0
-                    for feature_name, feature_detail_dict in self.feature_dict.items():
+                    feature_dict_items = sorted(self.feature_dict.items(), key = lambda x:x[0])
+                    for feature_name, feature_detail_dict in feature_dict_items:
 
                         # check the current feature is turned on
                         is_include = feature_detail_dict['is_include']
@@ -593,7 +596,7 @@ class Solution():
                     # TODO test this feature
                     # at lesat one feature should be turned on
                     if (is_target_chosen == True) and (is_not_include_f_num != feature_num):
-                        # chose only 1 target every day, based on decisive feature, if it is sell, revert the sign
+                        # choose only 1 target every day, based on decisive feature, if it is sell, revert the sign
                         if is_decisive_feature == 0:
                             target_decisive_feature_tuple = (target, float(feature_value_dict[self.decisive_feature]))
                         elif is_decisive_feature == 1:
@@ -647,7 +650,7 @@ class Solution():
         #logging
         logger1.debug("classification_result_list: {}".format(self.classification_result_list))
         logger1.debug("============get_classification_result END!!============")
-
+        logger_t.info("classification_result_list: {}".format(self.classification_result_list))
         # return
         return self.classification_result_list
 

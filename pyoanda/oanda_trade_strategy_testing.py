@@ -18,7 +18,7 @@ sys.path.append(os.path.join(code_main_folder, 'code'))
 #sys.path.append(os.path.join(code_main_folder, 'pyoanda'))
 from single_chromo_cls_result import get_single_chromo_cls_result
 from oanda_strategy import OandaStrategy
-
+from sub.sub_reader import SubReader
 
 # import subprocess
 import os
@@ -36,11 +36,22 @@ import pprint
 # 3136
 # >>>
 
-
 main_path = find_upper_level_folder_path(2)
+# set the path for chromosome
 chosen_chromosome_path = os.path.join(main_path, 'code', 'chromosome', 'conserved_best_chromosome.txt')
 oanda_main_parameter_json__path = os.path.join(code_main_folder, 'code', 'parameters', 'parameter.json')
 oanda_forex_testing_data_path = os.path.join(code_main_folder, 'data', 'oanda', 'oanda_forex_testing_data.txt')
+
+
+
+
+sub_reader = SubReader()
+parameter_dict = sub_reader.read_parameters(oanda_main_parameter_json__path)
+parameter_dict['input']['training_date_start'] = '10/16/2015'
+parameter_dict['input']['training_date_end'] = '12/16/2015'
+sub_reader.write_json(oanda_main_parameter_json__path, parameter_dict)
+sub_reader.write_json(oanda_main_parameter_json__path, parameter_dict)
+
 
 # initialize and read the chromosome into dict
 chosen_chromosome_dict = collections.defaultdict(lambda:[])
