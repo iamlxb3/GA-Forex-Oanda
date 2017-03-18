@@ -73,6 +73,7 @@ for string in sell_tuple:
             american_stock_fitness = AmericanStockFitness(parameter_dict)
             american_stock_fitness(testing_data_dict, s)
             testing_output_path = "test_data_result/{}_chromosome_testing.txt".format(string)
+            print ("testing_output_path: ", testing_output_path)
 
 
     Solution.compute_profit()
@@ -80,9 +81,9 @@ for string in sell_tuple:
 
     # remove file
     is_testing_output_path = os.path.exists(testing_output_path)
-    if is_testing_output_path:
+    if is_testing_output_path and sorted_solution_list:
         os.remove(testing_output_path)
-
+    
     for s in sorted_solution_list:
         print("--------------------------------------------------------------")
         print("name:{}, fitness:{}, profit:{}".format(s.name, s.fitness, s.profit))
@@ -95,6 +96,8 @@ for string in sell_tuple:
         chromosome = ''.join(chromosome_list)
 
         with open(testing_output_path, 'a', encoding = 'utf-8') as f:
+            print  ("testing_output_path :", testing_output_path)
+            #sys.exit(0)
             f.write("\n==========================================================================================\n")
             f.write("name: {}\n".format(s.name))
             f.write(chromosome + '\n')

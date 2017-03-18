@@ -1,73 +1,29 @@
 {
-    "SGA": {
-        "buy_sell_switch": 1,
-        "intial_solution_number": 30,
-        "target_return_percent": 40,
-        "parent_select_mode": "TS",
-        "max_population_num": 60,
-        "TS": {
-            "TS_K": 3
-        },
-        "multiple_return_switch": 0,
-        "no_progress_generation": 200
-    },
-    "testing": {
-        "raw_data_file_path": ""
-    },
-    "DSGA": {
-        "Parent_Choose": "f",
-        "SD": 0.005,
-        "CL": 4,
-        "IS": 0.095,
-        "RLC": 1,
-        "seed_max_ratio": 0.6,
-        "eliminate_ratio": 0.25,
-        "M": 0.5
-    },
     "evolution": {
         "mutation": {
-            "flip_bit_num": 3,
-            "mode": "random_flip"
+            "mode": "random_flip",
+            "flip_bit_num": 3
         },
         "cross_over": {
             "mode": "uniform"
         }
     },
     "input": {
-        "training_testing_ratio": "8,2",
-        "training_date_end": "12/16/2015",
-        "training_date_start": "10/16/2015",
-        "next_price_str": "profit_1_day",
-        "feature_choice_str": "0,1,3,4,5,6,7,8,13,14,15,16,17,18",
+        "feature_decide_bit_len": 4,
+        "decisive_feature": [
+            1,
+            3
+        ],
+        "raw_data_path": "D:\\我的坚果云\\我的坚果云\\SLP\\dissertation\\main\\data\\oanda\\oanda_forex_testing_data.txt",
         "raw_data_file_name": "cleaned_data.txt",
+        "next_price_str": "profit_1_day",
         "data_pos_in_chromosome": {
-            "8": [
+            "3": [
                 1,
                 2,
                 1,
-                11,
-                0
-            ],
-            "15": [
-                1,
-                2,
-                0,
-                6,
-                0
-            ],
-            "7": [
-                1,
-                2,
-                0,
-                14,
-                0
-            ],
-            "13": [
-                1,
-                2,
-                0,
-                6,
-                0
+                3,
+                4
             ],
             "4": [
                 1,
@@ -76,11 +32,11 @@
                 3,
                 4
             ],
-            "14": [
+            "7": [
                 1,
                 2,
                 0,
-                6,
+                14,
                 0
             ],
             "6": [
@@ -90,6 +46,20 @@
                 3,
                 4
             ],
+            "8": [
+                1,
+                2,
+                1,
+                11,
+                0
+            ],
+            "14": [
+                1,
+                2,
+                0,
+                6,
+                0
+            ],
             "5": [
                 1,
                 2,
@@ -97,41 +67,71 @@
                 3,
                 4
             ],
-            "3": [
+            "15": [
                 1,
                 2,
+                0,
+                6,
+                0
+            ],
+            "13": [
                 1,
-                3,
-                4
+                2,
+                0,
+                6,
+                0
             ]
         },
-        "restrict_training_date": true,
-        "raw_data_path": "D:\\我的坚果云\\我的坚果云\\SLP\\dissertation\\main\\data\\oanda\\oanda_forex_testing_data.txt",
+        "training_date_end": "02/01/2016",
+        "feature_choice_str": "0,1,3,4,5,6,7,8,13,14,15,16,17,18",
+        "training_testing_ratio": "8,2",
         "raw_data_dict": {
-            "6": "closeMid_1_day_percent",
-            "12": "volume_7_day_std",
-            "15": "lower_shadow_percent",
+            "3": "openMid_1_day_percent",
             "7": "volume",
+            "2": "time",
             "9": "openMid_3_day_std",
-            "13": "real_body_percent",
-            "18": "profit_7_day",
-            "16": "profit_1_day",
-            "17": "profit_3_day",
             "11": "volume_3_day_std",
             "1": "instrument",
+            "17": "profit_3_day",
+            "6": "closeMid_1_day_percent",
             "8": "volume_1_day_percent",
-            "10": "openMid_7_day_std",
-            "3": "openMid_1_day_percent",
-            "4": "highMid_1_day_percent",
-            "14": "upper_shadow_percent",
-            "0": "Blank",
+            "18": "profit_7_day",
             "5": "lowMid_percent",
-            "2": "time"
+            "15": "lower_shadow_percent",
+            "14": "upper_shadow_percent",
+            "4": "highMid_1_day_percent",
+            "13": "real_body_percent",
+            "10": "openMid_7_day_std",
+            "0": "Blank",
+            "16": "profit_1_day",
+            "12": "volume_7_day_std"
         },
-        "feature_decide_bit_len": 4,
-        "decisive_feature": [
-            1,
-            3
-        ]
+        "training_date_start": "05/08/2013",
+        "restrict_training_date": true
+    },
+    "testing": {
+        "raw_data_file_path": ""
+    },
+    "DSGA": {
+        "Parent_Choose": "f",
+        "SD": 0.005,
+        "eliminate_ratio": 0.25,
+        "IS": 0.095,
+        "RLC": 1,
+        "seed_max_ratio": 0.6,
+        "CL": 4,
+        "M": 0.5
+    },
+    "SGA": {
+        "intial_solution_number": 30,
+        "buy_sell_switch": 1,
+        "max_population_num": 60,
+        "TS": {
+            "TS_K": 3
+        },
+        "no_progress_generation": 200,
+        "target_return_percent": 40,
+        "parent_select_mode": "TS",
+        "multiple_return_switch": 0
     }
 }

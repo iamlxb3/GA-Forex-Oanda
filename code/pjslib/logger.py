@@ -39,7 +39,7 @@ ch.setFormatter(formatter)
 # create logger
 logger1 = logging.getLogger('logger1')
 # set level
-logger1.setLevel(logging.ERROR)
+logger1.setLevel(logging.INFO)
 # save to file
 hdlr_1 = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'logging.log'))
 hdlr_1.setFormatter(formatter)
@@ -76,7 +76,7 @@ if not logger_s.handlers:
 # create logger
 logger2 = logging.getLogger('logger2')
 # set level
-logger2.setLevel(logging.ERROR)
+logger2.setLevel(logging.INFO)
 # save to file
 
 hdlr_2 = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'testing_logging.log'))

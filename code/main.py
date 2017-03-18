@@ -45,7 +45,7 @@ ga = GeneticAlgorithm(parameter_dict, input_data_dict)
 ga.seed_radius = seed_radius
 ga.create_initial_parents()
 off_spring_generation = OffspringGeneration(parameter_dict)
-big_loop  = 500
+big_loop  = 250
 
 while not ga.END:
     RLC = parameter_dict['DSGA']['RLC']

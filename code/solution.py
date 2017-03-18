@@ -559,13 +559,13 @@ class Solution():
 
                         #==========================logging==========================
                         # only log the included feature
-                        logger_t.info("=============================================================")
-                        logger_t.info("date:{}, stock:{}, feature_name:{}, data_feature_value:{},"
+                        logger_t.debug("=============================================================")
+                        logger_t.debug("date:{}, stock:{}, feature_name:{}, data_feature_value:{},"
                                       " solution_feature_value:{}, operator: {} is_satisfied:{}".format(
                             date_object, target, feature_name, data_feature_value, solution_feature_value,
                             operator_bits_str, is_feature_satisfied
                         ))
-                        logger_t.info("=============================================================\n")
+                        logger_t.debug("=============================================================\n")
                         # ==========================logging end==========================
 
                         if is_feature_satisfied:
@@ -611,12 +611,12 @@ class Solution():
                         #logger1.info("self.classification_result_dict[date_object]: {}".format(self.classification_result_dict[date_object]))
 
                     # =======================TEMP LOGGING==============================================
-                    if is_target_chosen:
-                        logger_t.info("------------------Target Chosen!------------------------")
-                        logger_t.info("Date: {}, Target: {}, feature_value_tuple:\n {},"
+                    if is_target_chosen and (is_not_include_f_num != feature_num):
+                        logger_t.debug("------------------Target Chosen!------------------------")
+                        logger_t.debug("Date: {}, Target: {}, feature_value_tuple:\n {},"
                                       " target_decisive_feature_tuple:\n{}"
-                                      .format(date_object, target, feature_value_tuple,target_decisive_feature_tuple))
-                        logger_t.info("--------------------------------------------------------\n\n")
+                                      .format(date_object, target, feature_value_tuple, target_decisive_feature_tuple))
+                        logger_t.debug("--------------------------------------------------------\n\n")
                     # =======================TEMP LOGGING==============================================
 
                     is_target_chosen = False
@@ -650,7 +650,7 @@ class Solution():
         #logging
         logger1.debug("classification_result_list: {}".format(self.classification_result_list))
         logger1.debug("============get_classification_result END!!============")
-        logger_t.info("classification_result_list: {}".format(self.classification_result_list))
+        logger_t.debug("classification_result_list: {}".format(self.classification_result_list))
         # return
         return self.classification_result_list
 
