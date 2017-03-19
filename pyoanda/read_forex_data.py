@@ -115,7 +115,7 @@ class ReadForexData:
                 variance_list.append(feature_value)
             std = np.std(variance_list)
             std = float("{:3.1f}".format(std))
-            oanda_logger.info("instrument: {}, feature :{}, variance: {}".format(instrument, feature, std))
+            oanda_logger.debug("instrument: {}, feature :{}, variance: {}".format(instrument, feature, std))
             return std
 
         '''read oanda data via online api to dict with several features'''

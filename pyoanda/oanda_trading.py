@@ -21,7 +21,7 @@ class OandaTrading():
         self.is_3_day_sell = False
         self.is_7_day_buy = False
         self.is_7_day_sell = False
-        self.mode = '3-day'
+        self.mode = '3_day'
         self.strategy1_file_path = 'strategy/strategy_1.json'
         
         self.pos_detail_dict = collections.defaultdict(lambda: '')

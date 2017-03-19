@@ -101,6 +101,7 @@ with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
         # cls_result_today: (datetime.date(2017, 2, 17), 'GBP_USD')
         cls_result_today = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
                                               oanda_forex_trading_data_path, trading = True)
+        oanda_logger.info("cls_result_for_trading_data_set :{}".format(cls_result_today))
         # test whether this chromosome has return any forex for any date
         if cls_result_today == None:
             oanda_logger.info("{} has no forex return for any date".format(chromosome_type))
