@@ -56,10 +56,10 @@ sub_reader = SubReader()
 parameter_dict = sub_reader.read_parameters(oanda_main_parameter_json__path)
 parameter_dict['input']['raw_data_path'] = oanda_data_path
 print ("oanda_data_path: ", oanda_data_path)
-parameter_dict['input']['next_price_str'] = 'profit_1_day'
 parameter_dict['input']['training_date_start'] = '05/08/2013'
 parameter_dict['input']['training_date_end'] = '02/01/2016'
-parameter_dict['SGA']['buy_sell_switch'] = 1
+parameter_dict['SGA']['buy_sell_switch'] = 0
+parameter_dict['input']['next_price_str'] = 'profit_3_day'
 sub_reader.write_json(oanda_main_parameter_json__path, parameter_dict)
 
 # (3.) run  GA

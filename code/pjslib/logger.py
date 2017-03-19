@@ -39,7 +39,7 @@ ch.setFormatter(formatter)
 # create logger
 logger1 = logging.getLogger('logger1')
 # set level
-logger1.setLevel(logging.INFO)
+logger1.setLevel(logging.ERROR)
 # save to file
 hdlr_1 = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'logging.log'))
 hdlr_1.setFormatter(formatter)
@@ -55,7 +55,7 @@ if not logger1.handlers:
 # create logger
 logger_s = logging.getLogger('logger_s')
 # set level
-logger_s.setLevel(logging.INFO)
+logger_s.setLevel(logging.ERROR)
 # save to file
 hdlr_s = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'logging_seed.log'))
 hdlr_s.setFormatter(formatter)
@@ -76,7 +76,7 @@ if not logger_s.handlers:
 # create logger
 logger2 = logging.getLogger('logger2')
 # set level
-logger2.setLevel(logging.INFO)
+logger2.setLevel(logging.ERROR)
 # save to file
 
 hdlr_2 = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'testing_logging.log'))
@@ -92,7 +92,7 @@ if not logger2.handlers:
 # create logger
 logger3 = logging.getLogger('logger3')
 # set level
-logger3.setLevel(logging.INFO)
+logger3.setLevel(logging.ERROR)
 # save to file
 hdlr_3 = logging.FileHandler(os.path.join(code_folder_path, 'testing', 'code_testing_logging.log'))
 hdlr_3.setFormatter(formatter)
@@ -106,7 +106,7 @@ if not logger3.handlers:
 # create logger
 logger_t = logging.getLogger('logger_temp')
 # set level
-logger_t.setLevel(logging.INFO)
+logger_t.setLevel(logging.ERROR)
 # save to file
 
 hdlr_t = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'temp_logging.log'))
@@ -120,7 +120,7 @@ if not logger_t.handlers:
 # create logger
 logger_bg = logging.getLogger('logger_bg')
 # set level
-logger_bg.setLevel(logging.INFO)
+logger_bg.setLevel(logging.ERROR)
 # save to file
 hdlr_bg = logging.FileHandler(os.path.join(code_folder_path, 'logging', 'bg_logging.log'))
 hdlr_bg.setFormatter(formatter)

@@ -119,7 +119,10 @@ class GeneticAlgorithm():
                 f.write("Solution name: {}, ".format(solution_name))
                 f.write("profit: {}, ".format(profit))
                 f.write("fitness: {}\n".format(fitness))
-
+                
+            # write the chosen profit( 1,3,7 day)
+            chosen_profit = self.parameter_dict['input']['next_price_str']
+            f.write("chosen_profit arrtribute: {}\n".format(chosen_profit))
 
     #TODO
     def plot_generation_trend(self):

@@ -67,17 +67,17 @@ p_data_parameters_dict['mode'] = 'trading'
 sub_reader.write_json(p_data_parameters_json__path, p_data_parameters_dict)
 #=================================================WRITE OANDA PARAMETERS END============================================
 
-# # =========================================READING UP-TO-DATE-FOREX-DATA================================================
-# # set mode to trading
-# # (1.) read parameters
-# reader1 = ReadParameters(file_name = 'p_data_parameters.json')
-# parameter_dict = reader1.read_parameters(reader1.path)
-# print(parameter_dict)
-# # (2.) read forex data
-# read_forex_data = ReadForexData(parameter_dict)
-# read_forex_data.read_onanda_data()
-# read_forex_data.write_forex_dict_to_file()
-# # =========================================READING UP-TO-DATE-FOREX-DATA================================================
+# =========================================READING UP-TO-DATE-FOREX-DATA================================================
+# set mode to trading
+# (1.) read parameters
+reader1 = ReadParameters(file_name = 'p_data_parameters.json')
+parameter_dict = reader1.read_parameters(reader1.path)
+print(parameter_dict)
+# (2.) read forex data
+read_forex_data = ReadForexData(parameter_dict)
+read_forex_data.read_onanda_data()
+read_forex_data.write_forex_dict_to_file()
+# =========================================READING UP-TO-DATE-FOREX-DATA================================================
 
 # =========================================READ chromosome==============================================================
 oanda_logger.info("======================GETTING FOREX RETURN START======================")
@@ -88,8 +88,8 @@ ga_classifier_result_dict = collections.defaultdict(lambda :[])
 chromosome_strategy_chosen_path = os.path.join(code_main_folder, 'pyoanda',  'chromosome_strategy_chosen.txt')
 with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
     for line in f:
-        chromosome_type = re.findall(r'\[chromosome_type\]([A-Za-z0-9_]+)\[END\]-', line)[0]
-        chromosome = re.findall(r'\[chromosome\]([0-9]+)\[END\]', line)[0]
+        chromosome_type = re.findall(r'#([A-Za-z0-9_]+)#', line)[0]
+        chromosome = re.findall(r':chromosome#([0-9]+)#END', line)[0]
         chromosome_bits = list(chromosome)
         # convert str to int
         chromosome_bits = [int(x) for x in chromosome_bits]
@@ -112,7 +112,7 @@ with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
                 ga_classifier_result_dict[chromosome_type].append(cls_result_today[1])
                 oanda_logger.info("{} has return forex {} for {}".format(chromosome_type, cls_result_today, today))
             else:
-                oanda_logger.info("{} has no forex return for {}".format(chromosome_type, date_cls))
+                oanda_logger.info("{} has no forex return for {}".format(chromosome_type, today))
 
 print ("ga_classifier_result_dict: ", ga_classifier_result_dict)
 
@@ -136,15 +136,19 @@ oanda_trading = OandaTrading()
 
 # read parameters
 trading_params = {}
-
+strategy = 's1'
 
 def main_loop():
+    oanda_logger.info("===============adopted strategy: {}===============".format(strategy))
     # (1.) read parameters
     start_time = ''
     end_time = ''
     oanda_trading.update_data(start_time, end_time)
-    day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
-    oanda_trading.close_out(trading_params, day_buy, day_sell)
+    if strategy == 's2':
+        day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
+    elif strategy == 's1':
+        day_buy, day_sell = oanda_trading.s1_get_day_buy_sell(ga_classifier_result_dict)
+    oanda_trading.close_out(trading_params, day_buy, day_sell, strategy = strategy)
     time.sleep(3)
     oanda_trading.trade(trading_params, day_buy, day_sell)
     time.sleep(3)
