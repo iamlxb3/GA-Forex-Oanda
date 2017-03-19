@@ -49,6 +49,7 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     reader1 = ReadParameters()
     parameter_dict = reader1.read_parameters(parameter_path)
 
+    
     # (2.) put data into dict
     formatter1 = Formatter(parameter_dict)
     testing_data_dict = formatter1.format_and_create_dict(data_path, formatter1.feature_choice_list)
@@ -98,7 +99,7 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
 
     # return
     if trading:
-        return classification_result_1_day
+        return classification_result
     elif not trading and return_data_dict:
         return classification_result, testing_data_dict
     elif not trading:

@@ -126,7 +126,7 @@ class ReadForexData:
             response_status_code = response.status_code
             print("response_status_code: ", response_status_code)
             day_forex_list = dict(response.json())['candles']
-            print (day_forex_list)
+            #print (day_forex_list)
 
             for i, day_forex_dict in enumerate(day_forex_list):
                 if self.mode == 'testing':
@@ -160,12 +160,12 @@ class ReadForexData:
                 lowMid_percent = float("{:2.2f}".format(100*((lowMid - lowMid_1_day_ago)/ lowMid)))
                 # closeMid
                 if self.mode == 'trading':
-                    closeMid = 0.0
+                    closeMid = day_forex_dict['closeMid']
                     closeMid_1_day_ago = day_forex_list[i - 1]['closeMid']
                     closeMid_1_day_later = 0.0
                     closeMid_3_day_later = 0.0
                     closeMid_7_day_later = 0.0
-                    closeMid_1_day_percent = 0.0
+                    closeMid_1_day_percent = float("{:2.2f}".format(100*((closeMid - closeMid_1_day_ago)/ closeMid)))
                 elif self.mode == 'testing':
                     closeMid = day_forex_dict['closeMid']
                     closeMid_1_day_ago = day_forex_list[i - 1]['closeMid']

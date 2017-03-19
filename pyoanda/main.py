@@ -24,7 +24,7 @@ def run_python(path):
 #from oanda_ga_classifier import ga_classifier
 #========================================================================
 # SET TRADING_TRACE_DATE
-TRADING_TRACE_DATE = 20
+TRADING_TRACE_DATE = 100
 
 
 
@@ -99,14 +99,15 @@ with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
         oanda_logger.info("chromosome_bits: {}".format(''.join([str(x) for x in chromosome_bits])))
         #(chromosome_bits, chromosome_type, parameter_path, data_path, output_path, trading = False
         # cls_result_today: (datetime.date(2017, 2, 17), 'GBP_USD')
-        cls_result_today = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
+        cls_result = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
                                               oanda_forex_trading_data_path, trading = True)
-        oanda_logger.info("cls_result_for_trading_data_set :{}".format(cls_result_today))
+        
+        oanda_logger.debug("chromosome_type: {}, cls_result :{}".format(chromosome_type, cls_result))
         # test whether this chromosome has return any forex for any date
-        if cls_result_today == None:
+        if cls_result == None:
             oanda_logger.info("{} has no forex return for any date".format(chromosome_type))
-            oanda_logger.info("chosen_date_and_forex: {}".format(cls_result_today))
         else:
+            cls_result_today = cls_result[0]
             # test whether the fetech result is today
             date_cls = cls_result_today[0]
             if date_cls == today:
