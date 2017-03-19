@@ -97,10 +97,25 @@ class OandaTrading():
             elif mode == '7_day':
                 close_out_date = date_today + datetime.timedelta(days=7)
             #{date_object:{'close_out':['EUR_USD', ...]}}
+            
+            # TODO holiday is not included
+            # add 1 or 2 days if the date is at weekends
+            weekend = set([5, 6]) 
+            # 5 for saturday, 6 for sunday
+            if close_out_date.weekday() == 5:
+                close_out_date += datetime.timedelta(days=2)
+            elif close_out_date.weekday() == 6:
+                close_out_date += datetime.timedelta(days=1)
+            else:
+                pass
             self.strategy_1_dict[close_out_date]['close_out'].append(target)
             
+
+        
+        
         # write strategy_1_dict to local file, update the previous dict
         strategy1_file_path = self.strategy1_file_path
+        
         try:
             with open(strategy1_file_path, 'r', encoding = 'utf-8') as f:
                 strategy1_dict_json = json.load(f)
@@ -329,7 +344,6 @@ class OandaTrading():
             headers = self.headers
             url = self.order_url
             body['order']['instrument'] = trade_instrument
-
             # sell or buy
             if sell_or_buy == 'sell':
                 body['order']['units'] = str(int(body['order']['units']) * -1)
