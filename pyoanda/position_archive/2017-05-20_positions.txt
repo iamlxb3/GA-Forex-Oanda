@@ -1,0 +1,2 @@
+archive_time: 2017-05-20-13-33-54
+{'instrument': 'EUR_USD', 'short': {'unrealizedPL': '-0.5053', 'tradeIDs': ['88'], 'pl': '-0.0252', 'units': '-10', 'averagePrice': '1.05523', 'financing': '0', 'resettablePL': '-0.0252'}, 'pl': '-0.6639', 'unrealizedPL': '-0.5053', 'commission': '0', 'financing': '0.0000', 'long': {'unrealizedPL': '0.0000', 'financing': '0', 'pl': '-0.6387', 'units': '0', 'resettablePL': '-0.6387'}, 'resettablePL': '-0.6639'}

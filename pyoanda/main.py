@@ -14,7 +14,7 @@ from sub.sub_reader import SubReader
 code_main_folder = get_upper_folder_path(2)
 sys.path.append(code_main_folder)
 sys.path.append(os.path.join(code_main_folder, 'code'))
-print(sys.path)
+#print(sys.path)
 #sys.path.append(os.path.join(code_main_folder, 'code', 'pjslib'))
 from single_chromo_cls_result import get_single_chromo_cls_result
 import subprocess
@@ -68,57 +68,62 @@ sub_reader.write_json(p_data_parameters_json__path, p_data_parameters_dict)
 #=================================================WRITE OANDA PARAMETERS END============================================
 
 # =========================================READING UP-TO-DATE-FOREX-DATA================================================
-# set mode to trading
-# (1.) read parameters
-reader1 = ReadParameters(file_name = 'p_data_parameters.json')
-parameter_dict = reader1.read_parameters(reader1.path)
-print(parameter_dict)
-# (2.) read forex data
-read_forex_data = ReadForexData(parameter_dict)
-read_forex_data.read_onanda_data()
-read_forex_data.write_forex_dict_to_file()
+def read_up_to_date_forex_data():
+    # set mode to trading
+    # (1.) read parameters
+    reader1 = ReadParameters(file_name = 'p_data_parameters.json')
+    parameter_dict = reader1.read_parameters(reader1.path)
+    print("parameter_dict: ", parameter_dict)
+
+    # (2.) read forex data
+    read_forex_data = ReadForexData(parameter_dict)
+    read_forex_data.read_onanda_data()
+    read_forex_data.write_forex_dict_to_file()
+
+#read_up_to_date_forex_data()
 # =========================================READING UP-TO-DATE-FOREX-DATA================================================
 
 # =========================================READ chromosome==============================================================
-oanda_logger.info("======================GETTING FOREX RETURN START======================")
-import random
-today = datetime.datetime.today()
-today = datetime.date(year = today.year, month = today.month, day = today.day)
-ga_classifier_result_dict = collections.defaultdict(lambda :[])
-chromosome_strategy_chosen_path = os.path.join(code_main_folder, 'pyoanda',  'chromosome_strategy_chosen.txt')
-with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
-    for line in f:
-        chromosome_type = re.findall(r'#([A-Za-z0-9_]+)#', line)[0]
-        chromosome = re.findall(r':chromosome#([0-9]+)#END', line)[0]
-        chromosome_bits = list(chromosome)
-        # convert str to int
-        chromosome_bits = [int(x) for x in chromosome_bits]
-        print ("len_chromosome: ", len(chromosome_bits))
-        #chromosome_bits = [random.sample([0,1],1)[0] for x in range(len(chromosome_bits))]
+def get_ga_classifier_result_dict():
+    oanda_logger.info("======================GETTING FOREX RETURN START======================")
+    import random
+    today = datetime.datetime.today()
+    today = datetime.date(year = today.year, month = today.month, day = today.day)
+    ga_classifier_result_dict = collections.defaultdict(lambda :[])
+    chromosome_strategy_chosen_path = os.path.join(code_main_folder, 'pyoanda',  'chromosome_strategy_chosen.txt')
+    with open(chromosome_strategy_chosen_path, 'r', encoding = 'utf-8') as f:
+        for line in f:
+            chromosome_type = re.findall(r'#([A-Za-z0-9_]+)#', line)[0]
+            chromosome = re.findall(r':chromosome#([0-9]+)#END', line)[0]
+            chromosome_bits = list(chromosome)
+            # convert str to int
+            chromosome_bits = [int(x) for x in chromosome_bits]
+            print ("len_chromosome: ", len(chromosome_bits))
+            #chromosome_bits = [random.sample([0,1],1)[0] for x in range(len(chromosome_bits))]
 
-        oanda_logger.info("chromosome_bits: {}".format(''.join([str(x) for x in chromosome_bits])))
-        #(chromosome_bits, chromosome_type, parameter_path, data_path, output_path, trading = False
-        # cls_result_today: (datetime.date(2017, 2, 17), 'GBP_USD')
-        cls_result = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
-                                              oanda_forex_trading_data_path, trading = True)
-        
-        oanda_logger.debug("chromosome_type: {}, cls_result :{}".format(chromosome_type, cls_result))
-        # test whether this chromosome has return any forex for any date
-        if cls_result == None:
-            oanda_logger.info("{} has no forex return for any date".format(chromosome_type))
-        else:
-            cls_result_today = cls_result[0]
-            # test whether the fetech result is today
-            date_cls = cls_result_today[0]
-            if date_cls == today:
-                ga_classifier_result_dict[chromosome_type].append(cls_result_today[1])
-                oanda_logger.info("{} has return forex {} for {}".format(chromosome_type, cls_result_today, today))
+            oanda_logger.info("chromosome_bits: {}".format(''.join([str(x) for x in chromosome_bits])))
+            #(chromosome_bits, chromosome_type, parameter_path, data_path, output_path, trading = False
+            # cls_result_today: (datetime.date(2017, 2, 17), 'GBP_USD')
+            cls_result = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
+                                                  oanda_forex_trading_data_path, trading = True)
+
+            oanda_logger.debug("chromosome_type: {}, cls_result :{}".format(chromosome_type, cls_result))
+            # test whether this chromosome has return any forex for any date
+            if cls_result == None:
+                oanda_logger.info("{} has no forex return for any date".format(chromosome_type))
             else:
-                oanda_logger.info("{} has no forex return for {}".format(chromosome_type, today))
+                cls_result_today = cls_result[0]
+                # test whether the fetech result is today
+                date_cls = cls_result_today[0]
+                if date_cls == today:
+                    ga_classifier_result_dict[chromosome_type].append(cls_result_today[1])
+                    oanda_logger.info("{} has return forex {} for {}".format(chromosome_type, cls_result_today, today))
+                else:
+                    oanda_logger.info("{} has no forex return for {}".format(chromosome_type, today))
 
-print ("ga_classifier_result_dict: ", ga_classifier_result_dict)
-
-oanda_logger.info("======================GETTING FOREX RETURN END======================")
+    print ("ga_classifier_result_dict: ", dict(ga_classifier_result_dict))
+    oanda_logger.info("======================GETTING FOREX RETURN END======================")
+    return ga_classifier_result_dict
 # =========================================READ chromosome END==============================================================
 
 
@@ -142,25 +147,38 @@ strategy = 's1'
 
 def main_loop():
     oanda_logger.info("===============adopted strategy: {}===============".format(strategy))
-    # (1.) read parameters
-    start_time = ''
-    end_time = ''
-    oanda_trading.update_data(start_time, end_time)
+    # (1.) Update Forex Data
+    read_up_to_date_forex_data()
+
+    # (2.) get ga_classifier_result_dict
+    ga_classifier_result_dict = get_ga_classifier_result_dict()
+
+    # (3.) get day_buy/day_sell
     if strategy == 's2':
         day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
     elif strategy == 's1':
         day_buy, day_sell = oanda_trading.s1_get_day_buy_sell(ga_classifier_result_dict)
+
+    # (4.) close out
     oanda_trading.close_out(trading_params, day_buy, day_sell, strategy = strategy)
     time.sleep(3)
+
+    # (5.) buy
     oanda_trading.trade(trading_params, day_buy, day_sell)
     time.sleep(3)
+
+    # (6.) show position and archive positions
     oanda_trading.get_all_positions()
 
 
-schedule.every(3).seconds.do(main_loop)
-while not oanda_trading.isEnd:
-    schedule.run_pending()
-    # schedule.every().day.at("10:30").do(job)
+    
+main_loop()
+#schedule.every(3).seconds.do(main_loop)
+#schedule.every().day.at("10:30").do(main_loop)
+
+#while not oanda_trading.isEnd:
+#    schedule.run_pending()
+    
 
 
 

@@ -1,74 +1,74 @@
 {
     "3": {
-        "max_value": 4.05,
-        "pos_average": 0.36984131326949077,
-        "name": "openMid_1_day_percent",
         "neg_average": -0.4011586246749473,
+        "name": "openMid_1_day_percent",
+        "max_value": 4.05,
         "var": 0.34309954217289274,
-        "min_value": -17.05
+        "min_value": -17.05,
+        "pos_average": 0.36984131326949077
     },
     "4": {
-        "max_value": 3.61,
-        "pos_average": 0.34991803278688366,
-        "name": "highMid_1_day_percent",
         "neg_average": -0.3554695360536582,
+        "name": "highMid_1_day_percent",
+        "max_value": 3.61,
         "var": 0.2905888257814531,
-        "min_value": -16.02
+        "min_value": -16.02,
+        "pos_average": 0.34991803278688366
     },
     "5": {
-        "max_value": 4.73,
-        "pos_average": 0.3340829809725122,
-        "name": "lowMid_percent",
         "neg_average": -0.3903331332532993,
+        "name": "lowMid_percent",
+        "max_value": 4.73,
         "var": 0.35092121990488623,
-        "min_value": -21.35
+        "min_value": -21.35,
+        "pos_average": 0.3340829809725122
     },
     "6": {
-        "max_value": 4.05,
-        "pos_average": 0.3721821684094634,
-        "name": "closeMid_1_day_percent",
         "neg_average": -0.3985468121769075,
+        "name": "closeMid_1_day_percent",
+        "max_value": 4.05,
         "var": 0.3413769087669017,
-        "min_value": -17.05
+        "min_value": -17.05,
+        "pos_average": 0.3721821684094634
     },
     "7": {
-        "max_value": 312154.0,
-        "pos_average": 40586.93001686341,
-        "name": "volume",
         "neg_average": 0.0,
+        "name": "volume",
+        "max_value": 312154.0,
         "var": 1220866980.5979693,
-        "min_value": 404.0
+        "min_value": 404.0,
+        "pos_average": 40586.93001686341
     },
     "8": {
-        "max_value": 95.22,
-        "pos_average": 38.80862814895946,
-        "name": "volume_1_day_percent",
         "neg_average": -191.9223498845265,
+        "name": "volume_1_day_percent",
+        "max_value": 95.22,
         "var": 60358.36415232061,
-        "min_value": -4921.0
+        "min_value": -4921.0,
+        "pos_average": 38.80862814895946
     },
     "13": {
-        "max_value": 100.0,
-        "pos_average": 45.06857504215844,
-        "name": "real_body_percent",
         "neg_average": 0.0,
+        "name": "real_body_percent",
+        "max_value": 100.0,
         "var": 632.2835927137335,
-        "min_value": 0.0
+        "min_value": 0.0,
+        "pos_average": 45.06857504215844
     },
     "14": {
-        "max_value": 100.0,
-        "pos_average": 50.296746767847,
-        "name": "upper_shadow_percent",
         "neg_average": 0.0,
+        "name": "upper_shadow_percent",
+        "max_value": 100.0,
         "var": 974.6653307458793,
-        "min_value": 0.0
+        "min_value": 0.0,
+        "pos_average": 50.296746767847
     },
     "15": {
-        "max_value": 100.0,
-        "pos_average": 50.981852164137145,
-        "name": "lower_shadow_percent",
         "neg_average": 0.0,
+        "name": "lower_shadow_percent",
+        "max_value": 100.0,
         "var": 818.923574787588,
-        "min_value": 0.0
+        "min_value": 0.0,
+        "pos_average": 50.981852164137145
     }
 }

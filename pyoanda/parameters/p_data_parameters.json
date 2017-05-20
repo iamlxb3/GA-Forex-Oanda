@@ -1,8 +1,8 @@
 {
+    "data_path": "",
+    "granularity": "D",
     "date_range": 100,
-    "alignmentTimezone": "America",
     "candle_format": "midpoint",
     "mode": "trading",
-    "granularity": "D",
-    "data_path": ""
+    "alignmentTimezone": "America"
 }

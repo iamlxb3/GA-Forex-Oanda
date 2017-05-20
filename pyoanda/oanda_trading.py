@@ -8,6 +8,7 @@ import requests
 import pprint
 import collections
 import sys
+import os
 import json
 
 
@@ -23,7 +24,7 @@ class OandaTrading():
         self.is_7_day_sell = False
         self.mode = '3_day'
         self.strategy1_file_path = 'strategy/strategy_1.json'
-        
+
         self.pos_detail_dict = collections.defaultdict(lambda: '')
         self.isEnd = False
         # strategy_1 : buy or sell order and close_out dict
@@ -52,13 +53,13 @@ class OandaTrading():
     def update_data(self, start_time, end_time, mode = 'trading'):
         pass
 
-        
-        
+
+
     def s1_get_day_buy_sell(self, ga_classifier_result_dict):
         #
         mode = self.mode
         date_today = self.date_today
-        delta = datetime.timedelta(days=1) 
+        delta = datetime.timedelta(days=1)
         #
         buy_list = []
         sell_list = []
@@ -85,9 +86,9 @@ class OandaTrading():
 
         day_buy = list(set(buy_list) - set(sell_list))
         day_sell = list(set(sell_list) - set(buy_list))
-        
+
         close_out_target = list(set(day_buy + day_sell))
-        
+
         # get the close out target for buy and close
         for target in close_out_target:
             if mode == '1_day':
@@ -97,10 +98,10 @@ class OandaTrading():
             elif mode == '7_day':
                 close_out_date = date_today + datetime.timedelta(days=7)
             #{date_object:{'close_out':['EUR_USD', ...]}}
-            
+
             # TODO holiday is not included
             # add 1 or 2 days if the date is at weekends
-            weekend = set([5, 6]) 
+            weekend = set([5, 6])
             # 5 for saturday, 6 for sunday
             if close_out_date.weekday() == 5:
                 close_out_date += datetime.timedelta(days=2)
@@ -109,21 +110,21 @@ class OandaTrading():
             else:
                 pass
             self.strategy_1_dict[close_out_date]['close_out'].append(target)
-            
 
-        
-        
+
+
+
         # write strategy_1_dict to local file, update the previous dict
         strategy1_file_path = self.strategy1_file_path
-        
+
         try:
             with open(strategy1_file_path, 'r', encoding = 'utf-8') as f:
                 strategy1_dict_json = json.load(f)
         except FileNotFoundError:
             strategy1_dict_json = None
-            
-            
-            
+
+
+
         #if strategy1_dict is empty
         if not strategy1_dict_json:
             strategy1_dict_json = self.strategy_1_dict.copy()
@@ -133,16 +134,16 @@ class OandaTrading():
                 if strategy1_dict_json.get(date_key) == None:
                     strategy1_dict_json[date_key]['close_out'] = []
                 strategy1_dict_json[date_key]['close_out'].extend(value['close_out'])
-                
+
         with open (strategy1_file_path, 'w', encoding = 'utf-8') as f:
             json.dump(strategy1_dict_json, f, indent = 4)
         # ===================================================================
-        
+
         oanda_logger.info("day_buy: {}".format(day_buy))
         oanda_logger.info("day_sell: {}".format(day_sell))
         return day_buy, day_sell
-        
-        
+
+
     # ga_classifier_result_dict {'1_day_buy':['USD/JPY']}
     def get_day_buy_sell(self, ga_classifier_result_dict):
         #
@@ -164,7 +165,7 @@ class OandaTrading():
             buy_list.extend(ga_classifier_result_dict['3_day_buy'])
         if is_7_day_buy:
             buy_list.extend(ga_classifier_result_dict['7_day_buy'])
-            
+
 
         for i, instrument_list in enumerate(buy_list):
             if i == 0:
@@ -228,7 +229,7 @@ class OandaTrading():
                                        .format(instrument, instrument_pos, buy_or_sell))
                     if instrument == instrument_pos and buy_or_sell == 'buy':
                         instruments.append(instrument_pos)
-                        
+
         elif strategy == 's1':
             date_today_str = self.date_today.strftime("%Y-%m-%d")
             strategy1_file_path = self.strategy1_file_path
@@ -238,7 +239,7 @@ class OandaTrading():
                 instruments = strategy1_dict[date_today_str]['close_out']
             else:
                 instruments = []
-        
+
         #instruments = ['EUR_USD']
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
         oanda_logger.info("Close_out instruments: {}, Time: {}".format(instruments, time))
@@ -273,6 +274,20 @@ class OandaTrading():
                 sys.exit(0)
             self.pos_detail_dict[instrument] = buy_or_sell
 
+        #   archive positions
+        date = datetime.datetime.today().strftime("%Y-%m-%d")
+        folder_name = 'position_archive'
+        date_file_name = date + '_positions.txt'
+        date_file_path = os.path.join(folder_name, date_file_name)
+        archive_time = datetime.datetime.today().strftime("%Y-%m-%d-%H-%M-%S")
+
+        with open(date_file_path, 'w') as f:
+            f.write("archive_time: {}\n".format(archive_time))
+            for detail in positions_list:
+                f.write(str(detail))
+                f.write("\n")
+        #
+
         # logging
         oanda_logger.info("=============================All positions=============================")
         oanda_logger.info("Time: {}".format(time))
@@ -282,7 +297,7 @@ class OandaTrading():
         oanda_logger.info("=============================All positions END==========================\n")
         return all_pos_list
 
-    def close_out(self, trading_params, day_buy, day_sell, strategy = 's2'):
+    def close_out(self, trading_params, day_buy, day_sell, strategy = 's2', units= '50'):
         def get_trade_id(instrument):
             url = self.get_trade_id_url.format(self.account_id, instrument)
             response = requests.get(url, headers=self.headers)
@@ -310,7 +325,9 @@ class OandaTrading():
         for instrument in close_out_instruments:
             trade_id = get_trade_id(instrument)
             url = self.close_out_url.format(self.account_id, trade_id)
-            response = requests.put(url, headers=self.headers)
+            body = {'units': '0'}
+            body['units'] = units
+            response = requests.put(url, headers=self.headers, json=body)
             response_content = response.json()
             status_code = response.status_code
 

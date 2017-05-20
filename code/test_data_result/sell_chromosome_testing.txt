@@ -2,8 +2,8 @@
 ==========================================================================================
 name: 10
 00111110111011000111101110000011010011010100111001010111001101100111100000001010110101110011001110111000010
-profit: 9.6
-fitness: 0.071
+profit: 21.6
+fitness: 0.153
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -150,49 +150,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.4375,
         "operator": "01",
+        "value": 7.4375,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6612,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 22,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 22,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.25,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.25,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 12,
         "operator": "11",
+        "value": 12,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6612,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -200,8 +200,8 @@ feature_dict
 ==========================================================================================
 name: 11
 00011110100011000111101110000011010011010100111001010111001101100111100000001010110101110011001110111000010
-profit: 9.6
-fitness: 0.071
+profit: 21.6
+fitness: 0.153
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -348,49 +348,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.25,
         "operator": "00",
+        "value": 7.25,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6612,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 22,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 22,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.25,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.25,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 12,
         "operator": "11",
+        "value": 12,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6612,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -398,8 +398,8 @@ feature_dict
 ==========================================================================================
 name: 18
 00111111101011000111101110000011010011010100111010010011101101100111100000001011010101111011001101011000010
-profit: 7.2
-fitness: 0.057
+profit: 17.4
+fitness: 0.133
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -540,49 +540,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.8125,
         "operator": "01",
+        "value": 7.8125,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 13,
-        "operator": "10",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 7058,
+    "lowMid_percent": {
         "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.25,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.25,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 13,
         "operator": "11",
+        "value": 13,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "10",
+        "value": 13,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 7058,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -590,8 +590,8 @@ feature_dict
 ==========================================================================================
 name: 19
 00111110100011000111101110000011010011010110111011110101001101100111100000001011010101111001001110111000010
-profit: 5.3
-fitness: 0.043
+profit: 17.0
+fitness: 0.128
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -735,49 +735,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.25,
         "operator": "01",
+        "value": 7.25,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6494,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.375,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.375,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 9,
         "operator": "11",
+        "value": 9,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6494,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -785,8 +785,8 @@ feature_dict
 ==========================================================================================
 name: 12
 00101111100011000111001110000011010011010100111100010111001101100111100000001011010101110011001110111000010
-profit: 4.6
-fitness: 0.039
+profit: 13.5
+fitness: 0.107
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -928,49 +928,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": -7.75,
         "operator": "01",
+        "value": -7.75,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6609,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.25,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.25,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 12,
         "operator": "11",
+        "value": 12,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.75,
         "operator": "11",
+        "value": -4.75,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6609,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -978,8 +978,8 @@ feature_dict
 ==========================================================================================
 name: 13
 00111111100011000111101110000011010011010100111010010111001101100111100000001011010101110011001110111000010
-profit: 4.6
-fitness: 0.039
+profit: 13.5
+fitness: 0.107
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -1121,49 +1121,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.75,
         "operator": "01",
+        "value": 7.75,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6610,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.25,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.25,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 12,
         "operator": "11",
+        "value": 12,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6610,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -1171,8 +1171,8 @@ feature_dict
 ==========================================================================================
 name: 14
 00111111101011000111101100000011010011010100111010010111001101100111100000001011010101100011001110111000010
-profit: 4.6
-fitness: 0.039
+profit: 13.5
+fitness: 0.107
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -1314,49 +1314,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.8125,
         "operator": "01",
+        "value": 7.8125,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
-        "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6610,
-        "operator": "11",
+    "lowMid_percent": {
+        "operator": "10",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.25,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "10",
+        "value": 5.25,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 12,
         "operator": "10",
+        "value": 12,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6610,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -1364,8 +1364,8 @@ feature_dict
 ==========================================================================================
 name: 15
 00111111100011000111101110000011010011010100111000010111001101100111100000001011010101101011001110111000010
-profit: 3.6
-fitness: 0.032
+profit: 12.9
+fitness: 0.104
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -1506,49 +1506,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.75,
         "operator": "01",
+        "value": 7.75,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6608,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.25,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.25,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 13,
         "operator": "10",
+        "value": 13,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6608,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -1556,8 +1556,8 @@ feature_dict
 ==========================================================================================
 name: 16
 00011110100011000111101110000011010011010110111010110101001101100111100000001011010101111011001110111000010
-profit: 3.6
-fitness: 0.032
+profit: 12.9
+fitness: 0.104
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -1698,49 +1698,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.25,
         "operator": "00",
+        "value": 7.25,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6490,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.375,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.375,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 13,
         "operator": "11",
+        "value": 13,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6490,
+        "is_include": 1
     }
 }
 ==========================================================================================
@@ -1748,8 +1748,8 @@ feature_dict
 ==========================================================================================
 name: 17
 00111111100011000111101110000011010011010110111010110101001101100111100000001011010101111011001110111000010
-profit: 3.6
-fitness: 0.032
+profit: 12.9
+fitness: 0.104
 stock return..
 -------------------------------------------------
 2016-02-02,USD_CHF
@@ -1890,49 +1890,49 @@ stock return..
 feature_dict
 {
     "openMid_1_day_percent": {
-        "value": 7.75,
         "operator": "01",
+        "value": 7.75,
         "is_include": 0
     },
-    "lower_shadow_percent": {
-        "value": 14,
+    "lowMid_percent": {
         "operator": "11",
-        "is_include": 1
-    },
-    "volume": {
-        "value": 6490,
-        "operator": "11",
+        "value": -0.375,
         "is_include": 1
     },
     "real_body_percent": {
-        "value": 21,
         "operator": "01",
-        "is_include": 1
-    },
-    "volume_1_day_percent": {
-        "value": -15,
-        "operator": "10",
+        "value": 21,
         "is_include": 1
     },
     "closeMid_1_day_percent": {
-        "value": 5.375,
         "operator": "00",
-        "is_include": 1
-    },
-    "lowMid_percent": {
-        "value": -0.375,
-        "operator": "11",
+        "value": 5.375,
         "is_include": 1
     },
     "upper_shadow_percent": {
-        "value": 13,
         "operator": "11",
+        "value": 13,
+        "is_include": 1
+    },
+    "lower_shadow_percent": {
+        "operator": "11",
+        "value": 14,
+        "is_include": 1
+    },
+    "volume_1_day_percent": {
+        "operator": "10",
+        "value": -15,
         "is_include": 1
     },
     "highMid_1_day_percent": {
-        "value": -4.875,
         "operator": "11",
+        "value": -4.875,
         "is_include": 0
+    },
+    "volume": {
+        "operator": "11",
+        "value": 6490,
+        "is_include": 1
     }
 }
 ==========================================================================================
