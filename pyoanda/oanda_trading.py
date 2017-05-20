@@ -199,6 +199,7 @@ class OandaTrading():
         print ("=============get_close_out_instrument===============")
         instrument_list = []
         unit_list = []
+        line_id_list = []
         # if strategy == 's2':
         #     # close out the sell trade
         #     for instrument in day_buy:
@@ -216,7 +217,7 @@ class OandaTrading():
         if strategy == 's1':
             today_str = self.date_today.strftime("%Y-%m-%d")
             with open(self.close_out_file_path, 'r') as f:
-                for line in f:
+                for i, line in enumerate(f):
                     if line == '\n':
                         continue
                     line_list = line.split(',')
@@ -228,6 +229,7 @@ class OandaTrading():
                         units = str(line_list[2])
                         instrument_list.append(instrument)
                         unit_list.append(units)
+                        line_id_list.append(i)
             # date_today_str = self.date_today.strftime("%Y-%m-%d")
             # strategy1_file_path = self.strategy1_file_path
             # with open (strategy1_file_path, 'r', encoding = 'utf-8') as f:
@@ -240,7 +242,7 @@ class OandaTrading():
         #instruments = ['EUR_USD']
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
         oanda_logger.info("Close_out instruments: {}, units: {}, Time: {}".format(instrument_list, unit_list,  time))
-        return instrument_list, unit_list
+        return instrument_list, unit_list, line_id_list
 
     def get_all_positions(self):
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
@@ -306,7 +308,7 @@ class OandaTrading():
         instrument_in_pos = self.get_all_positions()
         print ("instrument_in_pos", instrument_in_pos)
         # ('EUR_USD', 'USD_JPY')
-        close_out_instruments, units_list = self.get_close_out_instrument(day_buy, day_sell, strategy = strategy)
+        close_out_instruments, units_list, line_id_list = self.get_close_out_instrument(day_buy, day_sell, strategy = strategy)
         close_out_instruments = set(close_out_instruments) & set(instrument_in_pos)
         if not close_out_instruments:
             # return logging
@@ -328,6 +330,20 @@ class OandaTrading():
             response = requests.put(url, headers=self.headers, json=body)
             response_content = response.json()
             status_code = response.status_code
+
+            # ===============================================================================
+            # delete the close_out_order line if close out is done succesfully
+            # TODO change status_code
+            if status_code == '200':
+                delete_line_id = line_id_list[i]
+                with open (self.close_out_file_path, 'r') as f:
+                    file_lines = f.readlines()
+                new_file_lines = [x for i,x in enumerate(file_lines) if i != delete_line_id]
+                with open(self.close_out_file_path, 'w') as f:
+                    for new_line in new_file_lines:
+                        f.write(new_line)
+                        f.write('\n')
+            # ===============================================================================
 
             # close_out logging
             oanda_logger.info("=============================Oanda Close Out=============================")
@@ -372,7 +388,7 @@ class OandaTrading():
             status_code = response.status_code
 
             # TODO update close_out_order.txt
-            if status_code == '':
+            if status_code == '200':
                 closed_out_date = self.s1_get_close_out_date()
                 self.update_close_out_order(trade_instrument, sell_or_buy, closed_out_date)
 
