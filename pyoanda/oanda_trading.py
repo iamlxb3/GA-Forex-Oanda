@@ -9,6 +9,7 @@ import pprint
 import collections
 import sys
 import os
+import copy
 import json
 
 
@@ -50,16 +51,51 @@ class OandaTrading():
         }
         }
 
+        # close_out_file_path
+        close_out_file = 'close_out_order.txt'
+        folder = 'order'
+        current_folder = get_upper_folder_path(1)
+        self.close_out_file_path = os.path.join(current_folder, folder, close_out_file)
+
+
     def update_data(self, start_time, end_time, mode = 'trading'):
         pass
 
 
+    def s1_get_close_out_date(self):
+        # get place order date
+        start_date = self.date_today
+        mode = self.mode
+
+        # get close order date
+        if mode == '1_day':
+            close_out_date = start_date + datetime.timedelta(days=1)
+        elif mode == '3_day':
+            close_out_date = start_date + datetime.timedelta(days=3)
+        elif mode == '7_day':
+            close_out_date = start_date + datetime.timedelta(days=7)
+
+        end_date = copy.copy(close_out_date)
+
+        # ===========================================================
+        # count the saturday/sunday between place/close order date
+        # ===========================================================
+        while start_date != end_date + delta:
+            if start_date.weekday() == 5 or start_date.weekday() == 6:
+                close_out_date += delta
+            start_date += delta
+
+        if close_out_date.weekday() == 5:
+            close_out_date = close_out_date + delta + delta
+        elif close_out_date.weekday() == 6:
+            close_out_date += delta
+        # ===========================================================
+        close_out_date = close_out_date.strftime("%Y-%m-%d")
+        return close_out_date
+
 
     def s1_get_day_buy_sell(self, ga_classifier_result_dict):
-        #
         mode = self.mode
-        date_today = self.date_today
-        delta = datetime.timedelta(days=1)
         #
         buy_list = []
         sell_list = []
@@ -87,60 +123,6 @@ class OandaTrading():
         day_buy = list(set(buy_list) - set(sell_list))
         day_sell = list(set(sell_list) - set(buy_list))
 
-        close_out_target = list(set(day_buy + day_sell))
-
-        # get the close out target for buy and close
-        for target in close_out_target:
-            if mode == '1_day':
-                close_out_date = date_today + datetime.timedelta(days=1)
-            elif mode == '3_day':
-                close_out_date = date_today + datetime.timedelta(days=3)
-            elif mode == '7_day':
-                close_out_date = date_today + datetime.timedelta(days=7)
-            #{date_object:{'close_out':['EUR_USD', ...]}}
-
-            # TODO holiday is not included
-            # add 1 or 2 days if the date is at weekends
-            weekend = set([5, 6])
-            # 5 for saturday, 6 for sunday
-            if close_out_date.weekday() == 5:
-                close_out_date += datetime.timedelta(days=2)
-            elif close_out_date.weekday() == 6:
-                close_out_date += datetime.timedelta(days=1)
-            else:
-                pass
-            self.strategy_1_dict[close_out_date]['close_out'].append(target)
-
-
-
-
-        # write strategy_1_dict to local file, update the previous dict
-        strategy1_file_path = self.strategy1_file_path
-
-        try:
-            with open(strategy1_file_path, 'r', encoding = 'utf-8') as f:
-                strategy1_dict_json = json.load(f)
-        except FileNotFoundError:
-            strategy1_dict_json = None
-
-
-
-        #if strategy1_dict is empty
-        if not strategy1_dict_json:
-            strategy1_dict_json = self.strategy_1_dict.copy()
-        else:
-            for key, value in self.strategy_1_dict.items():
-                date_key = key.strftime("%Y-%m-%d")
-                if strategy1_dict_json.get(date_key) == None:
-                    strategy1_dict_json[date_key]['close_out'] = []
-                strategy1_dict_json[date_key]['close_out'].extend(value['close_out'])
-
-        with open (strategy1_file_path, 'w', encoding = 'utf-8') as f:
-            json.dump(strategy1_dict_json, f, indent = 4)
-        # ===================================================================
-
-        oanda_logger.info("day_buy: {}".format(day_buy))
-        oanda_logger.info("day_sell: {}".format(day_sell))
         return day_buy, day_sell
 
 
@@ -213,37 +195,52 @@ class OandaTrading():
         oanda_logger.info("Trading decision: {}, Time: {}".format(trade_instruments_tuple, time))
         return trade_instruments_tuple
 
-    def get_close_out_instrument(self, day_buy, day_sell, strategy = 's2'):
+    def get_close_out_instrument(self, day_buy, day_sell, strategy = 's1'):
         print ("=============get_close_out_instrument===============")
-        instruments = []
-        if strategy == 's2':
-            # close out the sell trade
-            for instrument in day_buy:
-                for instrument_pos, buy_or_sell in self.pos_detail_dict.items():
-                    if instrument == instrument_pos and buy_or_sell == 'sell':
-                        instruments.append(instrument_pos)
-            # close out the buy trade
-            for instrument in day_sell:
-                for instrument_pos, buy_or_sell in self.pos_detail_dict.items():
-                    oanda_logger.debug("instrument: {}, instrument_pos:{}， buy_or_sell:{}"
-                                       .format(instrument, instrument_pos, buy_or_sell))
-                    if instrument == instrument_pos and buy_or_sell == 'buy':
-                        instruments.append(instrument_pos)
+        instrument_list = []
+        unit_list = []
+        # if strategy == 's2':
+        #     # close out the sell trade
+        #     for instrument in day_buy:
+        #         for instrument_pos, buy_or_sell in self.pos_detail_dict.items():
+        #             if instrument == instrument_pos and buy_or_sell == 'sell':
+        #                 instruments.append(instrument_pos)
+        #     # close out the buy trade
+        #     for instrument in day_sell:
+        #         for instrument_pos, buy_or_sell in self.pos_detail_dict.items():
+        #             oanda_logger.debug("instrument: {}, instrument_pos:{}， buy_or_sell:{}"
+        #                                .format(instrument, instrument_pos, buy_or_sell))
+        #             if instrument == instrument_pos and buy_or_sell == 'buy':
+        #                 instruments.append(instrument_pos)
 
-        elif strategy == 's1':
-            date_today_str = self.date_today.strftime("%Y-%m-%d")
-            strategy1_file_path = self.strategy1_file_path
-            with open (strategy1_file_path, 'r', encoding = 'utf-8') as f:
-                strategy1_dict = json.load(f)
-            if strategy1_dict.get(date_today_str):
-                instruments = strategy1_dict[date_today_str]['close_out']
-            else:
-                instruments = []
+        if strategy == 's1':
+            today_str = self.date_today.strftime("%Y-%m-%d")
+            with open(self.close_out_file_path, 'r') as f:
+                for line in f:
+                    if line == '\n':
+                        continue
+                    line_list = line.split(',')
+                    date_str = line_list[1]
+                    if today_str != date_str:
+                        continue
+                    else:
+                        instrument = line_list[0]
+                        units = str(line_list[2])
+                        instrument_list.append(instrument)
+                        unit_list.append(units)
+            # date_today_str = self.date_today.strftime("%Y-%m-%d")
+            # strategy1_file_path = self.strategy1_file_path
+            # with open (strategy1_file_path, 'r', encoding = 'utf-8') as f:
+            #     strategy1_dict = json.load(f)
+            # if strategy1_dict.get(date_today_str):
+            #     instruments = strategy1_dict[date_today_str]['close_out']
+            # else:
+            #     instruments = []
 
         #instruments = ['EUR_USD']
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
-        oanda_logger.info("Close_out instruments: {}, Time: {}".format(instruments, time))
-        return instruments
+        oanda_logger.info("Close_out instruments: {}, units: {}, Time: {}".format(instrument_list, unit_list,  time))
+        return instrument_list, unit_list
 
     def get_all_positions(self):
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
@@ -297,7 +294,7 @@ class OandaTrading():
         oanda_logger.info("=============================All positions END==========================\n")
         return all_pos_list
 
-    def close_out(self, trading_params, day_buy, day_sell, strategy = 's2', units= '50'):
+    def close_out(self, trading_params, day_buy, day_sell, strategy = 's2'):
         def get_trade_id(instrument):
             url = self.get_trade_id_url.format(self.account_id, instrument)
             response = requests.get(url, headers=self.headers)
@@ -309,7 +306,7 @@ class OandaTrading():
         instrument_in_pos = self.get_all_positions()
         print ("instrument_in_pos", instrument_in_pos)
         # ('EUR_USD', 'USD_JPY')
-        close_out_instruments = self.get_close_out_instrument(day_buy, day_sell, strategy = strategy)
+        close_out_instruments, units_list = self.get_close_out_instrument(day_buy, day_sell, strategy = strategy)
         close_out_instruments = set(close_out_instruments) & set(instrument_in_pos)
         if not close_out_instruments:
             # return logging
@@ -322,10 +319,11 @@ class OandaTrading():
             oanda_logger.info("=============================Return Trading END==========================\n")
             return
 
-        for instrument in close_out_instruments:
+        for i, instrument in enumerate(close_out_instruments):
             trade_id = get_trade_id(instrument)
             url = self.close_out_url.format(self.account_id, trade_id)
             body = {'units': '0'}
+            units = units_list[i]
             body['units'] = units
             response = requests.put(url, headers=self.headers, json=body)
             response_content = response.json()
@@ -337,6 +335,7 @@ class OandaTrading():
             oanda_logger.info("Day buy: {}".format(day_buy))
             oanda_logger.info("Day sell: {}".format(day_sell))
             oanda_logger.info("Close Out instrument chosen: {}".format(instrument))
+            oanda_logger.info("Close Out units: {}".format(units))
             oanda_logger.info("status_code: {}".format(status_code))
             oanda_logger.info("response_content:\n {}".format(pprint.pformat(response_content)))
             oanda_logger.info("=============================Oanda Trading END==========================\n")
@@ -361,6 +360,8 @@ class OandaTrading():
             headers = self.headers
             url = self.order_url
             body['order']['instrument'] = trade_instrument
+            body['order']['units'] = '50'
+
             # sell or buy
             if sell_or_buy == 'sell':
                 body['order']['units'] = str(int(body['order']['units']) * -1)
@@ -369,6 +370,12 @@ class OandaTrading():
             response = requests.post(url, headers=headers, json=body)
             response_content = response.json()
             status_code = response.status_code
+
+            # TODO update close_out_order.txt
+            if status_code == '':
+                closed_out_date = self.s1_get_close_out_date()
+                self.update_close_out_order(trade_instrument, sell_or_buy, closed_out_date)
+
             # logging
             oanda_logger.info("=============================Oanda Trading=============================")
             oanda_logger.info("Trading Time: {}".format(time))
@@ -378,3 +385,52 @@ class OandaTrading():
             oanda_logger.info("status_code: {}".format(status_code))
             oanda_logger.info("response_content:\n {}".format(pprint.pformat(response_content)))
             oanda_logger.info("=============================Oanda Trading END==========================\n")
+
+    def is_market_open(self):
+
+        today_date = datetime.datetime.today().strftime("%Y-%m-%d")
+        IsMarketOpen = True
+        if not IsMarketOpen:
+            oanda_logger.info("{}'s forex market is closed!".format(today_date))
+        return IsMarketOpen
+
+    def modify_close_out_date(self):
+        today_date_obj = datetime.datetime.today().date()
+        today_date = today_date_obj.strftime("%Y-%m-%d")
+        delta = datetime.timedelta(days=1)
+
+        # modify date
+        new_close_out_list = []
+        with open(self.close_out_file_path, 'r') as f:
+            for line in f:
+                if line == '\n':
+                    continue
+                line_list = line.split(',')
+                date = line_list[1]
+                if today_date == date:
+                    new_date_obj = today_date_obj + delta
+                    new_date = new_date_obj.strftime("%Y-%m-%d")
+                    line_list[1] = new_date
+
+                line_list_str = ','.join(line_list)
+                print ("line_list_str: ", line_list_str)
+                new_close_out_list.append(line_list_str)
+        #
+
+        # update and write
+        with open(self.close_out_file_path, 'w') as f:
+            for line_str in new_close_out_list:
+                f.write(line_str)
+                f.write('\n')
+        #
+
+
+    def update_close_out_order(self, trade_instrument, sell_or_buy, closed_out_date, units):
+        line_list = [trade_instrument, closed_out_date, units, sell_or_buy]
+        line_str = ','.join(line_list)
+
+        # write new closed out date
+        with open(self.close_out_file_path, 'a') as f:
+            f.write(line_str)
+            f.write('\n')
+        #

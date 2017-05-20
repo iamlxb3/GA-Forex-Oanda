@@ -61,43 +61,21 @@ class OandaTrading():
         print ("status_code: ", status_code)
 
 
-    def trade(self, trading_params, day_buy, day_sell):
+    def trade(self):
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
-        # trade_instruments_tuple: (('EUR_USD', 'buy'), ('EUR_USD', 'sell')...)
-        trade_instruments_tuple = self.get_trade_instrument(day_buy, day_sell)
-        for trade_instrument, sell_or_buy in trade_instruments_tuple:
+        body = self.body
+        headers = self.headers
+        url = self.order_url
+        body['order']['instrument'] = 'USD_JPY'
 
-            if not trade_instrument:
-                # return logging
-                oanda_logger.info("=============================Return Trading=============================")
-                oanda_logger.info("Trading Time: {}".format(time))
-                oanda_logger.info("Day buy: {}".format(day_buy))
-                oanda_logger.info("Day sell: {}".format(day_sell))
-                oanda_logger.info("No instrument chosen")
-                oanda_logger.info("=============================Return Trading END==========================\n")
-                return
+        response = requests.post(url, headers=headers, json=body)
+        response_content = response.json()
+        status_code = response.status_code
+        print ("response_content: ", response_content)
+        print ("status_code: ", status_code)
 
-            body = self.body
-            headers = self.headers
-            url = self.order_url
-            body['order']['instrument'] = trade_instrument
-            # sell or buy
-            if sell_or_buy == 'sell':
-                body['order']['units'] = str(int(body['order']['units']) * -1)
-            else:
-                pass
-            response = requests.post(url, headers=headers, json=body)
-            response_content = response.json()
-            status_code = response.status_code
-            # logging
-            oanda_logger.info("=============================Oanda Trading=============================")
-            oanda_logger.info("Trading Time: {}".format(time))
-            oanda_logger.info("Day buy: {}".format(day_buy))
-            oanda_logger.info("Day sell: {}".format(day_sell))
-            oanda_logger.info("Instrument chosen: {}".format(trade_instrument))
-            oanda_logger.info("status_code: {}".format(status_code))
-            oanda_logger.info("response_content:\n {}".format(pprint.pformat(response_content)))
-            oanda_logger.info("=============================Oanda Trading END==========================\n")
+        # logging
+
 
 
 #response_content:  [('lastTransactionID', '195'),
@@ -114,5 +92,12 @@ class OandaTrading():
 #  ('relatedTransactionIDs', ['194', '195'])]
 
 
+# # trade
+# response_content:  {'orderCreateTransaction': {'batchID': '204', 'positionFill': 'DEFAULT', 'id': '204', 'userID': 5027528, 'time': '2017-05-20T12:38:31.625793271Z', 'type': 'MARKET_ORDER', 'timeInForce': 'FOK', 'instrument': 'USD_JPY', 'units': '50', 'accountID': '101-004-5027528-001', 'reason': 'CLIENT_ORDER', 'requestID': '24286073800779523'}, 'lastTransactionID': '205', 'orderCancelTransaction': {'userID': 5027528, 'accountID': '101-004-5027528-001', 'id': '205', 'batchID': '204', 'reason': 'MARKET_HALTED', 'requestID': '24286073800779523', 'time': '2017-05-20T12:38:31.625793271Z', 'orderID': '204', 'type': 'ORDER_CANCEL'}, 'relatedTransactionIDs': ['204', '205']}
+# status_code:  201
+
+
+
 ot = OandaTrading()
 ot.close_out()
+ot.trade()

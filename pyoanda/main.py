@@ -146,6 +146,12 @@ trading_params = {}
 strategy = 's1'
 
 def main_loop():
+    # (0.) see if market is open
+    is_market_open = oanda_trading.is_market_open()
+    if not is_market_open:
+        oanda_trading.modify_close_out_date()
+        sys.exit()
+
     oanda_logger.info("===============adopted strategy: {}===============".format(strategy))
     # (1.) Update Forex Data
     read_up_to_date_forex_data()
@@ -158,6 +164,8 @@ def main_loop():
         day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
     elif strategy == 's1':
         day_buy, day_sell = oanda_trading.s1_get_day_buy_sell(ga_classifier_result_dict)
+
+    # TODO reinforcement learning, action outputs close order date, units, which shoule be the input of close_out and trade
 
     # (4.) close out
     oanda_trading.close_out(trading_params, day_buy, day_sell, strategy = strategy)

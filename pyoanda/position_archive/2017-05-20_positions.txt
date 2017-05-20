@@ -1,2 +1,2 @@
-archive_time: 2017-05-20-13-33-54
-{'instrument': 'EUR_USD', 'short': {'unrealizedPL': '-0.5053', 'tradeIDs': ['88'], 'pl': '-0.0252', 'units': '-10', 'averagePrice': '1.05523', 'financing': '0', 'resettablePL': '-0.0252'}, 'pl': '-0.6639', 'unrealizedPL': '-0.5053', 'commission': '0', 'financing': '0.0000', 'long': {'unrealizedPL': '0.0000', 'financing': '0', 'pl': '-0.6387', 'units': '0', 'resettablePL': '-0.6387'}, 'resettablePL': '-0.6639'}
+archive_time: 2017-05-20-16-24-25
+{'pl': '-0.6639', 'commission': '0', 'financing': '0.0000', 'long': {'pl': '-0.6387', 'financing': '0', 'units': '0', 'unrealizedPL': '0.0000', 'resettablePL': '-0.6387'}, 'instrument': 'EUR_USD', 'unrealizedPL': '-0.5053', 'short': {'tradeIDs': ['88'], 'pl': '-0.0252', 'averagePrice': '1.05523', 'financing': '0', 'units': '-10', 'unrealizedPL': '-0.5053', 'resettablePL': '-0.0252'}, 'resettablePL': '-0.6639'}
