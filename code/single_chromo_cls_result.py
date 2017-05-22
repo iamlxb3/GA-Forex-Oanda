@@ -52,6 +52,7 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     
     # (2.) put data into dict
     formatter1 = Formatter(parameter_dict)
+    print ("reading data from {}".format(data_path))
     testing_data_dict = formatter1.format_and_create_dict(data_path, formatter1.feature_choice_list)
     logger2.info("Create Testing_data_dict Successful")
 
@@ -65,6 +66,9 @@ def get_single_chromo_cls_result(chromosome_bits, chromosome_type, parameter_pat
     s.translate_chromosome_bits(ga.feature_pos_dict)
     # -(c) get the classfiled result in each day
     classification_result = s.get_classification_result(ga)
+
+
+
     if not classification_result:
         logger2.info("No forex returned of any date for {}".format(chromosome_type))
         logger2.info("chromosome_bits: {}".format(chromosome_bits))

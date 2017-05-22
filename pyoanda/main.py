@@ -69,6 +69,7 @@ sub_reader.write_json(p_data_parameters_json__path, p_data_parameters_dict)
 
 # =========================================READING UP-TO-DATE-FOREX-DATA================================================
 def read_up_to_date_forex_data():
+
     # set mode to trading
     # (1.) read parameters
     reader1 = ReadParameters(file_name = 'p_data_parameters.json')
@@ -79,6 +80,8 @@ def read_up_to_date_forex_data():
     read_forex_data = ReadForexData(parameter_dict)
     read_forex_data.read_onanda_data()
     read_forex_data.write_forex_dict_to_file()
+
+    print ("Reading up-to-date forex data finish!")
 
 #read_up_to_date_forex_data()
 # =========================================READING UP-TO-DATE-FOREX-DATA================================================
@@ -107,12 +110,14 @@ def get_ga_classifier_result_dict():
             cls_result = get_single_chromo_cls_result(chromosome_bits, chromosome_type, oanda_main_parameter_json__path,
                                                   oanda_forex_trading_data_path, trading = True)
 
+            print ("cls_result: ", cls_result)
+
             oanda_logger.debug("chromosome_type: {}, cls_result :{}".format(chromosome_type, cls_result))
             # test whether this chromosome has return any forex for any date
             if cls_result == None:
                 oanda_logger.info("{} has no forex return for any date".format(chromosome_type))
             else:
-                cls_result_today = cls_result[0]
+                cls_result_today = cls_result[-1]
                 # test whether the fetech result is today
                 date_cls = cls_result_today[0]
                 if date_cls == today:
@@ -131,67 +136,72 @@ def get_ga_classifier_result_dict():
 
 
 
-read_up_to_date_forex_data()
-
-
-# # ======================================================================================================================
-# # ======================================================================================================================
-# # ======================================================================================================================
-# # TRADING MAIN
-# # ======================================================================================================================
+# #read_up_to_date_forex_data()
+# ga_classifier_result_dict = get_ga_classifier_result_dict()
 # from oanda_trading import OandaTrading
-# import time
-# import schedule
-# 
 # oanda_trading = OandaTrading()
-# 
-# # read parameters
-# trading_params = {}
-# strategy = 's1'
-# 
-# def main_loop():
-#     # (0.) see if market is open
-#     is_market_open = oanda_trading.is_market_open()
-#     if not is_market_open:
-#         oanda_trading.modify_close_out_date()
-#         sys.exit()
-# 
-#     oanda_logger.info("===============adopted strategy: {}===============".format(strategy))
-#     # (1.) Update Forex Data
-#     read_up_to_date_forex_data()
-# 
-#     # (2.) get ga_classifier_result_dict
-#     ga_classifier_result_dict = get_ga_classifier_result_dict()
-# 
-#     # (3.) get day_buy/day_sell
-#     if strategy == 's2':
-#         day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
-#     elif strategy == 's1':
-#         day_buy, day_sell = oanda_trading.s1_get_day_buy_sell(ga_classifier_result_dict)
-# 
-#     # TODO reinforcement learning, action outputs close order date, units, which shoule be the input of close_out and trade
-# 
-#     # (4.) close out
-#     oanda_trading.close_out(trading_params, day_buy, day_sell, strategy = strategy)
-#     time.sleep(3)
-# 
-#     # (5.) buy
-#     oanda_trading.trade(trading_params, day_buy, day_sell)
-#     time.sleep(3)
-# 
-#     # (6.) show position and archive positions
-#     oanda_trading.get_all_positions()
-# 
-# 
-#     
-# main_loop()
-# #schedule.every(3).seconds.do(main_loop)
-# #schedule.every().day.at("10:30").do(main_loop) # time to place the order
-# # TODO maybe need another time to close out the order?
-# 
-# #while not oanda_trading.isEnd:
-# #    schedule.run_pending()
-#     
-# 
-# # ======================================================================================================================
+# day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
+
+
+
+# ====================================================================================================================
+# ====================================================================================================================
+# ====================================================================================================================
+# TRADING MAIN
+# ====================================================================================================================
+from oanda_trading import OandaTrading
+import time
+import schedule
+
+oanda_trading = OandaTrading()
+
+# read parameters
+trading_params = {}
+strategy = 's1'
+
+def main_loop():
+    # (0.) see if market is open
+    is_market_open = oanda_trading.is_market_open()
+    if not is_market_open:
+        oanda_trading.modify_close_out_date()
+        sys.exit()
+
+    oanda_logger.info("===============adopted strategy: {}===============".format(strategy))
+    # (1.) Update Forex Data
+    read_up_to_date_forex_data()
+
+    # (2.) get ga_classifier_result_dict
+    ga_classifier_result_dict = get_ga_classifier_result_dict()
+
+    # (3.) get day_buy/day_sell
+    if strategy == 's2':
+        day_buy, day_sell = oanda_trading.get_day_buy_sell(ga_classifier_result_dict)
+    elif strategy == 's1':
+        day_buy, day_sell = oanda_trading.s1_get_day_buy_sell(ga_classifier_result_dict)
+
+    # TODO reinforcement learning, action outputs close order date, units, which shoule be the input of close_out and trade
+
+    # (4.) close out
+    oanda_trading.close_out(trading_params, day_buy, day_sell, strategy = strategy)
+    time.sleep(3)
+
+    # (5.) buy
+    oanda_trading.trade(trading_params, day_buy, day_sell)
+    time.sleep(3)
+
+    # (6.) show position and archive positions
+    oanda_trading.get_all_positions()
+
+
+
+main_loop()
+#schedule.every(3).seconds.do(main_loop)
+#schedule.every().day.at("10:30").do(main_loop) # time to place the order
+# TODO maybe need another time to close out the order?
+
+#while not oanda_trading.isEnd:
+#    schedule.run_pending()
+
+
+# ====================================================================================================================
 

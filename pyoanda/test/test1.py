@@ -1,9 +1,14 @@
 import datetime
+from pjslib.general import get_upper_folder_path
+from pjslib.general import accepts
+#from pjslib.logger import oanda_logger
 #================================================
 import requests
 import pprint
 import collections
+import time
 import sys
+import os
 import json
 
 class OandaTrading():
@@ -35,13 +40,17 @@ class OandaTrading():
             'Authorization': 'Bearer ' + self.access_token,
         }
         self.body = {"order": {
-            "units": "50",
+            "units": "1",
             "instrument": "EUR_USD",
             "timeInForce": "FOK",
             "type": "MARKET",
-            "positionFill": "DEFAULT"
+            "positionFill": "DEFAULT",
         }
         }
+        close_out_file = 'close_out_order.txt'
+        folder = 'order'
+        current_folder = get_upper_folder_path(1)
+        self.close_out_file_path = os.path.join(current_folder, folder, close_out_file)
 
     def close_out(self):
         def get_trade_id(instrument):
@@ -50,13 +59,16 @@ class OandaTrading():
             trade_id = dict(response.json())['trades'][0]["id"]
             return trade_id
 
-        instrument = 'EUR_USD'
+        body = self.body
+        instrument = 'USD_JPY'
+        body['order']['instrument'] = instrument
         trade_id = get_trade_id(instrument)
+        trade_id = '241'
         url = self.close_out_url.format(self.account_id, trade_id)
-        body = {'units': '5'}
         response = requests.put(url, headers=self.headers, json = body)
         response_content = sorted(list(dict(response.json()).items()))
         status_code = response.status_code
+        #
         print ("response_content: ", response_content)
         print ("status_code: ", status_code)
 
@@ -67,14 +79,108 @@ class OandaTrading():
         headers = self.headers
         url = self.order_url
         body['order']['instrument'] = 'USD_JPY'
-
+        body['order']['units'] = '10'
         response = requests.post(url, headers=headers, json=body)
         response_content = response.json()
+        last_transaction_id = response_content['lastTransactionID']
+        print ("last_transaction_id: ", last_transaction_id)
         status_code = response.status_code
         print ("response_content: ", response_content)
         print ("status_code: ", status_code)
 
         # logging
+
+    def get_all_positions(self):
+        time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
+        url = self.get_all_positions_url
+        response = requests.get(url, headers = self.headers)
+        positions_list = dict(response.json())['positions']
+        pprint.pprint(positions_list)
+        all_pos_list = []
+        for positions_dict in positions_list:
+            instrument = positions_dict['instrument']
+            all_pos_list.append(instrument)
+
+            # get the pos detail(buy/sell)
+            long_units = int(positions_dict['long']['units'])
+            short_units = int(positions_dict['short']['units'])
+            if long_units == 0 and short_units <=0:
+                buy_or_sell = 'sell'
+            elif short_units == 0 and long_units >=0:
+                buy_or_sell = 'buy'
+            else:
+                #oanda_logger.error("ERROR HAPPEND AT get_all_positions! long_unit, short unit")
+                sys.exit(0)
+            self.pos_detail_dict[instrument] = buy_or_sell
+
+        #   archive positions
+        date = datetime.datetime.today().strftime("%Y-%m-%d")
+        folder_name = 'position_archive'
+        date_file_name = date + '_positions.txt'
+        date_file_path = os.path.join(folder_name, date_file_name)
+        archive_time = datetime.datetime.today().strftime("%Y-%m-%d-%H-%M-%S")
+
+        with open(date_file_path, 'w') as f:
+            f.write("archive_time: {}\n".format(archive_time))
+            for detail in positions_list:
+                f.write(str(detail))
+                f.write("\n")
+
+    def close_out2(self,strategy='s2'):
+        # get close out id
+        close_out_id_list = []
+        with open(self.close_out_file_path, 'r') as f:
+            for line in f:
+                if line == '\n':
+                    continue
+                line_list = line.strip().split(',')
+                date = line_list[1]
+                id = line_list[-1]
+                date_temp = time.strptime(date, '%Y-%m-%d')
+                date_obj = datetime.datetime(*date_temp[:3]).date()
+                print ('date_obj ', date_obj)
+                print ('date_today ', self.date_today)
+                if self.date_today == date_obj:
+                    close_out_id_list.append(id)
+
+        if not close_out_id_list:
+            print ("No close out forex for {}".format(date))
+
+        for i, trade_id in enumerate(close_out_id_list):
+
+            url = self.close_out_url.format(self.account_id, trade_id)
+            response = requests.put(url, headers=self.headers)
+            response_content = response.json()
+            status_code = response.status_code
+            print ("trade_id: ", trade_id)
+            print ("response_content: ", response_content)
+            print ("status_code: ", status_code)
+            # ===============================================================================
+            # delete the close_out_order line if close out is done succesfully
+            # TODO change status_code
+            new_file_list = []
+            if status_code == 200:
+                with open(self.close_out_file_path, 'r') as f:
+                    for line in f:
+                        line_list = line.strip().split(',')
+                        f_trade_id = line_list[-1]
+                        date = line_list[1]
+                        date_temp = time.strptime(date, '%Y-%m-%d')
+                        date_obj = datetime.datetime(*date_temp[:3]).date()
+                        if f_trade_id == trade_id and self.date_today == date_obj:
+                            continue
+                        else:
+                            new_file_list.append(line)
+
+                with open(self.close_out_file_path, 'w') as f:
+                    for new_line in new_file_list:
+                        f.write(new_line)
+                print ("Close out trade_id {} succesfully!".format(trade_id))
+            else:
+                print ("trade_id {} does not hold any position!".format(trade_id))
+            # ===============================================================================
+
+
 
 
 
@@ -99,5 +205,6 @@ class OandaTrading():
 
 
 ot = OandaTrading()
-ot.close_out()
-ot.trade()
+ot.close_out2()
+#ot.trade()
+ot.get_all_positions()

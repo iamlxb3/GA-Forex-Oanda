@@ -17,10 +17,10 @@ import json
 class OandaTrading():
     def __init__(self):
         self.date_today = datetime.datetime.today().date()
-        self.is_1_day_buy = True
-        self.is_1_day_sell = True
-        self.is_3_day_buy = False
-        self.is_3_day_sell = False
+        self.is_1_day_buy = False
+        self.is_1_day_sell = False
+        self.is_3_day_buy = True
+        self.is_3_day_sell = True
         self.is_7_day_buy = False
         self.is_7_day_sell = False
         self.mode = '3_day'
@@ -149,13 +149,7 @@ class OandaTrading():
             buy_list.extend(ga_classifier_result_dict['7_day_buy'])
 
 
-        for i, instrument_list in enumerate(buy_list):
-            if i == 0:
-                buy_set = set(instrument_list)
-                continue
-            else:
-                buy_set = buy_set & set(instrument_list)
-        # buy end
+        buy_set = set(buy_list)
 
         # sell
         if is_1_day_sell:
@@ -164,13 +158,8 @@ class OandaTrading():
             sell_list.extend(ga_classifier_result_dict['3_day_sell'])
         if is_7_day_sell:
             sell_list.extend(ga_classifier_result_dict['7_day_sell'])
-        for i, instrument_list in enumerate(sell_list):
-            if i == 0:
-                sell_set = set(instrument_list)
-                continue
-            else:
-                sell_set = sell_set & set(instrument_list)
-        # sell end
+
+        sell_set = set(sell_list)
 
         # if forex appear in both set, delete it
         buy_set_complete = buy_set.copy()
@@ -321,12 +310,26 @@ class OandaTrading():
             oanda_logger.info("=============================Return Trading END==========================\n")
             return
 
-        for i, instrument in enumerate(close_out_instruments):
-            trade_id = get_trade_id(instrument)
+        # get close out id
+        close_out_id_list = []
+        with open (self.close_out_file_path, 'r') as f:
+            for line in f:
+                if line == '\n':
+                    continue
+                line_list = line.strip().split(',')
+                date = line_list[1]
+                id =line_list[-1]
+                date_temp = time.strptime(date, '%Y%m%d')
+                date_obj = datetime.datetime(*date_temp[:3])
+                if self.date_today == date_obj:
+                    close_out_id_list.append(id)
+
+        if not close_out_id_list:
+            print ("No close out forex for {}".format())
+
+        for i, trade_id in enumerate(close_out_id_list):
+
             url = self.close_out_url.format(self.account_id, trade_id)
-            body = {'units': '0'}
-            units = units_list[i]
-            body['units'] = units
             response = requests.put(url, headers=self.headers, json=body)
             response_content = response.json()
             status_code = response.status_code
@@ -348,13 +351,66 @@ class OandaTrading():
             # close_out logging
             oanda_logger.info("=============================Oanda Close Out=============================")
             oanda_logger.info("Close Out Time: {}".format(time))
-            oanda_logger.info("Day buy: {}".format(day_buy))
-            oanda_logger.info("Day sell: {}".format(day_sell))
-            oanda_logger.info("Close Out instrument chosen: {}".format(instrument))
-            oanda_logger.info("Close Out units: {}".format(units))
+            oanda_logger.info("Close Out trade_id: {}".format(trade_id))
             oanda_logger.info("status_code: {}".format(status_code))
             oanda_logger.info("response_content:\n {}".format(pprint.pformat(response_content)))
             oanda_logger.info("=============================Oanda Trading END==========================\n")
+
+
+    def close_out2(self,strategy='s2'):
+        oanda_logger.info("=============================Oanda Close Out=============================")
+        # get close out id
+        close_out_id_list = []
+        with open(self.close_out_file_path, 'r') as f:
+            for line in f:
+                if line == '\n':
+                    continue
+                line_list = line.strip().split(',')
+                date = line_list[1]
+                id = line_list[-1]
+                date_temp = time.strptime(date, '%Y-%m-%d')
+                date_obj = datetime.datetime(*date_temp[:3]).date()
+                if self.date_today == date_obj:
+                    close_out_id_list.append(id)
+
+        if not close_out_id_list:
+            oanda_logger.info("No close out forex for {}".format(date))
+
+        for i, trade_id in enumerate(close_out_id_list):
+
+            url = self.close_out_url.format(self.account_id, trade_id)
+            response = requests.put(url, headers=self.headers)
+            response_content = response.json()
+            status_code = response.status_code
+            oanda_logger.info("trade_id: ", trade_id)
+            oanda_logger.info("response_content: ", response_content)
+            oanda_logger.info("status_code: ", status_code)
+            # ===============================================================================
+            # delete the close_out_order line if close out is done succesfully
+            # TODO change status_code
+            new_file_list = []
+            if status_code == 200:
+                with open(self.close_out_file_path, 'r') as f:
+                    for line in f:
+                        line_list = line.strip().split(',')
+                        f_trade_id = line_list[-1]
+                        date = line_list[1]
+                        date_temp = time.strptime(date, '%Y-%m-%d')
+                        date_obj = datetime.datetime(*date_temp[:3]).date()
+                        if f_trade_id == trade_id and self.date_today == date_obj:
+                            continue
+                        else:
+                            new_file_list.append(line)
+
+                with open(self.close_out_file_path, 'w') as f:
+                    for new_line in new_file_list:
+                        f.write(new_line)
+                oanda_logger.info("Close out trade_id {} succesfully!".format(trade_id))
+            else:
+                oanda_logger.info("trade_id {} does not hold any position!".format(trade_id))
+            # ===============================================================================
+        oanda_logger.info("=============================Oanda Close Out END=============================\n")
+
 
     def trade(self, trading_params, day_buy, day_sell):
         time = datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
@@ -386,11 +442,11 @@ class OandaTrading():
             response = requests.post(url, headers=headers, json=body)
             response_content = response.json()
             status_code = response.status_code
-
+            last_transaction_id =  response_content['lastTransactionID']
             # TODO update close_out_order.txt
-            if status_code == '200':
+            if status_code == '201':
                 closed_out_date = self.s1_get_close_out_date()
-                self.update_close_out_order(trade_instrument, sell_or_buy, closed_out_date)
+                self.update_close_out_order(trade_instrument, sell_or_buy, closed_out_date, last_transaction_id)
 
             # logging
             oanda_logger.info("=============================Oanda Trading=============================")
@@ -405,6 +461,8 @@ class OandaTrading():
     def is_market_open(self):
 
         today_date = datetime.datetime.today().strftime("%Y-%m-%d")
+
+
         IsMarketOpen = True
         if not IsMarketOpen:
             oanda_logger.info("{}'s forex market is closed!".format(today_date))
@@ -441,8 +499,8 @@ class OandaTrading():
         #
 
 
-    def update_close_out_order(self, trade_instrument, sell_or_buy, closed_out_date, units):
-        line_list = [trade_instrument, closed_out_date, units, sell_or_buy]
+    def update_close_out_order(self, trade_instrument, sell_or_buy, closed_out_date, units, last_transaction_id):
+        line_list = [trade_instrument, closed_out_date, units, sell_or_buy, last_transaction_id]
         line_str = ','.join(line_list)
 
         # write new closed out date

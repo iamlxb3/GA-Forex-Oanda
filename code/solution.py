@@ -512,6 +512,7 @@ class Solution():
         # sort the input_data_list
         input_data_list = sorted(list(input_data_dict.items()), key = lambda x:x[0])
 
+
         for date_object, target_dict in input_data_list:
             # target: 'MRK','VZ', feature_value_tuple: Feature(quarter = '2', stock = 'MRK',....)
             target_dict_items = sorted(list(target_dict.items()), key = lambda x:x[0])
