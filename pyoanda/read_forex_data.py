@@ -22,15 +22,19 @@ class ReadForexData:
         self.granularity = parameters_dict['granularity']
         self.candle_format = parameters_dict['candle_format']
         self.date_range = parameters_dict['date_range']
+        self.time_zone = "Europe%2FLondon"
+        # reference:
+        # http://developer.oanda.com/docs/timezones.txt
         self.url = "https://api-fxtrade.oanda.com/v1/candles?" \
                    "instrument=#instrument&" \
                    "count={date_range}&" \
                    "candleFormat={candle_format}&" \
                    "granularity={granularity}&" \
                    "dailyAlignment=0&" \
-                   "alignmentTimezone=America%2FNew_York".format(date_range = self.date_range,
+                   "alignmentTimezone={time_zone}".format(date_range = self.date_range,
                                                                  candle_format = self.candle_format,
-                                                                 granularity = self.granularity)
+                                                                 granularity = self.granularity,
+                                                                 time_zone = self.time_zone)
         # set the data output path
         parent_folder = os.path.join(get_upper_folder_path(2), 'data')
         data_folder = os.path.join(parent_folder, 'oanda')
