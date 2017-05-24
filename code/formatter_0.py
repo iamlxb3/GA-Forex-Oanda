@@ -97,7 +97,6 @@ class Formatter():
         with open(path, 'r', encoding='utf-8') as f:
             for line in f:
                 line_list = line.strip().split(',')
-                print ("line_list: ", line_list)
                 for pos in feature_pos_list:
                     feature_value_dict[pos]['value_list'].append(float(line_list[pos]))
 

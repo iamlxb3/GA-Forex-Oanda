@@ -1,0 +1,17 @@
+Feature_id: 3, max: 3.11, min: -19.3, pos_average: 0.3690495314591688, neg_average: -0.3987907465825439, zero_num: 75
+Feature_id: 4, max: 3.61, min: -16.02, pos_average: 0.3693301271040861, neg_average: -0.3779277436946132, zero_num: 71
+Feature_id: 5, max: 6.01, min: -21.35, pos_average: 0.36523414148123307, neg_average: -0.40033814723494077, zero_num: 66
+Feature_id: 6, max: 2.81, min: -19.28, pos_average: 0.3712283678316918, neg_average: -0.39222145088510785, zero_num: 88
+Feature_id: 7, max: 389401.0, min: 100.0, pos_average: 39228.651960784315, neg_average: 0, zero_num: 0
+Feature_id: 8, max: 99.62, min: -45646.11, pos_average: 42.97015355687875, neg_average: -1086.5698604992672, zero_num: 1
+Feature_id: 9, max: 77.9, min: 0.0, pos_average: 3.1385214007782056, neg_average: 0, zero_num: 5
+Feature_id: 10, max: 78.4, min: 0.6, pos_average: 5.51551724137932, neg_average: 0, zero_num: 0
+Feature_id: 11, max: 156.9, min: 0.1, pos_average: 14.039097363083194, neg_average: 0, zero_num: 0
+Feature_id: 12, max: 120.8, min: 1.4, pos_average: 19.0306457065585, neg_average: 0, zero_num: 0
+Feature_id: 13, max: 100.0, min: 0.0, pos_average: 45.22078106508872, neg_average: 0, zero_num: 1
+Feature_id: 14, max: 100.0, min: 0.0, pos_average: 50.86261055147678, neg_average: 0, zero_num: 59
+Feature_id: 15, max: 100.0, min: 0.0, pos_average: 51.210790500423975, neg_average: 0, zero_num: 21
+Feature_id: 16, max: 2.895, min: -16.164, pos_average: 0.36869135388739854, neg_average: -0.38298663926002036, zero_num: 13
+Feature_id: 17, max: 4.143, min: -16.002, pos_average: 0.6814309188464117, neg_average: -0.7117634004779801, zero_num: 5
+Feature_id: 18, max: 7.211, min: -15.9, pos_average: 1.064104257458935, neg_average: -1.1258774744027313, zero_num: 3
+Feature_id: 19, max: 125.656, min: 0.683845, pos_average: 19.70397929766745, neg_average: 0, zero_num: 0

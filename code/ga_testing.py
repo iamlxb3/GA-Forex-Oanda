@@ -32,12 +32,17 @@ logger2.info("Create Testing_data_dict Successful")
 print (testing_data_dict.keys())
 
 #(3.) read chromosome
-sell_tuple = ('buy', 'sell')
+sell_tuple = ('buy', 'sell', 'c_buy', 'c_sell')
 for string in sell_tuple:
     if string == 'sell':
         parameter_dict['SGA']['buy_sell_switch'] = 0
+    elif string == 'c_buy':
+        parameter_dict['SGA']['buy_sell_switch'] = 1
+    elif string == 'c_sell':
+        parameter_dict['SGA']['buy_sell_switch'] = 0
     elif string == 'buy':
         parameter_dict['SGA']['buy_sell_switch'] = 1
+        
 
     chromosome_path = "chromosome/{}_chromosome.txt".format(string)
     with open(chromosome_path, 'r', encoding = 'utf-8') as f:

@@ -10,7 +10,7 @@ def sub_cmd():
 
     print ("opts :", opts)
     if not opts:
-        print ("Please enter mode = train/test")
+        print ("Please enter -m train/test")
         sys.exit(0)
         
     for o, a in opts:

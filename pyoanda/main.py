@@ -182,7 +182,7 @@ def main_loop():
     # TODO reinforcement learning, action outputs close order date, units, which shoule be the input of close_out and trade
 
     # (4.) close out
-    oanda_trading.close_out(trading_params, day_buy, day_sell, strategy = strategy)
+    oanda_trading.close_out2(strategy = strategy)
     time.sleep(3)
 
     # (5.) buy
