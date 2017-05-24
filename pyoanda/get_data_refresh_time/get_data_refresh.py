@@ -13,7 +13,11 @@ now_date = None
 def get_data_refresh():
     url = "https://api-fxtrade.oanda.com/v1/candles?instrument=EUR_USD&"\
           "count=1&candleFormat=midpoint&granularity=D&"\
-          "dailyAlignment=0&alignmentTimezone=America%2FNew_York"
+          "dailyAlignment=0&alignmentTimezone=Europe%2FLondon"
+          
+    # url = "https://api-fxtrade.oanda.com/v1/candles?instrument=EUR_USD&"\
+    # "count=1&candleFormat=midpoint&granularity=D&"\
+    # "dailyAlignment=0&alignmentTimezone=Europe%2FLondon"
     response = requests.get(url)
     response_status_code = response.status_code
     print("response_status_code: ", response_status_code)
@@ -34,14 +38,20 @@ def get_shift_time(previous_date):
     now_date = get_data_refresh()
     if previous_date is None:
         previous_date = now_date
+        print ("set previous_date to {} at {}".format(now_date, time_now))
     print("now_date: ", now_date)
     print("previous_date: ", previous_date)
+    
     if previous_date != now_date:
         print ("shifting time: {}".format(time_now))
         sys.exit(0)
+    else:
+        return previous_date
 
+previous_date = get_shift_time(previous_date)
 
-schedule.every(60).seconds.do(get_shift_time, previous_date)
+schedule.every(2).seconds.do(get_shift_time, previous_date)
+
 #schedule.every().day.at("11:52").do(get_shift_time, previous_date)
 
 

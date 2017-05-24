@@ -160,9 +160,11 @@ trading_params = {}
 strategy = 's1'
 
 def main_loop():
+    print ("Oanda Trading Start!")
     # (0.) see if market is open
     is_market_open = oanda_trading.is_market_open()
     if not is_market_open:
+        print ("Market is closed today!")
         oanda_trading.modify_close_out_date()
         sys.exit()
 
@@ -192,15 +194,18 @@ def main_loop():
     # (6.) show position and archive positions
     oanda_trading.get_all_positions()
 
+    # (7.)
+    oanda_trading.isEnd = True
 
 
-main_loop()
+
+#main_loop()
 #schedule.every(3).seconds.do(main_loop)
-#schedule.every().day.at("10:30").do(main_loop) # time to place the order
-# TODO maybe need another time to close out the order?
+schedule.every().day.at("22:30").do(main_loop) # time to place the order
+#TODO maybe need another time to close out the order?
 
-#while not oanda_trading.isEnd:
-#    schedule.run_pending()
+while not oanda_trading.isEnd:
+   schedule.run_pending()
 
 
 # ====================================================================================================================

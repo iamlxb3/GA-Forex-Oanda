@@ -9,7 +9,8 @@ How to train and test on the forex data
 """
 parameter_dict['mode'] = 'testing'  |  parameter_dict['mode'] = 'trading'
 """
-modify how many days to download: C:\Users\JIASHU\Desktop\forex_main\pyoanda\parameters, set ["date_range": 1000,]
+modify how many days to download: "C:\Users\JIASHU\Desktop\forex_main\pyoanda\parameters", set ["date_range": 1000,]
+modify the GA parameters in "C:\Users\JIASHU\Desktop\forex_main\code\main.py"
 # =========================================================================================================================
 
 

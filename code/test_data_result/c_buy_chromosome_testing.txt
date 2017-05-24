@@ -116,50 +116,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "00",
-        "value": 1.25,
-        "is_include": 1
-    },
-    "closeMid_1_day_percent": {
-        "operator": "10",
-        "value": -6.375,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "10",
-        "value": 2,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "10",
-        "value": 55,
-        "is_include": 1
-    },
-    "upper_shadow_percent": {
-        "operator": "01",
-        "value": 26,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": -0.6875,
-        "is_include": 1
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "00",
+        "is_include": 1,
         "value": 0.375,
-        "is_include": 1
+        "operator": "00"
     },
     "volume_1_day_percent": {
-        "operator": "11",
+        "is_include": 0,
         "value": -1575,
-        "is_include": 0
+        "operator": "11"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 1,
+        "value": 1.25,
+        "operator": "00"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.375,
+        "operator": "10"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 26,
+        "operator": "01"
     },
     "volume": {
-        "operator": "00",
+        "is_include": 0,
         "value": 7311,
-        "is_include": 0
+        "operator": "00"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 55,
+        "operator": "10"
     }
 }
 ==========================================================================================
@@ -279,50 +279,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "10",
-        "value": -1.3125,
-        "is_include": 1
-    },
-    "closeMid_1_day_percent": {
-        "operator": "10",
-        "value": -6.375,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "10",
-        "value": 2,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "10",
-        "value": 55,
-        "is_include": 1
-    },
-    "upper_shadow_percent": {
-        "operator": "01",
-        "value": 26,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": -0.6875,
-        "is_include": 1
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "00",
+        "is_include": 1,
         "value": 0.375,
-        "is_include": 1
+        "operator": "00"
     },
     "volume_1_day_percent": {
-        "operator": "01",
+        "is_include": 0,
         "value": -1574,
-        "is_include": 0
+        "operator": "01"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 1,
+        "value": -1.3125,
+        "operator": "10"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.375,
+        "operator": "10"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 26,
+        "operator": "01"
     },
     "volume": {
-        "operator": "00",
+        "is_include": 0,
         "value": 3207,
-        "is_include": 0
+        "operator": "00"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 55,
+        "operator": "10"
     }
 }
 ==========================================================================================
@@ -442,50 +442,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "10",
-        "value": -1.25,
-        "is_include": 1
-    },
-    "closeMid_1_day_percent": {
-        "operator": "10",
-        "value": -6.125,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "10",
-        "value": 2,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "10",
-        "value": 55,
-        "is_include": 1
-    },
-    "upper_shadow_percent": {
-        "operator": "01",
-        "value": 26,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": -0.6875,
-        "is_include": 1
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "00",
+        "is_include": 1,
         "value": 0.375,
-        "is_include": 1
+        "operator": "00"
     },
     "volume_1_day_percent": {
-        "operator": "11",
+        "is_include": 0,
         "value": -1574,
-        "is_include": 0
+        "operator": "11"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 1,
+        "value": -1.25,
+        "operator": "10"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.125,
+        "operator": "10"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 26,
+        "operator": "01"
     },
     "volume": {
-        "operator": "00",
+        "is_include": 0,
         "value": 3222,
-        "is_include": 0
+        "operator": "00"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 55,
+        "operator": "10"
     }
 }
 ==========================================================================================
@@ -604,50 +604,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "10",
-        "value": -1.125,
-        "is_include": 1
-    },
-    "closeMid_1_day_percent": {
-        "operator": "10",
-        "value": -6.125,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "10",
-        "value": 2,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "10",
-        "value": 55,
-        "is_include": 1
-    },
-    "upper_shadow_percent": {
-        "operator": "01",
-        "value": 26,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": -0.6875,
-        "is_include": 1
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "00",
+        "is_include": 1,
         "value": 0.375,
-        "is_include": 1
+        "operator": "00"
     },
     "volume_1_day_percent": {
-        "operator": "11",
+        "is_include": 0,
         "value": -1830,
-        "is_include": 0
+        "operator": "11"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 2,
+        "operator": "10"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 1,
+        "value": -1.125,
+        "operator": "10"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.125,
+        "operator": "10"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 26,
+        "operator": "01"
     },
     "volume": {
-        "operator": "00",
+        "is_include": 0,
         "value": 3270,
-        "is_include": 0
+        "operator": "00"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 55,
+        "operator": "10"
     }
 }
 ==========================================================================================
@@ -803,50 +803,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "00",
-        "value": -6.4375,
-        "is_include": 0
-    },
-    "closeMid_1_day_percent": {
-        "operator": "01",
-        "value": -4.4375,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "01",
-        "value": 44,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "00",
-        "value": 32,
-        "is_include": 0
-    },
-    "upper_shadow_percent": {
-        "operator": "00",
-        "value": 63,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 0,
         "value": 1.4375,
-        "is_include": 0
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": 0,
-        "is_include": 1
+        "operator": "11"
     },
     "volume_1_day_percent": {
-        "operator": "01",
+        "is_include": 1,
         "value": 77,
-        "is_include": 1
+        "operator": "01"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 44,
+        "operator": "01"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": -6.4375,
+        "operator": "00"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -4.4375,
+        "operator": "01"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 63,
+        "operator": "00"
     },
     "volume": {
-        "operator": "11",
+        "is_include": 0,
         "value": 11883,
-        "is_include": 0
+        "operator": "11"
+    },
+    "real_body_percent": {
+        "is_include": 0,
+        "value": 32,
+        "operator": "00"
     }
 }
 ==========================================================================================
@@ -997,50 +997,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "00",
-        "value": -2.25,
-        "is_include": 0
-    },
-    "closeMid_1_day_percent": {
-        "operator": "01",
-        "value": -4.9375,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "01",
-        "value": 44,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "10",
-        "value": 9,
-        "is_include": 1
-    },
-    "upper_shadow_percent": {
-        "operator": "00",
-        "value": 55,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 0,
         "value": 1.3125,
-        "is_include": 0
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": 0,
-        "is_include": 1
+        "operator": "11"
     },
     "volume_1_day_percent": {
-        "operator": "00",
+        "is_include": 1,
         "value": 77,
-        "is_include": 1
+        "operator": "00"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 44,
+        "operator": "01"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": -2.25,
+        "operator": "00"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -4.9375,
+        "operator": "01"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 55,
+        "operator": "00"
     },
     "volume": {
-        "operator": "11",
+        "is_include": 0,
         "value": 11371,
-        "is_include": 0
+        "operator": "11"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 9,
+        "operator": "10"
     }
 }
 ==========================================================================================
@@ -1163,50 +1163,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "01",
-        "value": -2.1875,
-        "is_include": 0
-    },
-    "closeMid_1_day_percent": {
-        "operator": "01",
-        "value": -5.4375,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "01",
-        "value": 44,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "00",
-        "value": 55,
-        "is_include": 1
-    },
-    "upper_shadow_percent": {
-        "operator": "00",
-        "value": 63,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 0,
         "value": 2.125,
-        "is_include": 0
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": 0,
-        "is_include": 1
+        "operator": "11"
     },
     "volume_1_day_percent": {
-        "operator": "01",
+        "is_include": 1,
         "value": 192,
-        "is_include": 1
+        "operator": "01"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 44,
+        "operator": "01"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": -2.1875,
+        "operator": "01"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -5.4375,
+        "operator": "01"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 63,
+        "operator": "00"
     },
     "volume": {
-        "operator": "11",
+        "is_include": 0,
         "value": 11467,
-        "is_include": 0
+        "operator": "11"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 55,
+        "operator": "00"
     }
 }
 ==========================================================================================
@@ -1329,50 +1329,50 @@ stock return..
 -------------------------------------------------
 feature_dict
 {
-    "highMid_1_day_percent": {
-        "operator": "00",
-        "value": -2.1875,
-        "is_include": 0
-    },
-    "closeMid_1_day_percent": {
-        "operator": "01",
-        "value": -7.4375,
-        "is_include": 0
-    },
-    "lower_shadow_percent": {
-        "operator": "01",
-        "value": 44,
-        "is_include": 1
-    },
-    "real_body_percent": {
-        "operator": "00",
-        "value": 55,
-        "is_include": 1
-    },
-    "upper_shadow_percent": {
-        "operator": "00",
-        "value": 63,
-        "is_include": 1
-    },
     "lowMid_percent": {
-        "operator": "11",
+        "is_include": 0,
         "value": 6,
-        "is_include": 0
+        "operator": "11"
     },
     "openMid_1_day_percent": {
-        "operator": "11",
+        "is_include": 1,
         "value": 0,
-        "is_include": 1
+        "operator": "11"
     },
     "volume_1_day_percent": {
-        "operator": "01",
+        "is_include": 1,
         "value": 192,
-        "is_include": 1
+        "operator": "01"
+    },
+    "lower_shadow_percent": {
+        "is_include": 1,
+        "value": 44,
+        "operator": "01"
+    },
+    "highMid_1_day_percent": {
+        "is_include": 0,
+        "value": -2.1875,
+        "operator": "00"
+    },
+    "closeMid_1_day_percent": {
+        "is_include": 0,
+        "value": -7.4375,
+        "operator": "01"
+    },
+    "upper_shadow_percent": {
+        "is_include": 1,
+        "value": 63,
+        "operator": "00"
     },
     "volume": {
-        "operator": "11",
+        "is_include": 0,
         "value": 11339,
-        "is_include": 0
+        "operator": "11"
+    },
+    "real_body_percent": {
+        "is_include": 1,
+        "value": 55,
+        "operator": "00"
     }
 }
 ==========================================================================================
