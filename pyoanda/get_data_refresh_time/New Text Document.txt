@@ -1,0 +1,1 @@
+https://api-fxtrade.oanda.com/v1/candles?instrument=EUR_USD&count=1&candleFormat=midpoint&granularity=D&dailyAlignment=0
