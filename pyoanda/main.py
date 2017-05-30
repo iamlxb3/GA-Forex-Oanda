@@ -198,10 +198,13 @@ def main_loop():
     oanda_trading.isEnd = True
 
 
+    
+trading_time = "05:01"
+print ("Waiting for {} to trade".format(trading_time))
 
 #main_loop()
-#schedule.every(3).seconds.do(main_loop)
-schedule.every().day.at("22:30").do(main_loop) # time to place the order
+schedule.every(3).seconds.do(main_loop)
+#schedule.every().day.at(trading_time).do(main_loop) # time to place the order
 #TODO maybe need another time to close out the order?
 
 while not oanda_trading.isEnd:

@@ -22,7 +22,7 @@ class ReadForexData:
         self.granularity = parameters_dict['granularity']
         self.candle_format = parameters_dict['candle_format']
         self.date_range = parameters_dict['date_range']
-        self.time_zone = "Europe%2FLondon"
+        self.time_zone = "America%2FNew_York"
         # reference:
         # http://developer.oanda.com/docs/timezones.txt
         self.url = "https://api-fxtrade.oanda.com/v1/candles?" \

@@ -1,63 +1,43 @@
 {
-    "DSGA": {
-        "SD": 0.005,
-        "IS": 0.095,
-        "RLC": 1,
-        "M": 0.5,
-        "seed_max_ratio": 0.6,
-        "eliminate_ratio": 0.25,
-        "CL": 4,
-        "Parent_Choose": "f"
-    },
     "testing": {
         "raw_data_file_path": ""
     },
-    "evolution": {
-        "cross_over": {
-            "mode": "uniform"
-        },
-        "mutation": {
-            "mode": "random_flip",
-            "flip_bit_num": 3
-        }
-    },
     "input": {
+        "training_date_start": "02/19/2017",
+        "feature_decide_bit_len": 4,
+        "training_testing_ratio": "8,2",
+        "feature_choice_str": "0,1,3,4,5,6,7,8,13,14,15,16,17,18",
+        "raw_data_file_name": "cleaned_data.txt",
+        "next_price_str": "profit_1_day",
+        "raw_data_dict": {
+            "16": "profit_1_day",
+            "4": "highMid_1_day_percent",
+            "8": "volume_1_day_percent",
+            "5": "lowMid_percent",
+            "12": "volume_7_day_std",
+            "10": "openMid_7_day_std",
+            "9": "openMid_3_day_std",
+            "18": "profit_7_day",
+            "13": "real_body_percent",
+            "7": "volume",
+            "2": "time",
+            "1": "instrument",
+            "14": "upper_shadow_percent",
+            "11": "volume_3_day_std",
+            "3": "openMid_1_day_percent",
+            "6": "closeMid_1_day_percent",
+            "17": "profit_3_day",
+            "15": "lower_shadow_percent",
+            "0": "Blank"
+        },
+        "training_date_end": "05/30/2017",
+        "raw_data_path": "",
+        "restrict_training_date": true,
+        "decisive_feature": [
+            1,
+            3
+        ],
         "data_pos_in_chromosome": {
-            "14": [
-                1,
-                2,
-                0,
-                6,
-                0
-            ],
-            "6": [
-                1,
-                2,
-                1,
-                3,
-                4
-            ],
-            "15": [
-                1,
-                2,
-                0,
-                6,
-                0
-            ],
-            "3": [
-                1,
-                2,
-                1,
-                3,
-                4
-            ],
-            "8": [
-                1,
-                2,
-                1,
-                11,
-                0
-            ],
             "7": [
                 1,
                 2,
@@ -65,7 +45,21 @@
                 14,
                 0
             ],
+            "4": [
+                1,
+                2,
+                1,
+                3,
+                4
+            ],
             "13": [
+                1,
+                2,
+                0,
+                6,
+                0
+            ],
+            "14": [
                 1,
                 2,
                 0,
@@ -79,59 +73,65 @@
                 3,
                 4
             ],
-            "4": [
+            "3": [
                 1,
                 2,
                 1,
                 3,
                 4
+            ],
+            "6": [
+                1,
+                2,
+                1,
+                3,
+                4
+            ],
+            "8": [
+                1,
+                2,
+                1,
+                11,
+                0
+            ],
+            "15": [
+                1,
+                2,
+                0,
+                6,
+                0
             ]
+        }
+    },
+    "evolution": {
+        "mutation": {
+            "mode": "random_flip",
+            "flip_bit_num": 3
         },
-        "feature_decide_bit_len": 4,
-        "restrict_training_date": true,
-        "raw_data_dict": {
-            "10": "openMid_7_day_std",
-            "16": "profit_1_day",
-            "12": "volume_7_day_std",
-            "18": "profit_7_day",
-            "9": "openMid_3_day_std",
-            "14": "upper_shadow_percent",
-            "13": "real_body_percent",
-            "17": "profit_3_day",
-            "2": "time",
-            "1": "instrument",
-            "0": "Blank",
-            "6": "closeMid_1_day_percent",
-            "11": "volume_3_day_std",
-            "15": "lower_shadow_percent",
-            "3": "openMid_1_day_percent",
-            "8": "volume_1_day_percent",
-            "7": "volume",
-            "5": "lowMid_percent",
-            "4": "highMid_1_day_percent"
-        },
-        "training_date_start": "02/14/2017",
-        "raw_data_path": "",
-        "training_date_end": "05/25/2017",
-        "decisive_feature": [
-            1,
-            3
-        ],
-        "feature_choice_str": "0,1,3,4,5,6,7,8,13,14,15,16,17,18",
-        "raw_data_file_name": "cleaned_data.txt",
-        "training_testing_ratio": "8,2",
-        "next_price_str": "profit_1_day"
+        "cross_over": {
+            "mode": "uniform"
+        }
+    },
+    "DSGA": {
+        "CL": 4,
+        "IS": 0.095,
+        "RLC": 1,
+        "M": 0.5,
+        "eliminate_ratio": 0.25,
+        "Parent_Choose": "f",
+        "SD": 0.005,
+        "seed_max_ratio": 0.6
     },
     "SGA": {
-        "multiple_return_switch": 0,
-        "buy_sell_switch": 1,
-        "target_return_percent": 40,
-        "parent_select_mode": "TS",
         "no_progress_generation": 200,
+        "max_population_num": 60,
+        "intial_solution_number": 30,
+        "buy_sell_switch": 1,
         "TS": {
             "TS_K": 3
         },
-        "max_population_num": 60,
-        "intial_solution_number": 30
+        "parent_select_mode": "TS",
+        "target_return_percent": 40,
+        "multiple_return_switch": 0
     }
 }
